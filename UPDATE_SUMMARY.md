@@ -1,8 +1,22 @@
-# Portfolio Update Summary - October 24, 2025
+# Portfolio Update Summary - October 25, 2025
 
-## 🎯 What Was Accomplished
+## 🎯 Latest Update (v2.1.0)
 
-This document summarizes the major configuration architecture implementation completed on October 24, 2025.
+### Case Study Cards Enhancement
+- New layout with improved content structure
+- Company name and skills pills added
+- Removed unnecessary dividers
+- Added SVG image placeholders
+
+### Social Links Update
+- Updated LinkedIn profile URL
+- Consistent social links across configs
+- Enhanced accessibility labels
+
+---
+
+## Previous Major Update (v2.0.0) - October 24, 2025
+This section summarizes the major configuration architecture implementation completed on October 24, 2025.
 
 ---
 

@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.1.0] - 2025-10-25
+
+### Added
+- New case study cards design with improved layout
+- SVG image placeholders for case studies
+- Updated LinkedIn profile URL across config files
+
+### Changed
+- Merged subtitle and description in case study cards
+- Removed dividers from case study cards
+- Updated company names and skills pills in case study cards
+
+---
+
 ## [2.0.0] - 2025-10-24
 
 ### 🎯 Major Release: Configuration Architecture

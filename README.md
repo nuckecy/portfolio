@@ -2,6 +2,13 @@
 
 A professional Next.js portfolio showcasing design case studies and projects with a complete configuration architecture for easy customization.
 
+## 🎯 Latest Updates (v2.1.0)
+
+- New case study cards with improved layout and content structure
+- SVG placeholders for case study images
+- Updated social links and profile URLs
+- Enhanced configuration for case studies
+
 ## 🚀 Getting Started
 
 First, install the dependencies:
