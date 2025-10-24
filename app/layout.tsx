@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import { ConditionalFooter } from "@/components/conditional-footer";
 
 export const metadata: Metadata = {
   title: "Product Designer Portfolio",
@@ -21,6 +21,10 @@ export default function RootLayout({
           href="https://api.fontshare.com/v2/css?f[]=neue-montreal@400,500,600,700&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="font-sans">
         <ThemeProvider
@@ -31,7 +35,7 @@ export default function RootLayout({
         >
           <Navigation />
           {children}
-          <Footer />
+          <ConditionalFooter />
         </ThemeProvider>
       </body>
     </html>

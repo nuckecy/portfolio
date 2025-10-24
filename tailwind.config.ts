@@ -5,6 +5,7 @@ module.exports = {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
+    './config/**/*.{ts,tsx}',
   ],
   theme: {
     container: {
@@ -24,6 +25,15 @@ module.exports = {
           'Roboto',
           'Helvetica Neue',
           'Arial',
+          'sans-serif',
+        ],
+        serif: [
+          'Libre Baskerville',
+          'Georgia',
+          'serif',
+        ],
+        work: [
+          'Work Sans',
           'sans-serif',
         ],
       },
