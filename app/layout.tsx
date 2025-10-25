@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navigation } from "@/components/navigation";
-import { ConditionalFooter } from "@/components/conditional-footer";
+import { NavigationWrapper } from "@/components/navigation-wrapper";
+import { FooterWrapper } from "@/components/footer-wrapper";
 
 export const metadata: Metadata = {
   title: "Product Designer Portfolio",
@@ -33,9 +33,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navigation />
+          <NavigationWrapper />
           {children}
-          <ConditionalFooter />
+          <FooterWrapper />
         </ThemeProvider>
       </body>
     </html>

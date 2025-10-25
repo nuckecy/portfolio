@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Metadata } from "next"
-import { getPageData } from "@/lib/load-json"
+import { getPageDataServer } from "@/lib/load-json-server"
 import { caseStudiesPageConfig } from "@/config/case-studies-page"
 import { caseStudiesPageStyles } from "@/config/styles/case-studies-page"
 
@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description: "Featured case studies showcasing user-centered design solutions across fintech, e-commerce, and enterprise platforms.",
 }
 
-export default function CaseStudiesPage() {
-  const jsonData = getPageData('case-studies')
-  
+export default async function CaseStudiesPage() {
+  const jsonData = await getPageDataServer('case-studies')
+
   // Use JSON data with fallback to TypeScript config
   const { hero, studies } = jsonData || caseStudiesPageConfig
   const styles = caseStudiesPageStyles

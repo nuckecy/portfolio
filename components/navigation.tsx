@@ -4,21 +4,19 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
 import Image from "next/image"
 import { ExternalLink, Menu, X } from "lucide-react"
-import { useState, useEffect } from "react"
-import { getComponentData } from "@/lib/load-json"
+import { useState } from "react"
 import { navigationConfig } from "@/config/navigation"
 import { navigationStyles } from "@/config/styles/navigation"
 
-export function Navigation() {
+interface NavigationProps {
+  data?: any
+}
+
+export function Navigation({ data }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [jsonData, setJsonData] = useState<any>(null)
-  
-  useEffect(() => {
-    setJsonData(getComponentData('navigation'))
-  }, [])
-  
+
   // Use JSON data with fallback to TypeScript config
-  const navConfig = jsonData || navigationConfig
+  const navConfig = data || navigationConfig
 
   return (
     <>

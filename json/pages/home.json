@@ -15,5 +15,48 @@
     "portraitImage": "/images/Otobong_Okoko_Sketched_.png?v=2",
     "portraitAlt": "Otobong Okoko Portrait"
   },
-  "coreSkills": ["User Research", "Design Systems", "Prototyping", "Usability Testing", "Information Architecture", "Interaction Design", "Visual Design", "Design Thinking", "Wireframing", "User Flows", "A/B Testing", "Accessibility (WCAG)", "Responsive Design", "Design Sprint Facilitation", "Stakeholder Management", "AI-Powered Design", "Conversational AI/UX", "Generative AI Tools", "AI Prompt Engineering", "Machine Learning UX"]
+  "coreSkills": ["User Research", "Design Systems", "Prototyping", "Usability Testing", "Information Architecture", "Interaction Design", "Visual Design", "Design Thinking", "Wireframing", "User Flows", "A/B Testing", "Accessibility (WCAG)", "Responsive Design", "Design Sprint Facilitation", "Stakeholder Management", "AI-Powered Design", "Conversational AI/UX", "Generative AI Tools", "AI Prompt Engineering", "Machine Learning UX"],
+  "topCaseStudies": {
+    "heading": "Selected Work",
+    "viewAllText": "View All Case Studies",
+    "viewAllHref": "/case-studies",
+    "studies": [
+      {
+        "title": "Contextual Self-Help Platform",
+        "subtitle": "Transforming Customer Support Through Predictive Design.",
+        "description": "Cut 20M yearly inquiries by 42% and slashed resolution time from 24 hours to under 3.",
+        "tags": ["Product Design", "User Research"],
+        "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
+        "imageAlt": "Customer support and digital experience",
+        "href": "/case-study/zalando-contextual"
+      },
+      {
+        "title": "Fraud Analytics Platform",
+        "subtitle": "Real-Time Fraud Detection Dashboard.",
+        "description": "Predictive monitoring that cut fraud by 34% and false positives by 47%, saving ₦155M.",
+        "tags": ["Data Visualization", "Enterprise Design"],
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+        "imageAlt": "Security and data analytics dashboard",
+        "href": "/case-study/fraud-analytics"
+      },
+      {
+        "title": "UBA HCM Connect",
+        "subtitle": "Enterprise HR Management System.",
+        "description": "Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
+        "tags": ["Enterprise Design", "HR Tech"],
+        "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+        "imageAlt": "Modern office workspace and collaboration",
+        "href": "/case-study/uba-hcm"
+      },
+      {
+        "title": "Guided Conversational Chatbot",
+        "subtitle": "Reimagining Automated Support with Empathy.",
+        "description": "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
+        "tags": ["Conversational AI", "Product Design"],
+        "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
+        "imageAlt": "AI chatbot and conversational interface",
+        "href": "/case-study/cashamm"
+      }
+    ]
+  }
 }
