@@ -2,12 +2,16 @@
 
 A professional Next.js portfolio showcasing design case studies and projects with a complete configuration architecture for easy customization.
 
-## 🎯 Latest Updates (v2.1.0)
+## 🎯 Latest Updates (v2.2.0)
 
-- New case study cards with improved layout and content structure
-- SVG placeholders for case study images
-- Updated social links and profile URLs
-- Enhanced configuration for case studies
+- **Visual Enhancement**: Replaced SVG placeholders with professional Unsplash images
+- **Next.js Configuration**: Added support for external images from Unsplash and Wikipedia
+- **Mobile Optimization**: Completely redesigned mobile layouts with improved spacing and hierarchy
+- **Responsive Components**: Enhanced button sizing and layout stacking on mobile devices
+- **About Page Redesign**: New responsive social links grid (2-col mobile, 4-col desktop)
+- **Animation Enhancement**: Increased marquee speed from 60s to 18s for more dynamic feel
+- **Dark Mode Fix**: Fixed LinkedIn logo visibility with invert filter
+- **UX Improvements**: Made social link cards fully clickable for better accessibility
 
 ## 🚀 Getting Started
 
@@ -28,13 +32,16 @@ Open [http://localhost:3001](http://localhost:3001) with your browser to see the
 ## ✨ Features
 
 - 🌓 Dark mode support with system preference detection
-- 📱 Responsive design for all devices
+- 📱 Fully responsive mobile-first design with optimized layouts
 - 🎨 Clean, minimalist design with customizable theme
-- � Complete configuration architecture (content + styles separated)
+- 🏗️ Complete configuration architecture (content + styles separated)
 - ♿ Accessible components built with Radix UI
 - 🎯 SEO optimized
 - 📦 Type-safe TypeScript configurations
 - 🎭 Isolated page styles (no cross-page interference)
+- 🖼️ Next.js Image optimization with external image support
+- ✨ Smooth animations and interactive UI elements
+- 🔗 Enhanced clickable areas for better UX
 
 ## 📂 Project Structure
 

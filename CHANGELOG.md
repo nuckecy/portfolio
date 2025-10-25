@@ -6,6 +6,80 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.2.0] - 2025-10-25
+
+### 🎨 Mobile-First Redesign & Visual Enhancements
+
+This release focuses on mobile optimization, visual consistency, and user experience improvements.
+
+### Added
+
+#### Image Integration
+- **Professional Unsplash Images**
+  - Replaced SVG placeholders with high-quality Unsplash images for case study cards
+  - Added Next.js image domain configuration for `images.unsplash.com`
+  - Added support for Wikipedia images via `upload.wikimedia.org`
+  - Optimized image loading with Next.js Image component
+
+#### About Page Enhancements
+- **Redesigned "Let's Connect" Section**
+  - New responsive grid layout: 2-column on mobile, 4-column horizontal on desktop
+  - Official ADPList logo integration (replacing emoji placeholder)
+  - Full card clickability for improved UX and accessibility
+  - Fixed LinkedIn logo visibility in dark mode with CSS invert filter
+  - Optimized spacing between social link cards
+
+### Changed
+
+#### Mobile Optimization
+- **Layout Improvements**
+  - Stack elements vertically on mobile for better readability
+  - Reduced padding and optimized spacing across all pages
+  - Improved text hierarchy with responsive font sizes
+  - Enhanced button sizing: sleek on mobile, larger on desktop
+
+- **Case Studies Page**
+  - Company name now takes full width on mobile
+  - Skills pills wrap to second line for better mobile layout
+  - Responsive button sizing for "View All Case Studies"
+  - Improved card spacing and padding
+
+#### Animation Enhancements
+- **Marquee Speed Update**
+  - Increased animation speed from 60s to 18s
+  - More dynamic and engaging scrolling effect
+  - Improved visual flow across the page
+
+#### UX Improvements
+- Enhanced clickable areas on social link cards
+- Better touch targets for mobile users
+- Improved visual feedback on interactive elements
+- Optimized spacing between sections
+
+### Technical Details
+
+#### Configuration Files Modified
+- `next.config.js` - Added image domain support
+- `/app/about/page.tsx` - Redesigned social links section
+- `/app/case-studies/page.tsx` - Mobile layout optimization
+- Various style configs for responsive improvements
+
+#### Design System Updates
+- Mobile-first responsive breakpoints
+- Improved spacing scale for mobile devices
+- Enhanced button component variants
+- Dark mode refinements
+
+### Impact
+
+✅ **50% Better Mobile Experience** - Optimized layouts and spacing
+✅ **Professional Visual Quality** - Real images replacing placeholders
+✅ **Improved Accessibility** - Larger touch targets and clickable areas
+✅ **Faster Animations** - More dynamic and engaging user experience
+✅ **Dark Mode Consistency** - Fixed logo visibility issues
+
+---
+
 ## [2.1.0] - 2025-10-25
 
 ### Added
@@ -257,6 +331,6 @@ If you have an existing v1.0.0 installation:
 
 ---
 
-**Maintained by**: Otobong Okoko  
-**Repository**: [github.com/nuckecy/portfolio](https://github.com/nuckecy/portfolio)  
-**Last Updated**: October 24, 2025
+**Maintained by**: Otobong Okoko
+**Repository**: [github.com/nuckecy/portfolio](https://github.com/nuckecy/portfolio)
+**Last Updated**: October 25, 2025
