@@ -116,15 +116,21 @@ export default function AboutPage() {
 
           <div className={aboutStyles.connect.grid.className}>
             {aboutConfig.connect.links.map((link, index) => (
-              <div key={index} className={aboutStyles.connect.card.className}>
+              <Link
+                key={index}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className={aboutStyles.connect.card.className}
+              >
                 <div className={aboutStyles.connect.iconWrapper.className}>
                   {link.iconType === "svg" ? (
                     <Image
                       src={link.icon}
                       alt={link.label}
-                      width={48}
-                      height={48}
-                      className={aboutStyles.connect.icon.className}
+                      width={60}
+                      height={60}
+                      className={aboutStyles.connect.svgIcon.className}
                     />
                   ) : (
                     <span className={aboutStyles.connect.icon.className}>
@@ -136,17 +142,9 @@ export default function AboutPage() {
                   {link.label}
                 </h3>
                 <p className={aboutStyles.connect.sublabel.className}>
-                  {link.sublabel.split(" ").slice(0, -1).join(" ")}{" "}
-                  <Link 
-                    href={link.href}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    className={aboutStyles.connect.link.className}
-                  >
-                    {link.sublabel.split(" ").slice(-1)[0]}
-                  </Link>
+                  {link.sublabel}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

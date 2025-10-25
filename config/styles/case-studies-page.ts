@@ -34,13 +34,13 @@ export const caseStudiesPageStyles = {
       className: "mb-6"
     },
     topRow: {
-      className: "flex items-start justify-between mb-3 gap-4"
+      className: "flex flex-wrap items-start justify-between mb-3 gap-2"
     },
     company: {
-      className: "text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
+      className: "text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider w-full md:w-auto"
     },
     skills: {
-      className: "flex flex-wrap gap-1 justify-end"
+      className: "flex flex-wrap gap-1 justify-start md:justify-end w-full md:w-auto"
     },
     skill: {
       className: "px-3 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600"
@@ -64,7 +64,7 @@ export const caseStudiesPageStyles = {
       className: "w-1 h-1 bg-gray-400 dark:bg-gray-500 rounded-full"
     },
     viewButton: {
-      className: "inline-flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
+      className: "inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
     }
   }
 }

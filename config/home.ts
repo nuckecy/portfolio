@@ -117,8 +117,8 @@ export const homeConfig = {
         subtitle: "Transforming Customer Support Through Predictive Design.",
         description: "Cut 20M yearly inquiries by 42% and slashed resolution time from 24 hours to under 3.",
         tags: ["Product Design", "User Research"],
-        image: "/images/contextual_help_image_thumb.svg",
-        imageAlt: "contextual_help_image_thumb",
+        image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
+        imageAlt: "Customer support and digital experience",
         href: "/case-study/contextual-help"
       },
       {
@@ -126,8 +126,8 @@ export const homeConfig = {
         subtitle: "Real-Time Fraud Detection Dashboard.",
         description: "Predictive monitoring that cut fraud by 34% and false positives by 47%, saving ₦155M.",
         tags: ["Data Visualization", "Enterprise Design"],
-        image: "/images/fraud_analytics_image_thumb.svg",
-        imageAlt: "fraud_analytics_image_thumb",
+        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+        imageAlt: "Security and data analytics dashboard",
         href: "/case-study/fraud-analytics"
       },
       {
@@ -135,8 +135,8 @@ export const homeConfig = {
         subtitle: "Enterprise HR Management System.",
         description: "Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
         tags: ["Enterprise Design", "HR Tech"],
-        image: "/images/uba_hcm_image_thumb.svg",
-        imageAlt: "uba_hcm_image_thumb",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+        imageAlt: "Modern office workspace and collaboration",
         href: "/case-study/uba-hcm"
       },
       {
@@ -144,8 +144,8 @@ export const homeConfig = {
         subtitle: "Reimagining Automated Support with Empathy.",
         description: "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
         tags: ["Conversational AI", "Product Design"],
-        image: "/images/cashamm_image_thumb.svg",
-        imageAlt: "cashamm_image_thumb",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
+        imageAlt: "AI chatbot and conversational interface",
         href: "/case-study/cashamm"
       }
     ]

@@ -398,19 +398,19 @@ export const homeStyles = {
       className: "max-w-7xl mx-auto px-4 md:px-8",
     },
     header: {
-      className: "mb-12 flex items-center justify-between",
+      className: "mb-12 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0",
     },
     heading: {
-      className: "text-3xl md:text-4xl font-serif text-gray-900 dark:text-gray-100",
+      className: "text-3xl md:text-4xl font-serif text-gray-900 dark:text-gray-100 text-center md:text-left",
     },
     viewAll: {
-      className: "px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors flex items-center gap-2",
+      className: "px-4 py-2 md:px-6 md:py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors flex items-center gap-2",
     },
     grid: {
-      className: "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12",
+      className: "grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12",
     },
     card: {
-      className: "group space-y-4",
+      className: "group space-y-5",
     },
     imageWrapper: {
       className: "relative aspect-[16/10] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800",
@@ -419,7 +419,7 @@ export const homeStyles = {
       className: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300",
     },
     content: {
-      className: "space-y-2",
+      className: "space-y-3",
     },
     title: {
       className: "text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors",
@@ -428,7 +428,7 @@ export const homeStyles = {
       className: "text-sm text-gray-500 dark:text-gray-400",
     },
     description: {
-      className: "text-base text-gray-700 dark:text-gray-300 leading-relaxed",
+      className: "text-sm text-gray-700 dark:text-gray-300 leading-relaxed",
     },
     tags: {
       className: "flex flex-wrap gap-2",

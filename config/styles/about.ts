@@ -104,31 +104,34 @@ export const aboutStyles = {
   // Connect Section
   connect: {
     section: {
-      className: "py-16 md:py-24 bg-white dark:bg-gray-900",
+      className: "py-12 md:py-16 bg-white dark:bg-gray-900",
     },
     container: {
-      className: "container mx-auto px-4 md:px-8 max-w-6xl",
+      className: "container mx-auto px-4 md:px-8 max-w-7xl",
     },
     title: {
-      className: "text-3xl md:text-4xl lg:text-5xl font-normal text-center text-gray-900 dark:text-gray-100 mb-12",
+      className: "text-3xl md:text-4xl lg:text-5xl font-normal text-center text-gray-900 dark:text-gray-100 mb-10 md:mb-12",
     },
     grid: {
-      className: "flex flex-wrap justify-center gap-6 md:gap-8",
+      className: "grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8",
     },
     card: {
-      className: "text-center space-y-3 flex-shrink-0",
+      className: "block text-center space-y-2 p-3 md:p-6 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 group",
     },
     iconWrapper: {
-      className: "flex justify-center mb-4",
+      className: "flex justify-center mb-3 md:mb-6",
     },
     icon: {
-      className: "text-4xl md:text-5xl",
+      className: "text-4xl md:text-6xl dark:invert dark:brightness-0 dark:contrast-100 dark:filter",
+    },
+    svgIcon: {
+      className: "w-14 h-14 md:w-24 md:h-24 dark:invert dark:brightness-0 dark:contrast-100 dark:filter object-contain",
     },
     label: {
-      className: "text-lg md:text-xl font-medium text-gray-900 dark:text-gray-100",
+      className: "text-base md:text-2xl font-medium text-gray-900 dark:text-gray-100 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors",
     },
     sublabel: {
-      className: "text-sm md:text-base text-gray-600 dark:text-gray-400",
+      className: "text-xs md:text-lg text-gray-600 dark:text-gray-400",
     },
     link: {
       className: "text-red-500 dark:text-red-400 underline hover:text-red-600 dark:hover:text-red-300 transition-colors",

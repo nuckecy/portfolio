@@ -71,14 +71,14 @@ export const aboutConfig = {
     links: [
       {
         label: "Résumé",
-        sublabel: "View Otobong's Résumé.",
+        sublabel: "View Otobong's Résumé",
         href: "/resume",
         icon: "📄",
         external: false
       },
       {
-        label: "Linkedin",
-        sublabel: "Connect with me on Linkedin.",
+        label: "LinkedIn",
+        sublabel: "Let's connect on LinkedIn",
         href: "https://www.linkedin.com/in/otobong/",
         icon: "/images/linkedin.svg",
         external: true,
@@ -86,14 +86,15 @@ export const aboutConfig = {
       },
       {
         label: "ADPList Mentor",
-        sublabel: "Book a Mentor Session.",
+        sublabel: "Book a Mentor Session",
         href: "https://adplist.org/mentors/otobong-okoko",
-        icon: "😊",
-        external: true
+        icon: "https://upload.wikimedia.org/wikipedia/commons/f/f0/ADPList_Logo.png",
+        external: true,
+        iconType: "svg"
       },
       {
         label: "Case Studies",
-        sublabel: "View my work.",
+        sublabel: "View my work",
         href: "/case-studies",
         icon: "💼",
         external: false
