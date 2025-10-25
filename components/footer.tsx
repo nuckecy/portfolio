@@ -43,7 +43,7 @@ export function Footer() {
     copyright: `© ${currentYear} Otobong Okoko. All rights reserved.`
   }
   
-  const footerData = jsonData || defaultFooter
+  const footerData = (jsonData && jsonData.sections) ? jsonData : defaultFooter
 
   return (
     <footer className="border-t border-border bg-neutral-950 dark:bg-neutral-950 text-neutral-100">
