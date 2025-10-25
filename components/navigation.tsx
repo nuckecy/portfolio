@@ -4,12 +4,21 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
 import Image from "next/image"
 import { ExternalLink, Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
+import { getComponentData } from "@/lib/load-json"
 import { navigationConfig } from "@/config/navigation"
 import { navigationStyles } from "@/config/styles/navigation"
-import { useState } from "react"
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [jsonData, setJsonData] = useState<any>(null)
+  
+  useEffect(() => {
+    setJsonData(getComponentData('navigation'))
+  }, [])
+  
+  // Use JSON data with fallback to TypeScript config
+  const navConfig = jsonData || navigationConfig
 
   return (
     <>
@@ -17,16 +26,16 @@ export function Navigation() {
         <div className={navigationStyles.container.className}>
           <div className={navigationStyles.wrapper.className}>
             {/* Logo / Name */}
-            <Link href={navigationConfig.brand.logoUrl} className={navigationStyles.brand.link.className}>
+            <Link href={navConfig.brand.logoUrl} className={navigationStyles.brand.link.className}>
               <div className={navigationStyles.brand.logo.className}>
-                {navigationConfig.brand.initials}
+                {navConfig.brand.initials}
               </div>
-              <span className={navigationStyles.brand.name.className}>{navigationConfig.brand.name}</span>
+              <span className={navigationStyles.brand.name.className}>{navConfig.brand.name}</span>
             </Link>
             
             {/* Desktop Navigation Links */}
             <nav className={navigationStyles.nav.wrapper.className}>
-              {navigationConfig.links.map((link) => (
+              {navConfig.links.map((link: any) => (
                 <Link 
                   key={link.href}
                   href={link.href}
@@ -44,11 +53,11 @@ export function Navigation() {
                   )}
                 </Link>
               ))}
-              {navigationConfig.settings.showThemeToggle && navigationStyles.themeToggle.show && <ThemeToggle />}
+              {navConfig.settings.showThemeToggle && navigationStyles.themeToggle.show && <ThemeToggle />}
             </nav>
 
             {/* Mobile Theme Toggle - Always visible */}
-            {navigationConfig.settings.showThemeToggle && (
+            {navConfig.settings.showThemeToggle && (
               <div className="md:hidden">
                 <ThemeToggle />
               </div>
@@ -79,7 +88,7 @@ export function Navigation() {
           />
           <div className={navigationStyles.mobileMenu.panel.className}>
             <nav className={navigationStyles.mobileMenu.nav.className}>
-              {navigationConfig.links.map((link) => (
+              {navConfig.links.map((link: any) => (
                 <Link 
                   key={link.href}
                   href={link.href}

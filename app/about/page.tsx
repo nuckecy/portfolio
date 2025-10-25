@@ -4,13 +4,21 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { getPageData } from "@/lib/load-json"
 import { aboutConfig } from "@/config/about"
 import { aboutStyles } from "@/config/styles/about"
 import { SkillsMarquee } from "@/components/skills-marquee"
 import { SkillsRadarOverlay } from "@/components/skills-radar-overlay"
 
 export default function AboutPage() {
+  const [jsonData] = useState(() => getPageData('about'))
   const [isRadarOpen, setIsRadarOpen] = useState(false)
+  
+  // Use JSON data with fallback to TypeScript config
+  const heroData = jsonData?.hero || aboutConfig.hero
+  const coreSkillsData = jsonData?.coreSkills || aboutConfig.coreSkills
+  const principlesData = jsonData?.principles || aboutConfig.principles
+  const connectData = jsonData?.connect || aboutConfig.connect
 
   return (
     <div className={aboutStyles.page.className}>
@@ -21,19 +29,19 @@ export default function AboutPage() {
             {/* Left Column - Text */}
             <div className={aboutStyles.hero.textColumn.className}>
               <h1 className={aboutStyles.hero.greeting.className}>
-                {aboutConfig.hero.greeting}
+                {heroData.greeting}
               </h1>
               <p className={aboutStyles.hero.introduction.className}>
-                {aboutConfig.hero.introduction}{" "}
+                {heroData.introduction}{" "}
                 <span className={aboutStyles.hero.name.className}>
-                  {aboutConfig.hero.name}
+                  {heroData.name}
                 </span>{" "}
                 <span className={aboutStyles.hero.mission.className}>
-                  {aboutConfig.hero.mission}
+                  {heroData.mission}
                 </span>
               </p>
               <div className={aboutStyles.hero.story.className}>
-                {aboutConfig.hero.story.map((paragraph, index) => (
+                {heroData.story.map((paragraph: string, index: number) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -43,8 +51,8 @@ export default function AboutPage() {
             <div className={aboutStyles.hero.imageColumn.className}>
               <div className={aboutStyles.hero.imageWrapper.className}>
                 <Image
-                  src={aboutConfig.hero.image}
-                  alt={aboutConfig.hero.imageAlt}
+                  src={heroData.image}
+                  alt={heroData.imageAlt}
                   width={400}
                   height={400}
                   className="w-full h-auto"
@@ -60,7 +68,7 @@ export default function AboutPage() {
       <section className={aboutStyles.coreSkills.section.className}>
         <div className={aboutStyles.coreSkills.container.className}>
           <SkillsMarquee 
-            skills={aboutConfig.coreSkills} 
+            skills={coreSkillsData} 
             pillClassName={aboutStyles.coreSkills.pill.className}
             onSkillClick={() => setIsRadarOpen(true)}
           />
@@ -79,16 +87,16 @@ export default function AboutPage() {
           <div className={aboutStyles.principles.wrapper.className}>
             <div className={aboutStyles.principles.header.className}>
               <h2 className={aboutStyles.principles.title.className}>
-                {aboutConfig.principles.title}
+                {principlesData.title}
               </h2>
               <p 
                 className={aboutStyles.principles.description.className}
-                dangerouslySetInnerHTML={{ __html: aboutConfig.principles.description }}
+                dangerouslySetInnerHTML={{ __html: principlesData.description }}
               />
             </div>
 
             <div className={aboutStyles.principles.grid.className}>
-              {aboutConfig.principles.items.map((item, index) => (
+              {principlesData.items.map((item: any, index: number) => (
                 <div key={index} className={aboutStyles.principles.item.className}>
                   <div className={aboutStyles.principles.icon.className}>
                     {item.icon}
@@ -111,11 +119,11 @@ export default function AboutPage() {
       <section className={aboutStyles.connect.section.className}>
         <div className={aboutStyles.connect.container.className}>
           <h2 className={aboutStyles.connect.title.className}>
-            {aboutConfig.connect.title}
+            {connectData.title}
           </h2>
 
           <div className={aboutStyles.connect.grid.className}>
-            {aboutConfig.connect.links.map((link, index) => (
+            {connectData.links.map((link: any, index: number) => (
               <Link
                 key={index}
                 href={link.href}

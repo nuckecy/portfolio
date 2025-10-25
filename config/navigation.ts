@@ -18,12 +18,12 @@ export const navigationConfig = {
       href: "/",
     },
     {
-      label: "Case Study",
-      href: "/case-studies",
-    },
-    {
       label: "About",
       href: "/about",
+    },
+    {
+      label: "Case Study",
+      href: "/case-studies",
     },
     {
       label: "Resume",

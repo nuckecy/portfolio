@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Metadata } from "next"
+import { getPageData } from "@/lib/load-json"
 import { caseStudiesPageConfig } from "@/config/case-studies-page"
 import { caseStudiesPageStyles } from "@/config/styles/case-studies-page"
 
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
 }
 
 export default function CaseStudiesPage() {
-  const { hero, studies } = caseStudiesPageConfig
+  const jsonData = getPageData('case-studies')
+  
+  // Use JSON data with fallback to TypeScript config
+  const { hero, studies } = jsonData || caseStudiesPageConfig
   const styles = caseStudiesPageStyles
 
   return (
@@ -30,7 +34,7 @@ export default function CaseStudiesPage() {
       <section className={styles.studies.section.className}>
         <div className={styles.studies.container.className}>
           <div className={styles.studies.grid.className}>
-            {studies.map((study, index) => (
+            {studies.map((study: any, index: number) => (
               <div key={index} className={styles.studies.card.className}>
                 <div className={styles.studies.cardHeader.className}>
                   {/* Company & Skills Top Row */}
@@ -41,7 +45,7 @@ export default function CaseStudiesPage() {
                     
                     {/* Skills Pills (Top Right) */}
                     <div className={styles.studies.skills.className}>
-                      {study.skills.map((skill, skillIndex) => (
+                      {study.skills.map((skill: string, skillIndex: number) => (
                         <span key={skillIndex} className={styles.studies.skill.className}>
                           {skill}
                         </span>
@@ -66,7 +70,7 @@ export default function CaseStudiesPage() {
 
                 {/* Metrics */}
                 <div className={styles.studies.metrics.className}>
-                  {study.metrics.map((metric, metricIndex) => (
+                  {study.metrics.map((metric: string, metricIndex: number) => (
                     <div key={metricIndex} className={styles.studies.metric.className}>
                       {metricIndex > 0 && (
                         <span className={styles.studies.metricBullet.className} />
