@@ -9,10 +9,16 @@ export const ubaReddConfig = {
     description: "Environmental Impact Platform for Climate Action",
   },
 
+  cardInfo: {
+    title: "UBA REDD Banking App",
+    subtitle: "Pioneering Pan-African Digital Banking Transformation",
+    description: "Revolutionary personalization features that transformed mobile banking across Africa.",
+  },
+
   // Compact hero - smallest of all
   hero: {
     company: "UBA GROUP",
-    year: "2021",
+    year: "2020",
     title: "Environmental Impact Platform for Climate Action",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",

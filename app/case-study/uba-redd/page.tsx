@@ -37,6 +37,28 @@ export default function UBAREDDCaseStudy() {
           <main className={`flex-1 ${ubaReddConfig.layout.maxWidth} w-full`}>
             {/* Project Summary Section */}
             <section id="overview" className="mb-12 md:mb-16 scroll-mt-24">
+              {/* Card Info */}
+              {ubaReddConfig.cardInfo && (
+                <div className="mb-10 md:mb-12">
+                  <div className="inline-flex items-center gap-3 text-xs md:text-sm text-muted-foreground mb-3 md:mb-4 uppercase tracking-wide">
+                    <span>{ubaReddConfig.hero.company}</span>
+                    <span aria-hidden="true">•</span>
+                    <span>{ubaReddConfig.hero.year}</span>
+                  </div>
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-normal mb-3 md:mb-6 leading-tight">
+                    {ubaReddConfig.cardInfo.title}
+                  </h1>
+                  <p className="text-lg md:text-2xl text-muted-foreground font-light mb-3 md:mb-4 leading-snug">
+                    {ubaReddConfig.cardInfo.subtitle}
+                  </p>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                    {ubaReddConfig.cardInfo.description}
+                  </p>
+                </div>
+              )}
+
+              <Separator className="my-8 md:my-10" />
+
               <h2 className="text-2xl md:text-3xl font-normal mb-4 md:mb-6">Project Summary</h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8">
                 Led the complete redesign of UBA's flagship mobile banking application serving 50M+ 

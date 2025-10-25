@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Image from "next/image"
 import { TableOfContents } from "@/components/table-of-contents"
 import { MetricCard, QuoteBlock } from "@/components/case-study-components"
 import { Separator } from "@/components/ui/separator"
@@ -23,9 +24,28 @@ export default function ZalandoContextualCaseStudy() {
       {/* Hero Section */}
       <CaseStudyHero hero={zalandoContextualConfig.hero} metrics={zalandoContextualConfig.metrics} />
 
+      {/* Hero Image */}
+      {zalandoContextualConfig.heroImage && (
+        <div className="w-full bg-muted/30 py-8 md:py-12">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={zalandoContextualConfig.heroImage.url}
+                  alt={zalandoContextualConfig.heroImage.alt}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Main Layout */}
-      <div className="container mx-auto px-4 md:px-8 py-6 md:py-12">
-        <div className="lg:flex lg:gap-12">
+      <div className="container mx-auto px-4 md:px-8 py-8 md:py-16">
+        <div className="lg:flex lg:gap-16">
           {/* Sidebar - Table of Contents */}
           {zalandoContextualConfig.layout.hasSidebar && (
             <aside className="hidden lg:block w-64 flex-shrink-0">
@@ -34,44 +54,66 @@ export default function ZalandoContextualCaseStudy() {
           )}
 
           {/* Main Content */}
-          <main className={`flex-1 ${zalandoContextualConfig.layout.maxWidth} w-full`}>
+          <main className={`flex-1 ${zalandoContextualConfig.layout.maxWidth} w-full mx-auto`}>
             {/* Project Summary Section */}
-            <section id="overview" className="mb-12 md:mb-16 scroll-mt-24">
-              <h2 className="text-2xl md:text-3xl font-normal mb-4 md:mb-6">Project Summary</h2>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8">
-                Designed and launched a contextual self-help platform for Zalando's 50M+ customers that 
-                proactively addresses needs before they contact support, focusing initially on returns & 
-                refunds which represent 33% of all customer inquiries. Through behavioral analytics and 
-                ethnographic research, I identified that customers have highly predictable support needs 
-                based on order status and behavioral patterns. By creating anticipatory design that surfaces 
+            <section id="overview" className="mb-16 md:mb-20 scroll-mt-24">
+              {/* Card Info */}
+              {zalandoContextualConfig.cardInfo && (
+                <div className="mb-10 md:mb-12">
+                  <div className="inline-flex items-center gap-3 text-xs md:text-sm text-muted-foreground mb-3 md:mb-4 uppercase tracking-wide">
+                    <span>{zalandoContextualConfig.hero.company}</span>
+                    <span aria-hidden="true">•</span>
+                    <span>{zalandoContextualConfig.hero.year}</span>
+                  </div>
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-normal mb-3 md:mb-6 leading-tight">
+                    {zalandoContextualConfig.cardInfo.title}
+                  </h1>
+                  <p className="text-lg md:text-2xl text-muted-foreground font-light mb-3 md:mb-4 leading-snug">
+                    {zalandoContextualConfig.cardInfo.subtitle}
+                  </p>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                    {zalandoContextualConfig.cardInfo.description}
+                  </p>
+                </div>
+              )}
+
+              <Separator className="my-8 md:my-10" />
+
+              <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">Project Summary</h2>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 md:mb-10">
+                Designed and launched a contextual self-help platform for Zalando's 50M+ customers that
+                proactively addresses needs before they contact support, focusing initially on returns &
+                refunds which represent 33% of all customer inquiries. Through behavioral analytics and
+                ethnographic research, I identified that customers have highly predictable support needs
+                based on order status and behavioral patterns. By creating anticipatory design that surfaces
                 relevant information contextually, I transformed reactive support into proactive assistance.
               </p>
 
-              <Separator className="my-6 md:my-8" />
+              <Separator className="my-8 md:my-12" />
 
               {/* Project Metadata */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
                 <div>
-                  <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
+                  <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-2">
                     Timeline
                   </h3>
                   <p className="text-base md:text-lg">8 Months</p>
                 </div>
                 <div>
-                  <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
+                  <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-2">
                     Market
                   </h3>
                   <p className="text-base md:text-lg">{zalandoContextualConfig.project.market}: {zalandoContextualConfig.project.marketDetails}</p>
                 </div>
                 <div>
-                  <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
+                  <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-2">
                     Role
                   </h3>
                   <p className="text-base md:text-lg">{zalandoContextualConfig.project.role}</p>
                 </div>
               </div>
 
-              <div className="mt-6 md:mt-8">
+              <div className="mt-8 md:mt-10">
                 <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
                   Team
                 </h3>
@@ -87,10 +129,10 @@ export default function ZalandoContextualCaseStudy() {
             </section>
 
             {/* Goals Section */}
-            <section id="goals" className="mb-12 md:mb-16 scroll-mt-24">
+            <section id="goals" className="mb-16 md:mb-20 scroll-mt-24">
               <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">Goals</h2>
-              
-              <div className="space-y-6 md:space-y-8">
+
+              <div className="space-y-5 md:space-y-6">
                 <Card className="transition-shadow hover:shadow-md">
                   <CardContent className="pt-6">
                     <h3 className="text-lg md:text-xl font-normal mb-3">
@@ -142,10 +184,10 @@ export default function ZalandoContextualCaseStudy() {
             </section>
 
             {/* Approach Section */}
-            <section id="approach" className="mb-12 md:mb-16 scroll-mt-24">
+            <section id="approach" className="mb-16 md:mb-20 scroll-mt-24">
               <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">Approach</h2>
 
-              <div className="space-y-8 md:space-y-10">
+              <div className="space-y-10 md:space-y-12">
                 <div>
                   <h3 className="text-xl md:text-2xl font-normal mb-3 md:mb-4">
                     Predictive Contextual Intelligence
@@ -155,10 +197,10 @@ export default function ZalandoContextualCaseStudy() {
                     needs and surfaces relevant information contextually, creating a "magic" experience 
                     that feels personalized without being intrusive.
                   </p>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
                     <strong className="text-foreground">Core Design Principles:</strong>
                   </p>
-                  <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
+                  <ul className="space-y-4 text-sm md:text-base text-muted-foreground">
                     <li>
                       <strong className="text-foreground">Anticipatory Design:</strong> Predict customer 
                       needs based on order status, behavior, and historical patterns, surfacing information 
@@ -190,16 +232,16 @@ export default function ZalandoContextualCaseStudy() {
                     Implemented mixed-methods approach combining behavioral analytics, ethnographic research, 
                     and experimental validation:
                   </p>
-                  <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-muted-foreground ml-4">
+                  <ul className="list-disc list-inside space-y-3 text-sm md:text-base text-muted-foreground ml-4">
                     <li><strong className="text-foreground">Behavioral Data Analysis:</strong> 2.3M customer interaction analysis across all support channels</li>
                     <li><strong className="text-foreground">Journey mapping:</strong> High-contact customer segments and predictive modeling</li>
                     <li><strong className="text-foreground">Qualitative Research:</strong> 47 contextual inquiry sessions, 23 in-depth interviews, 12 diary studies</li>
                     <li><strong className="text-foreground">Usability Benchmarking:</strong> Competitive analysis of 12 e-commerce self-service experiences</li>
                   </ul>
 
-                  <div className="mt-4 p-4 bg-muted/30 rounded-lg">
-                    <p className="text-sm font-medium mb-2 text-foreground">Key Insights:</p>
-                    <ul className="space-y-1 text-sm text-muted-foreground">
+                  <div className="mt-6 p-6 bg-muted/30 rounded-lg border border-muted">
+                    <p className="text-sm font-semibold mb-3 text-foreground">Key Insights:</p>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• 78% of support inquiries could be anticipated based on order status + customer history</li>
                       <li>• Customers contact support at 5 predictable moments in the return journey</li>
                       <li>• Proactive communication reduces contact likelihood by 65%</li>
@@ -212,7 +254,7 @@ export default function ZalandoContextualCaseStudy() {
                   <h3 className="text-xl md:text-2xl font-normal mb-3 md:mb-4">
                     Solution Architecture
                   </h3>
-                  <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
+                  <ul className="space-y-4 text-sm md:text-base text-muted-foreground">
                     <li>
                       <strong className="text-foreground">Active Returns Dashboard:</strong> Real-time status 
                       tracking with predictive delivery estimates, contextual action buttons, proactive problem 
@@ -234,14 +276,14 @@ export default function ZalandoContextualCaseStudy() {
             </section>
 
             {/* Results Section */}
-            <section id="results" className="mb-12 md:mb-16 scroll-mt-24">
+            <section id="results" className="mb-16 md:mb-20 scroll-mt-24">
               <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">Results</h2>
 
-              <div className="space-y-10 md:space-y-12">
+              <div className="space-y-12 md:space-y-16">
                 {/* Quantitative Metrics */}
                 <div>
-                  <h3 className="text-xl md:text-2xl font-normal mb-4 md:mb-6">Quantitative Metrics</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                  <h3 className="text-xl md:text-2xl font-normal mb-6">Quantitative Metrics</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                     <MetricCard
                       value="33%"
                       label="Reduction in returns inquiries (exceeded 25% target)"
@@ -263,8 +305,8 @@ export default function ZalandoContextualCaseStudy() {
 
                 {/* Business Performance */}
                 <div>
-                  <h3 className="text-xl md:text-2xl font-normal mb-4 md:mb-6">Business Performance</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                  <h3 className="text-xl md:text-2xl font-normal mb-6">Business Performance</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                     <MetricCard
                       value="€3.2M"
                       label="Annual cost savings through operational cost reduction"
@@ -286,8 +328,8 @@ export default function ZalandoContextualCaseStudy() {
 
                 {/* Design System Impact */}
                 <div>
-                  <h3 className="text-xl md:text-2xl font-normal mb-4 md:mb-6">Design System Impact</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                  <h3 className="text-xl md:text-2xl font-normal mb-6">Design System Impact</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                     <MetricCard
                       value="12 Teams"
                       label="Adoption of contextual help patterns across product areas"
@@ -310,10 +352,10 @@ export default function ZalandoContextualCaseStudy() {
             </section>
 
             {/* Reflection Section */}
-            <section id="reflection" className="mb-12 md:mb-16 scroll-mt-24">
+            <section id="reflection" className="mb-16 md:mb-20 scroll-mt-24">
               <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">Reflection</h2>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
                   <h3 className="text-lg md:text-xl font-normal mb-3">The Biggest Learning</h3>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -363,8 +405,8 @@ export default function ZalandoContextualCaseStudy() {
             </section>
 
             {/* Navigation Footer */}
-            <Separator className="my-8 md:my-12" />
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 text-sm py-6 md:py-8">
+            <Separator className="my-12 md:my-16" />
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0 text-sm pb-8 md:pb-12">
               <a
                 href="#"
                 className="group inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"

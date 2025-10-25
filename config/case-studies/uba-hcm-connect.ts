@@ -9,10 +9,16 @@ export const ubaHcmConnectConfig = {
     description: "Employee Self-Service Revolution: From Paper to Digital",
   },
 
+  cardInfo: {
+    title: "UBA HCM Connect",
+    subtitle: "Transforming HR Operations for 20,000+ Employees Across Africa",
+    description: "A comprehensive 12-module enterprise platform that revolutionized HR processes.",
+  },
+
   // Medium full-width hero - UNIQUE combination
   hero: {
     company: "UBA GROUP",
-    year: "2019-2020",
+    year: "2021",
     title: "Employee Self-Service Revolution: From Paper to Digital",
     titleSize: "text-3xl md:text-4xl lg:text-5xl xl:text-6xl",
     titleWeight: "font-light",

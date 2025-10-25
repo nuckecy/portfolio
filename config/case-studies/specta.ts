@@ -9,10 +9,16 @@ export const spectaConfig = {
     description: "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
   },
 
+  cardInfo: {
+    title: "Specta Digital Lending",
+    subtitle: "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
+    description: "Nigeria's first instant digital lending platform transforming exploitative lending into transparent access.",
+  },
+
   // Different hero - SMALLER height, sidebar layout, different image
   hero: {
     company: "STERLING BANK",
-    year: "2017-2018",
+    year: "2016",
     title: "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",

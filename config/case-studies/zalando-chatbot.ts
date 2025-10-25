@@ -11,9 +11,15 @@ export const zalandoChatbotConfig = {
     description: "Transforming Customer Service with AI-Powered Conversations",
   },
 
+  cardInfo: {
+    title: "Zalando Chatbot Redesign",
+    subtitle: "From Frustration to Flow: Rebuilding Trust in Conversational AI",
+    description: "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
+  },
+
   hero: {
     company: "ZALANDO",
-    year: "2022",
+    year: "2024",
     title: "Transforming Customer Service with AI",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",

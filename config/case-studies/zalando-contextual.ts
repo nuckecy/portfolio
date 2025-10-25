@@ -11,9 +11,16 @@ export const zalandoContextualConfig = {
     description: "Personalizing Fashion Discovery Through Context-Aware Recommendations",
   },
 
+  // Card information from case studies page
+  cardInfo: {
+    title: "Contextual Self-Help Platform",
+    subtitle: "Transforming Customer Support Through Predictive Design",
+    description: "A proactive platform that anticipates customer needs before they contact support.",
+  },
+
   hero: {
     company: "ZALANDO",
-    year: "2023",
+    year: "2025",
     title: "Context-Aware Fashion Discovery",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
@@ -22,6 +29,11 @@ export const zalandoContextualConfig = {
     skills: ["Product Design", "Personalization", "Data Science"],
     centered: true,
     maxWidth: "lg:max-w-[55%]",
+  },
+
+  heroImage: {
+    url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80",
+    alt: "E-commerce and personalized shopping experience",
   },
 
   metrics: {

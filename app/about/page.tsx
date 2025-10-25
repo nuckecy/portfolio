@@ -138,12 +138,14 @@ export default function AboutPage() {
                     </span>
                   )}
                 </div>
-                <h3 className={aboutStyles.connect.label.className}>
-                  {link.label}
-                </h3>
-                <p className={aboutStyles.connect.sublabel.className}>
-                  {link.sublabel}
-                </p>
+                <div>
+                  <h3 className={aboutStyles.connect.label.className}>
+                    {link.label}
+                  </h3>
+                  <p className={aboutStyles.connect.sublabel.className}>
+                    {link.sublabel}
+                  </p>
+                </div>
               </Link>
             ))}
           </div>

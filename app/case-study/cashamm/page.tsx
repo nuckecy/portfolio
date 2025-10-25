@@ -37,6 +37,28 @@ export default function CashammCaseStudy() {
           <main className={`flex-1 ${cashAmmConfig.layout.maxWidth} w-full`}>
             {/* Project Summary Section */}
             <section id="overview" className="mb-12 md:mb-16 scroll-mt-24">
+              {/* Card Info */}
+              {cashAmmConfig.cardInfo && (
+                <div className="mb-10 md:mb-12">
+                  <div className="inline-flex items-center gap-3 text-xs md:text-sm text-muted-foreground mb-3 md:mb-4 uppercase tracking-wide">
+                    <span>{cashAmmConfig.hero.company}</span>
+                    <span aria-hidden="true">•</span>
+                    <span>{cashAmmConfig.hero.year}</span>
+                  </div>
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-normal mb-3 md:mb-6 leading-tight">
+                    {cashAmmConfig.cardInfo.title}
+                  </h1>
+                  <p className="text-lg md:text-2xl text-muted-foreground font-light mb-3 md:mb-4 leading-snug">
+                    {cashAmmConfig.cardInfo.subtitle}
+                  </p>
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+                    {cashAmmConfig.cardInfo.description}
+                  </p>
+                </div>
+              )}
+
+              <Separator className="my-8 md:my-10" />
+
               <h2 className="text-2xl md:text-3xl font-normal mb-4 md:mb-6">Project Summary</h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8">
                 I designed and developed a complete e-commerce ecosystem empowering Black business owners 
@@ -74,9 +96,9 @@ export default function CashammCaseStudy() {
                 </h3>
                 <ul className="text-muted-foreground space-y-1">
                   <li>Otobong Okoko (UX Engineer - Solo Designer + Frontend Developer)</li>
-                  <li>Startup Founders</li>
-                  <li>Backend Engineer</li>
-                  <li>Business Development Lead</li>
+                  <li>2 Startup Founders</li>
+                  <li>1 Backend Engineer</li>
+                  <li>1 Business Development Lead</li>
                 </ul>
               </div>
 
@@ -136,44 +158,64 @@ export default function CashammCaseStudy() {
               </div>
             </section>
 
+            {/* Challenge Section */}
+            <section id="challenge" className="mb-16 md:mb-20 scroll-mt-24">
+              <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">The Challenge</h2>
+
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 md:mb-10">
+                My research within Black business communities revealed that existing e-commerce platforms
+                failed not just on usability, but on cultural understanding. Business owners valued
+                community connection over features, while customers wanted authentic stories behind
+                products—not just transactions.
+              </p>
+
+              <h3 className="text-xl md:text-2xl font-normal mb-4 md:mb-6">Research Insights</h3>
+              <div className="space-y-6 md:space-y-8">
+                <Card className="transition-shadow hover:shadow-md">
+                  <CardContent className="pt-6">
+                    <h4 className="text-lg md:text-xl font-normal mb-3">
+                      Simplicity as Empowerment
+                    </h4>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      89% of business owners managed their businesses primarily through mobile devices and
+                      overwhelmingly preferred easy setup over extensive customization. They needed to get
+                      online fast, not become web developers.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="transition-shadow hover:shadow-md">
+                  <CardContent className="pt-6">
+                    <h4 className="text-lg md:text-xl font-normal mb-3">
+                      Story-Driven Shopping
+                    </h4>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      78% of customers discovered Black-owned businesses through social recommendations and
+                      preferred businesses with authentic personal narratives. The platform needed to celebrate
+                      entrepreneurial stories, not just display products.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="transition-shadow hover:shadow-md">
+                  <CardContent className="pt-6">
+                    <h4 className="text-lg md:text-xl font-normal mb-3">
+                      Community Over Competition
+                    </h4>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                      Business owners wanted to support each other's success rather than just compete. The
+                      platform should feel like a tool for collective economic empowerment, not individual survival.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
+
             {/* Approach Section */}
-            <section id="approach" className="mb-12 md:mb-16 scroll-mt-24">
+            <section id="approach" className="mb-16 md:mb-20 scroll-mt-24">
               <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">Approach</h2>
 
               <div className="space-y-8 md:space-y-10">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-normal mb-3 md:mb-4">
-                    Designing for Community, Not Just Commerce
-                  </h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                    My research within Black business communities revealed that existing e-commerce platforms 
-                    failed not just on usability, but on cultural understanding. Business owners valued 
-                    community connection over features, while customers wanted authentic stories behind 
-                    products—not just transactions.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
-                    <strong className="text-foreground">Research uncovered three critical insights:</strong>
-                  </p>
-                  <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
-                    <li>
-                      <strong className="text-foreground">Simplicity as Empowerment:</strong> 89% of business 
-                      owners managed their businesses primarily through mobile devices and overwhelmingly 
-                      preferred easy setup over extensive customization. They needed to get online fast, not 
-                      become web developers.
-                    </li>
-                    <li>
-                      <strong className="text-foreground">Story-Driven Shopping:</strong> 78% of customers 
-                      discovered Black-owned businesses through social recommendations and preferred businesses 
-                      with authentic personal narratives. The platform needed to celebrate entrepreneurial 
-                      stories, not just display products.
-                    </li>
-                    <li>
-                      <strong className="text-foreground">Community Over Competition:</strong> Business owners 
-                      wanted to support each other's success rather than just compete. The platform should feel 
-                      like a tool for collective economic empowerment, not individual survival.
-                    </li>
-                  </ul>
-                </div>
 
                 <div>
                   <h3 className="text-xl md:text-2xl font-normal mb-3 md:mb-4">
@@ -224,7 +266,7 @@ export default function CashammCaseStudy() {
             </section>
 
             {/* Results Section */}
-            <section id="results" className="mb-12 md:mb-16 scroll-mt-24">
+            <section id="results" className="mb-16 md:mb-20 scroll-mt-24">
               <h2 className="text-2xl md:text-3xl font-normal mb-6 md:mb-8">Results</h2>
 
               <div className="space-y-10 md:space-y-12">
@@ -234,19 +276,19 @@ export default function CashammCaseStudy() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                     <MetricCard
                       value="347"
-                      label="Businesses onboarded, exceeding 500-business target by month 8, demonstrating product-market fit"
+                      label="Businesses onboarded (exceeded 500-business target by month 8)"
                     />
                     <MetricCard
                       value="$1.2M"
-                      label="In community transactions during first year, enabling meaningful economic impact"
+                      label="Community transactions in first year"
                     />
                     <MetricCard
                       value="87%"
-                      label="Business owner satisfaction with positive feedback on platform usability and setup process"
+                      label="Business owner satisfaction rate"
                     />
                     <MetricCard
                       value="73%"
-                      label="Month-over-month growth with sustained transaction growth during first quarter post-launch"
+                      label="Month-over-month transaction growth"
                     />
                   </div>
                 </div>
@@ -311,13 +353,24 @@ export default function CashammCaseStudy() {
 
                 <div>
                   <h3 className="text-lg md:text-xl font-normal mb-3">Design Innovation Highlights</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Created story-driven business profiles helping owners share authentic entrepreneurial 
-                    narratives. Developed community discovery features with social integration and curated 
-                    showcases. Built simplified store creation with step-by-step setup flow and mobile-optimized 
-                    management. Implemented cultural design system emphasizing celebration over charity with 
-                    professional quality and authentic representation.
-                  </p>
+                  <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
+                    <li>
+                      <strong className="text-foreground">Story-Driven Business Profiles:</strong> Created
+                      profiles helping owners share authentic entrepreneurial narratives beyond product listings
+                    </li>
+                    <li>
+                      <strong className="text-foreground">Community Discovery Features:</strong> Developed social
+                      integration and curated showcases celebrating Black entrepreneurship
+                    </li>
+                    <li>
+                      <strong className="text-foreground">Simplified Store Creation:</strong> Built step-by-step
+                      setup flow and mobile-optimized management requiring minimal technical knowledge
+                    </li>
+                    <li>
+                      <strong className="text-foreground">Cultural Design System:</strong> Implemented design
+                      emphasizing celebration over charity with professional quality and authentic representation
+                    </li>
+                  </ul>
                 </div>
               </div>
             </section>

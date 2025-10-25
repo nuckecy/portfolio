@@ -10,6 +10,12 @@ export const fraudAnalyticsConfig = {
     description: "AI-Powered Financial Crime Prevention Through Design",
   },
 
+  cardInfo: {
+    title: "Fraud Analytics Platform",
+    subtitle: "AI-Powered Financial Crime Prevention Through Design",
+    description: "AI-powered fraud detection that reduced successful fraud attempts by 78% and saved €2.3M annually.",
+  },
+
   // Hero section configuration
   hero: {
     height: "87vh",

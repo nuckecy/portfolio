@@ -9,9 +9,15 @@ export const orgcompassConfig = {
     description: "From Data Overload to Strategic Intelligence: Transforming HR Decision-Making",
   },
 
+  cardInfo: {
+    title: "OrgCompass HR Intelligence",
+    subtitle: "From Data Overload to Strategic Intelligence",
+    description: "Enterprise platform turning HR data into actionable intelligence for C-suite executives.",
+  },
+
   // Medium hero - between Fraud's full-width and Specta's traditional
   hero: {
-    company: "UBA GROUP",
+    company: "MODUS CREATE",
     year: "2020",
     title: "From Data Overload to Strategic Intelligence: Transforming HR Decision-Making",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",

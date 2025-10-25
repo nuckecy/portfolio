@@ -11,9 +11,15 @@ export const cashAmmConfig = {
     description: "Revolutionizing Digital Payments with Enhanced Security",
   },
 
+  cardInfo: {
+    title: "Cashamm E-Commerce",
+    subtitle: "Empowering Economic Justice Through Design",
+    description: "Community-centered commerce platform empowering Black-owned businesses to thrive online.",
+  },
+
   hero: {
     company: "CASHAMM",
-    year: "2020-2021",
+    year: "2021",
     title: "Revolutionizing Digital Payments",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",

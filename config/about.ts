@@ -49,7 +49,7 @@ export const aboutConfig = {
       },
       {
         icon: "🌍",
-        title: "Inclusive by Design, Not by Retrofit",
+        title: "Include, Don't Retrofit",
         description: "Accessibility and cultural diversity shape the foundation - they don't get added later. <strong>Design for different thinking styles, communication preferences, and interaction needs from day one.</strong> Compliance is the baseline. True inclusion is the goal."
       },
       {
@@ -59,7 +59,7 @@ export const aboutConfig = {
       },
       {
         icon: "✓",
-        title: "Validate Before Building",
+        title: "Validate, Then Build",
         description: "Every significant design decision should be backed by evidence - user insights, behavioral data, or tested assumptions. <strong>Intuition starts the conversation, but research validates the direction.</strong> Make design choices defensible."
       }
     ]
