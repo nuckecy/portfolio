@@ -1,0 +1,14 @@
+{
+  "metadata": {"title": "Resume", "description": "Professional resume and work experience."},
+  "pageTitle": "Resume",
+  "personal": {"name": "Otobong Okoko", "title": "Senior Product Designer", "email": "otobong@example.com", "location": "Berlin, Germany", "website": "https://otobong.design", "linkedin": "https://www.linkedin.com/in/otobong/"},
+  "summary": "Senior Product Designer with 8+ years of experience creating user-centered digital experiences for fintech, e-commerce, and enterprise platforms.",
+  "experience": [
+    {"company": "Zalando", "position": "Senior Product Designer", "duration": "2024 - Present", "location": "Berlin, Germany", "description": "Leading product design for customer support transformation", "achievements": ["Designed contextual self-help platform reducing support inquiries by 33%", "Created conversational AI experience increasing automation by 226%"]},
+    {"company": "UBA Group", "position": "Lead Product Designer", "duration": "2019 - 2023", "location": "Lagos, Nigeria", "description": "Designed enterprise and fintech products", "achievements": ["Led design of HCM platform serving 20,000+ employees", "Designed fraud analytics platform reducing fraud by 78%"]}
+  ],
+  "education": [{"institution": "University Name", "degree": "Bachelor of Science", "field": "Computer Science / Design", "year": "2015"}],
+  "skills": {"design": ["Figma", "Adobe Creative Suite", "Sketch", "Prototyping", "Design Systems"], "technical": ["HTML/CSS", "React Basics", "Design Tokens", "APIs", "Accessibility (WCAG)"], "soft": ["Leadership", "Stakeholder Management", "Workshop Facilitation"]},
+  "certifications": [{"name": "Certified Scrum Master", "issuer": "Scrum Alliance", "year": "2020"}],
+  "downloadLink": "/resume/Otobong_Okoko_Resume.pdf"
+}

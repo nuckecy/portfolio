@@ -1,0 +1,62 @@
+{
+  "copyright": {
+    "year": 2025,
+    "name": "Otobong Okoko",
+    "text": "All rights reserved."
+  },
+  "social": [
+    {
+      "name": "LinkedIn",
+      "href": "https://linkedin.com/in/otobong-okoko",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Twitter",
+      "href": "https://twitter.com/yourusername",
+      "icon": "twitter"
+    },
+    {
+      "name": "GitHub",
+      "href": "https://github.com/yourusername",
+      "icon": "github"
+    },
+    {
+      "name": "Dribbble",
+      "href": "https://dribbble.com/yourusername",
+      "icon": "dribbble"
+    }
+  ],
+  "links": {
+    "work": {
+      "title": "Work",
+      "items": [
+        {
+          "label": "Case Studies",
+          "href": "/case-studies"
+        },
+        {
+          "label": "Resume",
+          "href": "/resume"
+        }
+      ]
+    },
+    "about": {
+      "title": "About",
+      "items": [
+        {
+          "label": "About Me",
+          "href": "/about"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "showSocial": true,
+    "showLinks": true,
+    "showCopyright": true
+  }
+}

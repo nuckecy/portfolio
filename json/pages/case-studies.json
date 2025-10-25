@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "Case Studies",
+    "description": "Crafting user-centered experiences that drive business impact across fintech, e-commerce, and enterprise platforms."
+  },
+  "studies": [
+    {
+      "company": "ZALANDO",
+      "year": "2025",
+      "title": "Contextual Self-Help Platform",
+      "subtitle": "Transforming Customer Support Through Predictive Design",
+      "description": "A proactive platform that anticipates customer needs before they contact support.",
+      "metrics": ["33% reduction in inquiries", "€3.2M annual savings", "28% satisfaction improvement"],
+      "skills": ["AI", "Product Design", "User Research", "Predictive UX"],
+      "href": "/case-study/zalando-contextual"
+    },
+    {
+      "company": "ZALANDO",
+      "year": "2024",
+      "title": "Zalando Chatbot Redesign",
+      "subtitle": "From Frustration to Flow: Rebuilding Trust in Conversational AI",
+      "description": "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
+      "metrics": ["226% automation increase", "18% reduction in repeat contacts", "€1.34M+ savings"],
+      "skills": ["Conversational AI", "Product Design", "User Research"],
+      "href": "/case-study/zalando-chatbot"
+    },
+    {
+      "company": "UBA GROUP",
+      "year": "2021",
+      "title": "UBA HCM Connect",
+      "subtitle": "Transforming HR Operations for 20,000+ Employees Across Africa",
+      "description": "A comprehensive 12-module enterprise platform that revolutionized HR processes.",
+      "metrics": ["$960K annual savings", "91% process automation", "94% employee adoption"],
+      "skills": ["Enterprise Design", "HR Tech", "System Design"],
+      "href": "/case-study/uba-hcm-connect"
+    },
+    {
+      "company": "CASHAMM",
+      "year": "2021",
+      "title": "Cashamm E-Commerce",
+      "subtitle": "Empowering Economic Justice Through Design",
+      "description": "Community-centered commerce platform empowering Black-owned businesses to thrive online.",
+      "metrics": ["347 businesses onboarded", "$1.2M transactions", "87% satisfaction"],
+      "skills": ["Mobile Design", "Product Strategy", "UX Engineering"],
+      "href": "/case-study/cashamm"
+    },
+    {
+      "company": "UBA GROUP",
+      "year": "2020",
+      "title": "UBA REDD Banking App",
+      "subtitle": "Pioneering Pan-African Digital Banking Transformation",
+      "description": "Revolutionary personalization features that transformed mobile banking across Africa.",
+      "metrics": ["€15M revenue increase", "89% satisfaction increase", "156% engagement boost"],
+      "skills": ["Mobile Banking", "Personalization", "User Research"],
+      "href": "/case-study/uba-redd"
+    },
+    {
+      "company": "MODUS CREATE",
+      "year": "2020",
+      "title": "OrgCompass HR Intelligence",
+      "subtitle": "From Data Overload to Strategic Intelligence",
+      "description": "Enterprise platform turning HR data into actionable intelligence for C-suite executives.",
+      "metrics": ["45% faster decisions", "32% team effectiveness", "94% C-suite adoption"],
+      "skills": ["Enterprise Design", "Dashboard UI", "User Research"],
+      "href": "/case-study/orgcompass"
+    },
+    {
+      "company": "STERLING BANK",
+      "year": "2019",
+      "title": "Fraud Analytics Platform",
+      "subtitle": "AI-Powered Financial Crime Prevention Through Design",
+      "description": "AI-powered fraud detection that reduced successful fraud attempts by 78% and saved €2.3M annually.",
+      "metrics": ["78% fraud reduction", "€2.3M annual savings", "47% false positive reduction"],
+      "skills": ["Data Visualization", "AI/ML UX", "Enterprise Design"],
+      "href": "/case-study/fraud-analytics"
+    },
+    {
+      "company": "SPECTA ANALYTICS",
+      "year": "2018",
+      "title": "Specta Analytics Dashboard",
+      "subtitle": "Democratizing Data Intelligence for Digital Marketers",
+      "description": "Self-service analytics platform that reduced time-to-insights from days to minutes.",
+      "metrics": ["85% time reduction", "92% user satisfaction", "340% ROI increase"],
+      "skills": ["Data Visualization", "Analytics", "UX Design"],
+      "href": "/case-study/specta"
+    }
+  ]
+}

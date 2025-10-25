@@ -1,0 +1,35 @@
+{
+  "brand": {
+    "name": "Otobong O.",
+    "initials": "OO",
+    "logoUrl": "/"
+  },
+  "links": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Case Study",
+      "href": "/case-studies"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Resume",
+      "href": "/resume"
+    },
+    {
+      "label": "Linkedin",
+      "href": "https://www.linkedin.com/in/otobong/",
+      "external": true,
+      "showIcon": true
+    }
+  ],
+  "settings": {
+    "sticky": false,
+    "showThemeToggle": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "badge": "HI. I'M A SENIOR",
+    "title": "Product Designer.",
+    "description": "Currently, I'm reimagining CX for Europe's leading fashion e-commerce platform.",
+    "rotatingBios": [
+      "Currently, I'm reimagining CX for Europe's leading fashion e-commerce platform.",
+      "Right now, I'm working to transform the customer care experience at Zalando.",
+      "Right now, I'm fixing the way customers get help at Zalando.",
+      "Right now, I'm working to make customer support at Zalando as seamless.",
+      "Currently, I'm focused on redesigning how millions of customers get help with Zalando.",
+      "Right now, I'm helping make Zalando's customer support easier and more enjoyable.",
+      "Right now, I'm working on improving customer care experiences at Zalando."
+    ],
+    "portraitImage": "/images/Otobong_Okoko_Sketched_.png?v=2",
+    "portraitAlt": "Otobong Okoko Portrait"
+  },
+  "coreSkills": ["User Research", "Design Systems", "Prototyping", "Usability Testing", "Information Architecture", "Interaction Design", "Visual Design", "Design Thinking", "Wireframing", "User Flows", "A/B Testing", "Accessibility (WCAG)", "Responsive Design", "Design Sprint Facilitation", "Stakeholder Management", "AI-Powered Design", "Conversational AI/UX", "Generative AI Tools", "AI Prompt Engineering", "Machine Learning UX"]
+}

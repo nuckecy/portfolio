@@ -1,0 +1,8 @@
+{
+  "metadata": {"title": "Contact", "description": "Get in touch."},
+  "pageTitle": "Contact",
+  "contact": {"email": "otobong@example.com", "phone": "+49 (123) 456-7890", "location": "Berlin, Germany"},
+  "social": {"linkedin": "https://www.linkedin.com/in/otobong/", "twitter": "https://twitter.com/yourusername", "github": "https://github.com/yourusername"},
+  "form": {"enabled": true, "fields": {"name": {"label": "Name", "placeholder": "Your name", "required": true}, "email": {"label": "Email", "placeholder": "your@email.com", "required": true}, "subject": {"label": "Subject", "placeholder": "What's this about?", "required": false}, "message": {"label": "Message", "placeholder": "Your message...", "required": true}}, "submitButton": "Send Message", "successMessage": "Thanks for reaching out!", "errorMessage": "Something went wrong."},
+  "intro": {"heading": "Let's Connect", "description": "I'm always open to discussing product design work or partnership opportunities."}
+}
