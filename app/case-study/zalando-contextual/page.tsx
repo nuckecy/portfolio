@@ -1,7 +1,5 @@
 import { Metadata } from "next"
-import { TableOfContents } from "@/components/table-of-contents"
 import { Card, CardContent } from "@/components/ui/card"
-import { ScrollProgress } from "@/components/scroll-progress"
 import { CaseStudyHero } from "@/components/case-study-hero"
 import { ApproachSection } from "@/components/approach-section"
 import { SolutionArchitectureSection } from "@/components/solution-architecture-section"
@@ -14,14 +12,9 @@ export const metadata: Metadata = {
   description: zalandoContextualConfig.metadata.description,
 }
 
-const sections = zalandoContextualConfig.sections
-
 export default function ZalandoContextualCaseStudy() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Scroll Progress */}
-      <ScrollProgress />
-      
       {/* Hero Section */}
       <CaseStudyHero hero={zalandoContextualConfig.hero} />
 
@@ -34,16 +27,8 @@ export default function ZalandoContextualCaseStudy() {
 
       {/* Main Layout */}
       <div className="container mx-auto px-4 md:px-8">
-        <div className="lg:flex lg:gap-16">
-          {/* Sidebar - Table of Contents */}
-          {zalandoContextualConfig.layout.hasSidebar && (
-            <aside className="hidden lg:block w-64 flex-shrink-0">
-              <TableOfContents sections={sections} />
-            </aside>
-          )}
-
-          {/* Main Content */}
-          <main className={`flex-1 ${zalandoContextualConfig.layout.maxWidth} w-full mx-auto`}>
+        {/* Main Content */}
+        <main className={`${zalandoContextualConfig.layout.maxWidth} w-full mx-auto`}>
             {/* Project Summary Section */}
             <section id="overview" className="scroll-mt-24">
               <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-muted/30 py-16 md:py-20">
@@ -378,8 +363,7 @@ export default function ZalandoContextualCaseStudy() {
             </section>
 
 
-          </main>
-        </div>
+        </main>
       </div>
 
       {/* Navigation Footer - Outside container for full width */}

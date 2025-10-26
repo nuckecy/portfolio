@@ -1,10 +1,10 @@
 "use client"
 
+import { useState } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
 import Image from "next/image"
 import { ExternalLink, Menu, X } from "lucide-react"
-import { useState } from "react"
 import { navigationConfig } from "@/config/navigation"
 import { navigationStyles } from "@/config/styles/navigation"
 
@@ -13,7 +13,7 @@ interface NavigationProps {
 }
 
 export function Navigation({ data }: NavigationProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Use JSON data with fallback to TypeScript config
   const navConfig = data || navigationConfig
@@ -30,11 +30,11 @@ export function Navigation({ data }: NavigationProps) {
               </div>
               <span className={navigationStyles.brand.name.className}>{navConfig.brand.name}</span>
             </Link>
-            
+
             {/* Desktop Navigation Links */}
             <nav className={navigationStyles.nav.wrapper.className}>
               {navConfig.links.map((link: any) => (
-                <Link 
+                <Link
                   key={link.href}
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
@@ -64,50 +64,47 @@ export function Navigation({ data }: NavigationProps) {
         </div>
       </header>
 
-      {/* Mobile Floating Menu Button */}
+      {/* Mobile Menu Button */}
       <button
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className={navigationStyles.mobileMenu.button.className}
-        aria-label="Toggle menu"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className="md:hidden fixed bottom-6 right-6 z-50 h-12 w-12 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center"
+        aria-label="Toggle mobile menu"
       >
-        {isMobileMenuOpen ? (
-          <X className="w-6 h-6" />
+        {mobileMenuOpen ? (
+          <X className="h-6 w-6" />
         ) : (
-          <Menu className="w-6 h-6" />
+          <Menu className="h-6 w-6" />
         )}
       </button>
 
       {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <>
-          <div 
-            className={navigationStyles.mobileMenu.overlay.className}
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-          <div className={navigationStyles.mobileMenu.panel.className}>
-            <nav className={navigationStyles.mobileMenu.nav.className}>
+      {mobileMenuOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <div
+            className="fixed bottom-0 left-0 right-0 bg-background border-t border-border p-6 rounded-t-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="mb-4 text-sm font-semibold tracking-tight">Navigation</h2>
+            <ul className="space-y-2">
               {navConfig.links.map((link: any) => (
-                <Link 
-                  key={link.href}
-                  href={link.href}
-                  target={link.external ? "_blank" : undefined}
-                  rel={link.external ? "noopener noreferrer" : undefined}
-                  className={navigationStyles.mobileMenu.link.className}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span>{link.label}</span>
-                  {link.external && link.showIcon && (
-                    link.label === "Linkedin" ? (
-                      <Image src="/images/linkedin.svg" alt="LinkedIn" width={16} height={16} className="w-4 h-4 dark:invert" />
-                    ) : (
-                      <ExternalLink className="w-4 h-4" />
-                    )
-                  )}
-                </Link>
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-left text-sm transition-colors hover:text-foreground py-2"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
               ))}
-            </nav>
+            </ul>
           </div>
-        </>
+        </div>
       )}
     </>
   )

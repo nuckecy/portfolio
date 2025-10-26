@@ -2,7 +2,6 @@ import { Metadata } from "next"
 import { MetricCard, QuoteBlock } from "@/components/case-study-components"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent } from "@/components/ui/card"
-import { ScrollProgress } from "@/components/scroll-progress"
 import { CaseStudyHero } from "@/components/case-study-hero"
 import { Shield, TrendingDown, Users, Zap, AlertTriangle, BarChart3, CheckCircle2, Home } from "lucide-react"
 import { fraudAnalyticsConfig } from "@/config/case-studies/fraud-analytics"
@@ -12,12 +11,9 @@ export const metadata: Metadata = {
   description: fraudAnalyticsConfig.metadata.description,
 }
 
-const sections = fraudAnalyticsConfig.sections
-
 export default function FraudAnalyticsCaseStudy() {
   return (
     <div className="min-h-screen bg-background">
-      <ScrollProgress />
 
       {/* Hero Section - includes Overview (gray) and Roles & Responsibilities (white) */}
       <CaseStudyHero 

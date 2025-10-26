@@ -33,10 +33,10 @@ export const homeStyles = {
       className: "space-y-3 md:space-y-4",
     },
     badge: {
-      className: "text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em] font-light flex items-center gap-3 md:gap-4 justify-center lg:justify-start",
+      className: "text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em] font-light flex items-center gap-3 md:gap-4 justify-center lg:justify-start",
       fontSize: {
-        mobile: "1.5rem",
-        desktop: "1.875rem",
+        mobile: "1.25rem",
+        desktop: "1.5rem",
       }
     },
     badgeLine: {
@@ -53,10 +53,10 @@ export const homeStyles = {
       lineHeight: "0.9",
     },
     description: {
-      className: "text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed font-light pb-6 lg:pb-0",
+      className: "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed font-light pb-6 lg:pb-0",
       fontSize: {
-        mobile: "1.5rem",
-        desktop: "2.25rem",
+        mobile: "1.25rem",
+        desktop: "1.875rem",
       },
       maxWidth: "42rem",
     },
@@ -422,7 +422,7 @@ export const homeStyles = {
       className: "space-y-3",
     },
     title: {
-      className: "text-xl md:text-2xl font-semibold text-gray-900 dark:text-gray-100 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors",
+      className: "text-xl md:text-2xl font-light text-gray-900 dark:text-gray-100 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors",
     },
     subtitle: {
       className: "text-sm text-gray-500 dark:text-gray-400",

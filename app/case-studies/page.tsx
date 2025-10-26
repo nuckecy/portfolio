@@ -24,13 +24,13 @@ function getGradientBorderClass(brandColor: string): string {
 // Helper function to get brand text color class
 function getBrandTextClass(brandColor: string): string {
   const brandTextColors: { [key: string]: string } = {
-    "zalando": "text-brand-zalando",
-    "uba": "text-brand-uba",
-    "cashamm": "text-brand-cashamm",
-    "modus": "text-brand-modus",
-    "sterling": "text-brand-sterling"
+    "zalando": "text-brand-zalando dark:text-brand-zalando",
+    "uba": "text-brand-uba dark:text-brand-uba",
+    "cashamm": "text-brand-cashamm dark:text-brand-cashamm",
+    "modus": "text-brand-modus dark:text-brand-modus",
+    "sterling": "text-brand-sterling dark:text-brand-sterling"
   }
-  return brandTextColors[brandColor] || "text-gray-500"
+  return brandTextColors[brandColor] || "text-gray-500 dark:text-gray-400"
 }
 
 export default async function CaseStudiesPage() {
@@ -61,8 +61,8 @@ export default async function CaseStudiesPage() {
         <div className={styles.studies.container.className}>
           <div className={styles.studies.grid.className}>
             {studies.map((study: any, index: number) => (
-              <div key={index} className={`${getGradientBorderClass(study.brandColor || study.company)} rounded-[8px] p-[1px] opacity-75`}>
-                <div className="bg-white dark:bg-gray-800 rounded-[8px]">
+              <div key={index} className={`${getGradientBorderClass(study.brandColor || study.company)} rounded-[8px] p-[1px] opacity-75 h-full`}>
+                <div className="bg-white dark:bg-gray-800 rounded-[8px] h-full">
                   <div className={`${styles.studies.card.className} rounded-[8px] border-0`}>
                     <div className={styles.studies.cardHeader.className}>
                   {/* Company & Skills Top Row */}
