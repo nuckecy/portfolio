@@ -2,15 +2,17 @@
 
 A professional Next.js portfolio showcasing design case studies and projects with dynamic JSON content, comprehensive design system documentation, and a complete configuration architecture for easy customization.
 
-## 🎯 Latest Updates (v2.3.0)
+## 🎯 Latest Updates (v2.4.0)
 
 ### Major Features
+- **Reusable Case Study Navigation Component**: New `CaseStudyNavigation` component for consistent prev/next/home navigation across all case studies
+- **Global Navigation Style**: All case study page navigation uses unified styling with responsive padding and full-width border divider
 - **Dynamic JSON Content System**: All page content is now managed via JSON files with graceful fallback to TypeScript configs
 - **Comprehensive Design System**: 10 detailed documentation files covering colors, typography, spacing, components, layout, shadows, animations, accessibility, and dark mode
 - **Complete Component Migration**: About, case-studies, navigation, and footer components updated to use JSON data
 - **Enhanced Fallback Pattern**: Intelligent data validation ensures proper rendering with missing JSON
 
-### Previous Updates (v2.2.0)
+### Previous Updates (v2.3.0)
 - Visual enhancement with professional images
 - Mobile optimization with improved layouts
 - Dark mode support with system preference
@@ -69,6 +71,7 @@ portfolio/
 │   │   └── separator.tsx
 │   ├── navigation.tsx           # Global navigation header
 │   ├── footer.tsx               # Global footer
+│   ├── case-study-navigation.tsx # Case study prev/next/home navigation
 │   ├── theme-toggle.tsx         # Dark mode toggle
 │   └── PaymentIcons.tsx         # Payment icons component
 ├── config/                       # Configuration files

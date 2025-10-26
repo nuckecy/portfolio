@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 
 interface CaseStudyHeroConfig {
+  projectName?: string
   company?: string
   year?: string
   title: string
@@ -81,6 +82,7 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
   }, [])
 
   const {
+    projectName,
     company,
     year,
     title,
@@ -101,12 +103,14 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
       <section className="w-full border-b border-border py-12 md:py-16 lg:py-20">
         <div className={`w-full px-4 md:px-8 lg:px-12 max-w-7xl mx-auto ${centered ? 'flex justify-center' : ''}`}>
           <div className={`space-y-6 md:space-y-8 max-w-none ${maxWidth} ${centered ? 'text-center' : ''}`}>
-            {/* Company and Year - Plain text */}
-            {(company || year) && (
+            {/* Project Name, Year, and Company - Plain text */}
+            {(projectName || company || year) && (
               <div className={`flex items-center gap-3 text-xs font-light text-muted-foreground uppercase tracking-wider animate-in fade-in slide-in-from-bottom-4 duration-700 ${centered ? 'justify-center' : ''}`}>
-                {company && <span>{company}</span>}
-                {company && year && <span>•</span>}
+                {projectName && <span>{projectName}</span>}
+                {projectName && (year || company) && <span>•</span>}
                 {year && <span>{year}</span>}
+                {year && company && <span>•</span>}
+                {company && <span>{company}</span>}
               </div>
             )}
 
@@ -136,6 +140,15 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
                 ))}
               </div>
             )}
+
+            {/* Impact Stats - Inline with centered dots */}
+            <div className={`flex flex-wrap items-center justify-center gap-3 text-sm font-light text-green-700 dark:text-green-600 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-700`}>
+              <span>33% reduction in inquiries</span>
+              <span className="text-xs">•</span>
+              <span>€3.2M annual savings</span>
+              <span className="text-xs">•</span>
+              <span>28% satisfaction improvement</span>
+            </div>
           </div>
         </div>
       </section>

@@ -15,16 +15,17 @@ export const zalandoContextualConfig = {
   cardInfo: {
     title: "Contextual Self-Help Platform",
     subtitle: "Transforming Customer Support Through Predictive Design",
-    description: "A proactive platform that anticipates customer needs before they contact support.",
+    description: "A proactive self-help platform that anticipates customer needs before they contact support, delivering smart recommendations that understand user context, preferences, and behavior to transform the customer experience.",
   },
 
   hero: {
+    projectName: "Contextual Self-Help",
     company: "ZALANDO",
     year: "2025",
-    title: "Context-Aware Fashion Discovery",
+    title: "Context-Aware Customer Support",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Smart recommendation system that understands user context, preferences, and behavior to deliver personalized shopping experiences",
+    description: "A proactive, data-driven self-service platform that leverages contextual insights, user preferences, and behavioral patterns to deliver personalized support and transform the customer experience.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "Personalization", "Data Science"],
     centered: true,
@@ -35,6 +36,21 @@ export const zalandoContextualConfig = {
     url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80",
     alt: "E-commerce and personalized shopping experience",
   },
+
+  carouselImages: [
+    {
+      url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80",
+      alt: "Customer shopping on e-commerce platform",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80",
+      alt: "Online customer support and assistance",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80",
+      alt: "Personalized shopping experience and analytics",
+    },
+  ],
 
   metrics: {
     style: "cards", // UNIQUE: Card style
@@ -83,7 +99,7 @@ export const zalandoContextualConfig = {
   project: {
     company: "Zalando",
     year: "2024",
-    role: "Lead UX Designer",
+    role: "Lead Designer",
     roleDetails: "Personalization, ML/AI Design, User Research",
     team: "Data Science, Product, Engineering",
     teamDetails: "10-person cross-functional team",

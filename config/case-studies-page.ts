@@ -20,20 +20,6 @@ export const caseStudiesPageConfig = {
       href: "/case-study/zalando-contextual"
     },
     {
-      company: "ZALANDO",
-      year: "2024",
-      title: "Zalando Chatbot Redesign",
-      subtitle: "From Frustration to Flow: Rebuilding Trust in Conversational AI",
-      description: "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
-      metrics: [
-        "226% automation increase",
-        "18% reduction in repeat contacts",
-        "€1.34M+ savings"
-      ],
-      skills: ["Conversational AI", "Product Design", "User Research"],
-      href: "/case-study/zalando-chatbot"
-    },
-    {
       company: "UBA GROUP",
       year: "2021",
       title: "UBA HCM Connect",
@@ -46,6 +32,20 @@ export const caseStudiesPageConfig = {
       ],
       skills: ["Enterprise Design", "HR Tech", "System Design"],
       href: "/case-study/uba-hcm-connect"
+    },
+    {
+      company: "STERLING BANK",
+      year: "2019",
+      title: "Fraud Analytics Platform",
+      subtitle: "AI-Powered Financial Crime Prevention Through Design",
+      description: "AI-powered fraud detection that reduced successful fraud attempts by 78% and saved €2.3M annually.",
+      metrics: [
+        "78% fraud reduction",
+        "€2.3M annual savings",
+        "92% customer satisfaction"
+      ],
+      skills: ["AI", "Fraud Detection", "Dashboard UI"],
+      href: "/case-study/fraud-analytics"
     },
     {
       company: "CASHAMM",
@@ -76,6 +76,20 @@ export const caseStudiesPageConfig = {
       href: "/case-study/uba-redd"
     },
     {
+      company: "ZALANDO",
+      year: "2024",
+      title: "Zalando Chatbot Redesign",
+      subtitle: "From Frustration to Flow: Rebuilding Trust in Conversational AI",
+      description: "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
+      metrics: [
+        "226% automation increase",
+        "18% reduction in repeat contacts",
+        "€1.34M+ savings"
+      ],
+      skills: ["Conversational AI", "Product Design", "User Research"],
+      href: "/case-study/zalando-chatbot"
+    },
+    {
       company: "MODUS CREATE",
       year: "2020",
       title: "OrgCompass HR Intelligence",
@@ -88,20 +102,6 @@ export const caseStudiesPageConfig = {
       ],
       skills: ["Enterprise Design", "Dashboard UI", "User Research"],
       href: "/case-study/orgcompass"
-    },
-    {
-      company: "STERLING BANK",
-      year: "2019",
-      title: "Fraud Analytics Platform",
-      subtitle: "AI-Powered Financial Crime Prevention Through Design",
-      description: "AI-powered fraud detection that reduced successful fraud attempts by 78% and saved €2.3M annually.",
-      metrics: [
-        "78% fraud reduction",
-        "€2.3M annual savings",
-        "92% customer satisfaction"
-      ],
-      skills: ["AI", "Fraud Detection", "Dashboard UI"],
-      href: "/case-study/fraud-analytics"
     },
     {
       company: "STERLING BANK",

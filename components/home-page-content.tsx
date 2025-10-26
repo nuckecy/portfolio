@@ -95,7 +95,7 @@ export function HomePageContent({ data }: HomePageContentProps) {
           </div>
 
           <div className={homeStyles.topCaseStudies.grid.className}>
-            {(pageData.topCaseStudies || homeConfig.topCaseStudies).studies.map((study, index) => (
+            {(pageData.topCaseStudies || homeConfig.topCaseStudies).studies.map((study: any, index: number) => (
               <Link
                 key={index}
                 href={study.href}
@@ -118,7 +118,7 @@ export function HomePageContent({ data }: HomePageContentProps) {
                     <strong>{study.subtitle}</strong> {study.description}
                   </p>
                   <div className={homeStyles.topCaseStudies.tags.className}>
-                    {study.tags.map((tag, tagIndex) => (
+                    {study.tags.map((tag: any, tagIndex: number) => (
                       <span
                         key={tagIndex}
                         className={homeStyles.topCaseStudies.tag.className}

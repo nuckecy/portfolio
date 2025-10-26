@@ -136,6 +136,23 @@ This portfolio has been built with a focus on performance, accessibility, and us
 - Isolate page-specific styles to prevent cross-page interference
 - Maintain global design tokens for brand consistency
 
+#### Case Study Navigation Component
+- Use the reusable `CaseStudyNavigation` component for all case study pages
+- Component provides prev/next/home navigation with consistent styling
+- Configuration passed via case study config files (`/config/case-studies/[study].ts`)
+- Navigation styling:
+  - Full-width with responsive padding (`pt-8 md:pt-12 pb-8 md:pb-10`)
+  - Top border divider for visual separation
+  - Responsive text sizing for all screen sizes
+- Example implementation:
+  ```tsx
+  <CaseStudyNavigation
+    prev={caseStudyConfig.navigation.prev}
+    next={caseStudyConfig.navigation.next}
+    showBackHome={true}
+  />
+  ```
+
 ### Testing Checklist
 
 Before deploying updates:
