@@ -1,1 +1,75 @@
-{"metadata": {"title": "Contextual Self-Help Platform", "description": "Transforming Customer Support Through Predictive Design"}, "hero": {"title": "Transforming Customer Support", "subtitle": "Through Predictive Design", "description": "42% reduction in inquiries and €3.2M annual savings"}, "projectSummary": {"overview": "Designed contextual, predictive self-help platform that dynamically surfaces relevant help content based on user behavior. Intercepts customers at critical moments before they abandon tasks.", "timeline": "16 Months", "company": "ZALANDO", "year": 2025}, "goals": {"heading": "Project Goals", "items": [{"title": "Reduce Support Inquiry Volume", "description": "Decrease incoming support tickets by proactively addressing issues"}, {"title": "Improve Resolution Time", "description": "Enable customers to solve problems independently in minutes"}, {"title": "Enhance Customer Satisfaction", "description": "Provide relevant, timely support that feels anticipatory"}]}, "results": {"heading": "Results & Impact", "metrics": [{"metric": "42%", "description": "reduction in support inquiries"}, {"metric": "33%", "description": "decrease in total inquiry volume (20M fewer annually)"}, {"metric": "€3.2M", "description": "annual cost savings"}, {"metric": "28%", "description": "satisfaction improvement"}, {"metric": "180min to 3min", "description": "resolution time improvement"}]}, "tags": ["AI", "Product Design", "Predictive UX"]}
+{
+  "card": {
+    "company": "ZALANDO",
+    "year": "2025",
+    "title": "Contextual Self-Help Platform",
+    "subtitle": "Transforming Customer Support Through Predictive Design",
+    "description": "A proactive platform that anticipates customer needs before they contact support.",
+    "metrics": [
+      "33% reduction in inquiries",
+      "€3.2M annual savings",
+      "28% satisfaction improvement"
+    ],
+    "skills": ["AI", "Product Design", "User Research", "Predictive UX"],
+    "href": "/case-study/zalando-contextual",
+    "brandColor": "zalando"
+  },
+  "metadata": {
+    "title": "Contextual Self-Help Platform",
+    "description": "Transforming Customer Support Through Predictive Design"
+  },
+  "hero": {
+    "title": "Transforming Customer Support",
+    "subtitle": "Through Predictive Design",
+    "description": "42% reduction in inquiries and €3.2M annual savings"
+  },
+  "projectSummary": {
+    "overview": "Designed contextual, predictive self-help platform that dynamically surfaces relevant help content based on user behavior. Intercepts customers at critical moments before they abandon tasks.",
+    "timeline": "16 Months",
+    "company": "ZALANDO",
+    "year": 2025
+  },
+  "goals": {
+    "heading": "Project Goals",
+    "items": [
+      {
+        "title": "Reduce Support Inquiry Volume",
+        "description": "Decrease incoming support tickets by proactively addressing issues"
+      },
+      {
+        "title": "Improve Resolution Time",
+        "description": "Enable customers to solve problems independently in minutes"
+      },
+      {
+        "title": "Enhance Customer Satisfaction",
+        "description": "Provide relevant, timely support that feels anticipatory"
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results & Impact",
+    "metrics": [
+      {
+        "metric": "42%",
+        "description": "reduction in support inquiries"
+      },
+      {
+        "metric": "33%",
+        "description": "decrease in total inquiry volume (20M fewer annually)"
+      },
+      {
+        "metric": "€3.2M",
+        "description": "annual cost savings"
+      },
+      {
+        "metric": "28%",
+        "description": "satisfaction improvement"
+      },
+      {
+        "metric": "180min to 3min",
+        "description": "resolution time improvement"
+      }
+    ]
+  },
+  "tags": ["AI", "Product Design", "Predictive UX"]
+}

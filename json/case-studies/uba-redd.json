@@ -1,1 +1,75 @@
-{"metadata": {"title": "UBA REDD Banking App", "description": "Pioneering Pan-African Digital Banking"}, "hero": {"title": "Pioneering Pan-African Banking", "subtitle": "Digital Transformation", "description": "€15M revenue increase and 156% engagement boost"}, "projectSummary": {"overview": "Led design of revolutionary mobile banking app introducing first-of-its-kind personalization features. Platform pioneered innovations in financial wellness.", "timeline": "20 Months", "company": "UBA GROUP", "year": 2020}, "goals": {"heading": "Project Goals", "items": [{"title": "Drive Adoption", "description": "Increase engagement and daily active users"}, {"title": "Enable Inclusion", "description": "Make banking accessible for users with varying financial literacy"}, {"title": "Introduce Personalization", "description": "Deliver tailored financial guidance"}, {"title": "Generate Revenue", "description": "Create new revenue streams through personalized products"}]}, "results": {"heading": "Results & Impact", "metrics": [{"metric": "156%", "description": "engagement increase"}, {"metric": "89%", "description": "satisfaction increase"}, {"metric": "€15M", "description": "revenue increase"}, {"metric": "2x", "description": "average session duration increase"}]}, "tags": ["Mobile Banking", "Personalization", "FinTech"]}
+{
+  "card": {
+    "company": "UBA GROUP",
+    "year": "2020",
+    "title": "UBA REDD Banking App",
+    "subtitle": "Pioneering Pan-African Digital Banking Transformation",
+    "description": "Revolutionary personalization features that transformed mobile banking across Africa.",
+    "metrics": [
+      "€15M revenue increase",
+      "89% satisfaction increase",
+      "156% engagement boost"
+    ],
+    "skills": ["Mobile Banking", "Personalization", "User Research"],
+    "href": "/case-study/uba-redd",
+    "brandColor": "uba"
+  },
+  "metadata": {
+    "title": "UBA REDD Banking App",
+    "description": "Pioneering Pan-African Digital Banking"
+  },
+  "hero": {
+    "title": "Pioneering Pan-African Banking",
+    "subtitle": "Digital Transformation",
+    "description": "€15M revenue increase and 156% engagement boost"
+  },
+  "projectSummary": {
+    "overview": "Led design of revolutionary mobile banking app introducing first-of-its-kind personalization features. Platform pioneered innovations in financial wellness.",
+    "timeline": "20 Months",
+    "company": "UBA GROUP",
+    "year": 2020
+  },
+  "goals": {
+    "heading": "Project Goals",
+    "items": [
+      {
+        "title": "Drive Adoption",
+        "description": "Increase engagement and daily active users"
+      },
+      {
+        "title": "Enable Inclusion",
+        "description": "Make banking accessible for users with varying financial literacy"
+      },
+      {
+        "title": "Introduce Personalization",
+        "description": "Deliver tailored financial guidance"
+      },
+      {
+        "title": "Generate Revenue",
+        "description": "Create new revenue streams through personalized products"
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results & Impact",
+    "metrics": [
+      {
+        "metric": "156%",
+        "description": "engagement increase"
+      },
+      {
+        "metric": "89%",
+        "description": "satisfaction increase"
+      },
+      {
+        "metric": "€15M",
+        "description": "revenue increase"
+      },
+      {
+        "metric": "2x",
+        "description": "average session duration increase"
+      }
+    ]
+  },
+  "tags": ["Mobile Banking", "Personalization", "FinTech"]
+}

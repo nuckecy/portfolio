@@ -1,4 +1,19 @@
 {
+  "card": {
+    "company": "ZALANDO",
+    "year": "2024",
+    "title": "Zalando Chatbot Redesign",
+    "subtitle": "From Frustration to Flow: Rebuilding Trust in Conversational AI",
+    "description": "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
+    "metrics": [
+      "226% automation increase",
+      "18% reduction in repeat contacts",
+      "€1.34M+ savings"
+    ],
+    "skills": ["Conversational AI", "Product Design", "User Research"],
+    "href": "/case-study/zalando-chatbot",
+    "brandColor": "zalando"
+  },
   "metadata": {"title": "Zalando Chatbot Redesign", "description": "From Frustration to Flow: Rebuilding Trust in Conversational AI"},
   "hero": {"title": "From Frustration to Flow", "subtitle": "Rebuilding Trust in Conversational AI", "description": "Increased automation by 226% and saved €1.34M+ annually"},
   "projectSummary": {"overview": "Led end-to-end redesign of Zalando's AI chatbot with 20% intent recognition failure rate. Through research, discovered the core issue was customer distrust, not usability. Architected guided conversational flow with counterintuitive design decisions like simulated thinking delays.", "timeline": "14 Months", "company": "ZALANDO", "year": 2024, "team": {"lead": "Otobong Okoko (Senior Product Designer)", "members": ["1 Product Manager", "2 Lead AI/ML Engineers", "3 Software Engineers", "1 Data Scientist", "1 Content Writer"]}, "market": "Europe"},

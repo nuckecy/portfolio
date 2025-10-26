@@ -6,6 +6,127 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.5.0] - 2025-10-26
+
+### 🌍 Global Configuration System for Case Studies
+
+This release introduces a centralized brand color system and refactored all case study data to use a JSON-first architecture with consistent metrics across listing and detail pages.
+
+### Added
+
+#### Global Brand Color System (`/tailwind.config.ts`)
+- **Centralized Brand Colors** in Tailwind configuration
+  - `bg-brand-zalando` - #FF4C00
+  - `bg-brand-uba` - #8B0000
+  - `bg-brand-cashamm` - #FFA500
+  - `bg-brand-modus` - #663399
+  - `bg-brand-sterling` - #D63637
+- Single source of truth for all brand colors across the application
+- Easily reusable via Tailwind utility classes
+
+#### Enhanced JSON Case Study Structure (`/json/case-studies/`)
+- **New `card` Section** in all 8 case study JSON files:
+  - Complete listing page data (company, year, title, subtitle, description)
+  - Metrics array (pre-formatted for card display)
+  - Skills array (technologies/methodologies)
+  - Brand color reference for consistent styling
+  - href link to detail page
+- **Synchronized Data**: Metrics now consistent between listing and detail pages
+- **All 8 Files Updated**:
+  - zalando-contextual.json
+  - uba-hcm-connect.json
+  - fraud-analytics.json
+  - cashamm.json
+  - uba-redd.json
+  - zalando-chatbot.json
+  - orgcompass.json
+  - specta.json
+
+#### Enhanced JSON Loading System (`/lib/load-json-server.ts`)
+- **New Function**: `getAllCaseStudyCardsServer()`
+  - Loads all 8 case study card data from JSON files
+  - Returns array of case study cards for listing page
+  - Graceful error handling with console warnings
+  - Empty array fallback on errors
+
+### Changed
+
+#### Case Studies Page Refactor (`/app/case-studies/page.tsx`)
+- **JSON-First Implementation**:
+  - Now reads from `getAllCaseStudyCardsServer()` instead of TypeScript config
+  - Falls back to TypeScript config if JSON unavailable
+  - Zero breaking changes with graceful degradation
+
+- **Updated `getGradientBorderClass()` Function**:
+  - Changed from company name mapping to brand color mapping
+  - Uses Tailwind brand color classes instead of hardcoded hex values
+  - Cleaner, more maintainable approach
+  - Example: `bg-brand-zalando` instead of `bg-[#FF4C00]`
+
+#### Improved Styling Approach
+- Replaced hardcoded hex color classes with Tailwind brand colors
+- Reduced technical debt and improved consistency
+- Easier future brand color updates
+
+### Benefits
+
+✅ **Single Source of Truth** - Brand colors centralized in Tailwind config
+✅ **Consistent Metrics** - Card data synchronized between listing and detail pages
+✅ **JSON-Driven** - No need to rebuild for content updates
+✅ **Maintainability** - Updated brand colors in one place
+✅ **Zero Breaking Changes** - Graceful fallback system in place
+✅ **Type-Safe** - Full TypeScript support throughout
+✅ **Scalability** - Easy to add new case studies with new brand colors
+
+### Technical Implementation
+
+#### Brand Color Integration
+```typescript
+// Before (hardcoded):
+"ZALANDO": "bg-[#FF4C00]"
+
+// After (Tailwind classes):
+"zalando": "bg-brand-zalando"
+```
+
+#### JSON-First Loading
+```typescript
+// Load all case study cards from JSON
+const studiesFromJson = await getAllCaseStudyCardsServer()
+
+// Fallback to TypeScript config if needed
+const studies = studiesFromJson.length > 0
+  ? studiesFromJson
+  : caseStudiesPageConfig.studies
+```
+
+#### Card Data Structure
+```json
+{
+  "card": {
+    "company": "ZALANDO",
+    "year": "2025",
+    "title": "Contextual Self-Help Platform",
+    "subtitle": "Transforming Customer Support Through Predictive Design",
+    "description": "A proactive platform that anticipates customer needs before they contact support.",
+    "metrics": ["33% reduction in inquiries", "€3.2M annual savings", "28% satisfaction improvement"],
+    "skills": ["AI", "Product Design", "User Research", "Predictive UX"],
+    "href": "/case-study/zalando-contextual",
+    "brandColor": "zalando"
+  }
+}
+```
+
+### Migration Path
+
+For existing users transitioning to v2.5.0:
+
+1. **No Action Required** - All existing functionality works as-is
+2. **Optional Brand Updates** - Update brand colors in `tailwind.config.ts`
+3. **Gradual Migration** - Migrate other components to use brand colors over time
+
+---
+
 ## [2.3.0] - 2025-10-25
 
 ### 🚀 Dynamic Content & Comprehensive Design System

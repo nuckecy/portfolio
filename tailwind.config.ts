@@ -60,6 +60,14 @@ module.exports = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        // Brand colors
+        brand: {
+          zalando: "#FF4C00",
+          uba: "#8B0000",
+          cashamm: "#FFA500",
+          modus: "#663399",
+          sterling: "#D63637",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -2,6 +2,68 @@
 
 The color system is built on CSS variables and uses HSL color format for maximum flexibility and dynamic theming support.
 
+## 🎨 Brand Colors (NEW in v2.5.0)
+
+### Global Brand Color System
+
+All brand colors are now centralized in `tailwind.config.ts` for consistent use across the entire application:
+
+```typescript
+brand: {
+  zalando: "#FF4C00",      // Orange - Primary brand color
+  uba: "#8B0000",          // Dark Red - Banking/Financial
+  cashamm: "#FFA500",      // Orange - Community Commerce
+  modus: "#663399",        // Purple - Enterprise/HR
+  sterling: "#D63637"      // Red - Financial Services
+}
+```
+
+### Usage in Components
+
+```html
+<!-- Background -->
+<div class="bg-brand-zalando">Orange background</div>
+
+<!-- Borders -->
+<div class="border-2 border-brand-uba">Red border</div>
+
+<!-- Text -->
+<span class="text-brand-modus">Purple text</span>
+
+<!-- Multiple Utilities -->
+<button class="bg-brand-sterling text-white hover:opacity-80">
+  Action Button
+</button>
+```
+
+### Brand Color Usage Guidelines
+
+| Brand | Color | Hex | Usage |
+|-------|-------|-----|-------|
+| Zalando | Orange | #FF4C00 | E-commerce, Customer Support, Self-Help |
+| UBA Group | Dark Red | #8B0000 | Banking, HR Systems, Financial Services |
+| Cashamm | Orange | #FFA500 | Community Commerce, Social Enterprise |
+| Modus Create | Purple | #663399 | Enterprise, HR Intelligence, SaaS |
+| Sterling Bank | Red | #D63637 | Fintech, Lending, Fraud Analytics |
+
+### Updating Brand Colors
+
+To change a brand color globally:
+
+1. Open `/tailwind.config.ts`
+2. Find the `brand` object in the `colors` section
+3. Update the color value
+4. Save - all components using that brand color update instantly
+
+**Example: Updating Zalando brand color**
+```typescript
+// Before
+zalando: "#FF4C00",
+
+// After
+zalando: "#FF5500",  // New color
+```
+
 ## 🎨 CSS Variables
 
 All colors are defined as CSS variables in `app/globals.css`:

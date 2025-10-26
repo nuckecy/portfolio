@@ -1,1 +1,75 @@
-{"metadata": {"title": "OrgCompass HR Intelligence", "description": "From Data Overload to Strategic Intelligence"}, "hero": {"title": "From Data Overload", "subtitle": "To Strategic Intelligence", "description": "45% faster decisions and 94% C-suite adoption"}, "projectSummary": {"overview": "Designed enterprise HR intelligence dashboard that transforms raw data into strategic insights for executives. Enables data-driven workforce planning.", "timeline": "12 Months", "company": "MODUS CREATE", "year": 2020}, "goals": {"heading": "Project Goals", "items": [{"title": "Simplify Complexity", "description": "Transform overwhelming datasets into clear insights"}, {"title": "Enable Decisions", "description": "Provide information for confident workforce decisions"}, {"title": "Identify Opportunities", "description": "Surface hidden patterns and organizational risks"}, {"title": "Drive Adoption", "description": "Create intuitive interface for busy executives"}]}, "results": {"heading": "Results & Impact", "metrics": [{"metric": "45%", "description": "faster decision-making"}, {"metric": "32%", "description": "team effectiveness improvement"}, {"metric": "94%", "description": "C-suite adoption"}, {"metric": "3", "description": "sessions per executive per week"}]}, "tags": ["Enterprise Design", "Dashboard UI", "Data Visualization"]}
+{
+  "card": {
+    "company": "MODUS CREATE",
+    "year": "2020",
+    "title": "OrgCompass HR Intelligence",
+    "subtitle": "From Data Overload to Strategic Intelligence",
+    "description": "Enterprise platform turning HR data into actionable intelligence for C-suite executives.",
+    "metrics": [
+      "45% faster decisions",
+      "32% team effectiveness",
+      "94% C-suite adoption"
+    ],
+    "skills": ["Enterprise Design", "Dashboard UI", "User Research"],
+    "href": "/case-study/orgcompass",
+    "brandColor": "modus"
+  },
+  "metadata": {
+    "title": "OrgCompass HR Intelligence",
+    "description": "From Data Overload to Strategic Intelligence"
+  },
+  "hero": {
+    "title": "From Data Overload",
+    "subtitle": "To Strategic Intelligence",
+    "description": "45% faster decisions and 94% C-suite adoption"
+  },
+  "projectSummary": {
+    "overview": "Designed enterprise HR intelligence dashboard that transforms raw data into strategic insights for executives. Enables data-driven workforce planning.",
+    "timeline": "12 Months",
+    "company": "MODUS CREATE",
+    "year": 2020
+  },
+  "goals": {
+    "heading": "Project Goals",
+    "items": [
+      {
+        "title": "Simplify Complexity",
+        "description": "Transform overwhelming datasets into clear insights"
+      },
+      {
+        "title": "Enable Decisions",
+        "description": "Provide information for confident workforce decisions"
+      },
+      {
+        "title": "Identify Opportunities",
+        "description": "Surface hidden patterns and organizational risks"
+      },
+      {
+        "title": "Drive Adoption",
+        "description": "Create intuitive interface for busy executives"
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results & Impact",
+    "metrics": [
+      {
+        "metric": "45%",
+        "description": "faster decision-making"
+      },
+      {
+        "metric": "32%",
+        "description": "team effectiveness improvement"
+      },
+      {
+        "metric": "94%",
+        "description": "C-suite adoption"
+      },
+      {
+        "metric": "3",
+        "description": "sessions per executive per week"
+      }
+    ]
+  },
+  "tags": ["Enterprise Design", "Dashboard UI", "Data Visualization"]
+}

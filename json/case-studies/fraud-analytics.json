@@ -1,1 +1,75 @@
-{"metadata": {"title": "Fraud Analytics Platform", "description": "AI-Powered Financial Crime Prevention Through Design"}, "hero": {"title": "AI-Powered Financial Crime", "subtitle": "Prevention Through Design", "description": "78% fraud reduction and €2.3M annual savings"}, "projectSummary": {"overview": "Designed fraud analytics platform that empowers financial analysts to detect and prevent fraud in real-time. Synthesizes multiple data streams into clear, actionable intelligence.", "timeline": "18 Months", "company": "STERLING BANK", "year": 2019}, "goals": {"heading": "Project Goals", "items": [{"title": "Detect Faster", "description": "Identify suspicious transactions in real-time"}, {"title": "Reduce False Positives", "description": "Minimize legitimate transactions flagged as fraud"}, {"title": "Enable Confidence", "description": "Provide transparent AI reasoning"}, {"title": "Scale Detection", "description": "Process millions of transactions daily"}]}, "results": {"heading": "Results & Impact", "metrics": [{"metric": "78%", "description": "fraud reduction (€2.3M annual savings)"}, {"metric": "47%", "description": "reduction in false positives"}, {"metric": "99.2%", "description": "accuracy in fraud detection"}, {"metric": "60", "description": "transactions reviewed per analyst per hour"}]}, "tags": ["Data Visualization", "AI/ML UX", "Enterprise Design"]}
+{
+  "card": {
+    "company": "STERLING BANK",
+    "year": "2019",
+    "title": "Fraud Analytics Platform",
+    "subtitle": "AI-Powered Financial Crime Prevention Through Design",
+    "description": "AI-powered fraud detection that reduced successful fraud attempts by 78% and saved €2.3M annually.",
+    "metrics": [
+      "78% fraud reduction",
+      "€2.3M annual savings",
+      "92% customer satisfaction"
+    ],
+    "skills": ["AI", "Fraud Detection", "Dashboard UI"],
+    "href": "/case-study/fraud-analytics",
+    "brandColor": "sterling"
+  },
+  "metadata": {
+    "title": "Fraud Analytics Platform",
+    "description": "AI-Powered Financial Crime Prevention Through Design"
+  },
+  "hero": {
+    "title": "AI-Powered Financial Crime",
+    "subtitle": "Prevention Through Design",
+    "description": "78% fraud reduction and €2.3M annual savings"
+  },
+  "projectSummary": {
+    "overview": "Designed fraud analytics platform that empowers financial analysts to detect and prevent fraud in real-time. Synthesizes multiple data streams into clear, actionable intelligence.",
+    "timeline": "18 Months",
+    "company": "STERLING BANK",
+    "year": 2019
+  },
+  "goals": {
+    "heading": "Project Goals",
+    "items": [
+      {
+        "title": "Detect Faster",
+        "description": "Identify suspicious transactions in real-time"
+      },
+      {
+        "title": "Reduce False Positives",
+        "description": "Minimize legitimate transactions flagged as fraud"
+      },
+      {
+        "title": "Enable Confidence",
+        "description": "Provide transparent AI reasoning"
+      },
+      {
+        "title": "Scale Detection",
+        "description": "Process millions of transactions daily"
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results & Impact",
+    "metrics": [
+      {
+        "metric": "78%",
+        "description": "fraud reduction (€2.3M annual savings)"
+      },
+      {
+        "metric": "47%",
+        "description": "reduction in false positives"
+      },
+      {
+        "metric": "99.2%",
+        "description": "accuracy in fraud detection"
+      },
+      {
+        "metric": "60",
+        "description": "transactions reviewed per analyst per hour"
+      }
+    ]
+  },
+  "tags": ["Data Visualization", "AI/ML UX", "Enterprise Design"]
+}

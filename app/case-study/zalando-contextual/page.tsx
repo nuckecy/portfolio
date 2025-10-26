@@ -68,8 +68,9 @@ export default function ZalandoContextualCaseStudy() {
                 </div>
 
                 {/* Right Column - Role & Team Information */}
-                <div className="bg-white dark:bg-slate-950 border border-gray-200 dark:border-slate-800 rounded-lg p-4 md:p-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                <div className="border border-red-500 rounded-[0.5rem] bg-white dark:bg-slate-950">
+                  <div className="p-4 md:p-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                     {/* Role */}
                     <div className="text-center">
                       <h3 className="text-sm font-bold text-black dark:text-white uppercase tracking-wide mb-2">
@@ -100,9 +101,10 @@ export default function ZalandoContextualCaseStudy() {
                     </div>
                   </div>
                 </div>
-                </div>
               </div>
-              </div>
+            </div>
+            </div>
+            </div>
             </section>
 
             {/* Goals Section */}

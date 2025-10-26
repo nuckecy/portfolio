@@ -46,7 +46,7 @@ export const caseStudiesPageStyles = {
       className: "px-3 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600"
     },
     title: {
-      className: "text-xl md:text-2xl font-normal text-gray-900 dark:text-gray-100 mb-4"
+      className: "text-xl md:text-2xl font-normal text-black mb-4"
     },
     combinedDescription: {
       className: "text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
@@ -58,13 +58,13 @@ export const caseStudiesPageStyles = {
       className: "flex flex-wrap gap-2 md:gap-4 mb-6 mt-6"
     },
     metric: {
-      className: "flex items-center gap-1 text-xs md:text-sm text-gray-700 dark:text-gray-300"
+      className: "flex items-center gap-1 text-xs md:text-sm text-black"
     },
     metricBullet: {
       className: "w-1 h-1 bg-gray-400 dark:bg-gray-500 rounded-full"
     },
     viewButton: {
-      className: "inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors"
+      className: "ml-auto w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors"
     }
   }
 }

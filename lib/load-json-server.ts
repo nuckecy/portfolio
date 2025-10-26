@@ -38,3 +38,31 @@ export async function getCaseStudyDataServer(caseStudyId: string) {
     return null
   }
 }
+
+export async function getAllCaseStudyCardsServer() {
+  try {
+    const caseStudyIds = [
+      'zalando-contextual',
+      'uba-hcm-connect',
+      'fraud-analytics',
+      'cashamm',
+      'uba-redd',
+      'zalando-chatbot',
+      'orgcompass',
+      'specta'
+    ]
+
+    const cards = []
+    for (const id of caseStudyIds) {
+      const data = await getCaseStudyDataServer(id)
+      if (data?.card) {
+        cards.push(data.card)
+      }
+    }
+
+    return cards
+  } catch (error) {
+    console.warn(`Failed to load case study cards:`, error)
+    return []
+  }
+}

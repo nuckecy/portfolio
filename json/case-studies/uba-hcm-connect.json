@@ -1,1 +1,79 @@
-{"metadata": {"title": "UBA HCM Connect", "description": "Transforming HR Operations for 20,000+ Employees"}, "hero": {"title": "Transforming HR Operations", "subtitle": "For 20,000+ Employees Across Africa", "description": "$960K annual savings and 94% adoption rate"}, "projectSummary": {"overview": "Led design of comprehensive 12-module enterprise HR platform serving 20,000+ employees across 20 countries. Unified 7 legacy systems into single intuitive platform.", "timeline": "24 Months", "company": "UBA GROUP", "year": 2021}, "goals": {"heading": "Project Goals", "items": [{"title": "Unify Systems", "description": "Consolidate 7 disparate HR systems into one platform"}, {"title": "Reduce Costs", "description": "Decrease HR operational costs through automation"}, {"title": "Improve UX", "description": "Create intuitive, self-service platform for employees"}, {"title": "Enable Scale", "description": "Design platform capable of serving growing workforce"}]}, "results": {"heading": "Results & Impact", "metrics": [{"metric": "$960K", "description": "annual operational savings"}, {"metric": "91%", "description": "process automation"}, {"metric": "94%", "description": "employee adoption rate"}, {"metric": "43%", "description": "productivity boost"}, {"metric": "7", "description": "legacy systems unified"}]}, "tags": ["Enterprise Design", "HR Tech", "System Design"]}
+{
+  "card": {
+    "company": "UBA GROUP",
+    "year": "2021",
+    "title": "UBA HCM Connect",
+    "subtitle": "Transforming HR Operations for 20,000+ Employees Across Africa",
+    "description": "A comprehensive 12-module enterprise platform that revolutionized HR processes.",
+    "metrics": [
+      "$960K annual savings",
+      "91% process automation",
+      "94% employee adoption"
+    ],
+    "skills": ["Enterprise Design", "HR Tech", "System Design"],
+    "href": "/case-study/uba-hcm-connect",
+    "brandColor": "uba"
+  },
+  "metadata": {
+    "title": "UBA HCM Connect",
+    "description": "Transforming HR Operations for 20,000+ Employees"
+  },
+  "hero": {
+    "title": "Transforming HR Operations",
+    "subtitle": "For 20,000+ Employees Across Africa",
+    "description": "$960K annual savings and 94% adoption rate"
+  },
+  "projectSummary": {
+    "overview": "Led design of comprehensive 12-module enterprise HR platform serving 20,000+ employees across 20 countries. Unified 7 legacy systems into single intuitive platform.",
+    "timeline": "24 Months",
+    "company": "UBA GROUP",
+    "year": 2021
+  },
+  "goals": {
+    "heading": "Project Goals",
+    "items": [
+      {
+        "title": "Unify Systems",
+        "description": "Consolidate 7 disparate HR systems into one platform"
+      },
+      {
+        "title": "Reduce Costs",
+        "description": "Decrease HR operational costs through automation"
+      },
+      {
+        "title": "Improve UX",
+        "description": "Create intuitive, self-service platform for employees"
+      },
+      {
+        "title": "Enable Scale",
+        "description": "Design platform capable of serving growing workforce"
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results & Impact",
+    "metrics": [
+      {
+        "metric": "$960K",
+        "description": "annual operational savings"
+      },
+      {
+        "metric": "91%",
+        "description": "process automation"
+      },
+      {
+        "metric": "94%",
+        "description": "employee adoption rate"
+      },
+      {
+        "metric": "43%",
+        "description": "productivity boost"
+      },
+      {
+        "metric": "7",
+        "description": "legacy systems unified"
+      }
+    ]
+  },
+  "tags": ["Enterprise Design", "HR Tech", "System Design"]
+}

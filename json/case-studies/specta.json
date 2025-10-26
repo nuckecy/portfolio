@@ -1,1 +1,75 @@
-{"metadata": {"title": "Specta Analytics Dashboard", "description": "Democratizing Data Intelligence for Digital Marketers"}, "hero": {"title": "Democratizing Data Intelligence", "subtitle": "For Digital Marketers", "description": "85% time reduction and 340% ROI increase"}, "projectSummary": {"overview": "Designed self-service analytics dashboard that empowers marketers to extract insights without data science expertise. Democratizes access to data intelligence.", "timeline": "14 Months", "company": "SPECTA ANALYTICS", "year": 2018}, "goals": {"heading": "Project Goals", "items": [{"title": "Democratize Access", "description": "Enable marketers to analyze data without SQL knowledge"}, {"title": "Accelerate Insights", "description": "Reduce time to insights from days to minutes"}, {"title": "Enable Self-Service", "description": "Create platform for independent analysis"}, {"title": "Drive ROI", "description": "Enable data-driven campaign decisions"}]}, "results": {"heading": "Results & Impact", "metrics": [{"metric": "85%", "description": "time reduction (days to minutes)"}, {"metric": "92%", "description": "user satisfaction"}, {"metric": "340%", "description": "ROI increase for customers"}, {"metric": "50", "description": "analyses per marketer per week"}]}, "tags": ["Data Visualization", "Analytics", "MarTech"]}
+{
+  "card": {
+    "company": "STERLING BANK",
+    "year": "2016",
+    "title": "Specta Digital Lending",
+    "subtitle": "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
+    "description": "Nigeria's first instant digital lending platform transforming exploitative lending into transparent access.",
+    "metrics": [
+      "$263M disbursements",
+      "200% profit growth",
+      "5-minute processing"
+    ],
+    "skills": ["AI", "User Research", "UX Engineering"],
+    "href": "/case-study/specta",
+    "brandColor": "sterling"
+  },
+  "metadata": {
+    "title": "Specta Analytics Dashboard",
+    "description": "Democratizing Data Intelligence for Digital Marketers"
+  },
+  "hero": {
+    "title": "Democratizing Data Intelligence",
+    "subtitle": "For Digital Marketers",
+    "description": "85% time reduction and 340% ROI increase"
+  },
+  "projectSummary": {
+    "overview": "Designed self-service analytics dashboard that empowers marketers to extract insights without data science expertise. Democratizes access to data intelligence.",
+    "timeline": "14 Months",
+    "company": "SPECTA ANALYTICS",
+    "year": 2018
+  },
+  "goals": {
+    "heading": "Project Goals",
+    "items": [
+      {
+        "title": "Democratize Access",
+        "description": "Enable marketers to analyze data without SQL knowledge"
+      },
+      {
+        "title": "Accelerate Insights",
+        "description": "Reduce time to insights from days to minutes"
+      },
+      {
+        "title": "Enable Self-Service",
+        "description": "Create platform for independent analysis"
+      },
+      {
+        "title": "Drive ROI",
+        "description": "Enable data-driven campaign decisions"
+      }
+    ]
+  },
+  "results": {
+    "heading": "Results & Impact",
+    "metrics": [
+      {
+        "metric": "85%",
+        "description": "time reduction (days to minutes)"
+      },
+      {
+        "metric": "92%",
+        "description": "user satisfaction"
+      },
+      {
+        "metric": "340%",
+        "description": "ROI increase for customers"
+      },
+      {
+        "metric": "50",
+        "description": "analyses per marketer per week"
+      }
+    ]
+  },
+  "tags": ["Data Visualization", "Analytics", "MarTech"]
+}

@@ -2,7 +2,10 @@
 
 ## Overview
 
-Your portfolio now has a complete separation of **content**, **styles**, and **components** with a two-tier configuration system that ensures maximum flexibility while maintaining design consistency.
+Your portfolio now has a complete separation of **content**, **styles**, and **components** with a three-tier configuration system that ensures maximum flexibility while maintaining design consistency across all pages and components.
+
+### What's New in v2.5.0: Global Brand Color System
+This release introduces a **centralized brand color system** where all brand colors are defined in one place (`tailwind.config.ts`) and referenced throughout the application. This means you can update brand colors globally without touching component code.
 
 ## Architecture Structure
 
@@ -27,12 +30,13 @@ Your portfolio now has a complete separation of **content**, **styles**, and **c
 
 ## Configuration Layers
 
-### 1. Global Theme Config (`/config/theme.ts`)
+### 1. Global Theme & Brand Colors (`/config/theme.ts` & `/tailwind.config.ts`)
 
 **Purpose:** Shared design tokens that maintain brand consistency across ALL pages.
 
+#### Main Theme Config (`/config/theme.ts`)
 **What's Included:**
-- Color tokens (background, foreground, primary, muted, etc.)
+- Base color tokens (background, foreground, primary, muted, etc.)
 - Typography (font families)
 - Base spacing units
 - Border radius values
@@ -40,13 +44,39 @@ Your portfolio now has a complete separation of **content**, **styles**, and **c
 - Container settings
 - Transitions
 
+#### Global Brand Colors (`/tailwind.config.ts`)
+**NEW in v2.5.0** - Centralized brand color system in Tailwind config:
+
+```typescript
+brand: {
+  zalando: "#FF4C00",      // Orange
+  uba: "#8B0000",          // Dark Red
+  cashamm: "#FFA500",      // Orange
+  modus: "#663399",        // Purple
+  sterling: "#D63637"      // Red
+}
+```
+
+**Usage Examples:**
+```html
+<!-- Background classes -->
+<div class="bg-brand-zalando">...</div>
+<div class="bg-brand-uba">...</div>
+
+<!-- Border classes -->
+<div class="border-brand-zalando">...</div>
+
+<!-- Text color classes -->
+<div class="text-brand-zalando">...</div>
+```
+
 **When to Edit:**
-- Changing brand colors
-- Updating font families
+- Changing brand colors (edit in `tailwind.config.ts`)
+- Updating font families (edit in `/config/theme.ts`)
 - Adjusting global spacing scale
 - Modifying breakpoints
 
-**Impact:** Changes here affect the ENTIRE portfolio
+**Impact:** Changes here affect the ENTIRE portfolio - all pages and components instantly update
 
 ### 2. Page-Specific Style Configs (`/config/styles/*.ts`)
 
