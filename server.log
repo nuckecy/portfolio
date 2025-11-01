@@ -15,3 +15,8 @@
  ✓ Compiled / in 188ms (1377 modules)
  GET / 200 in 244ms
  ✓ Compiled in 398ms (1391 modules)
+ ✓ Compiled in 155ms (1391 modules)
+ ✓ Compiled /_not-found in 236ms (1380 modules)
+ GET /_next/static/css/app/layout.css 404 in 310ms
+ ✓ Compiled in 692ms (1391 modules)
+ ✓ Compiled in 187ms (1391 modules)
