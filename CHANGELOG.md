@@ -6,6 +6,117 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [3.0.0] - 2025-11-01
+
+### 🎯 LinkedIn-Style Resume Redesign
+
+Complete redesign of the resume page with LinkedIn profile aesthetics, including a new structured experience section component and cleaned markdown content.
+
+### Added
+
+#### New Resume Components
+- **ExperienceSection Component** (`/components/experience-section.tsx`)
+  - Structured TypeScript data for job experiences
+  - Problem/Solution/Impact breakdown for each project
+  - Professional card-based layout matching LinkedIn style
+  - All 3 major career positions with detailed achievements:
+    - Zalando SE (2021-Present) - 3 major projects
+    - United Bank of Africa (2020-2021) - 1 strategic project
+    - Sterling Bank PLC (2014-2020) - 3 major projects
+  - Blue accent styling with left borders for projects
+  - Fully responsive design with proper spacing
+  - Dark mode support
+
+- **Enhanced LinkedInResume Component** (`/components/linkedin-resume.tsx`)
+  - New `extractText()` helper function for safe React element handling
+  - Enhanced `cleanText()` function to prevent [object Object] rendering
+  - Markdown filtering to separate content from structured components
+  - Comprehensive citation marker removal
+
+#### Resume Page Enhancements (`/app/resume/page.tsx`)
+- LinkedIn-style blue gradient header
+- Profile section with name, title, and contact info
+- Mobile sticky download button
+- Integration of both LinkedInResume and ExperienceSection components
+- Proper spacing and layout hierarchy
+
+#### Content Updates
+- **Cleaned resume.md**
+  - Removed all [cite_start] markers
+  - Removed all [cite: #] references
+  - Fixed typos (AI, UI corrections)
+  - Kept Professional Journey, Design Philosophy, Core Strengths, Core Competencies
+  - Improved formatting and readability
+
+### Changed
+
+#### Resume Page Architecture
+- Separated markdown content from structured experience data
+- Markdown renders: About/Professional sections
+- ExperienceSection renders: Job experience with projects
+- No duplication between sections
+- Improved component organization
+
+#### LinkedInResume Text Handling
+- Robust handling of React children elements
+- Prevention of [object Object] rendering errors
+- Proper null handling for empty elements
+- Better text extraction from markdown
+
+### Fixed
+
+- ✅ [object Object] rendering issues in markdown components
+- ✅ Removed all citation markers from resume content
+- ✅ Eliminated duplicate experience sections
+- ✅ Fixed component naming (Ul → UI, Al → AI)
+- ✅ Prevented blank elements from rendering
+- ✅ Improved markdown filtering for better content separation
+
+### Removed
+
+- All [cite_start] citation markers
+- All [cite: #] citation references
+- Duplicate markdown-based experience rendering
+- Citation artifacts from markdown content
+
+### Architecture Decisions
+
+#### 1. Separate Components for Different Content Types
+- **LinkedInResume**: For markdown-based about/philosophy content
+- **ExperienceSection**: For structured job experience with projects
+- **Benefit**: Clean separation of concerns, easier maintenance
+
+#### 2. Markdown Filtering Approach
+- Stop markdown rendering at "EXPERIENCE: DETAILS & PROJECTS"
+- Use dedicated ExperienceSection component for jobs
+- **Benefit**: Avoids duplication while keeping markdown source
+
+#### 3. Structured TypeScript Data for Experience
+- Hard-coded experience data in ExperienceSection component
+- Structure: Company → Position → Description → Projects
+- Each project: Title, Problem, Solution, Impacts
+- **Benefit**: Professional formatting and LinkedIn-style presentation
+
+#### 4. Safe React Element Handling
+- Custom text extraction for reliable markdown rendering
+- Safe citation marker removal
+- Null checks and empty element prevention
+- **Benefit**: Stable, predictable output
+
+### Testing & Validation
+
+- ✅ Build compiles successfully
+- ✅ No TypeScript errors
+- ✅ Resume page loads without errors
+- ✅ All text renders without artifacts
+- ✅ No duplicate sections visible
+- ✅ LinkedIn-style layout displays correctly
+- ✅ Dark mode support verified
+- ✅ Responsive design on all breakpoints
+- ✅ No console errors or warnings
+
+---
+
 ## [2.5.0] - 2025-10-26
 
 ### 🌍 Global Configuration System for Case Studies

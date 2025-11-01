@@ -2,18 +2,17 @@
 
 A professional Next.js portfolio showcasing design case studies and projects with dynamic JSON content, comprehensive design system documentation, and a complete configuration architecture for easy customization.
 
-## 🎯 Latest Updates (v2.5.0)
+## 🎯 Latest Updates (v3.0.0)
 
-### Major Features
-- **Global Brand Color System**: Centralized brand colors in Tailwind config (`tailwind.config.ts`) for use across the entire application
-- **JSON-First Case Studies**: All 8 case study JSON files now include `card` section with complete listing page data
-- **Dynamic Data Loading**: New `getAllCaseStudyCardsServer()` function loads case study cards from JSON files on-demand
-- **Simplified Border Implementation**: Brand-colored borders on case study cards using Tailwind color classes instead of hardcoded hex values
-- **Metrics Consistency**: Card metrics synchronized between listing page and individual detail pages via shared JSON data
-- **Refactored Case Studies Page**: Now reads all data from JSON files with Tailwind brand color integration
-- **Zero Breaking Changes**: Graceful fallback to TypeScript config if JSON files are unavailable
+### Major Features - Resume Redesign
+- **LinkedIn-Style Resume**: Complete redesign of resume page with professional gradient header and LinkedIn profile aesthetics
+- **ExperienceSection Component**: New structured component for job experience with Problem/Solution/Impact breakdowns
+- **Enhanced Content Rendering**: Improved markdown handling with text extraction and citation marker removal
+- **Separated Concerns**: Markdown for about content, structured components for experience details
+- **Professional Styling**: Blue accent colors, responsive design, dark mode support
+- **All Citation Markers Removed**: Clean, artifact-free content throughout resume
 
-### Previous Updates (v2.4.0)
+### Previous Updates (v2.5.0)
 - **Reusable Case Study Navigation Component**: New `CaseStudyNavigation` component for consistent prev/next/home navigation across all case studies
 - **Global Navigation Style**: All case study page navigation uses unified styling with responsive padding and full-width border divider
 - **Dynamic JSON Content System**: All page content is now managed via JSON files with graceful fallback to TypeScript configs

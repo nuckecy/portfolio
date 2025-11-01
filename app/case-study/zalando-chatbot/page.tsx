@@ -3,7 +3,9 @@ import { MetricCard, QuoteBlock } from "@/components/case-study-components"
 import { Card, CardContent } from "@/components/ui/card"
 import { CaseStudyHero } from "@/components/case-study-hero"
 import { CaseStudyNavigation } from "@/components/case-study-navigation"
+import { PasswordWall } from "@/components/password-wall"
 import { zalandoChatbotConfig } from "@/config/case-studies/zalando-chatbot"
+import { getCaseStudyPassword } from "@/config/passwords"
 
 export const metadata: Metadata = {
   title: zalandoChatbotConfig.metadata.title,
@@ -11,10 +13,18 @@ export const metadata: Metadata = {
 }
 
 export default function ZalandoChatbotCaseStudy() {
+  const password = getCaseStudyPassword("zalando-chatbot")
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <CaseStudyHero hero={zalandoChatbotConfig.hero} metrics={zalandoChatbotConfig.metrics} />
+
+      {/* Password Wall - Wraps content below hero */}
+      <PasswordWall
+        caseStudySlug="zalando-chatbot"
+        correctPassword={password || ""}
+      >
 
       {/* Main Layout */}
       <div className="container mx-auto px-4 md:px-8">
@@ -376,6 +386,8 @@ export default function ZalandoChatbotCaseStudy() {
         next={zalandoChatbotConfig.navigation?.next}
         showBackHome={true}
       />
+
+      </PasswordWall>
     </div>
   )
 }

@@ -5,7 +5,9 @@ import { ApproachSection } from "@/components/approach-section"
 import { SolutionArchitectureSection } from "@/components/solution-architecture-section"
 import { CaseStudyCarousel } from "@/components/case-study-carousel"
 import { CaseStudyNavigation } from "@/components/case-study-navigation"
+import { PasswordWall } from "@/components/password-wall"
 import { zalandoContextualConfig } from "@/config/case-studies/zalando-contextual"
+import { getCaseStudyPassword } from "@/config/passwords"
 
 export const metadata: Metadata = {
   title: zalandoContextualConfig.metadata.title,
@@ -13,17 +15,25 @@ export const metadata: Metadata = {
 }
 
 export default function ZalandoContextualCaseStudy() {
+  const password = getCaseStudyPassword("zalando-contextual")
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* Hero Section - Always Visible */}
       <CaseStudyHero hero={zalandoContextualConfig.hero} />
 
-      {/* Case Study Carousel */}
+      {/* Case Study Carousel - Always Visible */}
       {zalandoContextualConfig.carouselImages && (
         <section className="w-full bg-background border-b border-border">
           <CaseStudyCarousel images={zalandoContextualConfig.carouselImages} />
         </section>
       )}
+
+      {/* Password Wall - Wraps content below carousel */}
+      <PasswordWall
+        caseStudySlug="zalando-contextual"
+        correctPassword={password || ""}
+      >
 
       {/* Main Layout */}
       <div className="container mx-auto px-4 md:px-8">
@@ -372,6 +382,8 @@ export default function ZalandoContextualCaseStudy() {
         next={zalandoContextualConfig.navigation.next}
         showBackHome={true}
       />
+
+      </PasswordWall>
     </div>
   )
 }
