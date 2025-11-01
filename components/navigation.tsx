@@ -1,5 +1,21 @@
 "use client"
 
+import { TubelightNavBar } from "@/components/ui/tubelight-navbar"
+
+interface NavigationProps {
+  data?: any
+}
+
+export function Navigation({ data }: NavigationProps) {
+  return <TubelightNavBar />
+}
+
+/*
+=== ARCHIVED OLD NAVIGATION CODE ===
+
+This code has been replaced with the TubelightNavBar component.
+Original implementation preserved for reference:
+
 import { useState } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
@@ -109,3 +125,4 @@ export function Navigation({ data }: NavigationProps) {
     </>
   )
 }
+*/
