@@ -10,9 +10,9 @@ export const spectaConfig = {
   },
 
   cardInfo: {
-    title: "Specta Digital Lending",
-    subtitle: "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
-    description: "Nigeria's first instant digital lending platform transforming exploitative lending into transparent access.",
+    title: "Mobile Banking App (Specta)",
+    subtitle: "Next-Generation Digital Lending Experience",
+    description: "5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
   },
 
   // Different hero - SMALLER height, sidebar layout, different image

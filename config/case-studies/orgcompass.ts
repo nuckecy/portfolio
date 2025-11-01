@@ -10,9 +10,9 @@ export const orgcompassConfig = {
   },
 
   cardInfo: {
-    title: "OrgCompass HR Intelligence",
-    subtitle: "From Data Overload to Strategic Intelligence",
-    description: "Enterprise platform turning HR data into actionable intelligence for C-suite executives.",
+    title: "OrgCompass (HR Intelligence)",
+    subtitle: "Executive Decision Intelligence Platform",
+    description: "Cut C-suite decision time by 73% and boosted retention 68% through predictive team intelligence.",
   },
 
   // Medium hero - between Fraud's full-width and Specta's traditional

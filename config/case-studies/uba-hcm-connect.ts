@@ -11,8 +11,8 @@ export const ubaHcmConnectConfig = {
 
   cardInfo: {
     title: "UBA HCM Connect",
-    subtitle: "Transforming HR Operations for 20,000+ Employees Across Africa",
-    description: "A comprehensive 12-module enterprise platform that revolutionized HR processes.",
+    subtitle: "Enterprise HR Management System",
+    description: "Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
   },
 
   // Medium full-width hero - UNIQUE combination

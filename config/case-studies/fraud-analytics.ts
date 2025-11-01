@@ -12,8 +12,8 @@ export const fraudAnalyticsConfig = {
 
   cardInfo: {
     title: "Fraud Analytics Platform",
-    subtitle: "AI-Powered Financial Crime Prevention Through Design",
-    description: "AI-powered fraud detection that reduced successful fraud attempts by 78% and saved €2.3M annually.",
+    subtitle: "Real-Time Fraud Detection Dashboard",
+    description: "Predictive monitoring that cut fraud by 34% and false positives by 47%, saving ₦155M.",
   },
 
   // Hero section configuration

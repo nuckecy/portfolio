@@ -12,9 +12,9 @@ export const cashAmmConfig = {
   },
 
   cardInfo: {
-    title: "Cashamm E-Commerce",
-    subtitle: "Empowering Economic Justice Through Design",
-    description: "Community-centered commerce platform empowering Black-owned businesses to thrive online.",
+    title: "Cashamm (E-Commerce Platform)",
+    subtitle: "Empowering Black-Owned Businesses Through Community Commerce",
+    description: "Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.",
   },
 
   hero: {

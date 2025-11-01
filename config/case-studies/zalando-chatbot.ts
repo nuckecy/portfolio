@@ -12,9 +12,9 @@ export const zalandoChatbotConfig = {
   },
 
   cardInfo: {
-    title: "Zalando Chatbot Redesign",
-    subtitle: "From Frustration to Flow: Rebuilding Trust in Conversational AI",
-    description: "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
+    title: "Guided Conversational Chatbot",
+    subtitle: "Reimagining Automated Support with Empathy",
+    description: "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
   },
 
   hero: {

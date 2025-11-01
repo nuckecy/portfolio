@@ -10,9 +10,9 @@ export const ubaReddConfig = {
   },
 
   cardInfo: {
-    title: "UBA REDD Banking App",
-    subtitle: "Pioneering Pan-African Digital Banking Transformation",
-    description: "Revolutionary personalization features that transformed mobile banking across Africa.",
+    title: "UBA Redd App (Mobile Banking)",
+    subtitle: "Pan-African Banking with Mood-Based Personalization",
+    description: "Transformed satisfaction from 33% to 85% across 20 countries, driving €15M revenue and 43% digital growth.",
   },
 
   // Compact hero - smallest of all

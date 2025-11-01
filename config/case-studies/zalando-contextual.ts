@@ -15,7 +15,7 @@ export const zalandoContextualConfig = {
   cardInfo: {
     title: "Contextual Self-Help Platform",
     subtitle: "Transforming Customer Support Through Predictive Design",
-    description: "A proactive self-help platform that anticipates customer needs before they contact support, delivering smart recommendations that understand user context, preferences, and behavior to transform the customer experience.",
+    description: "Cut 20M yearly inquiries by 42% and slashed resolution time from 24 hours to under 3.",
   },
 
   hero: {
