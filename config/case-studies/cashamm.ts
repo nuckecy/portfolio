@@ -12,18 +12,18 @@ export const cashAmmConfig = {
   },
 
   cardInfo: {
-    title: "Cashamm (E-Commerce Platform)",
-    subtitle: "Empowering Black-Owned Businesses Through Community Commerce",
-    description: "Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.",
+    title: "Cashaam Platform",
+    subtitle: "Democratizing E-Commerce for Small Businesses",
+    description: "Built dual-app ecosystem enabling affordable online stores - sole UX engineer handling research, design, and frontend development.",
   },
 
   hero: {
     company: "CASHAMM",
     year: "2021",
-    title: "Revolutionizing Digital Payments",
+    title: "Cashaam Platform",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Empowering Black-Owned Businesses Through Community Commerce. Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.",
+    description: "Democratizing E-Commerce for Small Businesses. Built dual-app ecosystem enabling affordable online stores - sole UX engineer handling research, design, and frontend development.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "Payment UX", "Security"],
     centered: true,

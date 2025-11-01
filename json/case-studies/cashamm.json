@@ -2,9 +2,9 @@
   "card": {
     "company": "CASHAMM",
     "year": "2021",
-    "title": "Cashamm E-Commerce",
-    "subtitle": "Empowering Economic Justice Through Design",
-    "description": "Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.",
+    "title": "Cashaam Platform",
+    "subtitle": "Democratizing E-Commerce for Small Businesses",
+    "description": "Built dual-app ecosystem enabling affordable online stores - sole UX engineer handling research, design, and frontend development.",
     "metrics": [
       "347 businesses onboarded",
       "$1.2M transactions",
@@ -18,12 +18,12 @@
     "brandColor": "cashamm"
   },
   "metadata": {
-    "title": "Cashamm E-Commerce",
-    "description": "Empowering Economic Justice Through Design"
+    "title": "Cashaam Platform",
+    "description": "Democratizing E-Commerce for Small Businesses"
   },
   "hero": {
-    "title": "Cashamm E-Commerce",
-    "subtitle": "Empowering Economic Justice Through Design",
-    "description": "Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth."
+    "title": "Cashaam Platform",
+    "subtitle": "Democratizing E-Commerce for Small Businesses",
+    "description": "Built dual-app ecosystem enabling affordable online stores - sole UX engineer handling research, design, and frontend development."
   }
 }
