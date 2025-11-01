@@ -30,7 +30,6 @@ export function TubelightNavBar({ className }: NavBarProps) {
     { name: 'About', url: '/about', icon: User },
     { name: 'Case Studies', url: '/case-studies', icon: Briefcase },
     { name: 'Resume', url: '/resume', icon: FileText },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/otobong/', icon: User },
   ]
 
   useEffect(() => {
@@ -69,7 +68,6 @@ export function TubelightNavBar({ className }: NavBarProps) {
           const Icon = item.icon
           const active = isActive(item.url)
           const isExternal = item.url.startsWith('http')
-          const isLinkedIn = item.name === 'LinkedIn'
 
           return (
             <Link
@@ -83,24 +81,10 @@ export function TubelightNavBar({ className }: NavBarProps) {
                 active && !isExternal && "text-primary",
               )}
             >
-              {isLinkedIn ? (
-                <>
-                  <Image
-                    src="/images/linkedin.svg"
-                    alt="LinkedIn"
-                    width={18}
-                    height={18}
-                    className="dark:invert"
-                  />
-                </>
-              ) : (
-                <>
-                  <span className="hidden md:inline">{item.name}</span>
-                  <span className="md:hidden">
-                    <Icon size={18} strokeWidth={2.5} />
-                  </span>
-                </>
-              )}
+              <span className="hidden md:inline">{item.name}</span>
+              <span className="md:hidden">
+                <Icon size={18} strokeWidth={2.5} />
+              </span>
               {active && !isExternal && (
                 <motion.div
                   layoutId="tubelight"
@@ -123,8 +107,28 @@ export function TubelightNavBar({ className }: NavBarProps) {
           )
         })}
 
-        {/* Divider */}
-        <div className="h-6 w-px bg-border/40 mx-1" />
+        {/* LinkedIn Icon (replaces divider on mobile) */}
+        <Link
+          href="https://www.linkedin.com/in/otobong/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "relative cursor-pointer text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200",
+            "text-foreground hover:text-primary hover:bg-primary/10"
+          )}
+          aria-label="LinkedIn"
+        >
+          <Image
+            src="/images/linkedin.svg"
+            alt="LinkedIn"
+            width={18}
+            height={18}
+            className="dark:invert"
+          />
+        </Link>
+
+        {/* Divider - hidden on mobile */}
+        <div className="hidden md:block h-6 w-px bg-border/40 mx-1" />
 
         {/* Theme Toggle */}
         <button
