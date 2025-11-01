@@ -132,8 +132,7 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
                 {skills.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1.5 bg-muted/30 backdrop-blur-sm border border-border/50 rounded-full text-sm font-light"
-                    style={{ color: 'hsl(0, 0%, 0%)' }}
+                    className="px-3 py-1.5 bg-muted/30 backdrop-blur-sm border border-border/50 rounded-full text-sm font-light text-foreground dark:text-muted-foreground"
                   >
                     {skill}
                   </span>
