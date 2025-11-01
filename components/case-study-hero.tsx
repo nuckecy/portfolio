@@ -100,7 +100,7 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
   return (
     <>
       {/* Hero Section - Large Text */}
-      <section className="w-full border-b border-border py-12 md:py-16 lg:py-20">
+      <section className="w-full border-b border-border pt-24 md:pt-32 lg:pt-40 pb-12 md:pb-16 lg:pb-20">
         <div className={`w-full px-4 md:px-8 lg:px-12 max-w-7xl mx-auto ${centered ? 'flex justify-center' : ''}`}>
           <div className={`space-y-6 md:space-y-8 max-w-none ${maxWidth} ${centered ? 'text-center' : ''}`}>
             {/* Project Name, Year, and Company - Plain text */}

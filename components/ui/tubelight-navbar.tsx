@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
-import { LucideIcon, Home, User, Briefcase, FileText, Linkedin, Sun, Moon } from "lucide-react"
+import { LucideIcon, Home, User, Briefcase, FileText, Sun, Moon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface NavItem {
@@ -29,7 +30,7 @@ export function TubelightNavBar({ className }: NavBarProps) {
     { name: 'About', url: '/about', icon: User },
     { name: 'Case Studies', url: '/case-studies', icon: Briefcase },
     { name: 'Resume', url: '/resume', icon: FileText },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/otobong/', icon: Linkedin },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/otobong/', icon: User },
   ]
 
   useEffect(() => {
@@ -62,6 +63,7 @@ export function TubelightNavBar({ className }: NavBarProps) {
           const Icon = item.icon
           const active = isActive(item.url)
           const isExternal = item.url.startsWith('http')
+          const isLinkedIn = item.name === 'LinkedIn'
 
           return (
             <Link
@@ -75,13 +77,24 @@ export function TubelightNavBar({ className }: NavBarProps) {
                 active && !isExternal && "text-primary",
               )}
             >
-              <span className="hidden md:inline flex items-center gap-2">
-                {isExternal && item.name === 'LinkedIn' && <Icon size={16} strokeWidth={2.5} />}
-                {item.name}
-              </span>
-              <span className="md:hidden">
-                <Icon size={18} strokeWidth={2.5} />
-              </span>
+              {isLinkedIn ? (
+                <>
+                  <Image
+                    src="/images/linkedin.svg"
+                    alt="LinkedIn"
+                    width={18}
+                    height={18}
+                    className="dark:invert"
+                  />
+                </>
+              ) : (
+                <>
+                  <span className="hidden md:inline">{item.name}</span>
+                  <span className="md:hidden">
+                    <Icon size={18} strokeWidth={2.5} />
+                  </span>
+                </>
+              )}
               {active && !isExternal && (
                 <motion.div
                   layoutId="tubelight"

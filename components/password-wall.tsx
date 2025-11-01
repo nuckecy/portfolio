@@ -180,7 +180,7 @@ export function PasswordWall({ caseStudySlug, correctPassword, children }: Passw
       {/* Password Wall Overlay - Only covers this section */}
       <div
         className={`fixed left-0 right-0 z-50 flex items-center justify-center transition-all duration-300 ${
-          viewMode === 'request' ? 'top-0 bottom-0' : 'top-[65%] bottom-0'
+          viewMode === 'request' ? 'top-0 bottom-0' : 'top-[60%] bottom-0'
         }`}
         style={{
           backdropFilter: "blur(8px)",
