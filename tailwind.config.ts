@@ -64,7 +64,7 @@ module.exports = {
         brand: {
           zalando: "#FF4C00",
           uba: "#8B0000",
-          cashamm: "#FFA500",
+          cashamm: "#0066FF",
           modus: "#663399",
           sterling: "#D63637",
         },
