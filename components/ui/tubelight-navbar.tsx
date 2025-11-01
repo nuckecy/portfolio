@@ -46,6 +46,12 @@ export function TubelightNavBar({ className }: NavBarProps) {
 
   const isActive = (url: string) => {
     if (url.startsWith('http')) return false // External links not active
+
+    // Mark "Case Studies" as active for individual case study pages
+    if (url === '/case-studies' && pathname.startsWith('/case-study/')) {
+      return true
+    }
+
     return pathname === url || pathname.startsWith(url + '/')
   }
 
