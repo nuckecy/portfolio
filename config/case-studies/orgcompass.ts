@@ -22,7 +22,7 @@ export const orgcompassConfig = {
     title: "From Data Overload to Strategic Intelligence: Transforming HR Decision-Making",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "A strategic consulting engagement that turned organizational data into actionable intelligence, enabling C-suite executives to make talent decisions 45% faster while improving team effectiveness by 32%.",
+    description: "Executive Decision Intelligence Platform. Cut C-suite decision time by 73% and boosted retention 68% through predictive team intelligence.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "Data Visualization", "Strategy"],
     centered: true,

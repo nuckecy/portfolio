@@ -33,7 +33,7 @@ export const fraudAnalyticsConfig = {
     title: "AI-Powered Financial Crime Prevention",
     titleSize: "text-3xl md:text-5xl lg:text-6xl",
     titleWeight: "font-light",
-    description: "Designing an intelligent fraud detection platform that reduced successful fraud attempts by 78% and saved €2.3M annually.",
+    description: "Real-Time Fraud Detection Dashboard. Predictive monitoring that cut fraud by 34% and false positives by 47%, saving ₦155M.",
     descriptionSize: "text-lg md:text-xl",
     // Skills/tags displayed as pills
     skills: ["Product Design", "AI", "UX Engineering"],

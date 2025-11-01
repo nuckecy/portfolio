@@ -23,7 +23,7 @@ export const cashAmmConfig = {
     title: "Revolutionizing Digital Payments",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Secure, fast, and user-friendly payment platform serving millions of transactions daily",
+    description: "Empowering Black-Owned Businesses Through Community Commerce. Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "Payment UX", "Security"],
     centered: true,

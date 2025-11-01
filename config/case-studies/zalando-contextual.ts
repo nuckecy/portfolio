@@ -25,7 +25,7 @@ export const zalandoContextualConfig = {
     title: "Context-Aware Customer Support",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "A proactive, data-driven self-service platform that leverages contextual insights, user preferences, and behavioral patterns to deliver personalized support and transform the customer experience.",
+    description: "Transforming Customer Support Through Predictive Design. Cut 20M yearly inquiries by 42% and slashed resolution time from 24 hours to under 3.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "Personalization", "Data Science"],
     centered: true,

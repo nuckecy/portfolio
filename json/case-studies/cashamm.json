@@ -4,13 +4,17 @@
     "year": "2021",
     "title": "Cashamm E-Commerce",
     "subtitle": "Empowering Economic Justice Through Design",
-    "description": "Community-centered commerce platform empowering Black-owned businesses to thrive online.",
+    "description": "Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.",
     "metrics": [
       "347 businesses onboarded",
       "$1.2M transactions",
       "87% satisfaction"
     ],
-    "skills": ["Mobile Design", "Product Strategy", "UX Engineering"],
+    "skills": [
+      "Mobile Design",
+      "Product Strategy",
+      "UX Engineering"
+    ],
     "href": "/case-study/cashamm",
     "brandColor": "cashamm"
   },
@@ -19,53 +23,8 @@
     "description": "Empowering Economic Justice Through Design"
   },
   "hero": {
-    "title": "Empowering Economic Justice",
-    "subtitle": "Through Design",
-    "description": "347 businesses onboarded, $1.2M in transactions"
-  },
-  "projectSummary": {
-    "overview": "Designed community-first e-commerce platform for Black-owned businesses. Platform prioritizes vendor discovery and provides accessible tools for merchants.",
-    "timeline": "18 Months",
-    "company": "CASHAMM",
-    "year": 2021
-  },
-  "goals": {
-    "heading": "Project Goals",
-    "items": [
-      {
-        "title": "Lower Barriers",
-        "description": "Make it easy for Black-owned businesses to establish online presence"
-      },
-      {
-        "title": "Drive Discovery",
-        "description": "Create visibility for Black-owned businesses"
-      },
-      {
-        "title": "Build Community",
-        "description": "Create sense of belonging and shared mission"
-      },
-      {
-        "title": "Enable Empowerment",
-        "description": "Provide tools for businesses to scale and thrive"
-      }
-    ]
-  },
-  "results": {
-    "heading": "Results & Impact",
-    "metrics": [
-      {
-        "metric": "347",
-        "description": "Black-owned businesses onboarded"
-      },
-      {
-        "metric": "$1.2M",
-        "description": "in transactions processed"
-      },
-      {
-        "metric": "87%",
-        "description": "customer satisfaction"
-      }
-    ]
-  },
-  "tags": ["Mobile Design", "Product Strategy", "Community"]
+    "title": "Cashamm E-Commerce",
+    "subtitle": "Empowering Economic Justice Through Design",
+    "description": "Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth."
+  }
 }

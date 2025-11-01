@@ -19,6 +19,9 @@
 .DS_Store
 *.pem
 
+# NOTE: json/case-studies/*.json files ARE tracked and auto-generated from config/case-studies/*.ts
+# Do not manually edit JSON files - edit TypeScript configs and run: npm run generate:case-studies
+
 # debug
 npm-debug.log*
 yarn-debug.log*

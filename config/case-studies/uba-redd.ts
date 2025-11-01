@@ -22,7 +22,7 @@ export const ubaReddConfig = {
     title: "Environmental Impact Platform for Climate Action",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Designing Africa's first bank-led REDD+ carbon credit platform, connecting forest conservation with financial services.",
+    description: "Pan-African Banking with Mood-Based Personalization. Transformed satisfaction from 33% to 85% across 20 countries, driving €15M revenue and 43% digital growth.",
     descriptionSize: "text-base md:text-lg",
     skills: ["Product Design", "Impact Design", "Sustainability"],
     centered: true,

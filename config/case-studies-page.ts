@@ -10,7 +10,7 @@ export const caseStudiesPageConfig = {
       year: "2025",
       title: "Contextual Self-Help Platform",
       subtitle: "Transforming Customer Support Through Predictive Design",
-      description: "A proactive platform that anticipates customer needs before they contact support.",
+      description: "Cut 20M yearly inquiries by 42% and slashed resolution time from 24 hours to under 3.",
       metrics: [
         "33% reduction in inquiries",
         "€3.2M annual savings",
@@ -23,8 +23,8 @@ export const caseStudiesPageConfig = {
       company: "UBA GROUP",
       year: "2021",
       title: "UBA HCM Connect",
-      subtitle: "Transforming HR Operations for 20,000+ Employees Across Africa",
-      description: "A comprehensive 12-module enterprise platform that revolutionized HR processes.",
+      subtitle: "Enterprise HR Management System",
+      description: "Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
       metrics: [
         "$960K annual savings",
         "91% process automation",
@@ -37,8 +37,8 @@ export const caseStudiesPageConfig = {
       company: "STERLING BANK",
       year: "2019",
       title: "Fraud Analytics Platform",
-      subtitle: "AI-Powered Financial Crime Prevention Through Design",
-      description: "AI-powered fraud detection that reduced successful fraud attempts by 78% and saved €2.3M annually.",
+      subtitle: "Real-Time Fraud Detection Dashboard",
+      description: "Predictive monitoring that cut fraud by 34% and false positives by 47%, saving ₦155M.",
       metrics: [
         "78% fraud reduction",
         "€2.3M annual savings",
@@ -50,9 +50,9 @@ export const caseStudiesPageConfig = {
     {
       company: "CASHAMM",
       year: "2021",
-      title: "Cashamm E-Commerce",
-      subtitle: "Empowering Economic Justice Through Design",
-      description: "Community-centered commerce platform empowering Black-owned businesses to thrive online.",
+      title: "Cashamm (E-Commerce Platform)",
+      subtitle: "Empowering Black-Owned Businesses Through Community Commerce",
+      description: "Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.",
       metrics: [
         "347 businesses onboarded",
         "$1.2M transactions",
@@ -64,9 +64,9 @@ export const caseStudiesPageConfig = {
     {
       company: "UBA GROUP",
       year: "2020",
-      title: "UBA REDD Banking App",
-      subtitle: "Pioneering Pan-African Digital Banking Transformation",
-      description: "Revolutionary personalization features that transformed mobile banking across Africa.",
+      title: "UBA Redd App (Mobile Banking)",
+      subtitle: "Pan-African Banking with Mood-Based Personalization",
+      description: "Transformed satisfaction from 33% to 85% across 20 countries, driving €15M revenue and 43% digital growth.",
       metrics: [
         "€15M revenue increase",
         "89% satisfaction increase",
@@ -78,9 +78,9 @@ export const caseStudiesPageConfig = {
     {
       company: "ZALANDO",
       year: "2024",
-      title: "Zalando Chatbot Redesign",
-      subtitle: "From Frustration to Flow: Rebuilding Trust in Conversational AI",
-      description: "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
+      title: "Guided Conversational Chatbot",
+      subtitle: "Reimagining Automated Support with Empathy",
+      description: "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
       metrics: [
         "226% automation increase",
         "18% reduction in repeat contacts",
@@ -92,9 +92,9 @@ export const caseStudiesPageConfig = {
     {
       company: "MODUS CREATE",
       year: "2020",
-      title: "OrgCompass HR Intelligence",
-      subtitle: "From Data Overload to Strategic Intelligence",
-      description: "Enterprise platform turning HR data into actionable intelligence for C-suite executives.",
+      title: "OrgCompass (HR Intelligence)",
+      subtitle: "Executive Decision Intelligence Platform",
+      description: "Cut C-suite decision time by 73% and boosted retention 68% through predictive team intelligence.",
       metrics: [
         "45% faster decisions",
         "32% team effectiveness",
@@ -106,9 +106,9 @@ export const caseStudiesPageConfig = {
     {
       company: "STERLING BANK",
       year: "2016",
-      title: "Specta Digital Lending",
-      subtitle: "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
-      description: "Nigeria's first instant digital lending platform transforming exploitative lending into transparent access.",
+      title: "Mobile Banking App (Specta)",
+      subtitle: "Next-Generation Digital Lending Experience",
+      description: "5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
       metrics: [
         "$263M disbursements",
         "200% profit growth",

@@ -22,7 +22,7 @@ export const spectaConfig = {
     title: "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Designing Nigeria's first instant digital lending platform that reduced loan approval time from 3 weeks to 3 minutes.",
+    description: "Next-Generation Digital Lending Experience. 5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
     descriptionSize: "text-xl md:text-2xl",
     skills: ["Product Design", "UX Research", "Fintech"],
     centered: true,

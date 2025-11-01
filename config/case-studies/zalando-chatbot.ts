@@ -23,7 +23,7 @@ export const zalandoChatbotConfig = {
     title: "Transforming Customer Service with AI",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Intelligent chatbot delivering personalized shopping assistance and support to millions of Zalando customers",
+    description: "Reimagining Automated Support with Empathy. Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "AI/ML", "Conversational UX"],
     centered: true,
