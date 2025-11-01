@@ -25,7 +25,7 @@ export const caseStudiesPageStyles = {
       className: "text-xs md:text-sm font-medium tracking-wider uppercase mb-8 md:mb-12 text-gray-500 dark:text-gray-400"
     },
     grid: {
-      className: "grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-stretch"
+      className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 items-stretch"
     },
     card: {
       className: "group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 md:p-5 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 h-full flex flex-col"
@@ -37,7 +37,7 @@ export const caseStudiesPageStyles = {
       className: "flex flex-wrap items-start justify-between mb-2 gap-2"
     },
     company: {
-      className: "text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider w-full md:w-auto"
+      className: "text-xs font-semibold uppercase tracking-wider w-full md:w-auto"
     },
     skills: {
       className: "flex flex-wrap gap-1 justify-start md:justify-end w-full md:w-auto"
