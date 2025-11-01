@@ -64,7 +64,7 @@ export function TubelightNavBar({ className }: NavBarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-2 bg-background/5 border border-border/40 backdrop-blur-lg py-2 px-3 rounded-full shadow-lg">
+      <div className="flex items-center gap-2 bg-background/80 border border-border backdrop-blur-lg py-2 px-3 rounded-full shadow-lg">
         {navItems.map((item) => {
           const Icon = item.icon
           const active = isActive(item.url)
@@ -79,7 +79,7 @@ export function TubelightNavBar({ className }: NavBarProps) {
               rel={isExternal ? "noopener noreferrer" : undefined}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200",
-                "text-foreground/70 hover:text-primary hover:bg-primary/10",
+                "text-foreground hover:text-primary hover:bg-primary/10",
                 active && !isExternal && "text-primary",
               )}
             >
@@ -131,7 +131,7 @@ export function TubelightNavBar({ className }: NavBarProps) {
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           className={cn(
             "relative cursor-pointer px-5 py-2.5 rounded-full transition-all duration-200",
-            "text-foreground/70 hover:text-primary hover:bg-primary/10"
+            "text-foreground hover:text-primary hover:bg-primary/10"
           )}
           aria-label="Toggle theme"
         >
