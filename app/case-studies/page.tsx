@@ -72,9 +72,9 @@ export default async function CaseStudiesPage() {
                     </span>
                     
                     {/* Skills Pills (Top Right) */}
-                    <div className={styles.studies.skills.className}>
+                    <div className={styles.studies.skills.className} role="region" aria-label="Case study skills">
                       {study.skills.map((skill: string, skillIndex: number) => (
-                        <span key={skillIndex} className={styles.studies.skill.className}>
+                        <span key={skillIndex} className={styles.studies.skill.className} tabIndex={-1}>
                           {skill}
                         </span>
                       ))}

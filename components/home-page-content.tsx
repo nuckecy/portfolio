@@ -117,11 +117,13 @@ export function HomePageContent({ data }: HomePageContentProps) {
                   <p className={homeStyles.topCaseStudies.description.className}>
                     <strong>{study.subtitle}</strong> {study.description}
                   </p>
-                  <div className={homeStyles.topCaseStudies.tags.className}>
+                  <div className={homeStyles.topCaseStudies.tags.className} role="region" aria-label="Case study skills and tags">
                     {study.tags.map((tag: any, tagIndex: number) => (
                       <span
                         key={tagIndex}
                         className={homeStyles.topCaseStudies.tag.className}
+                        role="doc-biblioentry"
+                        tabIndex={-1}
                       >
                         {tag}
                       </span>

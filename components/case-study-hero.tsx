@@ -128,15 +128,18 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
 
             {/* Skills - Pills with light weight */}
             {skills.length > 0 && (
-              <div className={`flex flex-wrap items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500 ${centered ? 'justify-center' : ''}`}>
+              <div className={`flex flex-wrap items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500 ${centered ? 'justify-center' : ''}`} role="region" aria-label="Project skills and competencies">
                 {skills.map((skill, index) => (
-                  <span
+                  <button
                     key={index}
-                    className="px-3 py-1.5 bg-muted/30 backdrop-blur-sm border border-border/50 rounded-full text-sm font-light"
+                    type="button"
+                    className="px-3 py-1.5 bg-muted/30 backdrop-blur-sm border border-border/50 rounded-full text-sm font-light hover:bg-muted/50 active:bg-muted/60 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring cursor-default"
                     style={{ color: 'hsl(0, 0%, 0%)' }}
+                    aria-label={skill}
+                    tabIndex={0}
                   >
                     {skill}
-                  </span>
+                  </button>
                 ))}
               </div>
             )}

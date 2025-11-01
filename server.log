@@ -1,0 +1,25 @@
+  ▲ Next.js 14.2.33
+  - Local:        http://localhost:3001
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1345ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1420ms (1380 modules)
+ GET / 200 in 1543ms
+ ✓ Compiled in 147ms (693 modules)
+ GET / 200 in 32ms
+ ✓ Compiled /about in 251ms (1377 modules)
+ ✓ Compiled /case-studies in 211ms (1385 modules)
+ ✓ Compiled /case-study/zalando-contextual in 180ms (1427 modules)
+ ✓ Compiled in 341ms (1441 modules)
+ ✓ Compiled in 129ms (1441 modules)
+ ✓ Compiled in 384ms (1441 modules)
+ ✓ Compiled in 200ms (1441 modules)
+ ✓ Compiled in 171ms (1441 modules)
+ ✓ Compiled in 182ms (1441 modules)
+ ✓ Compiled in 105ms (1441 modules)
+ ✓ Compiled in 145ms (1441 modules)
+ ✓ Compiled in 136ms (1441 modules)
+ ✓ Compiled /_not-found in 73ms (1430 modules)
+ GET /_next/static/css/app/layout.css 404 in 129ms

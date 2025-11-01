@@ -434,7 +434,7 @@ export const homeStyles = {
       className: "flex flex-wrap gap-2",
     },
     tag: {
-      className: "px-3 py-1 text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full",
+      className: "px-3 py-1 text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors",
     }
   }
 }

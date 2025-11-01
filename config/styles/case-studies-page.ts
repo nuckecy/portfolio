@@ -43,7 +43,7 @@ export const caseStudiesPageStyles = {
       className: "flex flex-wrap gap-1 justify-start md:justify-end w-full md:w-auto"
     },
     skill: {
-      className: "px-3 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600"
+      className: "px-3 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors"
     },
     title: {
       className: "text-xl md:text-2xl font-normal text-black dark:text-white mb-4"
