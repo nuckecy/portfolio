@@ -5,13 +5,12 @@
   },
   "hero": {
     "greeting": "Hello!",
-    "introduction": "My name is",
+    "introduction": "I'm",
     "name": "Otobong Okoko",
-    "mission": "and I'm reimagining customer experience for Europe's leading fashion platform.",
+    "mission": "I help shape how millions of people experience customer care at Europe's biggest fashion platform.",
     "story": [
-      "Throughout my UX career, I've been a non-profit founder of a design education group, marketing non-profit chairman, event speaker, hackathon winner, certified scrum master, and team lead. Most importantly, I've been a life-long learner.",
-      "Like many of us, I have a story of someone who was forced to prioritize finances over health and are no longer with us as a consequence.",
-      "My mission is to prioritize health over cost by making affordable healthcare accessible to everyone."
+      "I'm a systems thinker who operates in both design and code. This dual perspective lets me bridge what users need with what's possible to build. I speak both designers' and developers' languages, which makes collaboration flow naturally. I'm naturally curious, maybe annoyingly so - constantly asking questions that uncover better solutions.",
+      "Let's build something meaningful together. If you're looking for a designer who thinks strategically, codes functionally, and questions relentlessly, I'd love to collaborate. Reach out - let's talk about how we can create products that actually work for people."
     ],
     "image": "/images/Otobong_Okoko_Sketched_.png",
     "imageAlt": "Otobong Okoko Portrait"
