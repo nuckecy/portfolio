@@ -37,10 +37,10 @@ export const caseStudiesPageStyles = {
       className: "flex flex-wrap items-start justify-between mb-2 gap-2"
     },
     company: {
-      className: "text-xs font-semibold uppercase tracking-wider w-full md:w-auto"
+      className: "text-xs font-semibold uppercase tracking-wider"
     },
     skills: {
-      className: "flex flex-wrap gap-1 justify-start md:justify-end w-full md:w-auto"
+      className: "flex flex-wrap gap-1 justify-start mt-4"
     },
     skill: {
       className: "px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors"

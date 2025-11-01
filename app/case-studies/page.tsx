@@ -65,20 +65,11 @@ export default async function CaseStudiesPage() {
                 <div className="bg-white dark:bg-gray-800 rounded-[8px] h-full">
                   <div className={`${styles.studies.card.className} rounded-[8px] border-0`}>
                     <div className={styles.studies.cardHeader.className}>
-                  {/* Company & Skills Top Row */}
+                  {/* Company */}
                   <div className={styles.studies.topRow.className}>
                     <span className={`${styles.studies.company.className} ${getBrandTextClass(study.brandColor || study.company)}`}>
                       {study.company}
                     </span>
-                    
-                    {/* Skills Pills (Top Right) */}
-                    <div className={styles.studies.skills.className} role="region" aria-label="Case study skills">
-                      {study.skills.map((skill: string, skillIndex: number) => (
-                        <span key={skillIndex} className={styles.studies.skill.className} tabIndex={-1}>
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
                   </div>
 
                   {/* Title */}
@@ -94,18 +85,15 @@ export default async function CaseStudiesPage() {
                     {' '}
                     {study.description}
                   </p>
-                </div>
 
-                {/* Metrics */}
-                <div className={styles.studies.metrics.className}>
-                  {study.metrics.map((metric: string, metricIndex: number) => (
-                    <div key={metricIndex} className={styles.studies.metric.className}>
-                      {metricIndex > 0 && (
-                        <span className={styles.studies.metricBullet.className} />
-                      )}
-                      <span>{metric}</span>
-                    </div>
-                  ))}
+                  {/* Skills Pills (Below Description) */}
+                  <div className={styles.studies.skills.className} role="region" aria-label="Case study skills">
+                    {study.skills.map((skill: string, skillIndex: number) => (
+                      <span key={skillIndex} className={styles.studies.skill.className} tabIndex={-1}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                     {/* View Case Study Button */}
