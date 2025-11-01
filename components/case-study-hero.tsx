@@ -177,9 +177,10 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
                   {overview.title.split(' ').map((word, index) => (
                     <span
                       key={index}
-                      className="fade-word inline-block transition-colors duration-500"
+                      className={`fade-word inline-block transition-colors duration-500 ${
+                        wordVisibility[index] ? 'text-foreground' : 'text-muted-foreground'
+                      }`}
                       style={{ 
-                        color: wordVisibility[index] ? 'hsl(0, 0%, 0%)' : 'hsl(0, 0%, 70%)',
                         marginRight: '0.25em'
                       }}
                     >
@@ -202,9 +203,10 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
                           return (
                             <span
                               key={wIndex}
-                              className="fade-word inline-block transition-colors duration-500"
+                              className={`fade-word inline-block transition-colors duration-500 ${
+                                wordVisibility[globalIndex] ? 'text-foreground' : 'text-muted-foreground'
+                              }`}
                               style={{ 
-                                color: wordVisibility[globalIndex] ? 'hsl(0, 0%, 0%)' : 'hsl(0, 0%, 70%)',
                                 marginRight: '0.25em'
                               }}
                             >
@@ -227,7 +229,7 @@ export function CaseStudyHero({ hero, overview, metrics, rolesResponsibilities }
                     <div className={`${metrics.fontSize?.value || 'text-3xl md:text-4xl lg:text-5xl'} font-normal mb-2 text-foreground`}>
                       {metric.value}
                     </div>
-                    <div className={`${metrics.fontSize?.label || 'text-sm'} font-medium`} style={{ color: 'hsl(0, 0%, 0%)' }}>
+                    <div className={`${metrics.fontSize?.label || 'text-sm'} font-medium text-foreground dark:text-muted-foreground`}>
                       {metric.label}
                     </div>
                   </div>
