@@ -19,7 +19,7 @@ const caseStudiesData = [
     subtitle: 'Transforming Customer Support Through Predictive Design',
     description: 'Cut 20M yearly inquiries by 42% and slashed resolution time from 24 hours to under 3.',
     metrics: ['33% reduction in inquiries', '€3.2M annual savings', '28% satisfaction improvement'],
-    skills: ['AI', 'Product Design', 'User Research', 'Predictive UX'],
+    skills: ['AI', 'Product Design', 'User Research'],
     brandColor: 'zalando',
   },
   {
@@ -30,7 +30,7 @@ const caseStudiesData = [
     subtitle: 'Transforming HR Operations for 20,000+ Employees Across Africa',
     description: 'Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.',
     metrics: ['$960K annual savings', '91% process automation', '94% employee adoption'],
-    skills: ['Enterprise Design', 'HR Tech', 'System Design'],
+    skills: ['Enterprise Design', 'System Design'],
     brandColor: 'uba',
   },
   {
@@ -41,7 +41,7 @@ const caseStudiesData = [
     subtitle: 'AI-Powered Financial Crime Prevention Through Design',
     description: 'Predictive monitoring that cut fraud by 34% and false positives by 47%, saving ₦155M.',
     metrics: ['78% fraud reduction', '€2.3M annual savings', '92% customer satisfaction'],
-    skills: ['AI', 'Fraud Detection', 'Dashboard UI'],
+    skills: ['AI'],
     brandColor: 'sterling',
   },
   {
@@ -52,7 +52,7 @@ const caseStudiesData = [
     subtitle: 'Empowering Economic Justice Through Design',
     description: 'Onboarded 750+ businesses and drove ₦2.8B in transactions with 89% satisfaction and 60% monthly growth.',
     metrics: ['347 businesses onboarded', '$1.2M transactions', '87% satisfaction'],
-    skills: ['Mobile Design', 'Product Strategy', 'UX Engineering'],
+    skills: ['Product Strategy', 'UX Engineering'],
     brandColor: 'cashamm',
   },
   {
@@ -63,7 +63,7 @@ const caseStudiesData = [
     subtitle: 'Pioneering Pan-African Digital Banking Transformation',
     description: 'Transformed satisfaction from 33% to 85% across 20 countries, driving €15M revenue and 43% digital growth.',
     metrics: ['€15M revenue increase', '89% satisfaction increase', '156% engagement boost'],
-    skills: ['Mobile Banking', 'Personalization', 'User Research'],
+    skills: ['User Research'],
     brandColor: 'uba',
   },
   {
@@ -85,7 +85,7 @@ const caseStudiesData = [
     subtitle: 'From Data Overload to Strategic Intelligence',
     description: 'Cut C-suite decision time by 73% and boosted retention 68% through predictive team intelligence.',
     metrics: ['45% faster decisions', '32% team effectiveness', '94% C-suite adoption'],
-    skills: ['Enterprise Design', 'Dashboard UI', 'User Research'],
+    skills: ['Enterprise Design', 'User Research'],
     brandColor: 'modus',
   },
   {
