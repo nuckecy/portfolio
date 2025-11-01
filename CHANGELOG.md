@@ -6,6 +6,176 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [3.1.0] - 2025-11-01
+
+### 🎨 Navigation Redesign & Email Integration
+
+Complete redesign of the navigation system with new glass morphism navbar and integration of transactional email API for password access requests.
+
+### Added
+
+#### New Components
+- **TubelightNavBar Component** (`/components/ui/tubelight-navbar.tsx`)
+  - Glass morphism design with backdrop blur effect
+  - Tubelight glow animation on active navigation items
+  - Fixed positioning at top of page with responsive height
+  - Mobile-first approach: text labels on desktop, icons on mobile
+  - LinkedIn SVG icon integration (from `/public/images/linkedin.svg`)
+  - Icon-only dark mode toggle (Sun/Moon icons)
+  - Smooth transitions and spring animations via Framer Motion
+  - Special active state detection for case study pages
+  - Divider between navigation items and theme toggle
+  - Full dark mode support with automatic theme detection
+
+- **API Route for Email** (`/app/api/send-request/route.ts`)
+  - POST endpoint for processing password access requests
+  - Mandrill transactional email integration
+  - Dual email system (user acknowledgment + owner notification)
+  - Required field validation (name, email, message, isRecruiter)
+  - Message character limit enforcement (160 characters max)
+  - Error handling with detailed response messages
+  - Environment variable support for secure API key management
+
+#### Password Wall Enhancements
+- **Reveal Flow Architecture**
+  - Multi-state form system: `initial | unlock | request`
+  - Initial choice screen with two options: "Unlock with Password" or "Request Password"
+  - Password entry view with centered form
+  - Full-page request form with recruiter validation
+  - Success message display (15 seconds auto-dismiss with manual close)
+
+- **Email Request Form**
+  - Name field (required, displayed with red asterisk)
+  - Email field (required, displayed with red asterisk)
+  - Message field with 160 character limit and live counter
+  - Message placeholder text: "Tell Otobong a bit about yourself and why you're requesting access"
+  - Recruiter selection via radio buttons (Yes/No)
+  - Conditional warning when non-recruiter selected
+  - Form validation with inline error messages
+  - Disabled submit button for non-recruiters
+
+### Changed
+
+#### Navigation Architecture
+- Replaced old sticky navigation with new TubelightNavBar
+- Updated all page hero sections with increased top padding
+- Modified active state detection to handle case study pages specially
+- Added Framer Motion dependency for smooth animations
+
+#### Password Wall Behavior
+- Overlay positioning changed from `top-[65%]` to `top-[60%]` (adjusted 5% up)
+- Overlay positioning changes based on view mode:
+  - `unlock` mode: Remains at `top-[60%]`
+  - `request` mode: Full page `top-0 bottom-0`
+- Changed from mailto links to API-based email sending
+- No localStorage persistence (session-only access pattern)
+- Success message auto-dismisses after 15 seconds
+
+#### Hero Section Spacing
+**Updated across all pages**:
+- Home page: `pt-8 md:pt-12` → `pt-20 md:pt-24`
+- About page: `pt-12 md:pt-16` → `pt-20 md:pt-24`
+- Case studies page: `py-16 md:py-24` → `pt-20 md:pt-28 pb-16 md:pb-24`
+- Resume page: `py-16 md:py-24` → `pt-20 md:pt-28 pb-16 md:pb-24`
+- Case study hero: Added `pt-24 md:pt-32 lg:pt-40` for extra breathing room
+
+#### Case Study Navigation Active State
+- Updated `isActive()` logic to mark "Case Studies" as active when viewing individual case study pages
+- Special case handling: `/case-studies` nav item highlights when on `/case-study/[slug]` pages
+
+### Technical Details
+
+#### Mandrill Email Configuration
+```typescript
+// Email Template Structure
+{
+  "key": process.env.MAILCHIMP_API_KEY,
+  "message": {
+    "html": "<html>...</html>",
+    "text": "...",
+    "subject": "Access Request Received",
+    "from_email": "me@otobong.com",
+    "from_name": "Otobong",
+    "to": [{ "email": "user@example.com", "type": "to" }],
+    "track_opens": true,
+    "track_clicks": true,
+    "auto_text": true,
+  }
+}
+```
+
+#### Framer Motion Animation
+```typescript
+// TubelightNavBar active indicator
+<motion.div
+  layoutId="tubelight"
+  className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
+  initial={false}
+  transition={{
+    type: "spring",
+    stiffness: 300,
+    damping: 30,
+  }}
+>
+  {/* Glow effect divs */}
+</motion.div>
+```
+
+#### Environment Variables Required
+```env
+MAILCHIMP_API_KEY=your_mandrill_api_key_here
+```
+
+### Benefits
+
+✅ **Modern UI/UX** - Glass morphism navbar with smooth animations
+✅ **Email Integration** - Transactional emails via Mandrill API
+✅ **Better UX Flow** - Multi-step form with clear options
+✅ **Responsive Design** - Mobile-first navigation approach
+✅ **Accessibility** - Proper ARIA labels and form semantics
+✅ **Security** - Email validation and recruiter-only access
+✅ **Brand Consistency** - Updated spacing maintains visual hierarchy
+✅ **Session-Based Access** - No persistent storage, fresh authentication on each visit
+
+### Testing & Validation
+
+✅ TubelightNavBar displays correctly on all pages
+✅ Active state highlights work for all routes
+✅ Case study pages show "Case Studies" as active
+✅ Theme toggle switches between light and dark modes
+✅ LinkedIn icon displays correctly in both themes
+✅ Password wall reveal flow works smoothly
+✅ Email sending via Mandrill API successful
+✅ Both user acknowledgment and owner notification emails received
+✅ Form validation prevents submission with invalid data
+✅ Success message displays and auto-dismisses correctly
+✅ Dark mode support works throughout
+✅ Responsive behavior verified on mobile, tablet, desktop
+
+### Migration Path
+
+For existing users upgrading to v3.1.0:
+
+1. **Install Framer Motion**:
+   ```bash
+   npm install framer-motion
+   ```
+
+2. **Add Mandrill API Key**:
+   - Create `.env.local` file in project root
+   - Add: `MAILCHIMP_API_KEY=your_api_key_here`
+   - Get key from MailChimp Mandrill dashboard
+
+3. **Update Navigation**:
+   - Old `<Navigation />` component still works
+   - Optional: Switch to `<TubelightNavBar />` in layout
+
+4. **Update Password Wall** (optional):
+   - Existing password walls still function
+   - To enable email requests: ensure API key is configured
+
+---
+
 ## [3.0.0] - 2025-11-01
 
 ### 🎯 LinkedIn-Style Resume Redesign

@@ -1,14 +1,22 @@
 # Password Wall Feature - Implementation Guide
 
 **Date**: November 1, 2025
-**Version**: 1.1.0 (Updated with overlay positioning & transparency changes)
-**Status**: ✅ Complete & Optimized
+**Version**: 2.0.0 (Complete redesign with reveal flow and Mandrill email integration)
+**Status**: ✅ Complete & Production Ready
 
 ---
 
 ## 📋 Overview
 
-A password protection system for sensitive case studies that allows controlled access with a recruiter-only request form. The wall appears after the hero section, preventing access to the full content while keeping the case study preview visible.
+A comprehensive password protection system for sensitive case studies featuring a multi-step reveal flow that allows users to either unlock with password or request access via email. The wall appears after the hero section, preventing access to the full content while keeping the case study preview visible. New in v2.0.0: Mandrill transactional email integration with dual email system (user acknowledgment + owner notification).
+
+### Key Features
+- 🔓 **Reveal Flow**: Three-state form (initial choice, password entry, or access request)
+- 📧 **Email Integration**: Automated emails via Mandrill API
+- ✅ **Recruiter Validation**: Only recruiters can request access
+- 📝 **Form Validation**: Real-time validation with inline errors
+- ⏱️ **Auto-Dismiss**: Success message disappears after 15 seconds
+- 🔒 **Session-Only**: Password resets on page refresh (no persistence)
 
 ---
 
@@ -26,10 +34,18 @@ A password protection system for sensitive case studies that allows controlled a
 - **Session-Only Access**: Password resets on page refresh (no persistence)
 - **Smart Overlay Positioning**:
   - Hero section: Fully visible (no overlay)
-  - Carousel & content below: 78% transparent overlay
+  - Carousel & content below: Transparent overlay
 - **Scroll Lock**: Page cannot scroll beyond visible hero section
 - **Print Prevention**: Page cannot be printed when wall is active
-- **78% Transparent Overlay**: Content visible but not accessible (light: white, dark: black)
+- **Dynamic Overlay**: Position changes based on view mode (60% for unlock, full-page for request)
+
+### ✅ Reveal Flow Architecture
+- **Initial Choice Screen**: Two options - "Unlock with Password" or "Request Password"
+- **Multi-State Form**: Views change based on user selection
+- **Password Entry Mode**: Centered form with password input
+- **Request Form Mode**: Full-page overlay with complete form
+- **X Close Button**: Professional close icon positioned top-right
+- **Success Confirmation**: 15-second auto-dismissing success message
 
 ### ✅ User Experience
 - **Hero Visible**: Case study hero section always visible
@@ -37,17 +53,25 @@ A password protection system for sensitive case studies that allows controlled a
 - **Shake Animation**: Input field shakes on wrong password
 - **Attempt Tracking**: 3 attempts before showing contact message
 - **Professional UI**: ShadCN-style components with dark mode support
+- **Inline Errors**: Real-time validation feedback
+- **Character Counter**: Live message character count (160 limit)
 
-### ✅ Request Access Form
-- **Name Field**: Required
-- **Email Field**: Required
-- **Recruiter Check**: Yes/No radio buttons
-- **Validation**: Only recruiters can request access
-- **Email Draft**: Opens `mailto:` with pre-filled content
+### ✅ Request Access Form (NEW v2.0.0)
+- **Name Field**: Required, displayed with red asterisk
+- **Email Field**: Required, displayed with red asterisk
+- **Message Field**: 160 character limit with live counter
+- **Message Placeholder**: "Tell Otobong a bit about yourself and why you're requesting access"
+- **Recruiter Check**: Yes/No radio buttons with validation
+- **Conditional Warning**: Shows warning for non-recruiters
+- **Email Integration**: Sends request via Mandrill API
+- **Dual Email System**:
+  - User acknowledgment email
+  - Owner notification email
+- **Success Message**: Displays confirmation with auto-dismiss
 
 ---
 
-## 📂 Files Created
+## 📂 Files Created & Modified
 
 ### 1. **Password Configuration**
 **File**: `/config/passwords.ts`
@@ -62,22 +86,51 @@ export const caseStudyPasswords = {
 **Purpose**: Centralized password management
 **How to Update**: Edit this file to add/change passwords
 
-### 2. **PasswordWall Component**
+### 2. **PasswordWall Component** (UPDATED v2.0.0)
 **File**: `/components/password-wall.tsx`
 
-**Features**:
+**New Features**:
+- Multi-view state machine (`initial | unlock | request`)
+- Reveal flow with initial choice screen
+- Full-page request form with email integration
+- Mandrill API email sending
+- Success message with 15-second auto-dismiss
+- Dynamic overlay positioning
+- Form validation with inline errors
+- Character counter for message field
+
+**Existing Features**:
 - Client-side component (`"use client"`)
 - Session-only access (resets on page refresh)
 - Scroll and print prevention
 - Password validation with attempts tracking
-- Request form with recruiter validation
-- Mailto link generation
+- Dark mode support
 
-### 3. **UI Components**
+### 3. **API Route for Email** (NEW v2.0.0)
+**File**: `/app/api/send-request/route.ts`
+
+**Features**:
+- POST endpoint for password access requests
+- Mandrill transactional email integration
+- Dual email system (user + owner)
+- Form validation
+- Error handling
+- Environment variable support
+
+### 4. **UI Components**
 **Files**:
 - `/components/ui/input.tsx` - ShadCN Input component
 - `/components/ui/button.tsx` - ShadCN Button component
 - `/components/ui/label.tsx` - ShadCN Label component
+
+### 5. **Environment Configuration** (NEW v2.0.0)
+**File**: `.env.local`
+
+```env
+MAILCHIMP_API_KEY=your_api_key_here
+```
+
+**Note**: This file should NOT be committed to Git (already in .gitignore)
 
 ---
 
@@ -127,22 +180,30 @@ export const caseStudyPasswords = {
 ```
 1. User clicks "Request Password"
    ↓
-2. Form appears with fields:
-   - Name (required)
-   - Email (required)
-   - Are you a recruiter? (Yes/No)
+2. Form appears with full-page overlay showing:
+   - Name field (required)
+   - Email field (required)
+   - Message field (160 char limit with counter)
+   - Are you a recruiter? (Yes/No radio buttons)
    ↓
-3. If "No": Show message "Only visible to recruiters"
+3. If "No": Show warning "This portfolio is only visible to recruiters at the moment"
+   Submit button remains disabled
    ↓
 4. If "Yes": Enable "Send Request" button
    ↓
 5. Click "Send Request"
    ↓
-6. Opens mailto: otobongsok@gmail.com
+6. Form submits via POST to /api/send-request
    ↓
-7. Email pre-filled with:
-   - Subject: Password Request - [case-study-slug]
-   - Body: Name, Email, Role: Recruiter
+7. Server validates all fields and character limit
+   ↓
+8. Mandrill API sends TWO emails:
+   a) User acknowledgment: "Access Request Received"
+   b) Owner notification: "New Access Request - [Case Study]"
+   ↓
+9. Success message displays for 15 seconds with manual close button
+   ↓
+10. Form auto-resets and returns to initial state
 ```
 
 ---
@@ -583,5 +644,26 @@ Before deploying:
 
 ---
 
+## 🔗 Related Documentation
+
+- [EMAIL_INTEGRATION_GUIDE.md](./EMAIL_INTEGRATION_GUIDE.md) - Complete Mandrill API setup and troubleshooting
+- [NAVBAR_GUIDE.md](./NAVBAR_GUIDE.md) - Navigation component documentation
+- [CHANGELOG.md](./CHANGELOG.md) - Version history and all changes in v3.1.0
+- [ARCHITECTURE.md](./ARCHITECTURE.md) - Component hierarchy and feature interactions
+
+---
+
 **Last Updated**: November 1, 2025
-**Status**: ✅ Complete and Tested
+**Version**: 2.0.0
+**Status**: ✅ Complete and Production Ready
+
+### What's New in v2.0.0
+
+- ✨ Complete reveal flow redesign with multi-state form
+- 📧 Mandrill transactional email integration
+- ✅ Dual email system (user acknowledgment + owner notification)
+- 📝 Message field with 160 character limit and live counter
+- 🎨 Enhanced UI with inline error messages
+- ⏱️ Success message with 15-second auto-dismiss
+- 🔒 Session-only password reset (no localStorage)
+- 🌙 Full dark mode support throughout

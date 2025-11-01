@@ -2,9 +2,18 @@
 
 A professional Next.js portfolio showcasing design case studies and projects with dynamic JSON content, comprehensive design system documentation, and a complete configuration architecture for easy customization.
 
-## 🎯 Latest Updates (v3.0.0)
+## 🎯 Latest Updates (v3.1.0)
 
-### Major Features - Resume Redesign
+### Major Features - Navigation Redesign & Email Integration
+- **TubelightNavBar Component**: New glass morphism navigation with tubelight glow effect on active states
+- **Mandrill Email API Integration**: Transactional email system for password access requests
+- **Password Wall Reveal Flow**: Multi-step form with unlock and request password options
+- **Enhanced Hero Spacing**: Doubled top padding on all pages for navbar compatibility
+- **LinkedIn SVG Icon**: Proper LinkedIn icon in navigation instead of text
+- **Dynamic Overlay Positioning**: Smart positioning that adapts to hero section height
+- **Dark Mode Navigation**: Full theme support with icon-only theme toggle
+
+### Previous Updates (v3.0.0)
 - **LinkedIn-Style Resume**: Complete redesign of resume page with professional gradient header and LinkedIn profile aesthetics
 - **ExperienceSection Component**: New structured component for job experience with Problem/Solution/Impact breakdowns
 - **Enhanced Content Rendering**: Improved markdown handling with text extraction and citation marker removal
@@ -76,10 +85,15 @@ portfolio/
 │   │   ├── button.tsx
 │   │   ├── card.tsx
 │   │   ├── radio-group.tsx
-│   │   └── separator.tsx
+│   │   ├── separator.tsx
+│   │   ├── input.tsx            # Input component
+│   │   └── label.tsx            # Label component
+│   ├── tubelight-navbar.tsx     # Glass morphism navbar with tubelight glow
 │   ├── navigation.tsx           # Global navigation header
 │   ├── footer.tsx               # Global footer
+│   ├── case-study-hero.tsx      # Case study hero section with animations
 │   ├── case-study-navigation.tsx # Case study prev/next/home navigation
+│   ├── password-wall.tsx        # Password protection with reveal flow
 │   ├── theme-toggle.tsx         # Dark mode toggle
 │   └── PaymentIcons.tsx         # Payment icons component
 ├── config/                       # Configuration files
@@ -224,7 +238,9 @@ All documentation includes code examples and best practices.
 - **UI Components**: Radix UI (shadcn/ui)
 - **Dark Mode**: next-themes
 - **Icons**: Lucide React
+- **Animations**: Framer Motion
 - **Fonts**: Neue Montreal (from Fontshare)
+- **Email**: Mandrill (MailChimp transactional API)
 
 ## 🔧 Customization
 
@@ -269,8 +285,15 @@ export const theme = {
 
 ## 📚 Documentation
 
-- [GLOBAL_CONFIG_GUIDE.md](./GLOBAL_CONFIG_GUIDE.md) - **NEW!** Global brand colors and case study data system (v2.5.0)
+### Implementation Guides (v3.1.0)
+- [NAVBAR_GUIDE.md](./NAVBAR_GUIDE.md) - **NEW!** TubelightNavBar glass morphism navigation
+- [EMAIL_INTEGRATION_GUIDE.md](./EMAIL_INTEGRATION_GUIDE.md) - **NEW!** Mandrill email setup and API integration
+- [ARCHITECTURE.md](./ARCHITECTURE.md) - **NEW!** Component hierarchy and feature interaction
+
+### Core Documentation
+- [PASSWORD_WALL_GUIDE.md](./PASSWORD_WALL_GUIDE.md) - Password protection with reveal flow and email requests
 - [CONFIG_ARCHITECTURE.md](./CONFIG_ARCHITECTURE.md) - Complete configuration system guide
+- [GLOBAL_CONFIG_GUIDE.md](./GLOBAL_CONFIG_GUIDE.md) - Global brand colors and case study data system
 - [CHANGELOG.md](./CHANGELOG.md) - Version history and release notes
 - [IMPLEMENTATION.md](./IMPLEMENTATION.md) - Implementation history and changelog
 - [DESIGN_REFERENCE.md](./DESIGN_REFERENCE.md) - Design system reference
