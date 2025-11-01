@@ -56,9 +56,9 @@ export function Footer({ data }: FooterProps) {
   const sections = footerData.sections || []
 
   return (
-    <footer className="border-t border-border bg-neutral-950 dark:bg-neutral-950 text-neutral-100">
+    <footer className="border-t border-border bg-neutral-950 dark:bg-neutral-950 text-neutral-100" role="contentinfo">
       <div className="container px-4 md:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
+        <nav className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto" aria-label="Footer navigation">
           {sections.map((section: any, sectionIndex: number) => (
             <div
               key={sectionIndex}
@@ -67,9 +67,9 @@ export function Footer({ data }: FooterProps) {
               <h3 className="text-sm font-medium mb-4 text-neutral-50 text-center md:text-left">
                 {section.title}
               </h3>
-              <ul className={sectionIndex === sections.length - 1 ? "flex flex-wrap justify-center md:flex-col md:justify-start gap-x-6 gap-y-2 text-sm" : "space-y-2 text-sm flex flex-col items-center md:items-start"}>
+              <ul className={sectionIndex === sections.length - 1 ? "flex flex-wrap justify-center md:flex-col md:justify-start gap-x-6 gap-y-2 text-sm" : "space-y-2 text-sm flex flex-col items-center md:items-start"} role="list">
                 {section.links.map((link: any, linkIndex: number) => (
-                  <li key={linkIndex}>
+                  <li key={linkIndex} role="listitem">
                     {link.external ? (
                       <a
                         href={link.href}
@@ -92,7 +92,7 @@ export function Footer({ data }: FooterProps) {
               </ul>
             </div>
           ))}
-        </div>
+        </nav>
       </div>
     </footer>
   )

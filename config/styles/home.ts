@@ -6,7 +6,7 @@
 export const homeStyles = {
   // Page wrapper - Responsive background with dark mode support
   page: {
-    className: "min-h-screen bg-gray-50 dark:bg-gray-950",
+    className: "min-h-screen bg-background",
   },
 
   // Hero Section - White container on gray background with dark mode
@@ -33,7 +33,7 @@ export const homeStyles = {
       className: "space-y-3 md:space-y-4",
     },
     badge: {
-      className: "text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 dark:text-gray-400 uppercase tracking-[0.2em] font-light flex items-center gap-3 md:gap-4 justify-center lg:justify-start",
+      className: "text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground uppercase tracking-[0.2em] font-light flex items-center gap-3 md:gap-4 justify-center lg:justify-start",
       fontSize: {
         mobile: "1.25rem",
         desktop: "1.5rem",
@@ -43,7 +43,7 @@ export const homeStyles = {
       className: "w-8 sm:w-10 md:w-12 lg:w-16 h-[2px] bg-gray-400 dark:bg-gray-600",
     },
     title: {
-      className: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-serif leading-[0.9] text-gray-900 dark:text-gray-100",
+      className: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-serif leading-[0.9] text-foreground",
       fontSize: {
         mobile: "4.5rem",
         tablet: "6rem",
@@ -53,7 +53,7 @@ export const homeStyles = {
       lineHeight: "0.9",
     },
     description: {
-      className: "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed font-light pb-6 lg:pb-0",
+      className: "text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-muted-foreground max-w-2xl leading-relaxed font-light pb-6 lg:pb-0",
       fontSize: {
         mobile: "1.25rem",
         desktop: "1.875rem",
@@ -80,7 +80,7 @@ export const homeStyles = {
   // Core Skills Section (Horizontal Scroll)
   coreSkills: {
     section: {
-      className: "bg-gray-50 dark:bg-gray-950 pt-6 md:pt-8 pb-12 md:pb-16 relative",
+      className: "bg-background pt-6 md:pt-8 pb-12 md:pb-16 relative",
     },
     container: {
       className: "overflow-hidden relative max-w-7xl mx-auto",

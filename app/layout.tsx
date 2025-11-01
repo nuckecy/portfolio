@@ -34,7 +34,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavigationWrapper />
-          {children}
+          <main id="main-content">
+            {children}
+          </main>
           <FooterWrapper />
         </ThemeProvider>
       </body>

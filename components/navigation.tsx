@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { TubelightNavBar } from "@/components/ui/tubelight-navbar"
 
 interface NavigationProps {
@@ -7,5 +8,13 @@ interface NavigationProps {
 }
 
 export function Navigation({ data }: NavigationProps) {
-  return <TubelightNavBar />
+  return (
+    <>
+      {/* Skip to main content link for accessibility */}
+      <Link href="#main-content" className="skip-to-main">
+        Skip to main content
+      </Link>
+      <TubelightNavBar />
+    </>
+  )
 }

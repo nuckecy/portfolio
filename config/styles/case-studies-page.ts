@@ -16,7 +16,7 @@ export const caseStudiesPageStyles = {
 
   studies: {
     section: {
-      className: "px-4 md:px-8 pt-16 md:pt-24 pb-16 md:pb-24 bg-gray-50 dark:bg-gray-950"
+      className: "px-4 md:px-8 pt-16 md:pt-24 pb-16 md:pb-24 bg-background"
     },
     container: {
       className: "max-w-7xl mx-auto"
