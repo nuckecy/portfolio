@@ -53,7 +53,7 @@ export function TubelightNavBar({ className }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6",
+        "fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-3",
         className,
       )}
     >
@@ -70,12 +70,15 @@ export function TubelightNavBar({ className }: NavBarProps) {
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
               className={cn(
-                "relative cursor-pointer text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200",
-                "text-foreground/70 hover:text-foreground hover:text-primary",
+                "relative cursor-pointer text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200",
+                "text-foreground/70 hover:text-primary hover:bg-primary/10",
                 active && !isExternal && "text-primary",
               )}
             >
-              <span className="hidden md:inline">{item.name}</span>
+              <span className="hidden md:inline flex items-center gap-2">
+                {isExternal && item.name === 'LinkedIn' && <Icon size={16} strokeWidth={2.5} />}
+                {item.name}
+              </span>
               <span className="md:hidden">
                 <Icon size={18} strokeWidth={2.5} />
               </span>
@@ -108,21 +111,16 @@ export function TubelightNavBar({ className }: NavBarProps) {
         <button
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           className={cn(
-            "relative cursor-pointer text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200",
-            "text-foreground/70 hover:text-primary"
+            "relative cursor-pointer px-5 py-2.5 rounded-full transition-all duration-200",
+            "text-foreground/70 hover:text-primary hover:bg-primary/10"
           )}
           aria-label="Toggle theme"
         >
-          <span className="hidden md:inline text-xs">
-            {theme === 'dark' ? 'Light' : 'Dark'}
-          </span>
-          <span className="md:hidden">
-            {theme === 'dark' ? (
-              <Sun size={18} strokeWidth={2.5} />
-            ) : (
-              <Moon size={18} strokeWidth={2.5} />
-            )}
-          </span>
+          {theme === 'dark' ? (
+            <Sun size={18} strokeWidth={2.5} />
+          ) : (
+            <Moon size={18} strokeWidth={2.5} />
+          )}
         </button>
       </div>
     </div>

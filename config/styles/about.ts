@@ -12,7 +12,7 @@ export const aboutStyles = {
   // Hero Section
   hero: {
     section: {
-      className: "bg-gray-50 dark:bg-gray-950 pt-12 md:pt-16 pb-4",
+      className: "bg-gray-50 dark:bg-gray-950 pt-20 md:pt-24 pb-4",
     },
     container: {
       className: "container mx-auto px-4 md:px-8 max-w-6xl",

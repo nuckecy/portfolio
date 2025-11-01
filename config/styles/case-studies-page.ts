@@ -1,7 +1,7 @@
 export const caseStudiesPageStyles = {
   hero: {
     section: {
-      className: "container mx-auto px-4 md:px-8 py-16 md:py-24 bg-white dark:bg-gray-900"
+      className: "container mx-auto px-4 md:px-8 pt-20 md:pt-28 pb-16 md:pb-24 bg-white dark:bg-gray-900"
     },
     content: {
       className: "max-w-4xl mx-auto text-center space-y-6"

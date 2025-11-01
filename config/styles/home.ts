@@ -12,7 +12,7 @@ export const homeStyles = {
   // Hero Section - White container on gray background with dark mode
   hero: {
     section: {
-      className: "container mx-auto px-4 md:px-8 pt-8 md:pt-12 pb-6 md:pb-8",
+      className: "container mx-auto px-4 md:px-8 pt-20 md:pt-24 pb-6 md:pb-8",
     },
     container: {
       className: "max-w-7xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-sm dark:shadow-gray-800/50 px-4 sm:px-8 md:px-12 lg:px-[100px] py-0",
