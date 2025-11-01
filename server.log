@@ -20,3 +20,491 @@
  GET /_next/static/css/app/layout.css 404 in 310ms
  ✓ Compiled in 692ms (1391 modules)
  ✓ Compiled in 187ms (1391 modules)
+ ○ Compiling /resume ...
+ ✓ Compiled /resume in 590ms (1728 modules)
+ ⨯ Error: Cannot find module './948.js'
+Require stack:
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/resume/page.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:198:28)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:162:22)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js:1:13034
+    at Object.<anonymous> (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js:1:13086)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js:109:84)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:1910:24)
+    at async DevServer.renderToResponseImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:818:17)
+    at async /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/resume/page.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/about'
+}
+ ✓ Compiled /_error in 396ms (1954 modules)
+ GET /about 200 in 59ms
+ ✓ Compiled /_not-found in 201ms (1957 modules)
+ GET /_next/static/css/app/layout.css?v=1762034116293 404 in 254ms
+ GET /_next/static/chunks/app/about/page.js 404 in 253ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 256ms
+ GET /_next/static/chunks/main-app.js?v=1762034116293 404 in 256ms
+ GET /about 200 in 38ms
+ GET /_next/static/css/app/layout.css?v=1762034118444 404 in 11ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 16ms
+ GET /_next/static/chunks/main-app.js?v=1762034118444 404 in 19ms
+ GET /_next/static/chunks/app/about/page.js 404 in 15ms
+ GET /about 200 in 21ms
+ GET /_next/static/css/app/layout.css?v=1762034141609 404 in 34ms
+ GET /_next/static/chunks/main-app.js?v=1762034141609 404 in 64ms
+ GET /_next/static/chunks/app/about/page.js 404 in 64ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 64ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/clsx.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/clsx' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/clsx.js', but to 'Error: Can't resolve './vendor-chunks/clsx' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/clsx (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/clsx.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/next-themes' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/next-themes.js', but to 'Error: Can't resolve './vendor-chunks/next-themes' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/next-themes (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/next-themes.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/motion-utils.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lucide-react' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/lucide-react.js', but to 'Error: Can't resolve './vendor-chunks/lucide-react' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lucide-react (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/lucide-react.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-route-loader/index.js
+ GET /about 200 in 41ms
+ GET /_next/static/css/app/layout.css?v=1762034259235 404 in 14ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 39ms
+ GET /_next/static/chunks/webpack.js?v=1762034259235 404 in 41ms
+ GET /_next/static/chunks/main-app.js?v=1762034259235 404 in 40ms
+ GET /_next/static/chunks/app/about/page.js 404 in 40ms
+ GET /_next/static/chunks/app/layout.js 404 in 39ms
+ ⨯ Error: Cannot find module './948.js'
+Require stack:
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:198:28)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:162:22)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/page.js:1:15316
+    at Object.<anonymous> (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/page.js:1:15369)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js:109:84)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:1910:24)
+    at async DevServer.renderToResponseImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:818:17)
+    at async /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './682.js'
+Require stack:
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:198:28)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:162:22)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/pages/_document.js:1:335
+    at Object.<anonymous> (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/pages/_document.js:1:376)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js:109:84)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ HEAD / 500 in 485ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/clsx' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/clsx.js', but to 'Error: Can't resolve './vendor-chunks/clsx' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/clsx (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/clsx.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/next-themes' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/next-themes.js', but to 'Error: Can't resolve './vendor-chunks/next-themes' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/next-themes (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/next-themes.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/lucide-react' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/lucide-react.js', but to 'Error: Can't resolve './vendor-chunks/lucide-react' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/lucide-react (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/lucide-react.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/motion-utils' in /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server for build dependencies doesn't lead to expected result '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/motion-utils.js', but to 'Error: Can't resolve './vendor-chunks/motion-utils' in '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/motion-utils (expected /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/vendor-chunks/motion-utils.js)
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/about/page.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/handle-externals.js
+<w>  at file dependencies /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+ ⨯ Error: Cannot find module './948.js'
+Require stack:
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:198:28)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:162:22)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/page.js:1:15316
+    at Object.<anonymous> (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/page.js:1:15369)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js:109:84)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:103:26)
+    at async DevServer.findPageComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:714:36)
+    at async DevServer.findPageComponents (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:1910:24)
+    at async DevServer.renderToResponseImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:922:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/base-server.js:818:17)
+    at async /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:179:21)
+    at async handleRequest (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:359:24)
+    at async requestHandlerImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js:383:13)
+    at async Server.requestListener (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/'
+}
+ ⨯ Error: Cannot find module './682.js'
+Require stack:
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js
+- /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1369:15)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Module._load (node:internal/modules/cjs/loader:1179:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at __webpack_require__.f.require (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:198:28)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js:162:22)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/pages/_document.js:1:335
+    at Object.<anonymous> (/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/pages/_document.js:1:376)
+    at Module._compile (node:internal/modules/cjs/loader:1692:14)
+    at Object..js (node:internal/modules/cjs/loader:1824:10)
+    at Module.load (node:internal/modules/cjs/loader:1427:32)
+    at Module._load (node:internal/modules/cjs/loader:1250:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1449:12)
+    at mod.require (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:135:16)
+    at requirePage (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js:109:84)
+    at /Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js:71:33)
+    at async DevServer.findPageComponentsImpl (/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/next-server.js:714:36) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/webpack-runtime.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/.next/server/app/_not-found/page.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/require.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/load-components.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/build/utils.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/otobong.okoko/Desktop/zalando/portfolio/node_modules/next/dist/server/lib/start-server.js'
+  ]
+}
+ GET / 500 in 17ms
+[?25h
