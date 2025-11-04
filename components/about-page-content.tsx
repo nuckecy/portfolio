@@ -52,7 +52,7 @@ export function AboutPageContent({ data }: AboutPageContentProps) {
                 {/* Contact Button */}
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors font-medium"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors font-medium"
                 >
                   Get in touch
                 </Link>

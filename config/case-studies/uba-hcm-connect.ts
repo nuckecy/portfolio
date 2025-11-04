@@ -12,7 +12,7 @@ export const ubaHcmConnectConfig = {
   cardInfo: {
     title: "UBA HCM Connect",
     subtitle: "Enterprise HR Management System",
-    description: "Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
+    description: "Unified 12 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
   },
 
   // Medium full-width hero - UNIQUE combination
@@ -22,7 +22,7 @@ export const ubaHcmConnectConfig = {
     title: "Employee Self-Service Revolution: From Paper to Digital",
     titleSize: "text-3xl md:text-4xl lg:text-5xl xl:text-6xl",
     titleWeight: "font-light",
-    description: "Enterprise HR Management System. Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
+    description: "Enterprise HR Management System. Unified 12 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "Enterprise UX", "Change Management"],
     centered: true,

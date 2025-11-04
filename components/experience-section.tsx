@@ -1,6 +1,7 @@
 "use client"
 
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
+import { ExpandableText } from './expandable-text'
 
 interface Experience {
   company: string
@@ -115,54 +116,101 @@ const experiences: Experience[] = [
 ]
 
 export function ExperienceSection() {
+  const [expandedProjects, setExpandedProjects] = useState<{[key: string]: boolean}>({})
+  
+  const toggleProject = (key: string) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }))
+  }
+  
   return (
     <div className="space-y-8">
       <div className="border-b border-gray-300 dark:border-gray-700 pb-4">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Experience</h2>
       </div>
 
-      {experiences.map((exp, idx) => (
+            {experiences.map((exp, idx) => (
         <div
           key={idx}
           className="pb-8 border-b border-gray-200 dark:border-gray-700 last:border-b-0"
         >
-          {/* Company & Position Header */}
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+          {/* LinkedIn-Style Header with Logo */}
+          <div className="flex gap-3 mb-4">
+            {/* Company Logo Placeholder */}
+            <div className="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded flex-shrink-0 flex items-center justify-center text-gray-600 dark:text-gray-400 font-semibold text-lg">
+              {exp.company.charAt(0)}
+            </div>
+            
+            {/* Company & Position Info */}
+            <div className="flex-1 min-w-0">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 {exp.position}
               </h3>
-              <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mt-1">
-                <span className="font-medium text-gray-700 dark:text-gray-300">
-                  {exp.company}
-                </span>
-                <span className="hidden md:inline text-gray-400 dark:text-gray-500">•</span>
-                <span className="text-gray-600 dark:text-gray-400">{exp.location}</span>
+              <div className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                {exp.company}
               </div>
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400 font-medium md:text-right">
-              {exp.dateRange}
+              <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400 mt-0.5">
+                <span>{exp.dateRange}</span>
+                <span>·</span>
+                <span>{exp.location}</span>
+              </div>
             </div>
           </div>
 
-          {/* Description */}
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-sm">
-            {exp.description}
-          </p>
+          {/* Description - Make expandable if long */}
+          {exp.description.length > 200 ? (
+            <ExpandableText 
+              text={exp.description}
+              maxLength={200}
+              className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-sm"
+            />
+          ) : (
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 text-sm">
+              {exp.description}
+            </p>
+          )}
 
-          {/* Achievements List */}
+          {/* Achievements List - Show first 3, expandable for more */}
           {exp.achievements.length > 0 && (
-            <div className="mb-4 space-y-2">
-              {exp.achievements.map((achievement, aidx) => (
-                <div key={aidx} className="flex gap-3">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold text-sm flex-shrink-0 mt-1">
-                    •
-                  </span>
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                    {achievement}
-                  </p>
-                </div>
-              ))}
+            <div className="mb-6">
+              <div className="space-y-2">
+                {exp.achievements.slice(0, 3).map((achievement, aidx) => (
+                  <div key={aidx} className="flex gap-3">
+                    <span className="text-blue-600 dark:text-blue-400 font-bold text-sm flex-shrink-0 mt-1">
+                      •
+                    </span>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                      {achievement}
+                    </p>
+                  </div>
+                ))}
+                
+                {/* Show remaining achievements if expanded */}
+                {expandedProjects[`achievements-${idx}`] && exp.achievements.length > 3 && (
+                  exp.achievements.slice(3).map((achievement, aidx) => (
+                    <div key={aidx + 3} className="flex gap-3">
+                      <span className="text-blue-600 dark:text-blue-400 font-bold text-sm flex-shrink-0 mt-1">
+                        •
+                      </span>
+                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        {achievement}
+                      </p>
+                    </div>
+                  ))
+                )}
+              </div>
+              
+              {/* Show more/less button for achievements */}
+              {exp.achievements.length > 3 && (
+                <button
+                  onClick={() => toggleProject(`achievements-${idx}`)}
+                  className="text-blue-600 dark:text-blue-400 hover:underline font-medium text-sm mt-2"
+                >
+                  {expandedProjects[`achievements-${idx}`] ? 'Show less' : `Show ${exp.achievements.length - 3} more`}
+                </button>
+              )}
             </div>
           )}
 
@@ -180,9 +228,11 @@ export function ExperienceSection() {
                     <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide mb-1">
                       Problem
                     </p>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                      {project.problem}
-                    </p>
+                    <ExpandableText 
+                      text={project.problem}
+                      maxLength={150}
+                      className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                    />
                   </div>
 
                   {/* Solution */}
@@ -190,9 +240,11 @@ export function ExperienceSection() {
                     <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide mb-1">
                       Solution
                     </p>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                      {project.solution}
-                    </p>
+                    <ExpandableText 
+                      text={project.solution}
+                      maxLength={150}
+                      className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed"
+                    />
                   </div>
 
                   {/* Impact */}

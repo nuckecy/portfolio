@@ -24,7 +24,7 @@ export const caseStudiesPageConfig = {
       year: "2021",
       title: "UBA HCM Connect",
       subtitle: "Enterprise HR Management System",
-      description: "Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
+      description: "Unified 12 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
       metrics: [
         "$960K annual savings",
         "91% process automation",

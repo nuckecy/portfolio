@@ -28,7 +28,7 @@ const caseStudiesData = [
     year: '2021',
     title: 'UBA HCM Connect',
     subtitle: 'Transforming HR Operations for 20,000+ Employees Across Africa',
-    description: 'Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.',
+    description: 'Unified 12 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.',
     metrics: ['$960K annual savings', '91% process automation', '94% employee adoption'],
     skills: ['Enterprise Design', 'System Design'],
     brandColor: 'uba',

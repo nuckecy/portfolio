@@ -133,7 +133,7 @@ export const homeConfig = {
       {
         title: "UBA HCM Connect",
         subtitle: "Enterprise HR Management System.",
-        description: "Unified 7 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
+        description: "Unified 12 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
         tags: ["Enterprise Design", "HR Tech"],
         image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
         imageAlt: "Modern office workspace and collaboration",

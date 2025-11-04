@@ -21,16 +21,28 @@ function getGradientBorderClass(brandColor: string): string {
   return brandColors[brandColor] || "bg-gray-400"
 }
 
-// Helper function to get brand text color class
+// Helper function to get brand text color class (light) with dark mode fallback
 function getBrandTextClass(brandColor: string): string {
   const brandTextColors: { [key: string]: string } = {
-    "zalando": "text-brand-zalando dark:text-brand-zalando",
-    "uba": "text-brand-uba dark:text-brand-uba",
-    "cashamm": "text-brand-cashamm dark:text-brand-cashamm",
-    "modus": "text-brand-modus dark:text-brand-modus",
-    "sterling": "text-brand-sterling dark:text-brand-sterling"
+    "zalando": "text-brand-zalando dark:text-gray-400",
+    "uba": "text-brand-uba dark:text-gray-400",
+    "cashamm": "text-brand-cashamm dark:text-gray-400",
+    "modus": "text-brand-modus dark:text-gray-400",
+    "sterling": "text-brand-sterling dark:text-gray-400"
   }
   return brandTextColors[brandColor] || "text-gray-500 dark:text-gray-400"
+}
+
+// Helper function to get card border color (brand in light, gray in dark)
+function getCardBorderDarkClass(brandColor: string): string {
+  const brandBorderColors: { [key: string]: string } = {
+    "zalando": "border-brand-zalando dark:border-gray-500",
+    "uba": "border-brand-uba dark:border-gray-500",
+    "cashamm": "border-brand-cashamm dark:border-gray-500",
+    "modus": "border-brand-modus dark:border-gray-500",
+    "sterling": "border-brand-sterling dark:border-gray-500"
+  }
+  return brandBorderColors[brandColor] || "border-gray-200 dark:border-gray-500"
 }
 
 export default async function CaseStudiesPage() {
@@ -61,9 +73,9 @@ export default async function CaseStudiesPage() {
         <div className={styles.studies.container.className}>
           <div className={styles.studies.grid.className}>
             {studies.map((study: any, index: number) => (
-              <div key={index} className={`${getGradientBorderClass(study.brandColor || study.company)} rounded-[8px] p-[1px] opacity-75 h-full`}>
-                <div className="bg-white dark:bg-gray-800 rounded-[8px] h-full">
-                  <div className={`${styles.studies.card.className} rounded-[8px] border-0`}>
+              <Link key={index} href={study.href} className={`${getGradientBorderClass(study.brandColor || study.company)} rounded-[8px] p-[1px] opacity-75 dark:opacity-100 dark:bg-gray-500 h-full`}>
+                <div className="bg-white dark:bg-gray-800 rounded-[8px] h-full flex flex-col justify-between">
+                  <div className={`${styles.studies.card.className} rounded-[8px] border-0 flex-grow`}>
                     <div className={styles.studies.cardHeader.className}>
                   {/* Company */}
                   <div className={styles.studies.topRow.className}>
@@ -85,8 +97,9 @@ export default async function CaseStudiesPage() {
                     {' '}
                     {study.description}
                   </p>
+                  </div>
 
-                  {/* Skills Pills (Below Description) */}
+                  {/* Skills Pills (Bottom of Card) */}
                   <div className={styles.studies.skills.className} role="region" aria-label="Case study skills">
                     {study.skills.map((skill: string, skillIndex: number) => (
                       <span key={skillIndex} className={styles.studies.skill.className} tabIndex={-1}>
@@ -95,15 +108,8 @@ export default async function CaseStudiesPage() {
                     ))}
                   </div>
                 </div>
-
-                    {/* View Case Study Button */}
-                    <Link href={study.href} className={styles.studies.viewButton.className}>
-                      <span className="hidden">View Case Study</span>
-                      <span>→</span>
-                    </Link>
-                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

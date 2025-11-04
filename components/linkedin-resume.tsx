@@ -1,6 +1,9 @@
 "use client"
 
 import ReactMarkdown from 'react-markdown'
+import { ExpandableText } from './expandable-text'
+import { ExpandableSection } from './expandable-section'
+import { useState } from 'react'
 
 interface LinkedInResumeProps {
   content: string
@@ -30,6 +33,8 @@ function extractText(children: any): string {
 }
 
 export function LinkedInResume({ content }: LinkedInResumeProps) {
+  const [showAllSkills, setShowAllSkills] = useState(false)
+  
   // Filter out the experience section from markdown (we'll use the structured ExperienceSection component instead)
   const lines = content.split('\n')
   const experienceStartIndex = lines.findIndex(line => 
@@ -41,7 +46,7 @@ export function LinkedInResume({ content }: LinkedInResumeProps) {
     : content
   
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <ReactMarkdown
         components={{
           h1: ({ children }) => null, // Skip the main title as we have it in header
@@ -49,17 +54,34 @@ export function LinkedInResume({ content }: LinkedInResumeProps) {
             const rawText = extractText(children)
             const text = cleanText(rawText)
             if (!text) return null
-            if (text.includes('EXPERIENCE') || text.includes('Professional Journey') || text.includes('Design Philosophy')) {
+            
+            // For sections that should be expandable
+            if (text.includes('Professional Journey')) {
               return (
-                <div className="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
-                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                    {text.replace('EXPERIENCE: DETAILS & PROJECTS', 'Experience').replace('Professional Journey', 'About')}
+                <div className="mb-2">
+                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+                    About
                   </h2>
                 </div>
               )
             }
+            
+            if (text.includes('Design Philosophy')) {
+              return (
+                <div className="mb-2 mt-8">
+                  <h2 className="text-2xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
+                    Design Philosophy
+                  </h2>
+                </div>
+              )
+            }
+            
+            if (text.includes('EXPERIENCE')) {
+              return null // Skip, handled by ExperienceSection
+            }
+            
             return (
-              <div className="border-b border-gray-200 dark:border-gray-700 pb-2 mb-6 mt-12">
+              <div className="border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 mt-8">
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">{text}</h2>
               </div>
             )
@@ -120,12 +142,24 @@ export function LinkedInResume({ content }: LinkedInResumeProps) {
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">{text.replace(/"/g, '')}</p>
               )
             }
+            
+            // Use ExpandableText for long paragraphs in About and Philosophy sections
+            if (text.length > 250) {
+              return (
+                <ExpandableText 
+                  text={text.replace(/"/g, '')} 
+                  maxLength={250}
+                  className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
+                />
+              )
+            }
+            
             return (
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">{text.replace(/"/g, '')}</p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{text.replace(/"/g, '')}</p>
             )
           },
           ul: ({ children }) => (
-            <div className="space-y-1 mb-4">{children}</div>
+            <div className="space-y-2 mb-6">{children}</div>
           ),
           li: ({ children }) => {
             const rawText = extractText(children)
@@ -134,15 +168,17 @@ export function LinkedInResume({ content }: LinkedInResumeProps) {
             // Achievement items - remove bullets and quotes
             if (text.includes('*') || text.startsWith('We ') || text.startsWith('Improved') || text.startsWith('Reduced') || text.startsWith('Increased')) {
               return (
-                <div className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  {text.replace(/^\*\s*/, '').replace(/"/g, '')}
+                <div className="flex items-start gap-2 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                  <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                  <span>{text.replace(/^\*\s*/, '').replace(/"/g, '')}</span>
                 </div>
               )
             }
             // Skills/competencies - remove bullets and quotes
             return (
-              <div className="text-gray-700 dark:text-gray-300 text-sm">
-                {text.replace(/^\*\s*/, '').replace(/"/g, '')}
+              <div className="flex items-start gap-2 text-gray-700 dark:text-gray-300 text-sm">
+                <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                <span>{text.replace(/^\*\s*/, '').replace(/"/g, '')}</span>
               </div>
             )
           },

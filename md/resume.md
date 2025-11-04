@@ -1,5 +1,5 @@
 # Otobong Okoko
-## Senior Product Designer & UX Engineer
+## Senior Product Designer - Building Products from Zero to Scale | AI | SaaS | Enterprise | B2B & B2C
 
 Portfolio | LinkedIn
 otobongsok@gmail.com

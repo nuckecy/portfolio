@@ -28,7 +28,8 @@ export const caseStudiesPageStyles = {
       className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 items-stretch"
     },
     card: {
-      className: "group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 md:p-5 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 h-full flex flex-col"
+      // base card styling; brand color applied dynamically in light mode, gray in dark mode
+      className: "group bg-white dark:bg-gray-800 border rounded-2xl p-4 md:p-5 hover:border-gray-300 dark:hover:border-gray-500 transition-all duration-300 h-full flex flex-col"
     },
     cardHeader: {
       className: "mb-4 flex-grow"
@@ -37,13 +38,15 @@ export const caseStudiesPageStyles = {
       className: "flex flex-wrap items-start justify-between mb-2 gap-2"
     },
     company: {
+      // base company styling; brand color applied dynamically in light mode, gray in dark mode
       className: "text-xs font-semibold uppercase tracking-wider"
     },
     skills: {
       className: "flex flex-wrap gap-1 justify-start mt-4"
     },
     skill: {
-      className: "px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors"
+      // clearer borders and text in dark mode for skill pills
+      className: "px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-100 rounded-full border border-gray-200 dark:border-gray-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors"
     },
     title: {
       className: "text-lg md:text-xl font-normal text-black dark:text-white mb-2"
@@ -61,7 +64,7 @@ export const caseStudiesPageStyles = {
       className: "flex items-center gap-1 text-xs text-black dark:text-gray-200"
     },
     metricBullet: {
-      className: "w-1 h-1 bg-gray-400 dark:bg-gray-500 rounded-full"
+      className: "w-1 h-1 bg-gray-400 dark:bg-gray-400 rounded-full"
     },
     viewButton: {
       className: "ml-auto w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors"

@@ -62,7 +62,7 @@ export function TubelightNavBar({ className }: NavBarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-1 md:gap-2 bg-background/80 border border-border backdrop-blur-lg py-2 px-2 md:px-3 rounded-full shadow-lg">
+      <div className="flex items-center gap-1 md:gap-2 bg-background/80 border border-border dark:border-gray-600 backdrop-blur-lg py-2 px-2 md:px-3 rounded-full shadow-lg">
         {navItems.map((item) => {
           const Icon = item.icon
           const active = isActive(item.url)
