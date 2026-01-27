@@ -33,14 +33,14 @@ export const zalandoContextualConfig = {
   },
 
   heroImage: {
-    url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80",
-    alt: "E-commerce and personalized shopping experience",
+    url: "/images/return-refund.png?v=2",
+    alt: "Return and refund customer support interface",
   },
 
   carouselImages: [
     {
-      url: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80",
-      alt: "Customer shopping on e-commerce platform",
+      url: "/images/return-refund.png?v=2",
+      alt: "Return and refund customer support interface",
     },
     {
       url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80",
