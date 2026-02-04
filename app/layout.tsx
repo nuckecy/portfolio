@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NavigationWrapper } from "@/components/navigation-wrapper";
 import { FooterWrapper } from "@/components/footer-wrapper";
+import { ConditionalMain } from "@/components/conditional-main";
 
 export const metadata: Metadata = {
   title: "Product Designer Portfolio",
@@ -34,9 +35,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavigationWrapper />
-          <main id="main-content">
+          <ConditionalMain>
             {children}
-          </main>
+          </ConditionalMain>
           <FooterWrapper />
         </ThemeProvider>
       </body>
