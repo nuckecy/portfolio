@@ -8,10 +8,6 @@ export default function CaseStudiesLayout({
   return (
     <>
       <style>{`
-        main {
-          padding: 0 !important;
-          min-height: 100vh !important;
-        }
         html, body {
           overflow: hidden !important;
           background: #0A0A0A !important;
