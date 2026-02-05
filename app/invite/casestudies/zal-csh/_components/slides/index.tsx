@@ -1171,29 +1171,29 @@ export const SlideTesting = () => {
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 2fr',
-        gap: 32,
+        gridTemplateRows: 'auto 1fr',
+        gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {/* Left: Big stat */}
-        <Card style={{
-          padding: 48,
-          borderRadius: STYLE.radius.bento,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
-        }}>
-          <div style={{ ...typeStyle('header3'), fontSize: 180, lineHeight: 0.9 }}>8<span style={{ color: STYLE.colors.gray600 }}>/12</span></div>
-          <div style={{ ...typeStyle('statLabel', STYLE.colors.gray400), marginTop: 24 }}>participants completed primary flow</div>
-          <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray600), marginTop: 8 }}>(first round success rate)</div>
-        </Card>
-
-        {/* Right: Findings + image */}
+        {/* Left column: Big stat + Fixed cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          {/* Stack Fixed cards horizontally */}
+          <Card style={{
+            padding: 48,
+            borderRadius: STYLE.radius.bento,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            flex: 1,
+          }}>
+            <div style={{ ...typeStyle('header3'), fontSize: 180, lineHeight: 0.9 }}>8<span style={{ color: STYLE.colors.gray600 }}>/12</span></div>
+            <div style={{ ...typeStyle('statLabel', STYLE.colors.gray400), marginTop: 24 }}>participants completed primary flow</div>
+            <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray600), marginTop: 8 }}>(first round success rate)</div>
+          </Card>
+          {/* Fixed cards below stat */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {findings.filter(f => f.status === 'Fixed').map((f, i) => (
               <Card key={i} style={{
@@ -1219,6 +1219,10 @@ export const SlideTesting = () => {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Right column: Insight + image */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {/* Insight card */}
           {findings.filter(f => f.status === 'Insight').map((f, i) => (
             <Card key={i} style={{
