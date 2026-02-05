@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { STYLE, typeStyle } from './styles/tokens';
+import { STYLE } from './styles/tokens';
 import { navIcons } from './styles/icons';
 import { usePresentation } from './hooks/usePresentation';
 import { slideData } from './data/slides';
@@ -48,7 +48,7 @@ export default function PresentationApp() {
   const {
     currentSlide, setCurrentSlide,
     isPresenting, showNotes, setShowNotes,
-    isMobilePortrait, windowSize, isMounted,
+    windowSize, isMounted,
     goNext, goPrev, togglePresent, exitPresent,
     onTouchStart, onTouchEnd, progress,
   } = usePresentation(slides.length);
@@ -105,27 +105,8 @@ export default function PresentationApp() {
     );
   }
 
-  // PRESENT MODE: Mobile portrait
-  if (isPresenting && isMobilePortrait) {
-    return (
-      <div
-        role="alert"
-        style={{
-          width: '100vw', height: '100vh', background: '#000',
-          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 24,
-        }}
-      >
-        <div aria-hidden="true" style={{ color: STYLE.colors.gray500, animation: 'spin 2s ease-in-out infinite' }}>{navIcons.rotate}</div>
-        <p style={{ ...typeStyle('paragraph2', STYLE.colors.gray500), textAlign: 'center', padding: '0 40px' }}>
-          Rotate your device to landscape for the best viewing experience
-        </p>
-        <button onClick={exitPresent} aria-label="Exit presentation mode" style={{ ...btnStyle(), marginTop: 16, padding: '10px 20px' }}>Exit presentation</button>
-        <style>{`@keyframes spin { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(-90deg); } }`}</style>
-      </div>
-    );
-  }
-
   // PRESENT MODE: Fullscreen
+  // Note: Portrait mobile is now handled by CSS rotation in layout.tsx - content always displays in landscape
   if (isPresenting) {
     // In present mode, use FULL viewport for slide scaling (controls will overlay at bottom)
     const fitScale = Math.min(windowSize.w / BASE_W, windowSize.h / BASE_H);
@@ -338,21 +319,35 @@ export default function PresentationApp() {
             </div>
           )}
           
-          <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
             {slides.map((slide, i) => (
               <button
                 key={i}
                 className="slide-nav-dot"
                 role="tab"
                 aria-selected={i === currentSlide}
-                aria-label={`Go to slide ${i + 1}: ${slide.title}`}
+                aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
                 onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
                 style={{
-                  width: i === currentSlide ? 24 : 8, height: 8, borderRadius: 4,
-                  background: i === currentSlide ? STYLE.colors.white : STYLE.colors.gray800,
-                  border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', padding: 0,
+                  width: 24,
+                  height: 24,
+                  borderRadius: '50%',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontFamily: STYLE.fonts.heading,
+                  fontSize: 11,
+                  fontWeight: 500,
+                  color: i === currentSlide ? STYLE.colors.white : STYLE.colors.gray700,
+                  transition: 'all 0.2s ease',
+                  padding: 0,
                 }}
-              />
+              >
+                {i === 0 ? navIcons.home : i + 1}
+              </button>
             ))}
           </div>
           <div style={{ position: 'relative' }}>
@@ -638,21 +633,35 @@ export default function PresentationApp() {
         )}
         </div>
 
-        <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+        <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
           {slides.map((slide, i) => (
             <button
               key={i}
               className="slide-nav-dot"
               role="tab"
               aria-selected={i === currentSlide}
-              aria-label={`Go to slide ${i + 1}: ${slide.title}`}
+              aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
               onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
               style={{
-                width: i === currentSlide ? 24 : 8, height: 8, borderRadius: 4,
-                background: i === currentSlide ? STYLE.colors.white : STYLE.colors.gray800,
-                border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', padding: 0,
+                width: 24,
+                height: 24,
+                borderRadius: '50%',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: STYLE.fonts.heading,
+                fontSize: 11,
+                fontWeight: 500,
+                color: i === currentSlide ? STYLE.colors.white : STYLE.colors.gray700,
+                transition: 'all 0.2s ease',
+                padding: 0,
               }}
-            />
+            >
+              {i === 0 ? navIcons.home : i + 1}
+            </button>
           ))}
         </div>
 

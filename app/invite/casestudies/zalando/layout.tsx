@@ -1,8 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: "Zalando Case Study | Otobong Okoko",
   description: "Transforming Customer Support - Context-aware self-help platform at Zalando",
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function ZalandoLayout({
@@ -25,6 +32,20 @@ export default function ZalandoLayout({
           background: #0A0A0A !important;
           margin: 0 !important;
           padding: 0 !important;
+        }
+
+        /* Force landscape orientation on mobile by rotating content when in portrait */
+        @media screen and (orientation: portrait) and (max-width: 1024px) {
+          html {
+            transform: rotate(-90deg);
+            transform-origin: left top;
+            width: 100vh;
+            height: 100vw;
+            overflow-x: hidden;
+            position: absolute;
+            top: 100%;
+            left: 0;
+          }
         }
       `}</style>
       {children}

@@ -14,7 +14,9 @@ export function usePresentation(totalSlides: number) {
   // Start with fixed defaults to avoid hydration mismatch - will update after mount
   const [windowSize, setWindowSize] = useState({ w: 1920, h: 1080 });
   const [isMounted, setIsMounted] = useState(false);
+  const [isPortraitRotated, setIsPortraitRotated] = useState(false);
   const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
 
   // Set mounted state and initial window size after hydration, ensure notes are hidden
   useEffect(() => {
@@ -69,12 +71,14 @@ export function usePresentation(totalSlides: number) {
     return () => window.removeEventListener('resize', resize);
   }, []);
 
-  // Mobile orientation detection
+  // Mobile orientation detection + CSS rotation tracking
   useEffect(() => {
     const check = () => {
       const isMobile = window.innerWidth < 768 || 'ontouchstart' in window;
       const isPortrait = window.innerHeight > window.innerWidth;
       setIsMobilePortrait(isMobile && isPortrait && isPresenting);
+      // Track if CSS rotation is active (portrait on mobile triggers CSS transform)
+      setIsPortraitRotated(isMobile && isPortrait);
     };
     check();
     window.addEventListener('resize', check);
@@ -92,13 +96,28 @@ export function usePresentation(totalSlides: number) {
     return () => document.removeEventListener('fullscreenchange', h);
   }, []);
 
-  // Touch swipe handlers
-  const onTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
+  // Touch swipe handlers (adjusted for CSS rotation when in portrait mode)
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
   const onTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const diff = e.changedTouches[0].clientX - touchStartX.current;
-    if (Math.abs(diff) > 60) { diff < 0 ? goNext() : goPrev(); }
+    if (touchStartX.current === null || touchStartY.current === null) return;
+
+    // When CSS rotates the page -90deg, touch coordinates are still in original portrait system
+    // Horizontal swipes in the rotated view appear as vertical swipes in the coordinate system
+    if (isPortraitRotated) {
+      // Use Y coordinates: swipe up (Y decreases) = next, swipe down (Y increases) = prev
+      const diffY = e.changedTouches[0].clientY - touchStartY.current;
+      if (Math.abs(diffY) > 60) { diffY < 0 ? goNext() : goPrev(); }
+    } else {
+      // Normal case: use X coordinates
+      const diffX = e.changedTouches[0].clientX - touchStartX.current;
+      if (Math.abs(diffX) > 60) { diffX < 0 ? goNext() : goPrev(); }
+    }
+
     touchStartX.current = null;
+    touchStartY.current = null;
   };
 
   const progress = ((currentSlide + 1) / totalSlides) * 100;
