@@ -36,18 +36,21 @@ export default function ZalandoLayout({
 
         /* Force landscape orientation on mobile by rotating content when in portrait */
         @media screen and (orientation: portrait) and (max-width: 1024px) {
-          html, body {
-            width: 100vh !important;
-            height: 100vw !important;
+          html {
+            width: 100% !important;
+            height: 100% !important;
             overflow: hidden !important;
           }
 
           body {
+            width: 100vh !important;
+            height: 100vw !important;
             transform: rotate(90deg);
             transform-origin: top left;
-            position: absolute;
+            position: fixed;
             top: 0;
-            left: 100%;
+            left: 100vw;
+            overflow: hidden !important;
           }
         }
       `}</style>
