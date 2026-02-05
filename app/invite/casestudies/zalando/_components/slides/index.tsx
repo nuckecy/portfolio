@@ -2057,31 +2057,43 @@ export const SlideResultsCustomer = () => {
       <SectionLabel section="Results & Impact" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Customer impact</h2>
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gridTemplateRows: '1fr 1fr',
+        display: 'flex',
         gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {metrics.map((m, i) => (
-          <BentoCard key={i} variant={m.variant} style={{
-            padding: 48,
-            borderRadius: STYLE.radius.bento,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          }}>
-            {(textColor, textSecondary) => (
-              <>
-                <div style={{ ...typeStyle('header3'), color: textColor, fontSize: 120, lineHeight: 0.9 }}>{m.value}</div>
-                <div style={{ ...typeStyle('statLabel'), color: textColor, marginTop: 16 }}>{m.label}</div>
-                <div style={{ ...typeStyle('paragraph3'), color: textSecondary, marginTop: 8 }}>{m.desc}</div>
-              </>
-            )}
-          </BentoCard>
-        ))}
+        {/* Left: Cards container - 65% */}
+        <div style={{
+          width: '65%',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridTemplateRows: '1fr 1fr',
+          gap: 24,
+        }}>
+          {metrics.map((m, i) => (
+            <BentoCard key={i} variant={m.variant} style={{
+              padding: 32,
+              borderRadius: STYLE.radius.bento,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+            }}>
+              {(textColor, textSecondary) => (
+                <>
+                  <div style={{ ...typeStyle('header3'), color: textColor, fontSize: 80, lineHeight: 0.9 }}>{m.value}</div>
+                  <div style={{ ...typeStyle('statLabel'), color: textColor, marginTop: 12 }}>{m.label}</div>
+                  <div style={{ ...typeStyle('paragraph3'), color: textSecondary, marginTop: 6 }}>{m.desc}</div>
+                </>
+              )}
+            </BentoCard>
+          ))}
+        </div>
+
+        {/* Right: Image placeholder - 35% */}
+        <div style={{ width: '35%' }}>
+          <ImagePlaceholder label="Customer impact visual" style={{ height: '100%', borderRadius: STYLE.radius.bento }} />
+        </div>
       </div>
     </div>
   );
