@@ -6,7 +6,7 @@ import { STYLE, typeStyle, slidePadding } from '../styles/tokens';
 import { Card, BentoCard, IconBox, ImagePlaceholder } from '../primitives';
 import { SectionLabel } from '../ui/SectionLabel';
 import { ImageModal } from '../ui/ImageModal';
-import { icons } from '../styles/icons';
+import { icons, navIcons } from '../styles/icons';
 
 const slideBase: React.CSSProperties = {
   ...slidePadding,
@@ -1675,6 +1675,200 @@ export const SlideEscalation = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideBeforeAfter = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+  const sliderImages = [
+    { src: '/images/presentation-assets/Old FAQ - Delivery.png', label: 'Old FAQ - Delivery' },
+    { src: '/images/presentation-assets/Old FAQ - Where is my Order.png', label: 'Old FAQ - Where is my Order' },
+    { src: '/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png', label: 'New FAQ Mobile - Delivery Status' },
+    { src: '/images/presentation-assets/New FAQ [Web] - Delivery Status.png', label: 'New FAQ Web - Delivery Status' },
+    { src: '/images/presentation-assets/New FAQ - Delivery Status (Mobile & Web).png', label: 'Delivery Status Comparison' },
+    { src: '/images/presentation-assets/New FAQ - Where is my Order (Mobile & Web).png', label: 'Where is my Order Comparison' },
+    { src: '/images/presentation-assets/New FAQ [Mobile] - Where is my Order.png', label: 'New FAQ Mobile - Where is my Order' },
+    { src: '/images/presentation-assets/New FAQ [Web] - Where is my Order.png', label: 'New FAQ Web - Where is my Order' },
+  ];
+
+  const goNextImage = () => setCurrentImageIndex((i) => Math.min(i + 1, sliderImages.length - 1));
+  const goPrevImage = () => setCurrentImageIndex((i) => Math.max(i - 1, 0));
+
+  // Keyboard navigation for slider
+  React.useEffect(() => {
+    if (!isModalOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsModalOpen(false);
+      if (e.key === 'ArrowRight') goNextImage();
+      if (e.key === 'ArrowLeft') goPrevImage();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [isModalOpen]);
+
+  // SliderModal component
+  const SliderModal = () => {
+    if (!isModalOpen || typeof document === 'undefined') return null;
+    return ReactDOM.createPortal(
+      <div
+        onClick={() => setIsModalOpen(false)}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0,0,0,0.95)',
+          zIndex: 10000,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        {/* Header */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '16px 24px',
+            borderBottom: `1px solid ${STYLE.colors.border}`,
+          }}
+        >
+          <span style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), fontFamily: STYLE.fonts.body }}>
+            {sliderImages[currentImageIndex].label}
+          </span>
+          <span style={{ ...typeStyle('paragraph2', STYLE.colors.gray500) }}>
+            {currentImageIndex + 1} / {sliderImages.length}
+          </span>
+          <button
+            onClick={() => setIsModalOpen(false)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: STYLE.colors.gray400,
+              cursor: 'pointer',
+              padding: 8,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Image area with navigation */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '24px 80px',
+            position: 'relative',
+            minHeight: 0,
+          }}
+        >
+          {/* Prev button */}
+          <button
+            onClick={goPrevImage}
+            disabled={currentImageIndex === 0}
+            style={{
+              position: 'absolute',
+              left: 24,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: STYLE.colors.surface,
+              border: `1px solid ${STYLE.colors.border}`,
+              borderRadius: '50%',
+              width: 48,
+              height: 48,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: currentImageIndex === 0 ? 'not-allowed' : 'pointer',
+              opacity: currentImageIndex === 0 ? 0.3 : 1,
+              color: STYLE.colors.white,
+            }}
+          >
+            {navIcons.chevLeft}
+          </button>
+
+          {/* Current image */}
+          <img
+            src={sliderImages[currentImageIndex].src}
+            alt={sliderImages[currentImageIndex].label}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              objectFit: 'contain',
+              borderRadius: STYLE.radius.bento,
+              boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+            }}
+          />
+
+          {/* Next button */}
+          <button
+            onClick={goNextImage}
+            disabled={currentImageIndex === sliderImages.length - 1}
+            style={{
+              position: 'absolute',
+              right: 24,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              background: STYLE.colors.surface,
+              border: `1px solid ${STYLE.colors.border}`,
+              borderRadius: '50%',
+              width: 48,
+              height: 48,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: currentImageIndex === sliderImages.length - 1 ? 'not-allowed' : 'pointer',
+              opacity: currentImageIndex === sliderImages.length - 1 ? 0.3 : 1,
+              color: STYLE.colors.white,
+            }}
+          >
+            {navIcons.chevRight}
+          </button>
+        </div>
+
+        {/* Dot indicators */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 8,
+            padding: '16px 24px',
+            borderTop: `1px solid ${STYLE.colors.border}`,
+          }}
+        >
+          {sliderImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentImageIndex(i)}
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: '50%',
+                background: i === currentImageIndex ? STYLE.colors.accent : STYLE.colors.gray700,
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
+                transition: 'background 0.2s ease',
+              }}
+            />
+          ))}
+        </div>
+      </div>,
+      document.body
+    );
+  };
+
   return (
     <div style={slideBase}>
       <SectionLabel section="Solution" subSection="Transformation" />
@@ -1689,7 +1883,7 @@ export const SlideBeforeAfter = () => {
         alignItems: 'center',
       }}>
         {/* Before */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, height: '100%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, height: '100%', paddingTop: '10%' }}>
           <div style={{
             padding: '10px 20px',
             background: STYLE.colors.surface,
@@ -1698,7 +1892,66 @@ export const SlideBeforeAfter = () => {
             ...typeStyle('tag', STYLE.colors.gray500),
             width: 'fit-content',
           }}>BEFORE</div>
-          <ImagePlaceholder label="Old generic FAQ page" style={{ flex: 1, borderRadius: STYLE.radius.bento }} />
+          <div
+            onClick={() => setIsModalOpen(true)}
+            style={{
+              position: 'relative',
+              flex: 1,
+              borderRadius: STYLE.radius.bento,
+              overflow: 'hidden',
+              background: '#2a2a2a',
+              cursor: 'pointer',
+            }}
+          >
+            {/* Base image */}
+            <img
+              src="/images/presentation-assets/Old FAQ - Delivery.png"
+              alt="Old FAQ - Delivery"
+              style={{
+                position: 'absolute',
+                width: '85%',
+                height: 'auto',
+                top: '5%',
+                left: '5%',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                borderRadius: 8,
+              }}
+            />
+            {/* Overlaid image */}
+            <img
+              src="/images/presentation-assets/Old FAQ - Where is my Order.png"
+              alt="Old FAQ - Where is my Order"
+              style={{
+                position: 'absolute',
+                width: '85%',
+                height: 'auto',
+                top: '15%',
+                left: '15%',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                borderRadius: 8,
+              }}
+            />
+            {/* Expand button */}
+            <button
+              onClick={(e) => { e.stopPropagation(); setIsModalOpen(true); }}
+              style={{
+                position: 'absolute',
+                top: 12,
+                right: 12,
+                background: 'rgba(0,0,0,0.6)',
+                border: 'none',
+                borderRadius: 6,
+                padding: 8,
+                cursor: 'pointer',
+                color: STYLE.colors.white,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {navIcons.expand}
+            </button>
+          </div>
           <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray500), textAlign: 'center' }}>
             Same static page for every customer. Text-heavy, no personalization, no real-time data.
           </div>
@@ -1708,7 +1961,7 @@ export const SlideBeforeAfter = () => {
         <div style={{ ...typeStyle('header1', STYLE.colors.accent), fontSize: 72 }}>→</div>
 
         {/* After */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, height: '100%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, height: '100%', paddingTop: '10%' }}>
           <div style={{
             padding: '10px 20px',
             background: STYLE.colors.accentDim,
@@ -1717,12 +1970,72 @@ export const SlideBeforeAfter = () => {
             ...typeStyle('tag', STYLE.colors.accent),
             width: 'fit-content',
           }}>AFTER</div>
-          <ImagePlaceholder label="New contextual self-help with cards" style={{ flex: 1, borderRadius: STYLE.radius.bento }} />
+          <div
+            onClick={() => { setCurrentImageIndex(2); setIsModalOpen(true); }}
+            style={{
+              position: 'relative',
+              flex: 1,
+              borderRadius: STYLE.radius.bento,
+              overflow: 'hidden',
+              background: '#2a2a2a',
+              cursor: 'pointer',
+            }}
+          >
+            {/* Base image - Mobile */}
+            <img
+              src="/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png"
+              alt="New FAQ Mobile - Delivery Status"
+              style={{
+                position: 'absolute',
+                width: '40%',
+                height: 'auto',
+                top: '5%',
+                left: '5%',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                borderRadius: 8,
+              }}
+            />
+            {/* Overlaid image - Web */}
+            <img
+              src="/images/presentation-assets/New FAQ [Web] - Delivery Status.png"
+              alt="New FAQ Web - Delivery Status"
+              style={{
+                position: 'absolute',
+                width: '70%',
+                height: 'auto',
+                top: '10%',
+                left: '30%',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                borderRadius: 8,
+              }}
+            />
+            {/* Expand button */}
+            <button
+              onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(2); setIsModalOpen(true); }}
+              style={{
+                position: 'absolute',
+                top: 12,
+                right: 12,
+                background: 'rgba(0,0,0,0.6)',
+                border: 'none',
+                borderRadius: 6,
+                padding: 8,
+                cursor: 'pointer',
+                color: STYLE.colors.white,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {navIcons.expand}
+            </button>
+          </div>
           <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), textAlign: 'center' }}>
             Personalized contextual cards. Product images, real-time status, entry-point-adaptive display.
           </div>
         </div>
       </div>
+      <SliderModal />
     </div>
   );
 };
