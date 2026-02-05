@@ -2370,7 +2370,7 @@ export const SlideResultsBusiness = () => {
         background: STYLE.colors.white,
       }}>
         <div style={{ ...typeStyle('paragraph1'), color: '#1a1a1a' }}>
-          The north star was clear: <strong>reduce customer enquiries</strong> that drove up costs while <strong>building trust</strong> in Zalando. The project delivered €3.2M in annual savings, helping the Customer Care team exceed budget targets. The solution became a blueprint for Zalando&apos;s broader <strong>self-service and automation strategy</strong>, with the confirmed carrier data approach adopted as a reference model across teams.
+          The north star was clear: <span style={{ fontWeight: 700 }}>reduce customer enquiries</span> that drove up costs while <span style={{ fontWeight: 700 }}>building trust</span> in Zalando. The project delivered €3.2M in annual savings, helping the Customer Care team exceed budget targets. The solution became a blueprint for Zalando&apos;s broader <span style={{ fontWeight: 700 }}>self-service and automation strategy</span>, with the confirmed carrier data approach adopted as a reference model across teams.
         </div>
       </Card>
     </div>
