@@ -1120,6 +1120,9 @@ export const SlideDecisions = () => {
     <div style={slideBase}>
       <SectionLabel section="Design Process" subSection="Ideation & Exploration" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Three decisions shaped the direction</h2>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1000 }}>
+        Research and testing validated three fundamental decisions that shaped the design direction.
+      </p>
       <div style={{
         display: 'flex',
         flexDirection: 'column',
@@ -1141,9 +1144,9 @@ export const SlideDecisions = () => {
               <div style={{ ...typeStyle('header2'), marginTop: 8 }}>{d.considered}</div>
             </Card>
             <div style={{ ...typeStyle('header2', STYLE.colors.gray600), fontSize: 32 }}>→</div>
-            <Card style={{ padding: '28px 36px', borderRadius: STYLE.radius.card, background: STYLE.colors.accentDim, borderColor: STYLE.colors.accent }}>
-              <div style={typeStyle('tag', STYLE.colors.accent)}>CHOSEN</div>
-              <div style={{ ...typeStyle('header2'), marginTop: 8 }}>{d.chosen}</div>
+            <Card style={{ padding: '28px 36px', borderRadius: STYLE.radius.card, background: STYLE.colors.accent, borderColor: STYLE.colors.accent }}>
+              <div style={{ ...typeStyle('tag'), color: '#1a1a1a', opacity: 0.7 }}>CHOSEN</div>
+              <div style={{ ...typeStyle('header2'), marginTop: 8, color: '#1a1a1a' }}>{d.chosen}</div>
             </Card>
             <div style={typeStyle('paragraph2', STYLE.colors.gray400)}>{d.reason}</div>
           </div>
