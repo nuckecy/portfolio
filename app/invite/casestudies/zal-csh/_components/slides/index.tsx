@@ -1101,18 +1101,21 @@ export const SlideDecisions = () => {
   const decisions = [
     {
       considered: 'Standalone help center',
+      consideredDesc: 'Build a new dedicated destination for self-service',
       chosen: 'Embedded in existing FAQ',
-      reason: 'Customers already had 4 established paths. New destination = new behavior to learn.',
+      chosenDesc: 'Customers already had 4 established paths. New destination = new behavior to learn.',
     },
     {
       considered: 'Comprehensive information upfront',
+      consideredDesc: 'Show all details on the first screen',
       chosen: 'Progressive disclosure',
-      reason: 'Usability testing showed detailed first-screens created the same overload problem.',
+      chosenDesc: 'Usability testing showed detailed first-screens created the same overload problem.',
     },
     {
       considered: 'Order IDs as identifiers',
+      consideredDesc: 'Use system-generated reference numbers',
       chosen: 'Product images',
-      reason: "Customers couldn't recall system codes. They identified purchases visually.",
+      chosenDesc: "Customers couldn't recall system codes. They identified purchases visually.",
     },
   ];
 
@@ -1135,20 +1138,21 @@ export const SlideDecisions = () => {
         {decisions.map((d, i) => (
           <div key={i} style={{
             display: 'grid',
-            gridTemplateColumns: '1fr auto 1fr 1.2fr',
-            gap: 24,
-            alignItems: 'center',
+            gridTemplateColumns: '1fr auto 1fr',
+            gap: 20,
+            alignItems: 'stretch',
           }}>
-            <Card style={{ padding: '28px 36px', borderRadius: STYLE.radius.card }}>
+            <Card style={{ padding: '20px 28px', borderRadius: STYLE.radius.card, display: 'flex', flexDirection: 'column' }}>
               <div style={typeStyle('tag', STYLE.colors.gray600)}>CONSIDERED</div>
-              <div style={{ ...typeStyle('header2'), marginTop: 8 }}>{d.considered}</div>
+              <div style={{ ...typeStyle('paragraph1'), fontWeight: 600, marginTop: 8 }}>{d.considered}</div>
+              <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6 }}>{d.consideredDesc}</div>
             </Card>
-            <div style={{ ...typeStyle('header2', STYLE.colors.gray600), fontSize: 32 }}>→</div>
-            <Card style={{ padding: '28px 36px', borderRadius: STYLE.radius.card, background: STYLE.colors.accent, borderColor: STYLE.colors.accent }}>
+            <div style={{ display: 'flex', alignItems: 'center', color: STYLE.colors.gray600, fontSize: 24 }}>→</div>
+            <Card style={{ padding: '20px 28px', borderRadius: STYLE.radius.card, background: STYLE.colors.accent, borderColor: STYLE.colors.accent, display: 'flex', flexDirection: 'column' }}>
               <div style={{ ...typeStyle('tag'), color: '#1a1a1a', opacity: 0.7 }}>CHOSEN</div>
-              <div style={{ ...typeStyle('header2'), marginTop: 8, color: '#1a1a1a' }}>{d.chosen}</div>
+              <div style={{ ...typeStyle('paragraph1'), fontWeight: 600, marginTop: 8, color: '#1a1a1a' }}>{d.chosen}</div>
+              <div style={{ ...typeStyle('paragraph3'), marginTop: 6, color: 'rgba(0,0,0,0.7)' }}>{d.chosenDesc}</div>
             </Card>
-            <div style={typeStyle('paragraph2', STYLE.colors.gray400)}>{d.reason}</div>
           </div>
         ))}
       </div>
