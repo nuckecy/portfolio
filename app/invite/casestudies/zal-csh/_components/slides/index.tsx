@@ -1005,50 +1005,26 @@ export const SlideEntryPoints = () => {
       </p>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: 'repeat(4, 1fr)',
         gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {/* Left: Entry point cards in 2x2 grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gridTemplateRows: 'repeat(2, 1fr)',
-          gap: 16,
-        }}>
-          {entryPoints.map((ep, i) => (
-            <Card key={i} style={{
-              padding: 24,
-              borderRadius: STYLE.radius.bento,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12,
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                <IconBox icon={ep.icon} size={44} />
-                <div style={{ ...typeStyle('header2'), fontSize: 24 }}>{ep.title}</div>
-              </div>
-              <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
-              <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 18, flex: 1 }}>{ep.desc}</div>
-            </Card>
-          ))}
-        </div>
-
-        {/* Right: Image holder */}
-        <div style={{
-          borderRadius: STYLE.radius.bento,
-          background: '#3a3a3a',
-          border: '2px solid #3a3a3a',
-          overflow: 'hidden',
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <ImagePlaceholder label="Entry points diagram" style={{ width: '100%', height: '100%' }} />
-        </div>
+        {entryPoints.map((ep, i) => (
+          <Card key={i} style={{
+            padding: 32,
+            borderRadius: STYLE.radius.bento,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 16,
+          }}>
+            <IconBox icon={ep.icon} size={56} />
+            <div style={{ ...typeStyle('header2'), fontSize: 28 }}>{ep.title}</div>
+            <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
+            <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 18, flex: 1, lineHeight: 1.5 }}>{ep.desc}</div>
+          </Card>
+        ))}
       </div>
     </div>
   );
@@ -2406,55 +2382,60 @@ export const SlideResultsBusiness = () => {
 
 export const SlideMetricsComparison = () => {
   const comparisons = [
-    { metric: 'Resolution time', before: '24 hours', after: 'Under 3 hours', change: '67% faster' },
-    { metric: 'Customer satisfaction', before: '3.1 / 5', after: '4.2 / 5', change: '28% improvement' },
-    { metric: 'Repeat contacts', before: '2M per year', after: '1.1M per year', change: '45% reduction' },
-    { metric: 'Annual cost', before: '€7M', after: '€3.8M', change: '€3.2M saved' },
+    { metric: ['Resolution', 'Time'], context: 'Self-help enabled instant answers. Escalated tickets resolved faster with full customer context.', before: '24 hr', after: 'Under 3 hr', change: '67%', changeLabel: 'faster' },
+    { metric: ['Customer', 'Satisfaction'], context: 'Customers resolved issues independently and received faster responses when escalation was needed.', before: '3.1 / 5', after: '4.2 / 5', change: '28%', changeLabel: 'improvement' },
+    { metric: ['Repeat', 'Contacts'], context: 'Transparent, real-time information built trust. Customers no longer needed to follow up.', before: '2M / yr', after: '1.1M / yr', change: '45%', changeLabel: 'reduction' },
+    { metric: ['Annual', 'Cost'], context: 'Fewer tickets meant lower costs. Self-service deflected inquiries that previously required agents.', before: '€7M', after: '€3.8M', change: '€3.2M', changeLabel: 'saved' },
   ];
 
   return (
     <div style={slideBase}>
       <SectionLabel section="Results & Impact" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>The transformation in numbers</h2>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1600 }}>
+        Self-help enabled instant answers, customers resolved issues independently, and transparent information built trust—driving significant improvements across resolution time, satisfaction, repeat contacts, and cost.
+      </p>
       <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 16,
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
-        justifyContent: 'center',
       }}>
         {comparisons.map((c, i) => (
-          <div key={i} style={{
-            display: 'grid',
-            gridTemplateColumns: '1.5fr 1fr auto 1fr 1fr',
-            gap: 24,
-            alignItems: 'center',
+          <Card key={i} style={{
+            padding: 32,
+            borderRadius: STYLE.radius.bento,
+            display: 'flex',
+            flexDirection: 'column',
           }}>
-            <div style={typeStyle('header2')}>{c.metric}</div>
-            <Card style={{ padding: '20px 28px', borderRadius: STYLE.radius.card, textAlign: 'center' }}>
-              <div style={typeStyle('paragraph3', STYLE.colors.gray500)}>{c.before}</div>
-            </Card>
-            <div style={{ ...typeStyle('header2', STYLE.colors.gray600), fontSize: 24 }}>→</div>
-            <Card style={{
-              padding: '20px 28px',
-              borderRadius: STYLE.radius.card,
-              textAlign: 'center',
-              background: STYLE.colors.accentDim,
-              borderColor: STYLE.colors.accent,
-            }}>
-              <div style={typeStyle('paragraph3')}>{c.after}</div>
-            </Card>
-            <div style={{
-              padding: '12px 20px',
-              background: STYLE.colors.surface,
-              borderRadius: STYLE.radius.small,
-              ...typeStyle('tag', STYLE.colors.accent),
-              fontSize: 14,
-              textAlign: 'center',
-            }}>{c.change}</div>
-          </div>
+            {/* Metric name */}
+            <div style={{ marginBottom: 32 }}>
+              <div style={{ fontFamily: STYLE.fonts.body, fontWeight: 600, fontSize: 40, color: STYLE.colors.white, lineHeight: 1.1 }}>
+                {c.metric[0]}<br />{c.metric[1]}
+              </div>
+              <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray500), marginTop: 8 }}>{c.context}</div>
+            </div>
+
+            {/* Before/After comparison */}
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 24 }}>
+              {/* Before */}
+              <div>
+                <div style={{ ...typeStyle('tag', STYLE.colors.gray600), fontSize: 14, marginBottom: 0, letterSpacing: '2px' }}>BEFORE</div>
+                <div style={{ fontFamily: STYLE.fonts.body, fontWeight: 700, fontSize: 52, color: STYLE.colors.gray600, lineHeight: 1.1 }}>{c.before}</div>
+              </div>
+
+              {/* After */}
+              <div>
+                <div style={{ ...typeStyle('tag', STYLE.colors.accent), fontSize: 14, marginBottom: 0, letterSpacing: '2px' }}>AFTER</div>
+                <div style={{ fontFamily: STYLE.fonts.body, fontWeight: 700, fontSize: 52, color: STYLE.colors.white, lineHeight: 1.1 }}>{c.after}</div>
+                <div style={{ ...typeStyle('paragraph1', STYLE.colors.accent), fontSize: 32, marginTop: 0, lineHeight: 1.2 }}>
+                  {c.change} {c.changeLabel}
+                </div>
+              </div>
+            </div>
+          </Card>
         ))}
       </div>
     </div>
@@ -2509,7 +2490,7 @@ export const SlideClosing = () => {
   return (
     <div style={slideBase}>
       <SectionLabel section="Reflection" />
-      <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>What I would do differently</h2>
+      <h2 style={{ ...typeStyle('header1'), fontSize: 80, marginTop: 64 }}>What I would do differently</h2>
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
@@ -2526,8 +2507,8 @@ export const SlideClosing = () => {
             flexDirection: 'column',
             gap: 20,
           }}>
-            <div style={{ ...typeStyle('header3'), color: STYLE.colors.accent }}>{r.num}</div>
-            <div style={typeStyle('header2')}>{r.title}</div>
+            <div style={{ ...typeStyle('header3'), color: STYLE.colors.gray600 }}>{r.num}</div>
+            <div style={{ ...typeStyle('header2'), fontSize: 48, color: STYLE.colors.accent }}>{r.title}</div>
             <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), flex: 1 }}>{r.body}</div>
           </Card>
         ))}
