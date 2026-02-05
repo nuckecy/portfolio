@@ -585,6 +585,9 @@ export const SlideResearch = () => {
     <div style={slideBase}>
       <SectionLabel section="Research & Discovery" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>How we built understanding</h2>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1200 }}>
+        A multi-method research approach combining qualitative insights from users and stakeholders, quantitative analysis of support data, and hands-on validation through iterative testing.
+      </p>
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
@@ -592,7 +595,7 @@ export const SlideResearch = () => {
         gap: 24,
         flex: 1,
         minHeight: 0,
-        marginTop: STYLE.spacing.titleGap,
+        marginTop: 32,
       }}>
         <Card style={{ padding: 36, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
           <div style={typeStyle('header3')}>12</div>
@@ -605,7 +608,7 @@ export const SlideResearch = () => {
           <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray600), marginTop: 4 }}>Product, engineering, operations</div>
         </Card>
         <Card style={{ padding: 36, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-          <div style={typeStyle('header3')}>50K+</div>
+          <div style={typeStyle('header3')}>100+</div>
           <div style={{ ...typeStyle('statLabel', STYLE.colors.gray400), marginTop: 8 }}>Support transcripts</div>
           <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray600), marginTop: 4 }}>Analyzed for patterns and issues</div>
         </Card>
@@ -620,7 +623,7 @@ export const SlideResearch = () => {
         }}>
           <div style={{ ...typeStyle('header2'), marginBottom: 16 }}>First-hand testing</div>
           <div style={typeStyle('paragraph1')}>
-            Extensive usability studies, A/B testing throughout the rollout, and direct observation of customer support interactions
+            Usability studies with 12 participants across 3 prototype iterations. A/B testing during phased rollout across markets. Direct observation of 20+ live support sessions. This research revealed the top use cases driving contact volume: delivery issues (58%), returns & refunds (23%), and other inquiries (19%).
           </div>
         </BentoCard>
       </div>
@@ -2583,8 +2586,8 @@ export const SlideThankYou = () => (
           With a background in fintech, e-commerce, and enterprise platforms, plus hands-on frontend engineering experience, I bring a systems-oriented approach to every challenge.
         </p>
         {/* Separator line */}
-        <div style={{ height: 1, background: STYLE.colors.border, margin: '16px 0' }} />
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ height: 1, background: STYLE.colors.border, margin: '24px 0' }} />
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32 }}>
           <a
             href="https://otobong.com"
             target="_blank"
@@ -2593,7 +2596,7 @@ export const SlideThankYou = () => (
             onMouseEnter={(e) => e.currentTarget.style.color = STYLE.colors.accent}
             onMouseLeave={(e) => e.currentTarget.style.color = STYLE.colors.gray500}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
             </svg>
             otobong.com
@@ -2607,7 +2610,7 @@ export const SlideThankYou = () => (
             onMouseEnter={(e) => e.currentTarget.style.color = STYLE.colors.accent}
             onMouseLeave={(e) => e.currentTarget.style.color = STYLE.colors.gray500}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
             LinkedIn
@@ -2619,7 +2622,7 @@ export const SlideThankYou = () => (
             onMouseEnter={(e) => e.currentTarget.style.color = STYLE.colors.accent}
             onMouseLeave={(e) => e.currentTarget.style.color = STYLE.colors.gray500}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
             Email
