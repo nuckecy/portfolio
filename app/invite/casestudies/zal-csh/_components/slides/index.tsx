@@ -1103,7 +1103,7 @@ export const SlideDecisions = () => {
       assumption: 'Standalone help center',
       assumptionDesc: 'A dedicated self-service destination will reduce support contacts',
       validated: 'Embedded in existing FAQ',
-      validatedDesc: 'Research revealed customers already navigate via 4 established paths. Adding a new destination would require learning new behavior.',
+      validatedDesc: 'Research revealed customers already navigate via 4 established paths. Adding a new destination would disrupt their existing mental model.',
     },
     {
       assumption: 'Comprehensive information upfront',
