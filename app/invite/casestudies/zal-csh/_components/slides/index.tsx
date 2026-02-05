@@ -1402,7 +1402,7 @@ export const SlideArchitecture = () => {
   const steps = [
     { num: '01', title: 'Entry', desc: '4 paths adapt display based on arrival context', orange: false },
     { num: '02', title: 'Identify', desc: 'Product images for instant visual recognition', orange: false },
-    { num: '03', title: 'Context', desc: 'Real-time data from carrier APIs, warehouse, payments', orange: true },
+    { num: '03', title: 'Context', desc: 'Real-time data from carrier APIs, warehouse, payments', orange: false },
     { num: '04', title: 'Resolve', desc: 'Tailored flow per journey: delivery, returns, refund', orange: false },
     { num: '05', title: 'Escalate', desc: 'Full context attached, timeline confirmed', orange: false },
   ];
@@ -1431,9 +1431,9 @@ export const SlideArchitecture = () => {
                 flexDirection: 'column',
                 gap: 12,
               }}>
-                <div style={{ ...typeStyle('header2'), fontSize: 24, color: 'white' }}>{s.num}</div>
-                <div style={{ ...typeStyle('header2'), color: 'white' }}>{s.title}</div>
-                <div style={{ ...typeStyle('paragraph3'), color: 'rgba(255,255,255,0.8)' }}>{s.desc}</div>
+                <div style={{ ...typeStyle('header2'), fontSize: 24, color: '#1a1a1a' }}>{s.num}</div>
+                <div style={{ ...typeStyle('header2'), color: '#1a1a1a' }}>{s.title}</div>
+                <div style={{ ...typeStyle('paragraph3'), color: 'rgba(0,0,0,0.7)' }}>{s.desc}</div>
               </BentoCard>
             ) : (
               <Card style={{
