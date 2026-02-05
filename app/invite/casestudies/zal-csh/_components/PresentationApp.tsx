@@ -14,7 +14,7 @@ import {
   SlidePrinciples, SlideDecisions, SlideTesting, SlideStakeholders,
   SlideArchitecture, SlideIdentification, SlideFlows, SlideEscalation, SlideBeforeAfter,
   SlideResultsCustomer, SlideResultsBusiness, SlideMetricsComparison,
-  SlideKeyLesson, SlideClosing,
+  SlideKeyLesson, SlideClosing, SlideThankYou,
 } from './slides';
 
 // Map component names to actual components
@@ -24,14 +24,16 @@ const componentMap: Record<string, React.FC> = {
   SlidePrinciples, SlideDecisions, SlideTesting, SlideStakeholders,
   SlideArchitecture, SlideIdentification, SlideFlows, SlideEscalation, SlideBeforeAfter,
   SlideResultsCustomer, SlideResultsBusiness, SlideMetricsComparison,
-  SlideKeyLesson, SlideClosing,
+  SlideKeyLesson, SlideClosing, SlideThankYou,
 };
 
-// Build slides array with resolved components
-const slides = slideData.map((s) => ({
-  ...s,
-  component: componentMap[s.componentName],
-}));
+// Build slides array with resolved components, filtering out hidden slides
+const slides = slideData
+  .filter((s) => !s.hidden)
+  .map((s) => ({
+    ...s,
+    component: componentMap[s.componentName],
+  }));
 
 const { width: BASE_W, height: BASE_H } = STYLE.canvas;
 const CONTROLS_H = 56;

@@ -1546,10 +1546,15 @@ export const SlideArchitecture = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideIdentification = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   return (
     <div style={slideBase}>
       <SectionLabel section="Solution" subSection="Core Experience" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Entry-point-adaptive display</h2>
+      <p style={{ ...typeStyle('paragraph1'), color: STYLE.colors.gray400, marginTop: 16, maxWidth: 800 }}>
+        The interface adapts based on how users arrive. Direct links show focused content; account access reveals the full dashboard with all active orders.
+      </p>
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1.5fr',
@@ -1583,8 +1588,63 @@ export const SlideIdentification = () => {
         </div>
 
         {/* Right: Image */}
-        <ImagePlaceholder label="FAQ homepage with contextual cards (annotated)" style={{ borderRadius: STYLE.radius.bento }} />
+        <div style={{
+          borderRadius: STYLE.radius.bento,
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#D8D8D8',
+          position: 'relative',
+        }}>
+          {/* Expand icon */}
+          <button
+            onClick={() => setIsModalOpen(true)}
+            style={{
+              position: 'absolute',
+              top: 16,
+              right: 16,
+              width: 40,
+              height: 40,
+              borderRadius: 8,
+              background: 'rgba(0, 0, 0, 0.6)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 10,
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </button>
+          <img
+            src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
+            alt="FAQ homepage with contextual cards showing returns and refunds"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'top left',
+            }}
+          />
+        </div>
       </div>
+
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
+        alt="FAQ homepage with contextual cards showing returns and refunds"
+      />
     </div>
   );
 };
@@ -1600,21 +1660,21 @@ export const SlideFlows = () => {
       icon: icons.truck,
       title: 'Delivery',
       steps: ['Purchase date & promised delivery', 'Current shipping status', 'Delivery details', 'Escalate if delayed/missing'],
-      note: 'Progressive: status at a glance, drill down for details',
+      note: 'Users see high-level status first, then can expand for carrier details, tracking history, and delivery windows',
     },
     {
       variant: 'orangeGradient' as const,
       icon: icons.rotateCcw,
       title: 'Returns',
       steps: ['Drop-off confirmation', 'Courier pickup', 'Warehouse arrival', 'Issue resolution'],
-      note: 'Staged vertical flow. Confirmed data only (carrier/warehouse scan)',
+      note: 'Each stage unlocks only after system confirmation: drop-off scan, pickup verification, warehouse receipt. This eliminates guesswork.',
     },
     {
       variant: 'gradientDark' as const,
       icon: icons.wallet,
       title: 'Refund',
       steps: ['Refund amount', 'Expected timeline', 'Payment method', 'Flag discrepancies'],
-      note: 'Horizontal cards. Static info with escalation triggers',
+      note: 'Clear breakdown of refund amount, timeline, and payment destination with automatic alerts if processing exceeds expected time',
     },
   ];
 
@@ -1622,51 +1682,79 @@ export const SlideFlows = () => {
     <div style={slideBase}>
       <SectionLabel section="Solution" subSection="Resolution Paths" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Tailored flow per journey type</h2>
+      <p style={{ ...typeStyle('paragraph1'), color: STYLE.colors.gray400, marginTop: 16, maxWidth: 800 }}>
+        Each customer journey has its own resolution flow. Instead of generic FAQ pages, users follow a guided path that surfaces the right information at each step.
+      </p>
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: 24,
-        flex: 1,
-        minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
         {flows.map((f, i) => (
           <BentoCard key={i} variant={f.variant} style={{
-            padding: 40,
+            padding: 32,
             borderRadius: STYLE.radius.bento,
             display: 'flex',
             flexDirection: 'column',
-            gap: 20,
+            gap: 16,
           }}>
             {(textColor, textSecondary) => (
               <>
-                <div style={{ color: textSecondary }}>{f.icon}</div>
-                <div style={{ ...typeStyle('header2'), color: textColor }}>{f.title}</div>
-                <div style={{ flex: 1 }}>
+                {/* Icon and Title on same line */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ color: textSecondary }}>{f.icon}</div>
+                  <div style={{ ...typeStyle('header2'), color: textColor }}>{f.title}</div>
+                </div>
+                <div>
                   {f.steps.map((step, si) => (
                     <div key={si} style={{
-                      display: 'flex', gap: 12, alignItems: 'flex-start',
-                      marginBottom: 12,
+                      display: 'flex',
+                      gap: 12,
+                      alignItems: 'center',
+                      position: 'relative',
+                      paddingBottom: si < f.steps.length - 1 ? 12 : 0,
                     }}>
+                      {/* Vertical line (except last item) */}
+                      {si < f.steps.length - 1 && (
+                        <div style={{
+                          position: 'absolute',
+                          left: 11,
+                          top: 24,
+                          width: 2,
+                          height: 'calc(100% - 8px)',
+                          background: textSecondary,
+                          opacity: 0.3,
+                          zIndex: 0,
+                        }} />
+                      )}
+                      {/* Circle with number */}
                       <div style={{
-                        ...typeStyle('tag'),
-                        color: textSecondary,
-                        fontSize: 14,
                         width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        border: `1.5px solid ${textSecondary}`,
+                        background: f.variant === 'orangeGradient' ? STYLE.colors.accent : STYLE.colors.surface,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         flexShrink: 0,
-                      }}>{si + 1}.</div>
+                        ...typeStyle('paragraph2'),
+                        fontSize: 14,
+                        color: f.variant === 'orangeGradient' ? '#000' : textColor,
+                        zIndex: 1,
+                      }}>{si + 1}</div>
+                      {/* Step text */}
                       <div style={{ ...typeStyle('paragraph2'), color: textColor }}>{step}</div>
                     </div>
                   ))}
                 </div>
-                <div style={{
-                  padding: '12px 16px',
-                  background: 'rgba(0,0,0,0.15)',
-                  borderRadius: STYLE.radius.small,
-                  ...typeStyle('paragraph3'),
+                <p style={{
+                  ...typeStyle('paragraph2'),
                   color: textSecondary,
-                  fontSize: 14,
-                }}>{f.note}</div>
+                  margin: 0,
+                  marginTop: 16,
+                }}>{f.note}</p>
               </>
             )}
           </BentoCard>
@@ -2441,15 +2529,120 @@ export const SlideClosing = () => {
           </Card>
         ))}
       </div>
-      <div style={{ marginTop: 'auto', paddingTop: 32, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-        <div>
-          <span style={typeStyle('pageFooter', STYLE.colors.accent)}>Otobong Okoko</span>
-          <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray600), marginTop: 4 }}>
-            Senior Product Designer &nbsp;·&nbsp; Designer Who Codes
-          </div>
-        </div>
-        <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray600), textAlign: 'right' }}>otobong.com</div>
-      </div>
     </div>
   );
 };
+
+// ─────────────────────────────────────────────────────────
+// SLIDE 25: Thank You & About Otobong
+// ─────────────────────────────────────────────────────────
+
+export const SlideThankYou = () => (
+  <div style={{
+    ...slideBase,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    position: 'relative',
+  }}>
+    {/* Two-column layout */}
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 64,
+      alignItems: 'center',
+      flex: 1,
+    }}>
+      {/* Left: Thank you */}
+      <div>
+        <h2 style={{ ...typeStyle('header1'), fontSize: 96, lineHeight: 1, marginBottom: 24 }}>
+          Thank you
+        </h2>
+        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.6 }}>
+          I appreciate you taking the time to explore this case study.
+        </p>
+      </div>
+
+      {/* Right: About section */}
+      <div style={{
+        background: STYLE.colors.surface,
+        border: `1px solid ${STYLE.colors.border}`,
+        borderRadius: STYLE.radius.bento,
+        padding: 32,
+      }}>
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ fontFamily: STYLE.fonts.body, fontWeight: 600, color: STYLE.colors.white, fontSize: 42 }}>Otobong Okoko</div>
+          <div style={{ ...typeStyle('paragraph3'), color: STYLE.colors.accent, marginTop: 4 }}>
+            Senior Product Designer · Designer Who Codes
+          </div>
+        </div>
+        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.6, margin: '0 0 12px 0' }}>
+          I bridge design thinking with technical execution, transforming complex service experiences into research and data-driven solutions.
+        </p>
+        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.6, margin: 0 }}>
+          With a background in fintech, e-commerce, and enterprise platforms, plus hands-on frontend engineering experience, I bring a systems-oriented approach to every challenge.
+        </p>
+        <div style={{ marginTop: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <a
+            href="https://otobong.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray500, textDecoration: 'none', transition: 'color 0.2s ease', display: 'flex', alignItems: 'center', gap: 6 }}
+            onMouseEnter={(e) => e.currentTarget.style.color = STYLE.colors.accent}
+            onMouseLeave={(e) => e.currentTarget.style.color = STYLE.colors.gray500}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+            </svg>
+            otobong.com
+          </a>
+          <div style={{ width: 1, height: 16, background: STYLE.colors.border }} />
+          <a
+            href="https://linkedin.com/in/otobong"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray500, textDecoration: 'none', transition: 'color 0.2s ease', display: 'flex', alignItems: 'center', gap: 6 }}
+            onMouseEnter={(e) => e.currentTarget.style.color = STYLE.colors.accent}
+            onMouseLeave={(e) => e.currentTarget.style.color = STYLE.colors.gray500}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <div style={{ width: 1, height: 16, background: STYLE.colors.border }} />
+          <a
+            href="mailto:me@otobong.com"
+            style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray500, textDecoration: 'none', transition: 'color 0.2s ease', display: 'flex', alignItems: 'center', gap: 6 }}
+            onMouseEnter={(e) => e.currentTarget.style.color = STYLE.colors.accent}
+            onMouseLeave={(e) => e.currentTarget.style.color = STYLE.colors.gray500}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Subtle footer */}
+    <div style={{
+      position: 'absolute',
+      bottom: 32,
+      left: 0,
+      right: 0,
+      textAlign: 'center',
+    }}>
+      <span style={{
+        fontFamily: STYLE.fonts.body,
+        fontSize: 14,
+        fontWeight: 400,
+        color: STYLE.colors.white,
+        letterSpacing: '0.5px',
+      }}>
+        Presentation vibe coded in Claude Code
+      </span>
+    </div>
+  </div>
+);

@@ -10,6 +10,7 @@ export interface SlideData {
   section: string;
   subSection?: string;
   notes: string;
+  hidden?: boolean;
 }
 
 export const slideData: SlideData[] = [
@@ -136,6 +137,7 @@ export const slideData: SlideData[] = [
     section: 'Solution',
     subSection: 'Core Experience',
     notes: 'Via Google search: land on specific FAQ section, see only relevant contextual cards.\n\nVia website, account, or returns page: see FAQ homepage with all active cards displayed. Product images ensure instant visual recognition across multiple active orders.',
+    hidden: true,
   },
   {
     id: 16,
@@ -195,5 +197,12 @@ export const slideData: SlideData[] = [
     title: 'Reflection & closing',
     section: 'Reflection',
     notes: "Three things I'd do differently:\n\n1. Push for technical discovery earlier (carrier API investigation happened mid-project)\n2. Invest in content strategy from day one (content design became critical)\n3. Map technical constraints before designing information architecture (the dashboard pivot was costly)\n\nThese principles are now foundational to how I approach complex service design.",
+  },
+  {
+    id: 24,
+    componentName: 'SlideThankYou',
+    title: 'Thank you & About Otobong',
+    section: 'Closing',
+    notes: 'Thank you for viewing this case study. Otobong Okoko is a Senior Product Designer who combines deep user research with technical fluency to deliver measurable business outcomes.',
   },
 ];
