@@ -635,19 +635,234 @@ export const SlideResearch = () => {
 // SLIDE 6: Customers scan, they don't read
 // ─────────────────────────────────────────────────────────
 
-export const SlideInsight1 = () => (
-  <div style={slideBase}>
-    <SectionLabel section="Research & Discovery" subSection="Key Insights" />
-    <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Customers scan. They don&apos;t read.</h2>
-    <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1000 }}>
-      Detailed context cards with comprehensive information caused information overload and abandonment. Customers wanted the one piece of information relevant to their specific situation, immediately visible.
-    </p>
-    <div style={{ display: 'flex', gap: 24, flex: 1, minHeight: 0, marginTop: STYLE.spacing.titleGap }}>
-      <ImagePlaceholder label="FAQ page heatmap / scroll depth" style={{ flex: 1, borderRadius: STYLE.radius.bento }} />
-      <ImagePlaceholder label="Context cards for returns" style={{ flex: 1, borderRadius: STYLE.radius.bento }} />
+export const SlideInsight1 = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  // Dual-image modal for Return and Refund cards
+  const DualImageModal = () => {
+    if (!isModalOpen || typeof document === 'undefined') return null;
+
+    return ReactDOM.createPortal(
+      <div
+        onClick={() => setIsModalOpen(false)}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          background: 'rgba(0, 0, 0, 0.9)',
+          display: 'flex',
+          flexDirection: 'column',
+          zIndex: 9999,
+        }}
+      >
+        {/* Top control bar */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '16px 24px',
+            background: 'rgba(0, 0, 0, 0.5)',
+            flexShrink: 0,
+          }}
+        >
+          <div
+            style={{
+              color: 'white',
+              fontFamily: STYLE.fonts.body,
+              fontSize: 16,
+              fontWeight: 500,
+              padding: '8px 16px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: 20,
+            }}
+          >
+            Context Cards Comparison
+          </div>
+
+          <button
+            onClick={() => setIsModalOpen(false)}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 8,
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Images container */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            gap: 40,
+            padding: 40,
+          }}
+        >
+          {/* Return Card */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, width: '45%' }}>
+            <div
+              style={{
+                color: 'rgba(255,255,255,0.6)',
+                fontFamily: STYLE.fonts.body,
+                fontSize: 14,
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+              }}
+            >
+              Return Card
+            </div>
+            <img
+              src="/images/presentation-assets/Return Card.png"
+              alt="Return card showing in transit status"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+              }}
+            />
+          </div>
+
+          {/* Refund Card */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, width: '45%' }}>
+            <div
+              style={{
+                color: 'rgba(255,255,255,0.6)',
+                fontFamily: STYLE.fonts.body,
+                fontSize: 14,
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+              }}
+            >
+              Refund Card
+            </div>
+            <img
+              src="/images/presentation-assets/Refund Card.png"
+              alt="Refund card showing refund issued status"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+              }}
+            />
+          </div>
+        </div>
+      </div>,
+      document.body
+    );
+  };
+
+  return (
+    <div style={slideBase}>
+      <SectionLabel section="Research & Discovery" subSection="Key Insights" />
+      <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Customers scan. They don&apos;t read.</h2>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1000 }}>
+        Detailed context cards with comprehensive information caused information overload and abandonment. Customers wanted the one piece of information relevant to their specific situation, immediately visible.
+      </p>
+      <div style={{ display: 'flex', gap: 24, flex: 1, minHeight: 0, marginTop: STYLE.spacing.titleGap }}>
+        {/* Return Card */}
+        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            style={{
+              position: 'absolute',
+              top: 12,
+              right: 12,
+              width: 36,
+              height: 36,
+              borderRadius: 8,
+              background: 'rgba(0, 0, 0, 0.6)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 10,
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
+          >
+            {navIcons.expand}
+          </button>
+          <img
+            src="/images/presentation-assets/Return Card.png"
+            alt="Return card showing in transit status"
+            style={{
+              width: '80%',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </div>
+
+        {/* Refund Card */}
+        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            style={{
+              position: 'absolute',
+              top: 12,
+              right: 12,
+              width: 36,
+              height: 36,
+              borderRadius: 8,
+              background: 'rgba(0, 0, 0, 0.6)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 10,
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
+          >
+            {navIcons.expand}
+          </button>
+          <img
+            src="/images/presentation-assets/Refund Card.png"
+            alt="Refund card showing refund issued status"
+            style={{
+              width: '80%',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </div>
+      </div>
+
+      {/* Modal */}
+      <DualImageModal />
     </div>
-  </div>
-);
+  );
+};
 
 // ─────────────────────────────────────────────────────────
 // SLIDE 7: Images are the primary identifier
@@ -1027,10 +1242,12 @@ export const SlideEntryPoints = () => {
               flexDirection: 'column',
               gap: 12,
             }}>
-              <IconBox icon={ep.icon} size={44} />
-              <div style={{ ...typeStyle('header2'), fontSize: 24 }}>{ep.title}</div>
               <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
-              <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 16, flex: 1, lineHeight: 1.5 }}>{ep.desc}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <IconBox icon={ep.icon} size={40} />
+                <div style={{ fontFamily: STYLE.fonts.body, fontSize: 28, fontWeight: 700 }}>{ep.title}</div>
+              </div>
+              <div style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), fontSize: 18, flex: 1, lineHeight: 1.5 }}>{ep.desc}</div>
             </Card>
           ))}
         </div>
