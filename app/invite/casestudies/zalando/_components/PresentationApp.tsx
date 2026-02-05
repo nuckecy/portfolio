@@ -324,7 +324,7 @@ export default function PresentationApp() {
           <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               {(() => {
-                const isMobile = windowSize.w < 768;
+                const isMobile = windowSize.w < 1024 || windowSize.h < 500;
                 const total = slides.length;
 
                 // On mobile, show only 5 indicators: home + 4 surrounding slides
@@ -748,7 +748,7 @@ export default function PresentationApp() {
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
             {(() => {
-              const isMobile = windowSize.w < 768;
+              const isMobile = windowSize.w < 1024 || windowSize.h < 500;
               const total = slides.length;
 
               // On mobile, show only 5 indicators: home + 4 surrounding slides
