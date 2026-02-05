@@ -10,8 +10,8 @@ interface ConditionalNavigationProps {
 export function ConditionalNavigation({ data }: ConditionalNavigationProps) {
   const pathname = usePathname()
 
-  // Hide navigation on presentation pages
-  if (pathname.startsWith("/invite/casestudies/zalando")) {
+  // Hide navigation on all case study pages
+  if (pathname.startsWith("/invite/casestudies")) {
     return null
   }
 

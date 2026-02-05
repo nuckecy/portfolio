@@ -8,9 +8,6 @@ export default function CaseStudiesLayout({
   return (
     <>
       <style>{`
-        nav, footer, header {
-          display: none !important;
-        }
         main {
           padding: 0 !important;
           min-height: 100vh !important;
