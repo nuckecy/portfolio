@@ -1100,22 +1100,22 @@ export const SlidePrinciples = () => {
 export const SlideDecisions = () => {
   const decisions = [
     {
-      considered: 'Standalone help center',
-      consideredDesc: 'Build a new dedicated destination for self-service',
-      chosen: 'Embedded in existing FAQ',
-      chosenDesc: 'Customers already had 4 established paths. New destination = new behavior to learn.',
+      assumption: 'Standalone help center',
+      assumptionDesc: 'We assumed a new dedicated destination would improve self-service',
+      validated: 'Embedded in existing FAQ',
+      validatedDesc: 'Customers already had 4 established paths. New destination = new behavior to learn.',
     },
     {
-      considered: 'Comprehensive information upfront',
-      consideredDesc: 'Show all details on the first screen',
-      chosen: 'Progressive disclosure',
-      chosenDesc: 'Usability testing showed detailed first-screens created the same overload problem.',
+      assumption: 'Comprehensive information upfront',
+      assumptionDesc: 'We assumed showing all details upfront would reduce confusion',
+      validated: 'Progressive disclosure',
+      validatedDesc: 'Testing showed detailed first-screens created the same overload problem.',
     },
     {
-      considered: 'Order IDs as identifiers',
-      consideredDesc: 'Use system-generated reference numbers',
-      chosen: 'Product images',
-      chosenDesc: "Customers couldn't recall system codes. They identified purchases visually.",
+      assumption: 'Order IDs as identifiers',
+      assumptionDesc: 'We assumed customers would use system reference numbers',
+      validated: 'Product images',
+      validatedDesc: "Customers couldn't recall system codes. They identified purchases visually.",
     },
   ];
 
@@ -1143,15 +1143,15 @@ export const SlideDecisions = () => {
             alignItems: 'stretch',
           }}>
             <Card style={{ padding: '20px 28px', borderRadius: STYLE.radius.card, display: 'flex', flexDirection: 'column' }}>
-              <div style={typeStyle('tag', STYLE.colors.gray600)}>CONSIDERED</div>
-              <div style={{ ...typeStyle('paragraph1'), fontWeight: 600, marginTop: 8 }}>{d.considered}</div>
-              <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6 }}>{d.consideredDesc}</div>
+              <div style={typeStyle('tag', STYLE.colors.gray600)}>ASSUMPTION</div>
+              <div style={{ ...typeStyle('paragraph1'), fontWeight: 600, marginTop: 8 }}>{d.assumption}</div>
+              <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6 }}>{d.assumptionDesc}</div>
             </Card>
             <div style={{ display: 'flex', alignItems: 'center', color: STYLE.colors.gray600, fontSize: 24 }}>→</div>
             <Card style={{ padding: '20px 28px', borderRadius: STYLE.radius.card, background: STYLE.colors.accent, borderColor: STYLE.colors.accent, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ ...typeStyle('tag'), color: '#1a1a1a', opacity: 0.7 }}>CHOSEN</div>
-              <div style={{ ...typeStyle('paragraph1'), fontWeight: 600, marginTop: 8, color: '#1a1a1a' }}>{d.chosen}</div>
-              <div style={{ ...typeStyle('paragraph3'), marginTop: 6, color: 'rgba(0,0,0,0.7)' }}>{d.chosenDesc}</div>
+              <div style={{ ...typeStyle('tag'), color: '#1a1a1a', opacity: 0.7 }}>VALIDATED</div>
+              <div style={{ ...typeStyle('paragraph1'), fontWeight: 600, marginTop: 8, color: '#1a1a1a' }}>{d.validated}</div>
+              <div style={{ ...typeStyle('paragraph3'), marginTop: 6, color: 'rgba(0,0,0,0.7)' }}>{d.validatedDesc}</div>
             </Card>
           </div>
         ))}
