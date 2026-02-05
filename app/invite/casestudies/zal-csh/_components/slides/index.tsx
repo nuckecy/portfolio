@@ -2367,9 +2367,10 @@ export const SlideResultsBusiness = () => {
         flex: 1,
         display: 'flex',
         alignItems: 'center',
+        background: STYLE.colors.white,
       }}>
-        <div style={typeStyle('paragraph1', STYLE.colors.gray400)}>
-          Results shared with Director and VP of Customer Care. Solution influenced Zalando&apos;s broader self-service and automation strategy. Confirmed carrier data approach became a reference model.
+        <div style={{ ...typeStyle('paragraph1'), color: '#1a1a1a' }}>
+          The north star was clear: <strong>reduce customer enquiries</strong> that drove up costs while <strong>building trust</strong> in Zalando. The project delivered €3.2M in annual savings, helping the Customer Care team exceed budget targets. The solution became a blueprint for Zalando&apos;s broader <strong>self-service and automation strategy</strong>, with the confirmed carrier data approach adopted as a reference model across teams.
         </div>
       </Card>
     </div>
@@ -2451,13 +2452,15 @@ export const SlideKeyLesson = () => (
     <SectionLabel section="Reflection" />
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       <h2 style={{ ...typeStyle('title1'), maxWidth: 1400 }}>
-        <span style={{ color: STYLE.colors.gray600 }}>Comprehensive</span> →{' '}
+        <span style={{ color: STYLE.colors.gray600 }}>Comprehensive</span>
+        <br />
+        <span style={{ color: STYLE.colors.white }}>→ </span>
         <span style={{ color: STYLE.colors.accent }}>Contextual</span>
       </h2>
-      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray500), marginTop: 48, maxWidth: 1100 }}>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray500), marginTop: 48, maxWidth: '40%' }}>
         The most important shift was moving from &quot;comprehensive&quot; to &quot;contextual.&quot; Research proved customers needed the right information at the right moment.
       </p>
-      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray500), marginTop: 24, maxWidth: 1100 }}>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray500), marginTop: 24, maxWidth: '40%' }}>
         Comprehensive help pages gave customers everything. Contextual cards gave them exactly what they needed.
       </p>
     </div>
@@ -2491,6 +2494,9 @@ export const SlideClosing = () => {
     <div style={slideBase}>
       <SectionLabel section="Reflection" />
       <h2 style={{ ...typeStyle('header1'), fontSize: 80, marginTop: 64 }}>What I would do differently</h2>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1200 }}>
+        Looking back at this project, these are the key lessons that would have accelerated delivery and reduced friction.
+      </p>
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
@@ -2507,7 +2513,7 @@ export const SlideClosing = () => {
             flexDirection: 'column',
             gap: 20,
           }}>
-            <div style={{ ...typeStyle('header3'), color: STYLE.colors.gray600 }}>{r.num}</div>
+            <div style={{ ...typeStyle('header3'), color: 'rgba(255,255,255,0.2)' }}>{r.num}</div>
             <div style={{ ...typeStyle('header2'), fontSize: 48, color: STYLE.colors.accent }}>{r.title}</div>
             <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), flex: 1 }}>{r.body}</div>
           </Card>
