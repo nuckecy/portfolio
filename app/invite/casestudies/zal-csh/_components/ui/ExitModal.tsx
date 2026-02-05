@@ -59,65 +59,75 @@ export function ExitModal({ isOpen, onClose }: ExitModalProps) {
         style={{
           background: STYLE.colors.surface,
           border: `1px solid ${STYLE.colors.border}`,
-          borderRadius: 16,
-          padding: '32px 40px',
+          borderRadius: 8,
+          padding: 16,
           maxWidth: 360,
           width: '90%',
-          textAlign: 'center',
           boxShadow: '0 24px 48px rgba(0, 0, 0, 0.4)',
         }}
       >
-        {/* Icon */}
+        {/* Header - Icon and Title inline */}
         <div
           style={{
-            width: 48,
-            height: 48,
-            borderRadius: '50%',
-            background: 'rgba(232, 147, 47, 0.15)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0 auto 20px',
+            gap: 12,
+            marginBottom: 8,
           }}
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke={STYLE.colors.accent}
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          {/* Icon */}
+          <div
+            style={{
+              width: 32,
+              height: 32,
+              borderRadius: '50%',
+              border: `1px solid ${STYLE.colors.border}`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
           >
-            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-            <polyline points="16 17 21 12 16 7" />
-            <line x1="21" y1="12" x2="9" y2="12" />
-          </svg>
-        </div>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke={STYLE.colors.accent}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+          </div>
 
-        {/* Title */}
-        <h2
-          style={{
-            fontFamily: STYLE.fonts.heading,
-            fontSize: 20,
-            fontWeight: 500,
-            color: STYLE.colors.white,
-            margin: '0 0 8px',
-          }}
-        >
-          Leave presentation?
-        </h2>
+          {/* Title */}
+          <h2
+            style={{
+              fontFamily: STYLE.fonts.heading,
+              fontSize: 18,
+              fontWeight: 500,
+              color: STYLE.colors.white,
+              margin: 0,
+            }}
+          >
+            Leave presentation?
+          </h2>
+        </div>
 
         {/* Subtitle */}
         <p
           style={{
             fontFamily: STYLE.fonts.body,
-            fontSize: 14,
+            fontSize: 13,
             fontWeight: 400,
             color: STYLE.colors.gray500,
-            margin: '0 0 28px',
+            margin: '0 0 16px',
             lineHeight: 1.5,
+            paddingLeft: 44,
           }}
         >
           You'll return to the case studies page.

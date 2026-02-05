@@ -1,6 +1,11 @@
+'use client';
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function InviteCaseStudiesPage() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <main style={{
       minHeight: '100vh',
@@ -10,39 +15,92 @@ export default function InviteCaseStudiesPage() {
       background: '#0A0A0A',
       overflow: 'hidden',
     }}>
-      <div style={{
-        background: 'rgba(255, 255, 255, 0.05)',
-        border: '1px solid rgba(255, 255, 255, 0.1)',
-        borderRadius: 16,
-        padding: '48px 64px',
-        textAlign: 'center',
-      }}>
-        <h1 style={{
-          color: 'white',
-          fontSize: 28,
-          fontWeight: 600,
-          marginBottom: 8,
-        }}>
-          Transforming Customer Support
-        </h1>
+      <Link
+        href="/invite/casestudies/zal-csh"
+        style={{
+          display: 'block',
+          background: 'rgba(255, 255, 255, 0.03)',
+          border: `1px solid ${isHovered ? 'rgba(232, 147, 47, 0.5)' : '#2A2A2A'}`,
+          borderRadius: 8,
+          padding: 16,
+          maxWidth: 400,
+          width: '90%',
+          textDecoration: 'none',
+          position: 'relative',
+          transition: 'border-color 0.3s ease',
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* CASE STUDY PRESENTATION caption */}
         <p style={{
-          color: 'rgba(255, 255, 255, 0.6)',
-          fontSize: 16,
-          marginBottom: 32,
+          fontFamily: "'Oswald', sans-serif",
+          fontSize: 8,
+          fontWeight: 700,
+          letterSpacing: '2px',
+          textTransform: 'uppercase',
+          color: '#888888',
+          margin: '0 0 16px',
         }}>
-          Otobong Okoko
+          Case Study Presentation
         </p>
-        <Link
-          href="/invite/casestudies/zal-csh"
-          style={{
-            color: '#FF6B35',
-            fontSize: 14,
-            textDecoration: 'none',
-          }}
-        >
-          View Presentation →
-        </Link>
-      </div>
+
+        {/* Title */}
+        <h1 style={{
+          fontFamily: "'Oswald', sans-serif",
+          fontSize: 32,
+          fontWeight: 700,
+          lineHeight: 1.0,
+          letterSpacing: '-0.5px',
+          color: '#FFFFFF',
+          margin: '0 0 6px',
+        }}>
+          Transforming<br />Customer Support
+        </h1>
+
+        {/* Subtitle */}
+        <p style={{
+          fontFamily: "'Zalando Sans', 'Source Sans 3', sans-serif",
+          fontSize: 16,
+          fontWeight: 300,
+          lineHeight: 1.4,
+          color: '#E8932F',
+          margin: '0 0 16px',
+        }}>
+          Context-aware self-help platform at Zalando
+        </p>
+
+        {/* Name */}
+        <p style={{
+          fontFamily: "'Zalando Sans', 'Source Sans 3', sans-serif",
+          fontSize: 12,
+          fontWeight: 700,
+          color: '#FFFFFF',
+          margin: 0,
+        }}>
+          By Otobong Okoko
+        </p>
+
+        {/* Chevron button - bottom right */}
+        <div style={{
+          position: 'absolute',
+          bottom: 16,
+          right: 16,
+          width: 24,
+          height: 24,
+          borderRadius: '50%',
+          border: `1px solid ${isHovered ? 'rgba(232, 147, 47, 0.5)' : '#2A2A2A'}`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: isHovered ? 'rgba(232, 147, 47, 0.5)' : '#888888',
+          transition: 'all 0.3s ease',
+        }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </div>
+      </Link>
     </main>
   );
 }
