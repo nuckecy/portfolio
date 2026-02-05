@@ -1180,21 +1180,20 @@ export const SlideTesting = () => {
         {/* Left column: Big stat + Fixed cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <Card style={{
-            padding: 48,
+            padding: '32px 48px',
             borderRadius: STYLE.radius.bento,
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             textAlign: 'center',
-            flex: 1,
           }}>
-            <div style={{ ...typeStyle('header3'), fontSize: 180, lineHeight: 0.9 }}>8<span style={{ color: STYLE.colors.gray600 }}>/12</span></div>
-            <div style={{ ...typeStyle('statLabel', STYLE.colors.gray400), marginTop: 24 }}>participants completed primary flow</div>
-            <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray600), marginTop: 8 }}>(first round success rate)</div>
+            <div style={{ ...typeStyle('header3'), fontSize: 140, lineHeight: 0.9 }}>8<span style={{ color: STYLE.colors.gray600 }}>/12</span></div>
+            <div style={{ ...typeStyle('statLabel', STYLE.colors.gray400), marginTop: 16 }}>participants completed primary flow</div>
+            <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray600), marginTop: 4 }}>(first round success rate)</div>
           </Card>
           {/* Fixed cards below stat */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, flex: 1 }}>
             {findings.filter(f => f.status === 'Fixed').map((f, i) => (
               <Card key={i} style={{
                 padding: '20px 24px',
