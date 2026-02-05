@@ -1148,8 +1148,8 @@ export const SlideDecisions = () => {
               <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6 }}>{d.assumptionDesc}</div>
             </Card>
             <div style={{ display: 'flex', alignItems: 'center', color: STYLE.colors.gray600, fontSize: 24 }}>→</div>
-            <Card style={{ padding: '20px 28px', borderRadius: STYLE.radius.card, background: STYLE.colors.accent, borderColor: STYLE.colors.accent, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ ...typeStyle('tag'), color: '#1a1a1a', opacity: 0.7 }}>VALIDATED</div>
+            <Card style={{ padding: '20px 28px', borderRadius: STYLE.radius.card, background: STYLE.colors.white, display: 'flex', flexDirection: 'column' }}>
+              <div style={{ ...typeStyle('tag'), color: STYLE.colors.accent }}>VALIDATED</div>
               <div style={{ ...typeStyle('paragraph1'), fontWeight: 600, marginTop: 8, color: '#1a1a1a' }}>{d.validated}</div>
               <div style={{ ...typeStyle('paragraph3'), marginTop: 6, color: 'rgba(0,0,0,0.7)' }}>{d.validatedDesc}</div>
             </Card>
