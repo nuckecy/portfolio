@@ -640,11 +640,11 @@ export const SlideInsight1 = () => (
     <SectionLabel section="Research & Discovery" subSection="Key Insights" />
     <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Customers scan. They don&apos;t read.</h2>
     <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1000 }}>
-      Detailed FAQ pages with comprehensive information caused information overload and abandonment. Customers wanted the one piece of information relevant to their specific situation, immediately visible.
+      Detailed context cards with comprehensive information caused information overload and abandonment. Customers wanted the one piece of information relevant to their specific situation, immediately visible.
     </p>
     <div style={{ display: 'flex', gap: 24, flex: 1, minHeight: 0, marginTop: STYLE.spacing.titleGap }}>
       <ImagePlaceholder label="FAQ page heatmap / scroll depth" style={{ flex: 1, borderRadius: STYLE.radius.bento }} />
-      <ImagePlaceholder label="Before: wall of text FAQ" style={{ flex: 1, borderRadius: STYLE.radius.bento }} />
+      <ImagePlaceholder label="Context cards for returns" style={{ flex: 1, borderRadius: STYLE.radius.bento }} />
     </div>
   </div>
 );
@@ -989,6 +989,8 @@ export const SlideInsight3 = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideEntryPoints = () => {
+  const [isCanvasOpen, setIsCanvasOpen] = React.useState(false);
+
   const entryPoints = [
     { icon: icons.search, title: 'Google search', tag: 'PRIMARY', desc: 'Highest volume. Customers searched specific questions and landed on relevant FAQ sections.' },
     { icon: icons.globe, title: 'Website navigation', tag: 'SECONDARY', desc: 'Header/footer links to FAQ from the main site.' },
@@ -1004,28 +1006,89 @@ export const SlideEntryPoints = () => {
         The solution needed to adapt its display based on arrival context. A customer via Google search sees only relevant cards; one from the homepage sees all active cards.
       </p>
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
+        display: 'flex',
         gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {entryPoints.map((ep, i) => (
-          <Card key={i} style={{
-            padding: 32,
-            borderRadius: STYLE.radius.bento,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 16,
-          }}>
-            <IconBox icon={ep.icon} size={56} />
-            <div style={{ ...typeStyle('header2'), fontSize: 28 }}>{ep.title}</div>
-            <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
-            <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 18, flex: 1, lineHeight: 1.5 }}>{ep.desc}</div>
-          </Card>
-        ))}
+        {/* Left: 2x2 grid of entry point cards */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: 16,
+          flex: 1,
+        }}>
+          {entryPoints.map((ep, i) => (
+            <Card key={i} style={{
+              padding: 24,
+              borderRadius: STYLE.radius.card,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+            }}>
+              <IconBox icon={ep.icon} size={44} />
+              <div style={{ ...typeStyle('header2'), fontSize: 24 }}>{ep.title}</div>
+              <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
+              <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 16, flex: 1, lineHeight: 1.5 }}>{ep.desc}</div>
+            </Card>
+          ))}
+        </div>
+        {/* Right: Canvas preview */}
+        <div style={{
+          position: 'relative',
+          flex: 1,
+          borderRadius: STYLE.radius.bento,
+          overflow: 'hidden',
+          background: '#f5f5f5',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <img
+            src="/images/presentation-assets/CSH Entry Point Flows.jpg"
+            alt="Entry Points to Contextual Self-Help"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+            }}
+          />
+          {/* Expand button */}
+          <button
+            onClick={() => setIsCanvasOpen(true)}
+            style={{
+              position: 'absolute',
+              top: 12,
+              right: 12,
+              width: 36,
+              height: 36,
+              borderRadius: 8,
+              background: 'rgba(0, 0, 0, 0.6)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'; }}
+            title="Open canvas view"
+          >
+            {navIcons.expand}
+          </button>
+        </div>
       </div>
+
+      {/* Canvas Modal */}
+      <CanvasModal
+        isOpen={isCanvasOpen}
+        onClose={() => setIsCanvasOpen(false)}
+        src="/images/presentation-assets/CSH Entry Point Flows.jpg"
+        alt="Entry Points to Contextual Self-Help"
+      />
     </div>
   );
 };
