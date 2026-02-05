@@ -1101,21 +1101,21 @@ export const SlideDecisions = () => {
   const decisions = [
     {
       assumption: 'Standalone help center',
-      assumptionDesc: 'We assumed a new dedicated destination would improve self-service',
+      assumptionDesc: 'A dedicated self-service destination will reduce support contacts',
       validated: 'Embedded in existing FAQ',
-      validatedDesc: 'Customers already had 4 established paths. New destination = new behavior to learn.',
+      validatedDesc: 'Research revealed customers already navigate via 4 established paths. Adding a new destination would require learning new behavior.',
     },
     {
       assumption: 'Comprehensive information upfront',
-      assumptionDesc: 'We assumed showing all details upfront would reduce confusion',
+      assumptionDesc: 'Providing all information on the first screen will answer questions faster',
       validated: 'Progressive disclosure',
-      validatedDesc: 'Testing showed detailed first-screens created the same overload problem.',
+      validatedDesc: 'Usability testing confirmed information overload. Users needed only the details relevant to their specific situation.',
     },
     {
       assumption: 'Order IDs as identifiers',
-      assumptionDesc: 'We assumed customers would use system reference numbers',
+      assumptionDesc: 'Customers will identify orders using system-generated reference numbers',
       validated: 'Product images',
-      validatedDesc: "Customers couldn't recall system codes. They identified purchases visually.",
+      validatedDesc: 'User interviews showed customers recognize purchases visually. Order IDs were only referenced during agent escalation.',
     },
   ];
 
