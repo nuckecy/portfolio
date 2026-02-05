@@ -1168,6 +1168,9 @@ export const SlideTesting = () => {
     <div style={slideBase}>
       <SectionLabel section="Design Process" subSection="Prototyping & Iteration" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Testing and iterating</h2>
+      <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1000 }}>
+        Usability testing with 12 participants across 3 prototype iterations revealed key friction points and validated the contextual approach.
+      </p>
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 2fr',
