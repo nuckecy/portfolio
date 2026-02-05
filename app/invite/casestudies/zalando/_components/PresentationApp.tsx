@@ -34,7 +34,7 @@ const slides = slideData.map((s) => ({
 
 const { width: BASE_W, height: BASE_H } = STYLE.canvas;
 const CONTROLS_H = 56;
-const PROGRESS_H = 3;
+const PROGRESS_H = 0.5;
 const BOTTOM_H = CONTROLS_H + PROGRESS_H;
 
 export default function PresentationApp() {
@@ -209,16 +209,17 @@ export default function PresentationApp() {
           aria-valuemin={1}
           aria-valuemax={slides.length}
           aria-label="Presentation progress"
-          style={{ height: PROGRESS_H, background: 'rgba(255,255,255,0.1)', flexShrink: 0 }}
+          style={{ height: PROGRESS_H, background: 'rgba(255,255,255,0.08)', flexShrink: 0 }}
         >
-          <div style={{ height: '100%', width: `${progress}%`, background: STYLE.colors.white, transition: 'width 0.3s ease' }} />
+          <div style={{ height: '100%', width: `${progress}%`, background: 'rgba(255,255,255,0.25)', transition: 'width 0.3s ease' }} />
         </div>
         <nav aria-label="Presentation controls" style={{
           height: CONTROLS_H, background: '#0A0A0A', flexShrink: 0,
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px',
+          display: 'flex', alignItems: 'center', padding: '0 24px',
           position: 'relative',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          {/* LEFT: Menu + Info */}
+          <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 12 }}>
             {/* Menu button */}
             <button
               onClick={(e) => { e.stopPropagation(); setIsMenuOpen(!isMenuOpen); }}
@@ -318,70 +319,77 @@ export default function PresentationApp() {
               ))}
             </div>
           )}
-          
-          <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            {slides.map((slide, i) => (
-              <button
-                key={i}
-                className="slide-nav-dot"
-                role="tab"
-                aria-selected={i === currentSlide}
-                aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
-                onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
-                style={{
-                  width: 24,
-                  height: 24,
-                  borderRadius: '50%',
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontFamily: STYLE.fonts.heading,
-                  fontSize: 11,
-                  fontWeight: 500,
-                  color: i === currentSlide ? STYLE.colors.white : STYLE.colors.gray700,
-                  transition: 'all 0.2s ease',
-                  padding: 0,
-                }}
-              >
-                {i === 0 ? navIcons.home : i + 1}
-              </button>
-            ))}
+
+          {/* CENTER: Page Indicators */}
+          <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+              {slides.map((slide, i) => (
+                <button
+                  key={i}
+                  className="slide-nav-dot"
+                  role="tab"
+                  aria-selected={i === currentSlide}
+                  aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
+                  onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
+                  style={{
+                    width: 24,
+                    height: 24,
+                    borderRadius: '50%',
+                    background: i === currentSlide ? 'rgba(255,255,255,0.5)' : 'transparent',
+                    border: i === 0 ? 'none' : (i === currentSlide ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.15)'),
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontFamily: STYLE.fonts.heading,
+                    fontSize: 11,
+                    fontWeight: 500,
+                    color: i === currentSlide ? '#0A0A0A' : 'rgba(255,255,255,0.25)',
+                    transition: 'all 0.2s ease',
+                    padding: 0,
+                  }}
+                >
+                  {i === 0 ? navIcons.home : i + 1}
+                </button>
+              ))}
+            </div>
           </div>
-          <div style={{ position: 'relative' }}>
-            <button
-              className="slide-btn"
-              onClick={(e) => { e.stopPropagation(); exitPresent(); }}
-              aria-label="Exit presentation mode"
-              style={btnStyle()}
-              onMouseEnter={() => setShowExitTooltip(true)}
-              onMouseLeave={() => setShowExitTooltip(false)}
-            >
-              {navIcons.shrink}<span>Exit</span>
-            </button>
-            {showExitTooltip && (
-              <div style={{
-                position: 'absolute',
-                bottom: '100%',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                marginBottom: 8,
-                padding: '6px 12px',
-                background: '#1A1A1A',
-                border: `1px solid ${STYLE.colors.border}`,
-                borderRadius: 6,
-                whiteSpace: 'nowrap',
-                fontSize: 12,
-                fontFamily: STYLE.fonts.body,
-                color: STYLE.colors.gray400,
-                boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-                zIndex: 1000,
-              }}>
-                Press <span style={{ color: STYLE.colors.white, fontWeight: 500 }}>Esc</span> to exit
-              </div>
-            )}
+
+          {/* RIGHT: Buttons */}
+          <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+            <div style={{ position: 'relative' }}>
+              <button
+                className="slide-btn"
+                onClick={(e) => { e.stopPropagation(); exitPresent(); }}
+                aria-label="Exit presentation mode"
+                style={btnStyle()}
+                onMouseEnter={() => setShowExitTooltip(true)}
+                onMouseLeave={() => setShowExitTooltip(false)}
+              >
+                {navIcons.shrink}<span>Exit</span>
+              </button>
+              {showExitTooltip && (
+                <div style={{
+                  position: 'absolute',
+                  bottom: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  marginBottom: 8,
+                  padding: '6px 12px',
+                  background: '#1A1A1A',
+                  border: `1px solid ${STYLE.colors.border}`,
+                  borderRadius: 6,
+                  whiteSpace: 'nowrap',
+                  fontSize: 12,
+                  fontFamily: STYLE.fonts.body,
+                  color: STYLE.colors.gray400,
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                  zIndex: 1000,
+                }}>
+                  Press <span style={{ color: STYLE.colors.white, fontWeight: 500 }}>Esc</span> to exit
+                </div>
+              )}
+            </div>
           </div>
         </nav>
       </div>
@@ -519,18 +527,19 @@ export default function PresentationApp() {
         aria-valuemin={1}
         aria-valuemax={slides.length}
         aria-label="Presentation progress"
-        style={{ height: 3, background: STYLE.colors.border, flexShrink: 0 }}
+        style={{ height: PROGRESS_H, background: 'rgba(255,255,255,0.08)', flexShrink: 0 }}
       >
-        <div style={{ height: '100%', width: `${progress}%`, background: STYLE.colors.white, transition: 'width 0.3s ease' }} />
+        <div style={{ height: '100%', width: `${progress}%`, background: 'rgba(255,255,255,0.25)', transition: 'width 0.3s ease' }} />
       </div>
 
       {/* Controls */}
       <nav aria-label="Presentation controls" style={{
         height: 56, background: '#0A0A0A', flexShrink: 0,
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px',
+        display: 'flex', alignItems: 'center', padding: '0 24px',
         position: 'relative',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }} ref={menuRef}>
+        {/* LEFT: Menu + Info */}
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 12 }} ref={menuRef}>
           {/* Menu button */}
           <button
             onClick={(e) => { e.stopPropagation(); setIsMenuOpen(!isMenuOpen); }}
@@ -633,39 +642,43 @@ export default function PresentationApp() {
         )}
         </div>
 
-        <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          {slides.map((slide, i) => (
-            <button
-              key={i}
-              className="slide-nav-dot"
-              role="tab"
-              aria-selected={i === currentSlide}
-              aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
-              onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
-              style={{
-                width: 24,
-                height: 24,
-                borderRadius: '50%',
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontFamily: STYLE.fonts.heading,
-                fontSize: 11,
-                fontWeight: 500,
-                color: i === currentSlide ? STYLE.colors.white : STYLE.colors.gray700,
-                transition: 'all 0.2s ease',
-                padding: 0,
-              }}
-            >
-              {i === 0 ? navIcons.home : i + 1}
-            </button>
-          ))}
+        {/* CENTER: Page Indicators */}
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            {slides.map((slide, i) => (
+              <button
+                key={i}
+                className="slide-nav-dot"
+                role="tab"
+                aria-selected={i === currentSlide}
+                aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
+                onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
+                style={{
+                  width: 24,
+                  height: 24,
+                  borderRadius: '50%',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontFamily: STYLE.fonts.heading,
+                  fontSize: 11,
+                  fontWeight: 500,
+                  color: i === currentSlide ? STYLE.colors.white : 'rgba(255,255,255,0.25)',
+                  transition: 'all 0.2s ease',
+                  padding: 0,
+                }}
+              >
+                {i === 0 ? navIcons.home : i + 1}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        {/* RIGHT: Buttons */}
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
           <div style={{ position: 'relative' }}>
             <button
               className="slide-btn"

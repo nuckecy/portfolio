@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { STYLE, typeStyle, slidePadding } from '../styles/tokens';
 import { Card, BentoCard, IconBox, ImagePlaceholder } from '../primitives';
 import { SectionLabel } from '../ui/SectionLabel';
@@ -649,6 +650,147 @@ export const SlideInsight1 = () => (
 // ─────────────────────────────────────────────────────────
 
 export const SlideInsight2 = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  // Custom dual-image modal
+  const DualImageModal = () => {
+    if (!isModalOpen || typeof document === 'undefined') return null;
+
+    return ReactDOM.createPortal(
+      <div
+        onClick={() => setIsModalOpen(false)}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          background: 'rgba(0, 0, 0, 0.9)',
+          display: 'flex',
+          flexDirection: 'column',
+          zIndex: 9999,
+        }}
+      >
+        {/* Top control bar */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '16px 24px',
+            background: 'rgba(0, 0, 0, 0.5)',
+            flexShrink: 0,
+          }}
+        >
+          <div
+            style={{
+              color: 'white',
+              fontFamily: STYLE.fonts.body,
+              fontSize: 16,
+              fontWeight: 500,
+              padding: '8px 16px',
+              background: 'rgba(255, 255, 255, 0.1)',
+              borderRadius: 20,
+            }}
+          >
+            Order Card Comparison
+          </div>
+
+          <button
+            onClick={() => setIsModalOpen(false)}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 8,
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Images container */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            gap: 40,
+            padding: 40,
+          }}
+        >
+          {/* System default */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, width: '45%' }}>
+            <div
+              style={{
+                color: 'rgba(255,255,255,0.6)',
+                fontFamily: STYLE.fonts.body,
+                fontSize: 14,
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+              }}
+            >
+              Delivery Card Version 1
+            </div>
+            <img
+              src="/images/presentation-assets/Delivery Card Version 1.png?v=3"
+              alt="Order card showing order ID and reference number"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+              }}
+            />
+          </div>
+
+          {/* Research finding */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, width: '45%' }}>
+            <div
+              style={{
+                color: 'rgba(255,255,255,0.6)',
+                fontFamily: STYLE.fonts.body,
+                fontSize: 14,
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+              }}
+            >
+              Delivery Card - Current
+            </div>
+            <img
+              src="/images/presentation-assets/Delivery Card - Current.png?v=3"
+              alt="Order card with product images as primary identifier"
+              style={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+              }}
+            />
+          </div>
+        </div>
+      </div>,
+      document.body
+    );
+  };
+
   return (
     <div style={slideBase}>
       <SectionLabel section="Research & Discovery" subSection="Key Insights" />
@@ -667,32 +809,119 @@ export const SlideInsight2 = () => {
           borderRadius: STYLE.radius.bento,
           display: 'flex',
           flexDirection: 'column',
-          gap: 20,
+          gap: 16,
         }}>
           <div style={typeStyle('tag', STYLE.colors.gray600)}>SYSTEM DEFAULT</div>
           <div style={typeStyle('header2')}>Order IDs & reference numbers</div>
-          <div style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), flex: 1 }}>
-            &quot;ZAL-2024-8847291&quot; means nothing to a customer with 5 active orders. They can&apos;t recall system-generated codes.
+          <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 24, lineHeight: 1.5 }}>
+            &quot;1019234205367&quot; means nothing to a customer with 5 active orders. They can&apos;t recall system-generated codes.
           </div>
-          <ImagePlaceholder label="Order list with IDs" style={{ height: 220, borderRadius: 12 }} />
+          <div style={{ flex: 1, borderRadius: 12, background: '#3a3a3a', border: '2px solid #3a3a3a', overflow: 'hidden', position: 'relative', minHeight: 0 }}>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                position: 'absolute',
+                top: 12,
+                right: 12,
+                width: 40,
+                height: 40,
+                borderRadius: 8,
+                background: 'rgba(0, 0, 0, 0.6)',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 10,
+                transition: 'background 0.2s ease',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <polyline points="9 21 3 21 3 15"></polyline>
+                <line x1="21" y1="3" x2="14" y2="10"></line>
+                <line x1="3" y1="21" x2="10" y2="14"></line>
+              </svg>
+            </button>
+            <img
+              src="/images/presentation-assets/Delivery Card Version 1.png?v=3"
+              alt="Order card showing order ID and reference number"
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-40%, -30%)',
+                width: '120%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </div>
         </Card>
 
         {/* Right: Research finding */}
-        <BentoCard variant="peachGradient" style={{
+        <Card style={{
           padding: 44,
           borderRadius: STYLE.radius.bento,
           display: 'flex',
           flexDirection: 'column',
-          gap: 20,
+          gap: 16,
+          border: '1px solid rgba(255,255,255,0.15)',
         }}>
-          <div style={{ ...typeStyle('tag'), color: 'rgba(0,0,0,0.5)' }}>RESEARCH FINDING</div>
-          <div style={{ ...typeStyle('header2'), color: '#1A1A1A' }}>Product images</div>
-          <div style={{ ...typeStyle('paragraph1'), color: '#1A1A1A', opacity: 0.85, flex: 1 }}>
-            Customers think in &quot;the blue jacket&quot; or &quot;the running shoes.&quot; Product photos became the primary identifier; order IDs reserved for agent escalation.
+          <div style={typeStyle('tag', STYLE.colors.gray600)}>RESEARCH FINDING</div>
+          <div style={typeStyle('header2')}>Product images</div>
+          <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 24, lineHeight: 1.5 }}>
+            Customers think in &quot;the blue jacket&quot; or &quot;the running shoes.&quot; Product photos became the primary identifier.
           </div>
-          <ImagePlaceholder label="Card with product image" style={{ height: 220, borderRadius: 12, background: 'rgba(255,255,255,0.3)', border: '2px dashed rgba(0,0,0,0.2)' }} />
-        </BentoCard>
+          <div style={{ flex: 1, borderRadius: 12, background: '#3a3a3a', border: '2px solid #3a3a3a', overflow: 'hidden', position: 'relative', minHeight: 0 }}>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                position: 'absolute',
+                top: 12,
+                right: 12,
+                width: 40,
+                height: 40,
+                borderRadius: 8,
+                background: 'rgba(0, 0, 0, 0.6)',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 10,
+                transition: 'background 0.2s ease',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <polyline points="9 21 3 21 3 15"></polyline>
+                <line x1="21" y1="3" x2="14" y2="10"></line>
+                <line x1="3" y1="21" x2="10" y2="14"></line>
+              </svg>
+            </button>
+            <img
+              src="/images/presentation-assets/Delivery Card - Current.png?v=3"
+              alt="Order card with product images as primary identifier"
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-40%, -26%)',
+                width: '120%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </div>
+        </Card>
       </div>
+
+      <DualImageModal />
     </div>
   );
 };
@@ -709,11 +938,35 @@ export const SlideInsight3 = () => {
   return (
     <div style={slideBase}>
       <SectionLabel section="Research & Discovery" subSection="Key Insights" />
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <h2 style={typeStyle('title1')}>Context beats<br/>comprehensiveness.</h2>
-        <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray500), marginTop: 40, maxWidth: 1000 }}>
-          The initial assumption was that customers needed more information. Research proved they needed the right information at the right moment.
-        </p>
+      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'start', marginTop: STYLE.spacing.sectionGap, paddingTop: 80 }}>
+        {/* Left: Text content */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+          <h2 style={typeStyle('title1')}>Context beats<br/>comprehensiveness.</h2>
+          <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray500), marginTop: 40 }}>
+            The initial assumption was that customers needed more information. Research proved they needed the right information at the right moment.
+          </p>
+        </div>
+
+        {/* Right: Image */}
+        <div style={{
+          height: '80%',
+          borderRadius: STYLE.radius.bento,
+          background: '#F7A35C',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <img
+            src="/images/presentation-assets/Tech Life - Blockchain.png"
+            alt="Illustration showing context-aware information delivery"
+            style={{
+              width: '105%',
+              height: 'auto',
+              display: 'block',
+            }}
+          />
+        </div>
       </div>
       <div style={{ display: 'flex', gap: 24 }}>
         {insights.map((c, i) => (
@@ -748,29 +1001,50 @@ export const SlideEntryPoints = () => {
       </p>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        gridTemplateRows: 'repeat(2, 1fr)',
+        gridTemplateColumns: '1fr 1fr',
         gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {entryPoints.map((ep, i) => (
-          <Card key={i} style={{
-            padding: 36,
-            borderRadius: STYLE.radius.bento,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 16,
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <IconBox icon={ep.icon} size={56} />
-              <div style={typeStyle('header2')}>{ep.title}</div>
-            </div>
-            <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
-            <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), flex: 1 }}>{ep.desc}</div>
-          </Card>
-        ))}
+        {/* Left: Entry point cards in 2x2 grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gridTemplateRows: 'repeat(2, 1fr)',
+          gap: 16,
+        }}>
+          {entryPoints.map((ep, i) => (
+            <Card key={i} style={{
+              padding: 24,
+              borderRadius: STYLE.radius.bento,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <IconBox icon={ep.icon} size={44} />
+                <div style={{ ...typeStyle('header2'), fontSize: 24 }}>{ep.title}</div>
+              </div>
+              <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
+              <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 18, flex: 1 }}>{ep.desc}</div>
+            </Card>
+          ))}
+        </div>
+
+        {/* Right: Image holder */}
+        <div style={{
+          borderRadius: STYLE.radius.bento,
+          background: '#3a3a3a',
+          border: '2px solid #3a3a3a',
+          overflow: 'hidden',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <ImagePlaceholder label="Entry points diagram" style={{ width: '100%', height: '100%' }} />
+        </div>
       </div>
     </div>
   );
