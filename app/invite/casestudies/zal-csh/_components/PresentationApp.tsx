@@ -5,6 +5,7 @@ import { STYLE } from './styles/tokens';
 import { navIcons } from './styles/icons';
 import { usePresentation } from './hooks/usePresentation';
 import { slideData } from './data/slides';
+import { ExitModal } from './ui/ExitModal';
 
 // Import all slide components
 import {
@@ -43,6 +44,7 @@ export default function PresentationApp() {
   const [showPrevTooltip, setShowPrevTooltip] = React.useState(false);
   const [showNextTooltip, setShowNextTooltip] = React.useState(false);
   const [showExitTooltip, setShowExitTooltip] = React.useState(false);
+  const [showExitModal, setShowExitModal] = React.useState(false);
   const menuRef = React.useRef<HTMLDivElement>(null);
   
   const {
@@ -420,39 +422,94 @@ export default function PresentationApp() {
                     );
                   }
 
+                  // Add exit button at the end
+                  items.push(
+                    <button
+                      key="exit"
+                      className="slide-nav-dot"
+                      aria-label="Exit presentation"
+                      onClick={(e) => { e.stopPropagation(); setShowExitModal(true); }}
+                      style={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'rgba(255,255,255,0.25)',
+                        transition: 'all 0.2s ease',
+                        padding: 0,
+                        marginLeft: 4,
+                      }}
+                    >
+                      {navIcons.exit}
+                    </button>
+                  );
+
                   return items;
                 }
 
                 // Desktop: show all slides
-                return slides.map((slide, i) => (
-                  <button
-                    key={i}
-                    className="slide-nav-dot"
-                    role="tab"
-                    aria-selected={i === currentSlide}
-                    aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
-                    onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
-                    style={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: '50%',
-                      background: i === currentSlide ? 'rgba(255,255,255,0.5)' : 'transparent',
-                      border: i === 0 ? 'none' : (i === currentSlide ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.15)'),
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontFamily: STYLE.fonts.heading,
-                      fontSize: 11,
-                      fontWeight: 500,
-                      color: i === currentSlide ? '#0A0A0A' : 'rgba(255,255,255,0.25)',
-                      transition: 'all 0.2s ease',
-                      padding: 0,
-                    }}
-                  >
-                    {i === 0 ? navIcons.home : i + 1}
-                  </button>
-                ));
+                return (
+                  <>
+                    {slides.map((slide, i) => (
+                      <button
+                        key={i}
+                        className="slide-nav-dot"
+                        role="tab"
+                        aria-selected={i === currentSlide}
+                        aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
+                        onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
+                        style={{
+                          width: 24,
+                          height: 24,
+                          borderRadius: '50%',
+                          background: i === currentSlide ? 'rgba(255,255,255,0.5)' : 'transparent',
+                          border: i === 0 ? 'none' : (i === currentSlide ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.15)'),
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontFamily: STYLE.fonts.heading,
+                          fontSize: 11,
+                          fontWeight: 500,
+                          color: i === currentSlide ? '#0A0A0A' : 'rgba(255,255,255,0.25)',
+                          transition: 'all 0.2s ease',
+                          padding: 0,
+                        }}
+                      >
+                        {i === 0 ? navIcons.home : i + 1}
+                      </button>
+                    ))}
+                    {/* Exit button */}
+                    <button
+                      key="exit"
+                      className="slide-nav-dot"
+                      aria-label="Exit presentation"
+                      onClick={(e) => { e.stopPropagation(); setShowExitModal(true); }}
+                      style={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'rgba(255,255,255,0.25)',
+                        transition: 'all 0.2s ease',
+                        padding: 0,
+                        marginLeft: 4,
+                      }}
+                    >
+                      {navIcons.exit}
+                    </button>
+                  </>
+                );
               })()}
             </div>
           </div>
@@ -851,39 +908,94 @@ export default function PresentationApp() {
                   );
                 }
 
+                // Add exit button at the end
+                items.push(
+                  <button
+                    key="exit"
+                    className="slide-nav-dot"
+                    aria-label="Exit presentation"
+                    onClick={(e) => { e.stopPropagation(); setShowExitModal(true); }}
+                    style={{
+                      width: 24,
+                      height: 24,
+                      borderRadius: '50%',
+                      background: 'transparent',
+                      border: 'none',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'rgba(255,255,255,0.25)',
+                      transition: 'all 0.2s ease',
+                      padding: 0,
+                      marginLeft: 4,
+                    }}
+                  >
+                    {navIcons.exit}
+                  </button>
+                );
+
                 return items;
               }
 
               // Desktop: show all slides
-              return slides.map((slide, i) => (
-                <button
-                  key={i}
-                  className="slide-nav-dot"
-                  role="tab"
-                  aria-selected={i === currentSlide}
-                  aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
-                  onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
-                  style={{
-                    width: 24,
-                    height: 24,
-                    borderRadius: '50%',
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontFamily: STYLE.fonts.heading,
-                    fontSize: 11,
-                    fontWeight: 500,
-                    color: i === currentSlide ? STYLE.colors.white : 'rgba(255,255,255,0.25)',
-                    transition: 'all 0.2s ease',
-                    padding: 0,
-                  }}
-                >
-                  {i === 0 ? navIcons.home : i + 1}
-                </button>
-              ));
+              return (
+                <>
+                  {slides.map((slide, i) => (
+                    <button
+                      key={i}
+                      className="slide-nav-dot"
+                      role="tab"
+                      aria-selected={i === currentSlide}
+                      aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
+                      onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
+                      style={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontFamily: STYLE.fonts.heading,
+                        fontSize: 11,
+                        fontWeight: 500,
+                        color: i === currentSlide ? STYLE.colors.white : 'rgba(255,255,255,0.25)',
+                        transition: 'all 0.2s ease',
+                        padding: 0,
+                      }}
+                    >
+                      {i === 0 ? navIcons.home : i + 1}
+                    </button>
+                  ))}
+                  {/* Exit button */}
+                  <button
+                    key="exit"
+                    className="slide-nav-dot"
+                    aria-label="Exit presentation"
+                    onClick={(e) => { e.stopPropagation(); setShowExitModal(true); }}
+                    style={{
+                      width: 24,
+                      height: 24,
+                      borderRadius: '50%',
+                      background: 'transparent',
+                      border: 'none',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'rgba(255,255,255,0.25)',
+                      transition: 'all 0.2s ease',
+                      padding: 0,
+                      marginLeft: 4,
+                    }}
+                  >
+                    {navIcons.exit}
+                  </button>
+                </>
+              );
             })()}
           </div>
         </div>
@@ -1000,6 +1112,9 @@ export default function PresentationApp() {
           </div>
         </div>
       </nav>
+
+      {/* Exit Modal */}
+      <ExitModal isOpen={showExitModal} onClose={() => setShowExitModal(false)} />
     </div>
   );
 }
