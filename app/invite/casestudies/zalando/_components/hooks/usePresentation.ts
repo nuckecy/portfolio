@@ -20,7 +20,14 @@ export function usePresentation(totalSlides: number) {
 
   // Set mounted state and initial window size after hydration, ensure notes are hidden
   useEffect(() => {
-    setWindowSize({ w: window.innerWidth, h: window.innerHeight });
+    const isMobile = window.innerWidth < 1024 || 'ontouchstart' in window;
+    const isPortrait = window.innerHeight > window.innerWidth;
+    // Swap dimensions if mobile portrait (CSS will rotate)
+    if (isMobile && isPortrait) {
+      setWindowSize({ w: window.innerHeight, h: window.innerWidth });
+    } else {
+      setWindowSize({ w: window.innerWidth, h: window.innerHeight });
+    }
     setShowNotes(false);
     setIsMounted(true);
   }, []);
@@ -64,11 +71,25 @@ export function usePresentation(totalSlides: number) {
     return () => window.removeEventListener('keydown', handler);
   }, [goNext, goPrev, isPresenting, togglePresent, exitPresent]);
 
-  // Window resize tracking
+  // Window resize tracking - swap dimensions when portrait rotated
   useEffect(() => {
-    const resize = () => setWindowSize({ w: window.innerWidth, h: window.innerHeight });
+    const resize = () => {
+      const isMobile = window.innerWidth < 1024 || 'ontouchstart' in window;
+      const isPortrait = window.innerHeight > window.innerWidth;
+      // When CSS rotates portrait to landscape, swap the dimensions
+      if (isMobile && isPortrait) {
+        setWindowSize({ w: window.innerHeight, h: window.innerWidth });
+      } else {
+        setWindowSize({ w: window.innerWidth, h: window.innerHeight });
+      }
+    };
+    resize(); // Call immediately to set correct initial size
     window.addEventListener('resize', resize);
-    return () => window.removeEventListener('resize', resize);
+    window.addEventListener('orientationchange', resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('orientationchange', resize);
+    };
   }, []);
 
   // Mobile orientation detection + CSS rotation tracking
