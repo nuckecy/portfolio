@@ -1,0 +1,441 @@
+{
+  "personal": {
+    "name": "Otobong Okoko",
+    "title": "Senior Product Designer",
+    "tagline": "Building Products from Zero to Scale | AI | SaaS | Enterprise | B2B & B2C",
+    "email": "otobongsok@gmail.com",
+    "phone": "+491756899970",
+    "location": {
+      "city": "Berlin",
+      "country": "Germany"
+    },
+    "availability": "Available for work",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/otobong/",
+      "dribbble": "https://dribbble.com/yourusername",
+      "twitter": "https://twitter.com/yourusername",
+      "adplist": "https://adplist.org/mentors/otobong-okoko"
+    }
+  },
+
+  "home": {
+    "hero": {
+      "badge": "HI. I'M A SENIOR",
+      "title": "Product Designer.",
+      "rotatingBios": [
+        "Currently, I'm reimagining CX for Europe's leading fashion e-commerce platform.",
+        "Right now, I'm working to transform the customer care experience at Zalando.",
+        "Right now, I'm fixing the way customers get help at Zalando.",
+        "Right now, I'm working to make customer support at Zalando as seamless.",
+        "Currently, I'm focused on redesigning how millions of customers get help with Zalando.",
+        "Right now, I'm helping make Zalando's customer support easier and more enjoyable.",
+        "Right now, I'm working on improving customer care experiences at Zalando."
+      ]
+    },
+    "coreSkills": [
+      "User Research",
+      "Design Systems",
+      "Prototyping",
+      "Usability Testing",
+      "Information Architecture",
+      "Interaction Design",
+      "Visual Design",
+      "Design Thinking",
+      "Wireframing",
+      "User Flows",
+      "A/B Testing",
+      "Accessibility (WCAG)",
+      "Responsive Design",
+      "Design Sprint Facilitation",
+      "Stakeholder Management",
+      "AI-Powered Design",
+      "Conversational AI/UX",
+      "Generative AI Tools",
+      "AI Prompt Engineering",
+      "Machine Learning UX"
+    ],
+    "achievements": [
+      { "icon": "CSM", "title": "Certified", "subtitle": "Scrum Master" },
+      { "icon": "📊", "title": "Design Sprint", "subtitle": "Facilitator" },
+      { "icon": "🎓", "title": "Non-Profit", "subtitle": "Founder" },
+      { "icon": "🏆", "title": "Hackathon", "subtitle": "Winner" },
+      { "icon": "📢", "title": "Event", "subtitle": "Speaker" }
+    ],
+    "callToAction": [
+      { "label": "View Case Studies", "href": "/case-studies" },
+      { "label": "Contact Me", "href": "/contact" },
+      { "label": "Download Resume", "href": "/resume/Otobong_Okoko_Resume.pdf" }
+    ]
+  },
+
+  "about": {
+    "greeting": "Hello!",
+    "introduction": "I'm Otobong Okoko",
+    "mission": "I help shape how millions of people experience customer care at Europe's biggest fashion platform.",
+    "story": [
+      "I'm a systems thinker who operates in both design and code. This dual perspective lets me bridge what users need with what's possible to build. I speak both designers' and developers' languages, which makes collaboration flow naturally. I'm naturally curious, maybe annoyingly so - constantly asking questions that uncover better solutions.",
+      "Let's build something meaningful together. If you're looking for a designer who thinks strategically, codes functionally, and questions relentlessly, I'd love to collaborate. Reach out - let's talk about how we can create products that actually work for people."
+    ],
+    "coreSkills": [
+      "User Research",
+      "Design Systems",
+      "Frontend Development",
+      "Prototyping",
+      "Usability Testing",
+      "Visual Design",
+      "A/B Testing",
+      "Accessibility (WCAG)",
+      "Workshop Facilitation",
+      "AI/Vibe Coding/Prompt Engineering"
+    ],
+    "designPrinciples": [
+      {
+        "icon": "🎯",
+        "title": "Show, Don't Overwhelm",
+        "description": "Complexity should be revealed gradually, not dumped on users all at once. Start simple. Demonstrate competence step by step. Users gain confidence through progressive discovery - not by seeing everything upfront."
+      },
+      {
+        "icon": "🌍",
+        "title": "Include, Don't Retrofit",
+        "description": "Accessibility and cultural diversity shape the foundation - they don't get added later. Design for different thinking styles, communication preferences, and interaction needs from day one. Compliance is the baseline. True inclusion is the goal."
+      },
+      {
+        "icon": "🔧",
+        "title": "Fix Systems, Not Symptoms",
+        "description": "Surface problems usually point to deeper issues. Address root causes through interconnected solutions rather than patching individual pain points. Sustainable design solves for the system, not just the screen."
+      },
+      {
+        "icon": "✓",
+        "title": "Validate, Then Build",
+        "description": "Every significant design decision should be backed by evidence - user insights, behavioral data, or tested assumptions. Intuition starts the conversation, but research validates the direction. Make design choices defensible."
+      }
+    ]
+  },
+
+  "resume": {
+    "professionalJourney": "I started my career as a frontend engineer, and that technical foundation has been instrumental to my journey as a designer. It gave me a unique perspective, bridging the gap between what's technically feasible and what users truly need. With over 14 years of experience, I've had the opportunity to not just design products but to strategically lead and shape design organizations across diverse sectors, including e-commerce and banking. I am passionate about taking on complex business challenges and turning them into research-backed, user-validated experiences that deliver real, measurable business growth. Every design decision I make is anchored in rigorous user research, which ensures our solutions genuinely address user needs while achieving critical business objectives.",
+    "designPhilosophy": "I believe great design is a strategic business function, not just an aesthetic one. This approach extends to my leadership style: I focus on building resilient, data-informed design teams that serve as strategic partners to the business, rather than just service providers. I'm passionate about mentoring and empowering my team to grow their skills and careers, creating a culture of excellence and innovation that raises the bar for everyone.",
+    "coreStrengths": [
+      {
+        "title": "UX Engineering",
+        "description": "I have a deep understanding of front-end development principles. I can comfortably deliver accessible & responsive designs with HTML, CSS, & JavaScript. Great for functional testing as prototypes, reusable components, and production-ready code, even with AI as a sparring partner."
+      },
+      {
+        "title": "Cross-Disciplinary Expertise",
+        "description": "I've built a strong background in product design, UX research, accessibility, technical development, and cross-functional leadership."
+      },
+      {
+        "title": "Industry-Spanning Experience",
+        "description": "I've applied my design skills successfully across different industries, from large e-commerce platforms and banking to early-stage startups."
+      },
+      {
+        "title": "Mentorship & Team Growth",
+        "description": "Guiding and empowering junior designers to build their skills and careers."
+      }
+    ],
+    "coreCompetencies": [
+      {
+        "title": "Strategic Product Vision",
+        "description": "I translate stakeholder goals into cohesive design roadmaps that thoughtfully balance user needs, technical feasibility, and business objectives."
+      },
+      {
+        "title": "Cross-Functional Leadership",
+        "description": "I enjoy bringing design, engineering, and product teams together to make sure products are delivered smoothly."
+      },
+      {
+        "title": "Technical Design Implementation",
+        "description": "My engineering background helps me create designs that are not just great for users but are also efficient to build."
+      },
+      {
+        "title": "Accessibility Excellence",
+        "description": "I am a strong advocate for inclusive design, creating products that serve a wide range of people."
+      }
+    ]
+  },
+
+  "experience": [
+    {
+      "company": "Zalando SE",
+      "location": "Berlin, Germany",
+      "role": "Senior Product Designer, Customer Care Pillar",
+      "duration": "Nov 2021 - Present",
+      "description": "I lead the end-to-end design for the customer care division at Europe's largest fashion e-commerce platform. My focus has been on initiatives that improve customer support experiences while making our operations more efficient.",
+      "projects": [
+        {
+          "name": "Customer Care: Contextual Self-Help",
+          "problem": "We were dealing with approximately 20 million customer inquiries every year. It was a huge problem, and we needed a better way to solve customer challenges without them having to make multiple contacts.",
+          "solution": "I designed a data-driven contextual support system that gave customers personalized self-service options, often solving their problem in just one go. My technical background as a UX engineer allowed me to collaborate with engineering on a smart content delivery API that cut down page load time by 35%.",
+          "impact": [
+            "Reduced support ticket volume by 42%",
+            "Decreased resolution time from over 24 hours to under 3 hours",
+            "Improved customer satisfaction scores by 28%",
+            "Generated €3.4M in annual operational savings"
+          ]
+        },
+        {
+          "name": "Guided Conversational Chatbot",
+          "problem": "Our old chatbot was pretty rigid, which meant a 78% abandonment rate and a 43% escalation to human agents. Customers felt trapped in loops and kept having to repeat themselves, which was not a good look for the brand and was damaging our reputation.",
+          "solution": "By analyzing over 100 customer histories and use cases, I discovered useful insights and designed a new conversational architecture. This new system used natural language understanding with high accuracy and dynamic conversation paths that could adapt to a customer's emotional cues. We also included multi-modal confirmation states (visual, textual, and progress indicators) to keep customers confident throughout the interaction.",
+          "impact": [
+            "Increased the automation rate by 34%, beating our target by 9%",
+            "Reduced the average handling time by 47%",
+            "Improved the first-contact resolution rate by 23%"
+          ]
+        },
+        {
+          "name": "Accessibility Transformation Initiative",
+          "problem": "After a comprehensive accessibility audit, we discovered that 78% of our customer-facing interfaces and touchpoints had major WCAG compliance issues. This was a big deal because it meant we were effectively excluding about 15% of our potential customers and facing significant legal and reputational risks in our key European markets.",
+          "solution": "As a key part of a company-wide initiative, I drove the WCAG compliance solution for the Customer Care touchpoints. I optimized and tested all the designs to achieve AA and AAA accessibility compliance for web forms, FAQs, and contextual self-help tools to meet the full European Accessibility Act compliance by June 2025, which included implementing dark mode and dynamic text capabilities.",
+          "impact": [
+            "Achieved WCAG 2.1 AA compliance across 94% of customer interfaces",
+            "Expanded potential market by approximately 2.3 million new customers",
+            "Reduced legal compliance risk by 65%"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "United Bank of Africa",
+      "location": "Lagos, Nigeria",
+      "role": "Design Lead",
+      "duration": "Jan 2020 - Nov 2021",
+      "description": "I directed the design strategy for a pan-African financial institution, leading and managing design and engineering teams to deliver digital transformation initiatives that redefined banking experiences for over 20 million customers across 20 countries.",
+      "contributions": [
+        "Design System Implementation: Established the bank's first comprehensive design system with over 120 reusable components, increasing design-to-development velocity by 65%",
+        "UX Maturity Enhancement: Elevated organizational UX maturity through structured stakeholder engagement and research-driven practices, improving cross-functional collaboration by 60%",
+        "Mentoring & Team Leadership: Responsible for a team of four designers and mentored a product design intern who later joined full-time",
+        "Cross-Functional Excellence: Led a team of over 20 designers, engineers, product managers, and analysts through the complete product lifecycle"
+      ],
+      "projects": [
+        {
+          "name": "HCM Connect",
+          "problem": "UBA's fragmented HR infrastructure was a huge problem, creating significant business vulnerabilities across 20 countries. Disconnected data systems caused payroll errors, wasted over 30 weekly hours on manual reconciliation, and created documentation gaps that exposed the bank to a potential $1.2M in license fees and operational costs annually.",
+          "solution": "I led the architecture and design of a centralized employee management ecosystem that consolidated seven different systems into a single source of truth. My technical skills were essential in developing an intelligent data integration layer that allowed real-time synchronization between our previously siloed databases and implemented automated validation checks that kept our data integrity at 99.7%.",
+          "impact": [
+            "Eliminated $80,000 in monthly license fees",
+            "Improved the HR team's productivity by 43%",
+            "Reduced compliance reporting time from 3 days to 4 hours",
+            "Contributed to an 8% annual profitability improvement"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Sterling Bank PLC",
+      "location": "Lagos, Nigeria",
+      "role": "Product Designer & UX Engineer",
+      "duration": "Jan 2014 - Jan 2020",
+      "description": "Over eight years, I evolved my career from frontend engineer to senior product designer, where I was a key part of the digital transformation initiatives that redefined the bank's customer experience strategy and technical approach.",
+      "projects": [
+        {
+          "name": "Specta (Digital Lending Platform)",
+          "problem": "Nigeria's lending system was extremely inefficient, taking 14-21 days for approval and requiring extensive paperwork and multiple branch visits. This resulted in a 68% application abandonment rate and limited market reach.",
+          "solution": "I helped architect Nigeria's first fully digital lending platform, which used biometric identity verification and real-time credit scoring to enable 5-minute loan approvals. The research-validated interface used progressive disclosure to boost completion rates by 82% above industry standards.",
+          "impact": [
+            "Facilitated N20 billion ($55 million) in loan disbursements",
+            "Achieved an exceptional 0.1% non-performing loan rate",
+            "Improved operational efficiency by 80%",
+            "Expanded customer acquisition by 230%"
+          ]
+        },
+        {
+          "name": "Doubble (Investment Platform)",
+          "problem": "We were facing a 92% investment exclusion rate in Nigeria because of high minimum requirements ($5,000+) and complex onboarding processes. Most customers just didn't have the financial literacy to participate.",
+          "solution": "I designed a market-disrupting micro-investment platform that allowed contributions as low as $10. The platform had a behavior-based user journey with embedded financial education that increased investor confidence by 58%.",
+          "impact": [
+            "Increased first-time investors by 134%",
+            "Improved the conversion rate from registration to investment by 46%",
+            "Enhanced customer lifetime value by 28%"
+          ]
+        },
+        {
+          "name": "Fraud Analytics & Management Solution",
+          "problem": "Our old fraud detection systems were reactive, leading to significant financial losses and customer friction during transactions.",
+          "solution": "I designed a predictive fraud monitoring system that required minimal customer intervention. It was based on comprehensive user interviews and behavioral analysis and implemented an intelligent alert system with contextual verification workflows.",
+          "impact": [
+            "Reduced fraud incidents by 34%",
+            "Decreased false positives by 47%",
+            "Improved customer transaction completion rate by 23%",
+            "Saved approximately N155 million in potential fraud losses"
+          ]
+        }
+      ]
+    }
+  ],
+
+  "caseStudies": [
+    {
+      "slug": "zalando-contextual",
+      "company": "Zalando",
+      "year": "2025",
+      "title": "Contextual Self-Help Platform",
+      "subtitle": "Transforming Customer Support Through Predictive Design",
+      "description": "Cut 20M yearly inquiries by 42% and slashed resolution time from 24 hours to under 3.",
+      "skills": ["Product Design", "Personalization", "Data Science"],
+      "metrics": [
+        { "value": "34%", "label": "Higher Engagement" },
+        { "value": "28%", "label": "More Conversions" },
+        { "value": "2.1x", "label": "Click-Through Rate" },
+        { "value": "€8.2M", "label": "Revenue Impact" }
+      ],
+      "role": "Lead Designer",
+      "team": "Data Science, Product, Engineering (10-person cross-functional team)",
+      "market": "Europe - E-Commerce, Fashion, Personalization"
+    },
+    {
+      "slug": "zalando-chatbot",
+      "company": "Zalando",
+      "year": "2024",
+      "title": "Guided Conversational Chatbot",
+      "subtitle": "Reimagining Automated Support with Empathy",
+      "description": "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
+      "skills": ["Product Design", "AI/ML", "Conversational UX"],
+      "metrics": [
+        { "value": "87%", "label": "Resolution Rate" },
+        { "value": "45s", "label": "Avg Response Time" },
+        { "value": "3M+", "label": "Monthly Interactions" },
+        { "value": "4.6/5", "label": "Customer Rating" }
+      ],
+      "role": "Senior UX Designer",
+      "team": "AI, Product, Engineering (12-person cross-functional team)",
+      "market": "Europe - E-Commerce, Fashion, Customer Service"
+    },
+    {
+      "slug": "fraud-analytics",
+      "company": "Sterling Bank",
+      "year": "2019",
+      "title": "Fraud Analytics Platform",
+      "subtitle": "Real-Time Fraud Detection Dashboard",
+      "description": "Predictive monitoring that cut fraud by 34% and false positives by 47%, saving ₦155M.",
+      "skills": ["Product Design", "AI", "UX Engineering"],
+      "metrics": [
+        { "value": "78%", "label": "Fraud Reduction" },
+        { "value": "€2.3M", "label": "Annual Savings" },
+        { "value": "92%", "label": "Satisfaction" },
+        { "value": "6 Mo", "label": "Timeline" }
+      ],
+      "role": "Solo UX Engineer",
+      "team": "Data analytics, fraud specialists, engineers (5-person team)",
+      "market": "Nigeria - Fintech, Banking Security"
+    },
+    {
+      "slug": "uba-hcm-connect",
+      "company": "UBA Group",
+      "year": "2021",
+      "title": "UBA HCM Connect",
+      "subtitle": "Enterprise HR Management System",
+      "description": "Unified 12 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
+      "skills": ["Product Design", "Enterprise UX", "Change Management"],
+      "metrics": [
+        { "value": "20k", "label": "Employees" },
+        { "value": "85%", "label": "Adoption Rate" },
+        { "value": "60%", "label": "Time Saved" },
+        { "value": "8 Mo", "label": "Timeline" }
+      ],
+      "role": "Lead Product Designer",
+      "team": "Product, Engineering, HR (6-person cross-functional team)",
+      "market": "Nigeria, Africa - Enterprise HR Technology"
+    },
+    {
+      "slug": "uba-redd",
+      "company": "UBA Group",
+      "year": "2020",
+      "title": "UBA Redd App (Mobile Banking)",
+      "subtitle": "Pan-African Banking with Mood-Based Personalization",
+      "description": "Transformed satisfaction from 33% to 85% across 20 countries, driving €15M revenue and 43% digital growth.",
+      "skills": ["Product Design", "Impact Design", "Sustainability"],
+      "metrics": [
+        { "value": "500k", "label": "Trees Protected" },
+        { "value": "₦2B", "label": "Carbon Credits" },
+        { "value": "10k", "label": "Farmers Impacted" },
+        { "value": "18 Mo", "label": "Timeline" }
+      ],
+      "role": "UX Lead",
+      "team": "Sustainability, Tech, Operations (8-person cross-functional team)",
+      "market": "Africa - Climate Tech, Sustainable Finance"
+    },
+    {
+      "slug": "specta",
+      "company": "Sterling Bank",
+      "year": "2016",
+      "title": "Mobile Banking App (Specta)",
+      "subtitle": "Next-Generation Digital Lending Experience",
+      "description": "5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
+      "skills": ["Product Design", "UX Research", "Fintech"],
+      "metrics": [
+        { "value": "3 min", "label": "Approval Time" },
+        { "value": "15k+", "label": "Loans Disbursed" },
+        { "value": "₦500M", "label": "Total Value" },
+        { "value": "4.8/5", "label": "User Rating" }
+      ],
+      "role": "Lead Product Designer",
+      "team": "Product, Engineering, Credit (4-person cross-functional team)",
+      "market": "Nigeria - Consumer Lending, Fintech"
+    },
+    {
+      "slug": "cashamm",
+      "company": "Cashamm",
+      "year": "2021",
+      "title": "Cashaam Platform",
+      "subtitle": "Democratizing E-Commerce for Small Businesses",
+      "description": "Built dual-app ecosystem enabling affordable online stores - sole UX engineer handling research, design, and frontend development.",
+      "skills": ["Product Design", "Payment UX", "Security"],
+      "metrics": [
+        { "value": "2M+", "label": "Daily Transactions" },
+        { "value": "99.9%", "label": "Uptime" },
+        { "value": "45%", "label": "Faster Checkout" },
+        { "value": "92%", "label": "User Satisfaction" }
+      ],
+      "role": "Lead Product Designer",
+      "team": "Product, Engineering, Security (6-person cross-functional team)",
+      "market": "Global - Digital Payments, Fintech"
+    },
+    {
+      "slug": "orgcompass",
+      "company": "Modus Create",
+      "year": "2020",
+      "title": "OrgCompass (HR Intelligence)",
+      "subtitle": "Executive Decision Intelligence Platform",
+      "description": "Cut C-suite decision time by 73% and boosted retention 68% through predictive team intelligence.",
+      "skills": ["Product Design", "Data Visualization", "Strategy"],
+      "metrics": [
+        { "value": "45%", "label": "Faster Decisions" },
+        { "value": "32%", "label": "Team Effectiveness" },
+        { "value": "500+", "label": "Executives Enabled" },
+        { "value": "12 Mo", "label": "Timeline" }
+      ],
+      "role": "Product Strategy Consultant",
+      "team": "HR Leadership, IT (3-person consulting team)",
+      "market": "Nigeria - Enterprise HR Analytics"
+    }
+  ],
+
+  "contact": {
+    "heading": "Let's Connect",
+    "description": "I'm always open to discussing product design work or partnership opportunities.",
+    "email": "otobongsok@gmail.com",
+    "phone": "+491756899970",
+    "location": "Berlin, Germany"
+  },
+
+  "navigation": {
+    "brand": "Otobong O.",
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
+      { "label": "Case Study", "href": "/case-studies" },
+      { "label": "Resume", "href": "/resume" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/otobong/", "external": true }
+    ]
+  },
+
+  "footer": {
+    "copyright": "Otobong Okoko. All rights reserved.",
+    "social": [
+      { "name": "LinkedIn", "href": "https://linkedin.com/in/otobong-okoko" },
+      { "name": "Twitter", "href": "https://twitter.com/yourusername" },
+      { "name": "GitHub", "href": "https://github.com/yourusername" },
+      { "name": "Dribbble", "href": "https://dribbble.com/yourusername" }
+    ]
+  }
+}

@@ -1,22 +1,16 @@
 /**
  * Slide data for the Zalando case study presentation.
  * Each entry maps to a slide component and contains metadata.
+ *
+ * Component imports are handled in the slides index file.
+ * This file contains only data (titles, notes, sections).
  */
 
-export interface SlideData {
-  id: number;
-  componentName: string;
-  title: string;
-  section: string;
-  subSection?: string;
-  notes: string;
-}
-
-export const slideData: SlideData[] = [
+export const slideData = [
   {
     id: 0,
     componentName: 'SlideHero',
-    title: 'Introduction',
+    title: 'Hero',
     section: 'Opening',
     notes: 'Open with the headline and let the metrics speak. Pause on each metric briefly.\n\n42% fewer inquiries, 28% CSAT lift, €3.2M saved, 67% faster resolution.\n\nThese are the outcomes. The rest of the presentation explains how we got there.',
   },

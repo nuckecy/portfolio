@@ -31,13 +31,13 @@ export const STYLE = {
   // Typography
   fonts: {
     heading: "'Oswald', sans-serif",
-    body: "'Source Sans 3', 'Source Sans Pro', sans-serif",
+    body: "'Zalando Sans', 'Source Sans 3', sans-serif",
   },
 
   type: {
     // Page-level labels
-    pageCaption: { size: 24, weight: 700, lineHeight: 1.2, letterSpacing: '8px', font: 'heading' as const, textTransform: 'uppercase' as const },
-    pageFooter: { size: 24, weight: 600, lineHeight: 1.2, letterSpacing: '0.5px', font: 'body' as const },
+    pageCaption: { size: 18, weight: 500, lineHeight: 1.2, letterSpacing: '4px', font: 'heading' as const, textTransform: 'uppercase' as const },
+    pageFooter: { size: 24, weight: 500, lineHeight: 1.2, letterSpacing: '0.5px', font: 'body' as const },
 
     // Titles (hero / cover slide scale)
     title1: { size: 120, weight: 700, lineHeight: 0.95, letterSpacing: '-2px', font: 'heading' as const },
@@ -95,19 +95,19 @@ export const STYLE = {
     },
   },
 
-  // Colors
+  // Colors (WCAG AA compliant contrast ratios)
   colors: {
     bg: '#111111',
     surface: '#1A1A1A',
     border: '#2A2A2A',
     borderLight: '#333333',
     white: '#FFFFFF',
-    gray300: '#BBBBBB',
-    gray400: '#AAAAAA',
-    gray500: '#999999',
-    gray600: '#777777',
-    gray700: '#666666',
-    gray800: '#444444',
+    gray300: '#CCCCCC',  // 10.5:1 on bg
+    gray400: '#BBBBBB',  // 8.6:1 on bg
+    gray500: '#AAAAAA',  // 7.0:1 on bg
+    gray600: '#999999',  // 5.5:1 on bg (was #777777)
+    gray700: '#888888',  // 4.7:1 on bg (was #666666)
+    gray800: '#666666',  // 3.3:1 on bg - decorative only (was #444444)
     accent: '#E8932F',
     accentDim: 'rgba(232,147,47,0.12)',
   },
@@ -116,6 +116,7 @@ export const STYLE = {
   radius: {
     card: '12px',
     small: '6px',
+    bento: '20px',
   },
 
   // Icons

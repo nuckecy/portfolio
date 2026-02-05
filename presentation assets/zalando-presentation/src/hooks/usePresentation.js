@@ -1,27 +1,19 @@
-'use client';
-
 import { useState, useEffect, useCallback, useRef } from 'react';
 
 /**
  * Custom hook encapsulating all presentation navigation logic.
  * Handles keyboard, touch, fullscreen, and mobile orientation.
  */
-export function usePresentation(totalSlides: number) {
+export function usePresentation(totalSlides) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPresenting, setIsPresenting] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [isMobilePortrait, setIsMobilePortrait] = useState(false);
-  // Start with fixed defaults to avoid hydration mismatch - will update after mount
-  const [windowSize, setWindowSize] = useState({ w: 1920, h: 1080 });
-  const [isMounted, setIsMounted] = useState(false);
-  const touchStartX = useRef<number | null>(null);
-
-  // Set mounted state and initial window size after hydration, ensure notes are hidden
-  useEffect(() => {
-    setWindowSize({ w: window.innerWidth, h: window.innerHeight });
-    setShowNotes(false);
-    setIsMounted(true);
-  }, []);
+  const [windowSize, setWindowSize] = useState({
+    w: window.innerWidth,
+    h: window.innerHeight,
+  });
+  const touchStartX = useRef(null);
 
   const goNext = useCallback(
     () => setCurrentSlide((s) => Math.min(s + 1, totalSlides - 1)),
@@ -33,15 +25,15 @@ export function usePresentation(totalSlides: number) {
   );
 
   const exitPresent = useCallback(async () => {
-    try { await document.exitFullscreen?.(); } catch { /* ignore */ }
-    try { (screen.orientation as any)?.unlock?.(); } catch { /* ignore */ }
+    try { await document.exitFullscreen?.(); } catch {}
+    try { screen.orientation?.unlock?.(); } catch {}
     setIsPresenting(false);
   }, []);
 
   const togglePresent = useCallback(async () => {
     if (!isPresenting) {
-      try { await document.documentElement.requestFullscreen?.(); } catch { /* ignore */ }
-      try { await (screen.orientation as any)?.lock?.('landscape'); } catch { /* ignore */ }
+      try { await document.documentElement.requestFullscreen?.(); } catch {}
+      try { await screen.orientation?.lock?.('landscape'); } catch {}
       setIsPresenting(true);
       setShowNotes(false);
     } else {
@@ -51,7 +43,7 @@ export function usePresentation(totalSlides: number) {
 
   // Keyboard navigation
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
+    const handler = (e) => {
       if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goNext(); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
       if (e.key === 'f' || e.key === 'F') togglePresent();
@@ -93,8 +85,8 @@ export function usePresentation(totalSlides: number) {
   }, []);
 
   // Touch swipe handlers
-  const onTouchStart = (e: React.TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
-  const onTouchEnd = (e: React.TouchEvent) => {
+  const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
     if (touchStartX.current === null) return;
     const diff = e.changedTouches[0].clientX - touchStartX.current;
     if (Math.abs(diff) > 60) { diff < 0 ? goNext() : goPrev(); }
@@ -111,7 +103,6 @@ export function usePresentation(totalSlides: number) {
     setShowNotes,
     isMobilePortrait,
     windowSize,
-    isMounted,
     goNext,
     goPrev,
     togglePresent,

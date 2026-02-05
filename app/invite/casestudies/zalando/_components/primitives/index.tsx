@@ -46,30 +46,43 @@ export const BentoCard = ({
 
 /**
  * Icon wrapper with consistent sizing and color.
+ * Clones the icon SVG to override its width/height attributes.
  */
-export const IconBox = ({ icon, size }: { icon: React.ReactNode; size?: number }) => (
-  <div style={{
-    color: STYLE.colors.gray500,
-    width: size || STYLE.icon.size,
-    height: size || STYLE.icon.size,
-    flexShrink: 0,
-  }}>{icon}</div>
-);
+export const IconBox = ({ icon, size }: { icon: React.ReactNode; size?: number }) => {
+  const s = size || STYLE.icon.size;
+  return (
+    <div style={{
+      color: STYLE.colors.gray500,
+      width: s,
+      height: s,
+      flexShrink: 0,
+    }}>
+      {React.isValidElement(icon)
+        ? React.cloneElement(icon as React.ReactElement<{ width?: number; height?: number }>, { width: s, height: s })
+        : icon}
+    </div>
+  );
+};
 
 /**
  * Placeholder for images not yet added.
  * Replace these with actual <img> tags when assets are ready.
+ * Includes role="img" for accessibility.
  */
 export const ImagePlaceholder = ({ label = 'Image placeholder', style = {} }: { label?: string; style?: React.CSSProperties }) => (
-  <div style={{
-    background: `repeating-linear-gradient(45deg, ${STYLE.colors.border}, ${STYLE.colors.border} 1px, transparent 1px, transparent 16px)`,
-    backgroundColor: STYLE.colors.surface,
-    border: `2px dashed ${STYLE.colors.gray800}`,
-    borderRadius: STYLE.radius.card,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    ...typeStyle('paragraph3', STYLE.colors.gray600),
-    ...style,
-  }}>{label}</div>
+  <div 
+    role="img" 
+    aria-label={label}
+    style={{
+      background: `repeating-linear-gradient(45deg, ${STYLE.colors.border}, ${STYLE.colors.border} 1px, transparent 1px, transparent 16px)`,
+      backgroundColor: STYLE.colors.surface,
+      border: `2px dashed ${STYLE.colors.gray800}`,
+      borderRadius: STYLE.radius.card,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      ...typeStyle('paragraph3', STYLE.colors.gray600),
+      ...style,
+    }}
+  >{label}</div>
 );

@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { STYLE, typeStyle, slidePadding } from '../styles/tokens';
 import { Card, BentoCard, IconBox, ImagePlaceholder } from '../primitives';
 import { SectionLabel } from '../ui/SectionLabel';
-import { ImageModal } from '../ui/ImageModal';
 import { icons } from '../styles/icons';
 
 const slideBase: React.CSSProperties = {
@@ -88,107 +88,93 @@ export const SlideAbout = () => {
       </h2>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '1.2fr 1fr 1fr',
-        gridTemplateRows: '1fr 1fr 0.6fr',
+        gridTemplateColumns: '0.65fr 0.65fr 1fr 1fr',
+        gridTemplateRows: '1fr 1fr 1fr',
         gap: 16,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {/* Cell 1: Zalando Logo + Company info [R1-2, C1] */}
+        {/* Cell 1: Large white gradient card [R1-2, C1-2] */}
         <BentoCard variant="gradientWhite" style={{
-          gridColumn: '1',
+          gridColumn: '1 / 3',
           gridRow: '1 / 3',
           padding: 48,
           borderRadius: STYLE.radius.bento,
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
+          justifyContent: 'flex-end',
         }}>
-          <img
-            src="/images/presentation-assets/zalando-logo.svg"
-            alt="Zalando"
-            style={{ width: 280, height: 'auto' }}
-          />
-          <div>
-            <p style={{ ...typeStyle('paragraph2', '#444444'), margin: 0, marginBottom: 16 }}>
-              Europe&apos;s leading online fashion and lifestyle platform
-            </p>
-            <div style={{ display: 'flex', gap: 24 }}>
-              <div>
-                <div style={{ ...typeStyle('header2', '#111111'), fontSize: 36, margin: 0 }}>50M+</div>
-                <div style={{ ...typeStyle('paragraph3', '#666666'), fontSize: 16 }}>active customers</div>
-              </div>
-              <div>
-                <div style={{ ...typeStyle('header2', '#111111'), fontSize: 36, margin: 0 }}>25</div>
-                <div style={{ ...typeStyle('paragraph3', '#666666'), fontSize: 16 }}>markets</div>
-              </div>
-            </div>
-          </div>
+          <h3 style={{ ...typeStyle('header2', '#111111'), textTransform: 'uppercase', marginBottom: 20, margin: 0 }}>
+            ABOUT ZALANDO
+          </h3>
+          <p style={{ ...typeStyle('paragraph1', '#111111'), margin: 0 }}>
+            Europe&apos;s leading online fashion and lifestyle platform, operating across 25 markets with over 50 million active customers. Customer Care handles millions of contacts annually.
+          </p>
         </BentoCard>
 
-        {/* Cell 2: Platform [R1, C2] */}
-        <Card style={{ padding: 32, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        {/* Cell 3: Platform [R1, C3] */}
+        <Card style={{ padding: 36, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <span style={typeStyle('tag', STYLE.colors.gray600)} aria-label="Category: Platform">PLATFORM</span>
           <div>
             <h4 style={{ ...typeStyle('header2'), margin: 0 }}>Web-based FAQ</h4>
-            <p style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), margin: '6px 0 0 0' }}>
+            <p style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6, margin: '6px 0 0 0' }}>
               Embedded within existing help pages
             </p>
           </div>
         </Card>
 
-        {/* Cell 3: Focus [R1, C3] */}
-        <Card style={{ padding: 32, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        {/* Cell 4: Markets [R1, C4] */}
+        <Card style={{ padding: 36, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <span style={typeStyle('tag', STYLE.colors.gray600)} aria-label="Category: Markets">MARKETS</span>
+          <div>
+            <h4 style={{ ...typeStyle('header2'), margin: 0 }}>25 European</h4>
+            <p style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6, margin: '6px 0 0 0' }}>
+              Excluding cash-on-delivery regions
+            </p>
+          </div>
+        </Card>
+
+        {/* Cell 5: Focus [R2, C3] */}
+        <Card style={{ padding: 36, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <span style={typeStyle('tag', STYLE.colors.gray600)} aria-label="Category: Focus">FOCUS</span>
           <div>
             <h4 style={{ ...typeStyle('header2'), margin: 0 }}>Delivery, returns, refunds</h4>
-            <p style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), margin: '6px 0 0 0' }}>
+            <p style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6, margin: '6px 0 0 0' }}>
               Highest-volume contact categories
             </p>
           </div>
         </Card>
 
-        {/* Cell 4: Duration [R2, C2] */}
-        <BentoCard variant="orangeGradient" style={{ padding: 32, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <span style={{ ...typeStyle('tag', '#1A1A1A'), opacity: 0.7 }} aria-label="Category: Duration">DURATION</span>
+        {/* Cell 6: Duration [R2, C4] */}
+        <Card style={{ padding: 36, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <span style={typeStyle('tag', STYLE.colors.gray600)} aria-label="Category: Duration">DURATION</span>
           <div>
-            <h4 style={{ ...typeStyle('header2', '#111111'), fontSize: 48, margin: 0 }}>11 months</h4>
-            <p style={{ ...typeStyle('paragraph3', '#2A1A08'), margin: '6px 0 0 0' }}>
+            <h4 style={{ ...typeStyle('header2'), margin: 0 }}>11 months</h4>
+            <p style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), marginTop: 6, margin: '6px 0 0 0' }}>
               100% dedicated, sole designer
-            </p>
-          </div>
-        </BentoCard>
-
-        {/* Cell 5: Role [R2, C3] */}
-        <Card style={{ padding: 32, borderRadius: STYLE.radius.bento, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <span style={typeStyle('tag', STYLE.colors.gray600)} aria-label="Category: Role">ROLE</span>
-          <div>
-            <h4 style={{ ...typeStyle('header2'), margin: 0 }}>Lead Product Designer</h4>
-            <p style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), margin: '6px 0 0 0' }}>
-              End-to-end ownership
             </p>
           </div>
         </Card>
 
-        {/* Cell 6: The Project [R3, C1-3] */}
-        <Card style={{
-          gridColumn: '1 / 4',
-          padding: '28px 40px',
+        {/* Cell 7: The Project [R3, C1-4] */}
+        <BentoCard variant="orangeGradient" style={{
+          gridColumn: '1 / 5',
+          padding: '36px 48px',
           borderRadius: STYLE.radius.bento,
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
-          gap: 40,
+          gap: 48,
         }}>
-          <h3 style={{ ...typeStyle('header2', STYLE.colors.accent), textTransform: 'uppercase', flexShrink: 0, margin: 0 }}>
+          <h3 style={{ ...typeStyle('header2'), textTransform: 'uppercase', flexShrink: 0, margin: 0 }}>
             THE PROJECT
           </h3>
-          <div style={{ width: 1, height: 40, background: STYLE.colors.border, flexShrink: 0 }} aria-hidden="true" />
-          <p style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), margin: 0 }}>
+          <div style={{ width: 1, height: 48, background: 'rgba(0,0,0,0.15)', flexShrink: 0 }} aria-hidden="true" />
+          <p style={{ ...typeStyle('paragraph1'), margin: 0 }}>
             A strategic initiative within Customer Care to redesign how customers self-serve for delivery, returns, and refund issues. Sponsored by the Director of Customer Care with VP-level visibility.
           </p>
-        </Card>
+        </BentoCard>
       </div>
     </div>
   );
@@ -200,6 +186,26 @@ export const SlideAbout = () => {
 
 export const SlideCost = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  // Block keyboard navigation when modal is open
+  React.useEffect(() => {
+    if (!isModalOpen) return;
+    
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Block navigation keys when modal is open
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', ' ', 'Space'].includes(e.key)) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      // Allow Escape to close modal
+      if (e.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
+  }, [isModalOpen]);
 
   return (
     <div style={slideBase}>
@@ -319,24 +325,74 @@ export const SlideCost = () => {
             </svg>
           </button>
           <img
-            src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
+            src="/images/presentation-assets/desktop-returns.png"
             alt="Zalando self-service returns and refunds desktop interface"
             style={{
               width: '130%',
               height: 'auto',
               display: 'block',
-              transform: 'translateX(15%) translateY(38%)',
+              transform: 'translateX(15%) translateY(28%)',
             }}
           />
         </div>
       </div>
 
-      <ImageModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
-        alt="Zalando self-service returns and refunds desktop interface"
-      />
+      {/* Modal - rendered via portal to escape transform context */}
+      {isModalOpen && typeof document !== 'undefined' && ReactDOM.createPortal(
+        <div
+          onClick={() => setIsModalOpen(false)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'rgba(0, 0, 0, 0.7)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 9999,
+            cursor: 'pointer',
+          }}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setIsModalOpen(false)}
+            style={{
+              position: 'absolute',
+              top: 24,
+              right: 24,
+              width: 48,
+              height: 48,
+              borderRadius: 24,
+              background: 'rgba(255, 255, 255, 0.1)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <img
+            src="/images/presentation-assets/desktop-returns.png"
+            alt="Zalando self-service returns and refunds desktop interface"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: '90%',
+              maxHeight: '90%',
+              objectFit: 'contain',
+              borderRadius: 16,
+              cursor: 'default',
+            }}
+          />
+        </div>,
+        document.body
+      )}
     </div>
   );
 };
@@ -346,120 +402,56 @@ export const SlideCost = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideWhyRepeats = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-
   const reasons = [
     {
       icon: icons.search,
       title: 'Generic FAQ',
       body: 'Same static page for every customer regardless of order, parcel status, or return stage',
+      imgLabel: 'Generic FAQ visual',
     },
     {
       icon: icons.repeat,
       title: 'Channel hopping',
       body: 'Unresolved via email, try phone, then chat. Fragmented ticket histories increased workload',
+      imgLabel: 'Channel hopping visual',
     },
     {
       icon: icons.headphones,
       title: 'Agent dependency',
       body: 'Without personalized context, customers abandoned self-service and contacted support directly',
+      imgLabel: 'Agent dependency visual',
     },
   ];
 
   return (
     <div style={slideBase}>
       <SectionLabel section="The challenge" subSection="Context & Background" />
-      <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap, marginBottom: 24 }}>
+      <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>
         Why customers contacted repeatedly
       </h2>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '35fr 65fr',
+        gridTemplateColumns: 'repeat(3, 1fr)',
         gap: 24,
         flex: 1,
         minHeight: 0,
+        marginTop: STYLE.spacing.titleGap,
       }}>
-        {/* Left: Stacked cards */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 16,
-        }}>
-          {reasons.map((r, i) => (
-            <Card key={i} style={{
-              padding: 28,
-              borderRadius: STYLE.radius.card,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 20,
-              flex: 1,
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                <IconBox icon={r.icon} size={32} />
-                <div style={typeStyle('header2')}>{r.title}</div>
-              </div>
-              <div style={typeStyle('paragraph2', STYLE.colors.gray400)}>{r.body}</div>
-            </Card>
-          ))}
-        </div>
-        {/* Right: Image */}
-        <div style={{
-          borderRadius: STYLE.radius.bento,
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          background: '#D8D8D8',
-          position: 'relative',
-        }}>
-          {/* Expand icon */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 10,
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-          </button>
-          <img
-            src="/images/presentation-assets/FAQ - Orders - Dark Mode.png"
-            alt="Zalando FAQ orders interface showing generic self-service"
-            style={{
-              width: '130%',
-              height: 'auto',
-              display: 'block',
-              transform: 'translateX(15%) translateY(35%)',
-            }}
-          />
-        </div>
+        {reasons.map((r, i) => (
+          <Card key={i} style={{
+            padding: 36,
+            borderRadius: STYLE.radius.bento,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 20,
+          }}>
+            <IconBox icon={r.icon} size={56} />
+            <div style={typeStyle('header2')}>{r.title}</div>
+            <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), flex: 1 }}>{r.body}</div>
+            <ImagePlaceholder label={r.imgLabel} style={{ height: 180, borderRadius: 12 }} />
+          </Card>
+        ))}
       </div>
-
-      <ImageModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/FAQ - Orders - Dark Mode.png"
-        alt="Zalando FAQ orders interface showing generic self-service"
-      />
     </div>
   );
 };
@@ -469,12 +461,11 @@ export const SlideWhyRepeats = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideTopFive = () => {
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-
   const questions = [
     { icon: icons.wallet, q: '"Where is my refund?"', desc: 'No visibility into refund amount, timeline, or payment method' },
     { icon: icons.truck, q: '"Where is my package?"', desc: 'Delivery status unavailable in self-service tied to their actual parcel' },
     { icon: icons.rotateCcw, q: '"How do I return this?"', desc: 'Return process lacked step-by-step contextual guidance' },
+    { icon: icons.activity, q: '"What is the latest status?"', desc: 'Parcel tracking required contacting an agent for real-time updates' },
     { icon: icons.mapPinOff, q: '"Where do I drop this off?"', desc: 'Drop-off and pickup logistics buried in generic instructions' },
   ];
 
@@ -485,91 +476,29 @@ export const SlideTopFive = () => {
         Top five reasons customers contacted support
       </h2>
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: '35fr 65fr',
-        gap: 32,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16,
+        justifyContent: 'center',
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 16,
-          justifyContent: 'center',
-        }}>
-          {questions.map((item, i) => (
-            <Card key={i} style={{
-              padding: '22px 36px',
-              borderRadius: STYLE.radius.card,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12,
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                <IconBox icon={item.icon} size={32} />
+        {questions.map((item, i) => (
+          <Card key={i} style={{
+            padding: '22px 36px',
+            borderRadius: STYLE.radius.card,
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+              <IconBox icon={item.icon} size={44} />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6, flex: 1 }}>
                 <div style={typeStyle('header2')}>{item.q}</div>
+                <div style={typeStyle('paragraph2', STYLE.colors.gray400)}>{item.desc}</div>
               </div>
-              <div style={typeStyle('paragraph2', STYLE.colors.gray400)}>{item.desc}</div>
-            </Card>
-          ))}
-        </div>
-        <div style={{
-          position: 'relative',
-          overflow: 'hidden',
-          borderRadius: STYLE.radius.bento,
-          background: STYLE.colors.surface,
-          border: `1px solid ${STYLE.colors.border}`,
-          height: '100%',
-        }}>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            aria-label="Expand image"
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              zIndex: 10,
-              width: 36,
-              height: 36,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-          </button>
-          <img
-            src="/images/presentation-assets/Contextual Self Help Home.png"
-            alt="Zalando contextual self-help home interface"
-            style={{
-              width: '130%',
-              height: 'auto',
-              display: 'block',
-              transform: 'translateX(15%) translateY(8%)',
-            }}
-          />
-        </div>
+            </div>
+          </Card>
+        ))}
       </div>
-
-      <ImageModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/Contextual Self Help Home.png"
-        alt="Zalando contextual self-help home interface"
-      />
     </div>
   );
 };
@@ -748,12 +677,12 @@ export const SlideEntryPoints = () => {
       </p>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        gridTemplateRows: 'repeat(2, 1fr)',
+        gridTemplateColumns: 'repeat(4, 1fr)',
         gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
+        alignItems: 'stretch',
       }}>
         {entryPoints.map((ep, i) => (
           <Card key={i} style={{
@@ -763,11 +692,9 @@ export const SlideEntryPoints = () => {
             flexDirection: 'column',
             gap: 16,
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <IconBox icon={ep.icon} size={56} />
-              <div style={typeStyle('header2')}>{ep.title}</div>
-            </div>
+            <IconBox icon={ep.icon} size={56} />
             <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
+            <div style={typeStyle('header2')}>{ep.title}</div>
             <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), flex: 1 }}>{ep.desc}</div>
           </Card>
         ))}
@@ -784,7 +711,7 @@ export const SlidePrinciples = () => {
   const principles = [
     {
       num: '01',
-      title: 'Progressive disclosure over more information',
+      title: 'Progressive disclosure over information overload',
       body: 'Reveal only what matters at each step. Customers abandoned comprehensive pages but engaged with contextual cards that layered complexity: identify first, then status, then escalation.',
       tag: 'Minimal cards over detailed pages, drill-down architecture',
     },
@@ -808,32 +735,46 @@ export const SlidePrinciples = () => {
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Three principles guided every decision</h2>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
+        gridTemplateColumns: '1.5fr 1fr',
         gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {principles.map((p, i) => (
-          <Card key={i} style={{
-            padding: 44,
-            borderRadius: STYLE.radius.bento,
-            display: 'flex',
-            flexDirection: 'column',
-          }}>
-            <div style={{ ...typeStyle('header3'), color: STYLE.colors.gray700, fontSize: 120, lineHeight: 0.8, marginBottom: 32 }}>{p.num}</div>
-            <div style={{ ...typeStyle('header2'), fontSize: 48, lineHeight: 1.2, color: STYLE.colors.accent, marginBottom: 20 }}>{p.title}</div>
-            <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray300), fontSize: 22, lineHeight: 1.6, flex: 1 }}>{p.body}</div>
-            <div style={{
-              ...typeStyle('paragraph3', STYLE.colors.white),
-              fontSize: 24,
-              letterSpacing: '0.5px',
-              fontWeight: 600,
-              textTransform: 'none' as const,
-              marginTop: 24,
-            }}>{p.tag}</div>
-          </Card>
-        ))}
+        {/* Left: Principles */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          {principles.map((p, i) => (
+            <Card key={i} style={{
+              padding: 36,
+              borderRadius: STYLE.radius.bento,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 16,
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                <div style={{ ...typeStyle('header3'), color: STYLE.colors.accent, fontSize: 48 }}>{p.num}</div>
+                <div style={{ ...typeStyle('header2'), flex: 1, fontSize: 28 }}>{p.title}</div>
+              </div>
+              <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 16 }}>{p.body}</div>
+              <div style={{
+                padding: '10px 14px',
+                background: STYLE.colors.white,
+                borderRadius: 24,
+                ...typeStyle('paragraph3'),
+                color: STYLE.colors.background,
+                fontSize: 13,
+                fontWeight: 500,
+                width: 'fit-content',
+              }}>{p.tag}</div>
+            </Card>
+          ))}
+        </div>
+        
+        {/* Right: Image placeholder */}
+        <ImagePlaceholder
+          label="Principle application examples"
+          style={{ borderRadius: STYLE.radius.bento }}
+        />
       </div>
     </div>
   );
@@ -1007,131 +948,66 @@ export const SlideStakeholders = () => {
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Navigating organizational complexity</h2>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '35fr 65fr',
+        gridTemplateColumns: '1fr 1fr',
         gap: 24,
         flex: 1,
         minHeight: 0,
         marginTop: STYLE.spacing.titleGap,
       }}>
-        {/* Left column: Image */}
-        <div style={{
-          border: `1px solid ${STYLE.colors.white}`,
-          borderRadius: STYLE.radius.bento,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-        }}>
-          <img
-            src="/images/presentation-assets/handshake-deal.svg?v=2"
-            alt="Handshake illustration"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-            }}
-          />
+        {/* Left column: Challenge with nested Resolution */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <Card style={{
+            padding: 44,
+            borderRadius: STYLE.radius.bento,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 20,
+          }}>
+            <div style={typeStyle('tag', STYLE.colors.gray600)}>CHALLENGE</div>
+            <div style={typeStyle('header2')}>FAQ redesign pushback</div>
+            <div style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), flex: 1 }}>
+              A proposed FAQ redesign faced pushback from teams who saw it as scope creep beyond the self-help mandate.
+            </div>
+          </Card>
+          <Card style={{
+            padding: 36,
+            borderRadius: STYLE.radius.bento,
+            background: 'linear-gradient(160deg, #1E1E1E 0%, #252525 100%)',
+            flex: 1,
+          }}>
+            <div style={typeStyle('tag', STYLE.colors.accent)}>RESOLUTION</div>
+            <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray300), marginTop: 12 }}>
+              Phased strategy: embed contextual cards first (core project), evolve FAQ in subsequent phases. Preserved momentum while acknowledging the broader opportunity.
+            </div>
+          </Card>
         </div>
 
-        {/* Right column: 2 rows */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 24,
-        }}>
-          {/* Row 1: Challenge → Resolution */}
-          <div style={{
-            flex: 1,
+        {/* Right column: Collaboration with nested Outcome */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <Card style={{
+            padding: 44,
+            borderRadius: STYLE.radius.bento,
             display: 'flex',
-            alignItems: 'stretch',
-            gap: 12,
+            flexDirection: 'column',
+            gap: 20,
           }}>
-            {/* Challenge */}
-            <div style={{
-              flex: 1,
-              background: STYLE.colors.white,
-              borderRadius: 12,
-              padding: 32,
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
-              <div style={{ ...typeStyle('tag', STYLE.colors.gray700), fontSize: 18, marginBottom: 16, padding: '16px 0' }}>CHALLENGE</div>
-              <div style={{ ...typeStyle('header2', STYLE.colors.bg), fontSize: 32 }}>FAQ redesign pushback</div>
-              <div style={{ ...typeStyle('paragraph2', '#444444'), fontSize: 22, lineHeight: 1.5, marginTop: 12 }}>
-                I proposed redesigning the FAQ as part of improving self-service, but other member teams saw it as scope creep outside the core self-help mandate.
-              </div>
+            <div style={typeStyle('tag', STYLE.colors.gray600)}>COLLABORATION</div>
+            <div style={typeStyle('header2')}>Carrier API investigation</div>
+            <div style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), flex: 1 }}>
+              Carrier data was fragmented across European markets: different data structures, status codes, update frequencies.
             </div>
-
-            {/* Chevron */}
-            <div style={{ display: 'flex', alignItems: 'center', color: STYLE.colors.gray600 }}>
-              <svg width="20" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" preserveAspectRatio="none">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </div>
-
-            {/* Resolution */}
-            <div style={{
-              flex: 1,
-              background: STYLE.colors.accent,
-              borderRadius: 12,
-              padding: 32,
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
-              <div style={{ ...typeStyle('tag', '#1A1A1A'), fontSize: 18, marginBottom: 16, padding: '16px 0' }}>RESOLUTION</div>
-              <div style={{ ...typeStyle('header2', STYLE.colors.bg), fontSize: 32 }}>Strategic compromise</div>
-              <div style={{ ...typeStyle('paragraph2', '#2A1A08'), fontSize: 22, lineHeight: 1.5, marginTop: 12 }}>
-                Agreed to phase the work: deliver contextual help cards first (the core deliverable), with FAQ improvements planned for a future phase. This preserved momentum while keeping the door open.
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2: Challenge → Outcome */}
-          <div style={{
+          </Card>
+          <Card style={{
+            padding: 36,
+            borderRadius: STYLE.radius.bento,
+            background: 'linear-gradient(160deg, #1E1E1E 0%, #252525 100%)',
             flex: 1,
-            display: 'flex',
-            alignItems: 'stretch',
-            gap: 12,
           }}>
-            {/* Challenge */}
-            <div style={{
-              flex: 1,
-              background: STYLE.colors.white,
-              borderRadius: 12,
-              padding: 32,
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
-              <div style={{ ...typeStyle('tag', STYLE.colors.gray700), fontSize: 18, marginBottom: 16, padding: '16px 0' }}>CHALLENGE</div>
-              <div style={{ ...typeStyle('header2', STYLE.colors.bg), fontSize: 32 }}>Missing carrier data</div>
-              <div style={{ ...typeStyle('paragraph2', '#444444'), fontSize: 22, lineHeight: 1.5, marginTop: 12 }}>
-                Engineering said the data I needed for the cards didn&apos;t exist because carriers weren&apos;t providing it. But I&apos;d seen similar data from other carriers, so I asked them to investigate further.
-              </div>
+            <div style={typeStyle('tag', STYLE.colors.accent)}>OUTCOME</div>
+            <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray300), marginTop: 12 }}>
+              Partnered with backend engineers market by market. Revealed more data was available than assumed. The carrier data map became a resource for other initiatives.
             </div>
-
-            {/* Chevron */}
-            <div style={{ display: 'flex', alignItems: 'center', color: STYLE.colors.gray600 }}>
-              <svg width="20" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" preserveAspectRatio="none">
-                <path d="m9 18 6-6-6-6" />
-              </svg>
-            </div>
-
-            {/* Outcome */}
-            <div style={{
-              flex: 1,
-              background: STYLE.colors.accent,
-              borderRadius: 12,
-              padding: 32,
-              display: 'flex',
-              flexDirection: 'column',
-            }}>
-              <div style={{ ...typeStyle('tag', '#1A1A1A'), fontSize: 18, marginBottom: 16, padding: '16px 0' }}>OUTCOME</div>
-              <div style={{ ...typeStyle('header2', STYLE.colors.bg), fontSize: 32 }}>Collaborative discovery</div>
-              <div style={{ ...typeStyle('paragraph2', '#2A1A08'), fontSize: 22, lineHeight: 1.5, marginTop: 12 }}>
-                Engineering partnered with me to audit carrier APIs across markets. We found more data existed than assumed. The investigation became a shared resource for future projects.
-              </div>
-            </div>
-          </div>
+          </Card>
         </div>
       </div>
     </div>
