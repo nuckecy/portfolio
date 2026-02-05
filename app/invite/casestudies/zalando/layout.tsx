@@ -34,27 +34,28 @@ export default function ZalandoLayout({
           padding: 0 !important;
         }
 
-        /* Force landscape orientation on mobile by rotating content when in portrait */
+        /* Mobile portrait: rotate wrapper to simulate landscape */
         @media screen and (orientation: portrait) and (max-width: 1024px) {
-          html {
-            width: 100% !important;
-            height: 100% !important;
-            overflow: hidden !important;
-          }
-
-          body {
-            width: 100vh !important;
-            height: 100vw !important;
-            transform: rotate(90deg);
-            transform-origin: top left;
+          .presentation-wrapper {
             position: fixed;
             top: 0;
-            left: 100vw;
-            overflow: hidden !important;
+            left: 0;
+            width: 100vh;
+            height: 100vw;
+            transform: rotate(90deg) translateY(-100%);
+            transform-origin: top left;
+            overflow: hidden;
           }
         }
+
+        .presentation-wrapper {
+          width: 100vw;
+          height: 100vh;
+        }
       `}</style>
-      {children}
+      <div className="presentation-wrapper">
+        {children}
+      </div>
     </>
   );
 }
