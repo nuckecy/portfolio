@@ -786,7 +786,7 @@ export const SlideInsight1 = () => {
       </p>
       <div style={{ display: 'flex', gap: 24, flex: 1, minHeight: 0, marginTop: STYLE.spacing.titleGap }}>
         {/* Return Card */}
-        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
           <button
             onClick={() => setIsModalOpen(true)}
             style={{
@@ -822,7 +822,7 @@ export const SlideInsight1 = () => {
         </div>
 
         {/* Refund Card */}
-        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
           <button
             onClick={() => setIsModalOpen(true)}
             style={{
@@ -1245,7 +1245,7 @@ export const SlideEntryPoints = () => {
               <div style={{ ...typeStyle('tag', i === 0 ? STYLE.colors.accent : STYLE.colors.gray600) }}>{ep.tag}</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <IconBox icon={ep.icon} size={40} />
-                <div style={{ fontFamily: STYLE.fonts.body, fontSize: 28, fontWeight: 700 }}>{ep.title}</div>
+                <div style={{ fontFamily: STYLE.fonts.body, fontSize: 28, fontWeight: 700, color: STYLE.colors.white }}>{ep.title}</div>
               </div>
               <div style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), fontSize: 18, flex: 1, lineHeight: 1.5 }}>{ep.desc}</div>
             </Card>
@@ -1445,6 +1445,8 @@ export const SlideDecisions = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideTesting = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   const findings = [
     { finding: 'Unclear escalation entry points', resolution: 'Increased escalation trigger visibility and positioning', status: 'Fixed' },
     { finding: 'Confusion between return stages', resolution: 'Refined return status terminology and visual indicators', status: 'Fixed' },
@@ -1536,9 +1538,62 @@ export const SlideTesting = () => {
               </div>
             </Card>
           ))}
-          <ImagePlaceholder label="Card layout iterations: V1 → V2 → Final" style={{ flex: 1, minHeight: 180, borderRadius: 12 }} />
+          {/* Card iterations image */}
+          <div style={{
+            position: 'relative',
+            overflow: 'hidden',
+            borderRadius: STYLE.radius.bento,
+            background: '#f5f5f5',
+            border: `1px solid ${STYLE.colors.border}`,
+            flex: 1,
+            minHeight: 180,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              aria-label="Expand image"
+              style={{
+                position: 'absolute',
+                top: 16,
+                right: 16,
+                zIndex: 10,
+                width: 36,
+                height: 36,
+                borderRadius: 8,
+                background: 'rgba(0, 0, 0, 0.6)',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s ease',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
+            >
+              {navIcons.expand}
+            </button>
+            <img
+              src="/images/presentation-assets/Delivery Cards - Iterations.png"
+              alt="Delivery card iterations showing design evolution"
+              style={{
+                width: '95%',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </div>
         </div>
       </div>
+
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        src="/images/presentation-assets/Delivery Cards - Iterations.png"
+        alt="Delivery card iterations showing design evolution"
+      />
     </div>
   );
 };
