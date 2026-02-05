@@ -323,35 +323,137 @@ export default function PresentationApp() {
           {/* CENTER: Page Indicators */}
           <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div role="tablist" aria-label="Slide navigation" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-              {slides.map((slide, i) => (
-                <button
-                  key={i}
-                  className="slide-nav-dot"
-                  role="tab"
-                  aria-selected={i === currentSlide}
-                  aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
-                  onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
-                  style={{
-                    width: 24,
-                    height: 24,
-                    borderRadius: '50%',
-                    background: i === currentSlide ? 'rgba(255,255,255,0.5)' : 'transparent',
-                    border: i === 0 ? 'none' : (i === currentSlide ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.15)'),
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontFamily: STYLE.fonts.heading,
-                    fontSize: 11,
-                    fontWeight: 500,
-                    color: i === currentSlide ? '#0A0A0A' : 'rgba(255,255,255,0.25)',
-                    transition: 'all 0.2s ease',
-                    padding: 0,
-                  }}
-                >
-                  {i === 0 ? navIcons.home : i + 1}
-                </button>
-              ))}
+              {(() => {
+                const isMobile = windowSize.w < 768;
+                const total = slides.length;
+
+                // On mobile, show only 5 indicators: home + 4 surrounding slides
+                if (isMobile) {
+                  const visibleCount = 4;
+                  let start: number, end: number;
+
+                  if (currentSlide <= 2) {
+                    start = 1;
+                    end = Math.min(visibleCount, total - 1);
+                  } else if (currentSlide >= total - 3) {
+                    start = Math.max(1, total - visibleCount);
+                    end = total - 1;
+                  } else {
+                    start = currentSlide - 1;
+                    end = currentSlide + 2;
+                  }
+
+                  const items: React.ReactNode[] = [];
+
+                  // Always add home button
+                  items.push(
+                    <button
+                      key={0}
+                      className="slide-nav-dot"
+                      role="tab"
+                      aria-selected={0 === currentSlide}
+                      aria-label="Go to first slide"
+                      onClick={(e) => { e.stopPropagation(); setCurrentSlide(0); }}
+                      style={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: '50%',
+                        background: 0 === currentSlide ? 'rgba(255,255,255,0.5)' : 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontFamily: STYLE.fonts.heading,
+                        fontSize: 11,
+                        fontWeight: 500,
+                        color: 0 === currentSlide ? '#0A0A0A' : 'rgba(255,255,255,0.25)',
+                        transition: 'all 0.2s ease',
+                        padding: 0,
+                      }}
+                    >
+                      {navIcons.home}
+                    </button>
+                  );
+
+                  if (start > 1) {
+                    items.push(
+                      <span key="ellipsis-start" style={{ color: 'rgba(255,255,255,0.25)', fontSize: 11, padding: '0 2px' }}>…</span>
+                    );
+                  }
+
+                  for (let i = start; i <= end; i++) {
+                    items.push(
+                      <button
+                        key={i}
+                        className="slide-nav-dot"
+                        role="tab"
+                        aria-selected={i === currentSlide}
+                        aria-label={`Go to slide ${i + 1}: ${slides[i].title}`}
+                        onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
+                        style={{
+                          width: 24,
+                          height: 24,
+                          borderRadius: '50%',
+                          background: i === currentSlide ? 'rgba(255,255,255,0.5)' : 'transparent',
+                          border: i === currentSlide ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.15)',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontFamily: STYLE.fonts.heading,
+                          fontSize: 11,
+                          fontWeight: 500,
+                          color: i === currentSlide ? '#0A0A0A' : 'rgba(255,255,255,0.25)',
+                          transition: 'all 0.2s ease',
+                          padding: 0,
+                        }}
+                      >
+                        {i + 1}
+                      </button>
+                    );
+                  }
+
+                  if (end < total - 1) {
+                    items.push(
+                      <span key="ellipsis-end" style={{ color: 'rgba(255,255,255,0.25)', fontSize: 11, padding: '0 2px' }}>…</span>
+                    );
+                  }
+
+                  return items;
+                }
+
+                // Desktop: show all slides
+                return slides.map((slide, i) => (
+                  <button
+                    key={i}
+                    className="slide-nav-dot"
+                    role="tab"
+                    aria-selected={i === currentSlide}
+                    aria-label={i === 0 ? "Go to first slide" : `Go to slide ${i + 1}: ${slide.title}`}
+                    onClick={(e) => { e.stopPropagation(); setCurrentSlide(i); }}
+                    style={{
+                      width: 24,
+                      height: 24,
+                      borderRadius: '50%',
+                      background: i === currentSlide ? 'rgba(255,255,255,0.5)' : 'transparent',
+                      border: i === 0 ? 'none' : (i === currentSlide ? '1px solid rgba(255,255,255,0.5)' : '1px solid rgba(255,255,255,0.15)'),
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontFamily: STYLE.fonts.heading,
+                      fontSize: 11,
+                      fontWeight: 500,
+                      color: i === currentSlide ? '#0A0A0A' : 'rgba(255,255,255,0.25)',
+                      transition: 'all 0.2s ease',
+                      padding: 0,
+                    }}
+                  >
+                    {i === 0 ? navIcons.home : i + 1}
+                  </button>
+                ));
+              })()}
             </div>
           </div>
 

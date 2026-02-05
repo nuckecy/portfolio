@@ -6,6 +6,7 @@ import { STYLE, typeStyle, slidePadding } from '../styles/tokens';
 import { Card, BentoCard, IconBox, ImagePlaceholder } from '../primitives';
 import { SectionLabel } from '../ui/SectionLabel';
 import { ImageModal } from '../ui/ImageModal';
+import { CanvasModal } from '../ui/CanvasModal';
 import { icons, navIcons } from '../styles/icons';
 
 const slideBase: React.CSSProperties = {
@@ -1417,12 +1418,14 @@ export const SlideStakeholders = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideArchitecture = () => {
+  const [isCanvasOpen, setIsCanvasOpen] = React.useState(false);
+
   const steps = [
-    { num: '01', title: 'Entry', desc: '4 paths adapt display based on arrival context' },
-    { num: '02', title: 'Identify', desc: 'Product images for instant visual recognition' },
-    { num: '03', title: 'Context', desc: 'Real-time data from carrier APIs, warehouse, payments' },
-    { num: '04', title: 'Resolve', desc: 'Tailored flow per journey: delivery, returns, refund' },
-    { num: '05', title: 'Escalate', desc: 'Full context attached, timeline confirmed' },
+    { num: '01', title: 'Entry', desc: '4 paths adapt display based on arrival context', orange: false },
+    { num: '02', title: 'Identify', desc: 'Product images for instant visual recognition', orange: false },
+    { num: '03', title: 'Context', desc: 'Real-time data from carrier APIs, warehouse, payments', orange: true },
+    { num: '04', title: 'Resolve', desc: 'Tailored flow per journey: delivery, returns, refund', orange: false },
+    { num: '05', title: 'Escalate', desc: 'Full context attached, timeline confirmed', orange: false },
   ];
 
   return (
@@ -1440,25 +1443,100 @@ export const SlideArchitecture = () => {
       }}>
         {steps.map((s, i) => (
           <React.Fragment key={i}>
-            <Card style={{
-              flex: 1,
-              padding: '28px 24px',
-              borderRadius: STYLE.radius.card,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12,
-            }}>
-              <div style={{ ...typeStyle('header2', STYLE.colors.accent), fontSize: 24 }}>{s.num}</div>
-              <div style={typeStyle('header2')}>{s.title}</div>
-              <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray500) }}>{s.desc}</div>
-            </Card>
+            {s.orange ? (
+              <BentoCard variant="orangeGradient" style={{
+                flex: 1,
+                padding: '28px 24px',
+                borderRadius: STYLE.radius.card,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12,
+              }}>
+                <div style={{ ...typeStyle('header2'), fontSize: 24, color: 'white' }}>{s.num}</div>
+                <div style={{ ...typeStyle('header2'), color: 'white' }}>{s.title}</div>
+                <div style={{ ...typeStyle('paragraph3'), color: 'rgba(255,255,255,0.8)' }}>{s.desc}</div>
+              </BentoCard>
+            ) : (
+              <Card style={{
+                flex: 1,
+                padding: '28px 24px',
+                borderRadius: STYLE.radius.card,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12,
+              }}>
+                <div style={{ ...typeStyle('header2', STYLE.colors.accent), fontSize: 24 }}>{s.num}</div>
+                <div style={typeStyle('header2')}>{s.title}</div>
+                <div style={{ ...typeStyle('paragraph3', STYLE.colors.gray500) }}>{s.desc}</div>
+              </Card>
+            )}
             {i < steps.length - 1 && (
-              <div style={{ display: 'flex', alignItems: 'center', color: STYLE.colors.gray600, fontSize: 24 }}>→</div>
+              <div style={{ display: 'flex', alignItems: 'center', color: STYLE.colors.gray500 }}>
+                <svg width="12" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" preserveAspectRatio="none">
+                  <path d="m9 18 6-6-6-6"/>
+                </svg>
+              </div>
             )}
           </React.Fragment>
         ))}
       </div>
-      <ImagePlaceholder label="System architecture flow diagram" style={{ flex: 1, minHeight: 300, marginTop: 24, borderRadius: STYLE.radius.bento }} />
+
+      {/* Architecture diagram with canvas preview */}
+      <div style={{
+        position: 'relative',
+        flex: 1,
+        minHeight: 300,
+        marginTop: 24,
+        borderRadius: STYLE.radius.bento,
+        overflow: 'hidden',
+        background: '#1a1a1a',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <img
+          src="/images/presentation-assets/Contextual Self Help - User Journey.png"
+          alt="Contextual Self Help User Journey"
+          style={{
+            width: '100%',
+            height: 'auto',
+            objectFit: 'contain',
+          }}
+        />
+        {/* Expand button */}
+        <button
+          onClick={() => setIsCanvasOpen(true)}
+          style={{
+            position: 'absolute',
+            top: 12,
+            right: 12,
+            width: 36,
+            height: 36,
+            borderRadius: 8,
+            background: 'rgba(0, 0, 0, 0.6)',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            transition: 'background 0.2s ease',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'; }}
+          title="Open canvas view"
+        >
+          {navIcons.expand}
+        </button>
+      </div>
+
+      {/* Canvas Modal */}
+      <CanvasModal
+        isOpen={isCanvasOpen}
+        onClose={() => setIsCanvasOpen(false)}
+        src="/images/presentation-assets/Contextual Self Help - User Journey.png"
+        alt="Contextual Self Help User Journey"
+      />
     </div>
   );
 };
@@ -2045,11 +2123,13 @@ export const SlideBeforeAfter = () => {
 // ─────────────────────────────────────────────────────────
 
 export const SlideResultsCustomer = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   const metrics = [
     { value: '42%', label: 'reduction in yearly inquiries', desc: 'Across delivery and returns categories', variant: 'orangeGradient' as const },
     { value: '33%', label: 'fewer returns inquiries', desc: 'Exceeded 25% target set at kickoff', variant: 'gradientDark' as const },
     { value: '28%', label: 'CSAT improvement', desc: '3.1 → 4.2 out of 5', variant: 'gradientDark' as const },
-    { value: '67%', label: 'faster resolution', desc: '24 hours → under 3 hours', variant: 'gradientDark' as const },
+    { value: '67%', label: 'faster resolution', desc: '24 hours → under 3 hours', variant: 'gradientWhite' as const },
   ];
 
   return (
@@ -2090,11 +2170,67 @@ export const SlideResultsCustomer = () => {
           ))}
         </div>
 
-        {/* Right: Image placeholder - 35% */}
-        <div style={{ width: '35%' }}>
-          <ImagePlaceholder label="Customer impact visual" style={{ height: '100%', borderRadius: STYLE.radius.bento }} />
+        {/* Right: Image - 35% */}
+        <div style={{
+          width: '35%',
+          borderRadius: STYLE.radius.bento,
+          overflow: 'hidden',
+          background: '#E8E8E8',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          {/* Expand icon */}
+          <button
+            onClick={() => setIsModalOpen(true)}
+            style={{
+              position: 'absolute',
+              top: 16,
+              right: 16,
+              width: 40,
+              height: 40,
+              borderRadius: 8,
+              background: 'rgba(0, 0, 0, 0.6)',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 10,
+              transition: 'background 0.2s ease',
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <polyline points="9 21 3 21 3 15"></polyline>
+              <line x1="21" y1="3" x2="14" y2="10"></line>
+              <line x1="3" y1="21" x2="10" y2="14"></line>
+            </svg>
+          </button>
+          <img
+            src="/images/presentation-assets/Customer Email.png"
+            alt="Zalando customer email notification about delivery delay"
+            style={{
+              width: '85%',
+              height: 'auto',
+              display: 'block',
+              borderRadius: 12,
+              boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+              transform: 'translateX(0%) translateY(32%)',
+            }}
+          />
         </div>
       </div>
+
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        src="/images/presentation-assets/Customer Email.png"
+        alt="Zalando customer email notification about delivery delay"
+      />
     </div>
   );
 };
