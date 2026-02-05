@@ -1161,7 +1161,7 @@ export const SlideTesting = () => {
   const findings = [
     { finding: 'Unclear escalation entry points', resolution: 'Increased escalation trigger visibility and positioning', status: 'Fixed' },
     { finding: 'Confusion between return stages', resolution: 'Refined return status terminology and visual indicators', status: 'Fixed' },
-    { finding: 'Card layout differentiation', resolution: 'Returns: vertical staged flow. Refunds: horizontal cards. Emerged from testing, not upfront design.', status: 'Insight' },
+    { finding: 'Different journeys need different layouts', resolution: 'Testing revealed returns needed a vertical staged flow to show progress, while refunds worked better as horizontal cards showing payment details. This wasn\'t planned—it emerged from watching users.', status: 'Insight' },
   ];
 
   return (
