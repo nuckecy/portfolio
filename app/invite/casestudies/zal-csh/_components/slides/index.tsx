@@ -2576,13 +2576,15 @@ export const SlideThankYou = () => (
             Senior Product Designer · Designer Who Codes
           </div>
         </div>
-        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.6, margin: '0 0 12px 0' }}>
+        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.4, margin: '0 0 8px 0' }}>
           I bridge design thinking with technical execution, transforming complex service experiences into research and data-driven solutions.
         </p>
-        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.6, margin: 0 }}>
+        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.4, margin: 0 }}>
           With a background in fintech, e-commerce, and enterprise platforms, plus hands-on frontend engineering experience, I bring a systems-oriented approach to every challenge.
         </p>
-        <div style={{ marginTop: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        {/* Separator line */}
+        <div style={{ height: 1, background: STYLE.colors.border, margin: '16px 0' }} />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <a
             href="https://otobong.com"
             target="_blank"
@@ -2636,7 +2638,7 @@ export const SlideThankYou = () => (
     }}>
       <span style={{
         fontFamily: STYLE.fonts.body,
-        fontSize: 14,
+        fontSize: 18,
         fontWeight: 400,
         color: STYLE.colors.white,
         letterSpacing: '0.5px',
