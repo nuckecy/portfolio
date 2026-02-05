@@ -6,7 +6,7 @@
 ## SECTION: Opening
 
 ### Slide 1: Hero
-**Layout:** Full-bleed dark with content anchored to bottom-left
+**Layout:** Full-bleed dark with content anchored to left, phone mockup on right
 
 **Page caption:** Case study
 
@@ -15,17 +15,19 @@
 **Subtitle:** Context-aware self-help platform at Zalando
 
 **Metrics grid (2×2):**
-| 42% fewer inquiries | 28% CSAT lift |
-| €3.2M saved | 67% faster resolution |
+| 42% drop in recontact cases | €3.2M operational cost saved |
+| 67% faster resolution | 28% increase in CSAT |
+
+**Visual:** Phone mockup (`mobile-returns.png`) showing Zalando self-help returns interface, absolutely positioned on right side
 
 **Footer:** Otobong Okoko · Senior Product Designer · Zalando SE
 
-**Speaker notes:** Open with the headline and let the metrics speak. Pause on each metric briefly. 42% fewer inquiries, 28% CSAT lift, €3.2M saved, 67% faster resolution. These are the outcomes. The rest of the presentation explains how we got there.
+**Speaker notes:** Open with the headline and let the metrics speak. Pause on each metric briefly. 42% drop in recontact cases, €3.2M operational cost saved, 67% faster resolution, 28% increase in CSAT. These are the outcomes. The rest of the presentation explains how we got there.
 
 ---
 
 ### Slide 2: About the Project
-**Layout:** 4-column × 3-row bento grid
+**Layout:** 3-column × 3-row bento grid (`1.2fr 1fr 1fr` columns, `1fr 1fr 0.6fr` rows)
 
 **Page caption:** About the project
 
@@ -35,77 +37,79 @@
 
 | Position | Card Type | Content |
 |----------|-----------|---------|
-| R1-2, C1-2 (span 2×2) | BentoCard gradientWhite | **WHAT IS ZALANDO** — Europe's leading online fashion and lifestyle platform, operating across 25 markets with over 50 million active customers. Customer Care handles millions of contacts annually. |
-| R1, C3 | Card | **Tag:** PLATFORM · **Header:** Web-based FAQ · **Subtitle:** Embedded within existing help pages |
-| R1, C4 | Card | **Tag:** MARKETS · **Header:** 25 European · **Subtitle:** Excluding cash-on-delivery regions |
-| R2, C3 | Card | **Tag:** FOCUS · **Header:** Delivery, returns, refunds · **Subtitle:** Highest-volume contact categories |
-| R2, C4 | Card | **Tag:** DURATION · **Header:** 11 months · **Subtitle:** 100% dedicated, sole designer |
-| R3, C1-4 (full row) | BentoCard orangeGradient | **THE PROJECT** — A strategic initiative within Customer Care to redesign how customers self-serve for delivery, returns, and refund issues. Sponsored by the Director of Customer Care with VP-level visibility. |
+| R1-2, C1 (span 2 rows) | BentoCard gradientWhite | **Zalando logo** (`zalando-logo.svg`) + **Company info**: Europe's leading online fashion and lifestyle platform. Stats: **50M+** active customers, **25** markets |
+| R1, C2 | Card | **Tag:** PLATFORM · **Header:** Web-based FAQ · **Subtitle:** Embedded within existing help pages |
+| R1, C3 | Card | **Tag:** FOCUS · **Header:** Delivery, returns, refunds · **Subtitle:** Highest-volume contact categories |
+| R2, C2 | BentoCard orangeGradient | **Tag:** DURATION · **Header:** 11 months · **Subtitle:** 100% dedicated, sole designer |
+| R2, C3 | Card | **Tag:** ROLE · **Header:** Lead Product Designer · **Subtitle:** End-to-end ownership |
+| R3, C1-3 (full row) | Card horizontal | **THE PROJECT** (accent color, uppercase) + divider + A strategic initiative within Customer Care to redesign how customers self-serve for delivery, returns, and refund issues. Sponsored by the Director of Customer Care with VP-level visibility. |
 
-**Speaker notes:** Zalando is Europe's largest online fashion platform with 50M+ active customers across 25 markets. This was an 11-month strategic initiative to redesign self-service for delivery, returns, and refund issues. Sponsored by the Director of Customer Care with VP-level visibility. I was the sole designer, 100% dedicated.
+**Speaker notes:** Zalando is Europe's largest online fashion platform with 50M+ active customers across 25 markets. This was an 11-month strategic initiative to redesign self-service for delivery, returns, and refund issues. Sponsored by the Director of Customer Care with VP-level visibility. I was the sole designer, 100% dedicated, with end-to-end ownership.
 
 ---
 
 ## SECTION: The Challenge
 
 ### Slide 3: The Cost of Failed Self-Service
-**Layout:** Two-column split (35% left, 65% right)
+**Layout:** Two-column split (25% left, 75% right)
 
 **Section label:** The challenge | Context & Background
 
 **Header:** The cost of failed self-service
 
-**Left column — Stats bento grid:**
-| €3.5 | 2M |
-| cost per contact | repeat contacts |
-| across email, phone, and chat | per year |
+**Left column — Vertical stack of 3 stat cards:**
+1. **€3.5** — cost per contact across email, phone, and chat
+2. **2M** — repeat contacts per year
+3. **€7M** — annual operations cost (with gradient background)
 
-**Bottom bar spanning both columns:**
-| €7M | annual cost · CSAT: 3.1/5 · Resolution: 24hrs |
+**Footer text below cards:** CSAT: 3.1/5 · Resolution: 24hrs
 
-**Right column:** Image placeholder — Self-service experience visual
+**Right column:** Image with expand button (`Dashboard - Returns and Refunds.png`) — Zalando self-service returns and refunds desktop interface, with ImageModal for full-screen view
 
 **Speaker notes:** Every customer contact cost €3.5 across email, phone, and chat. There were 2 million repeat contacts per year. That's €7 million annually in avoidable support costs. CSAT was 3.1/5 and average resolution took 24 hours.
 
 ---
 
 ### Slide 4: Why Customers Contacted Repeatedly
-**Layout:** Three-column cards
+**Layout:** Two-column split (35% left, 65% right)
 
 **Section label:** The challenge | Context & Background
 
 **Header:** Why customers contacted repeatedly
 
-**Cards:**
+**Left column — Vertical stack of 3 cards:**
 
-1. **Icon:** search · **Title:** Generic FAQ · **Body:** Same static page for every customer regardless of order, parcel status, or return stage · **Image placeholder:** Generic FAQ visual
+1. **Icon:** search · **Title:** Generic FAQ · **Body:** Same static page for every customer regardless of order, parcel status, or return stage
 
-2. **Icon:** repeat · **Title:** Channel hopping · **Body:** Unresolved via email, try phone, then chat. Fragmented ticket histories increased workload · **Image placeholder:** Channel hopping visual
+2. **Icon:** repeat · **Title:** Channel hopping · **Body:** Unresolved via email, try phone, then chat. Fragmented ticket histories increased workload
 
-3. **Icon:** headphones · **Title:** Agent dependency · **Body:** Without personalized context, customers abandoned self-service and contacted support directly · **Image placeholder:** Agent dependency visual
+3. **Icon:** headphones · **Title:** Agent dependency · **Body:** Without personalized context, customers abandoned self-service and contacted support directly
+
+**Right column:** Image with expand button (`FAQ - Orders - Dark Mode.png`) — Zalando FAQ orders interface showing generic self-service, with ImageModal for full-screen view
 
 **Speaker notes:** Three root causes drove repeat contacts: 1. Generic FAQ: same static page regardless of customer context 2. Channel hopping: unresolved in one channel, try another 3. Agent dependency: self-service trained customers to bypass it
 
 ---
 
 ### Slide 5: Top Five Reasons
-**Layout:** Vertical list of cards
+**Layout:** Two-column split (35% left, 65% right)
 
 **Section label:** The challenge | Problem Statement
 
 **Header:** Top five reasons customers contacted support
 
-**List items:**
+**Left column — Vertical stack of 4 cards:**
 
 | Icon | Question | Description |
 |------|----------|-------------|
 | wallet | "Where is my refund?" | No visibility into refund amount, timeline, or payment method |
 | truck | "Where is my package?" | Delivery status unavailable in self-service tied to their actual parcel |
 | rotateCcw | "How do I return this?" | Return process lacked step-by-step contextual guidance |
-| activity | "What is the latest status?" | Parcel tracking required contacting an agent for real-time updates |
 | mapPinOff | "Where do I drop this off?" | Drop-off and pickup logistics buried in generic instructions |
 
-**Speaker notes:** Five questions dominated support volume: Where is my refund? Where is my package? How do I return this? What is the latest status? Where do I drop this off? Every one pointed to the same root issue: zero awareness of the customer's actual situation.
+**Right column:** Image with expand button (`Contextual Self Help Home.png`) — Zalando contextual self-help home interface, with ImageModal for full-screen view
+
+**Speaker notes:** Four questions dominated support volume: Where is my refund? Where is my package? How do I return this? Where do I drop this off? Every one pointed to the same root issue: zero awareness of the customer's actual situation.
 
 ---
 
@@ -122,11 +126,10 @@
 
 | Position | Content |
 |----------|---------|
-| R1, C1 | **12** User interviews — Across multiple European markets, scenario-based methodology |
-| R1, C2 | **8** Stakeholder interviews — Product, engineering, customer care operations leadership |
-| R1, C3 | **50K+** Support transcripts — Analyzed for conversation patterns and failure points |
-| R2, C1-2 (span) | BentoCard orangeGradient: **First-hand testing of existing channels** — Usability studies, A/B testing during rollout, support channel analysis to identify inquiry patterns |
-| R2, C3 | **Tag:** SCOPE · **Header:** Multi-market · Regional differences in carrier infrastructure and customer behavior |
+| R1, C1 | Card: **12** User interviews — Across multiple European markets |
+| R1, C2 | Card: **8** Stakeholder interviews — Product, engineering, operations |
+| R1, C3 | Card: **50K+** Support transcripts — Analyzed for patterns and issues |
+| R2, C1-3 (full span) | BentoCard orangeGradient: **First-hand testing** — Extensive usability studies, A/B testing throughout the rollout, and direct observation of customer support interactions |
 
 **Speaker notes:** I conducted 12 user interviews across multiple European markets and 8 stakeholder interviews spanning product, engineering, and customer care leadership. We analyzed 50,000+ support transcripts for conversation patterns and failure points. The research also included first-hand testing of existing channels, usability studies, and A/B testing during rollout.
 
@@ -286,25 +289,29 @@ Evidence tag: Nielsen's Heuristic #1, confirmed over declared data
 ---
 
 ### Slide 14: Stakeholder Navigation
-**Layout:** Two-column cards with nested resolution cards
+**Layout:** Two-column split (35% left, 65% right)
 
 **Section label:** Design Process | Stakeholder Navigation
 
 **Header:** Navigating organizational complexity
 
-**Left card:**
-- **Tag:** CHALLENGE
-- **Header:** FAQ redesign pushback
-- **Body:** A proposed FAQ redesign faced pushback from teams who saw it as scope creep beyond the self-help mandate.
-- **Nested resolution card:** Phased strategy: embed contextual cards first (core project), evolve FAQ in subsequent phases. Preserved momentum while acknowledging the broader opportunity.
+**Left column:** Handshake illustration (`handshake-deal.svg`) with white border, centered
 
-**Right card:**
-- **Tag:** COLLABORATION
-- **Header:** Carrier API investigation
-- **Body:** Carrier data was fragmented across European markets: different data structures, status codes, update frequencies.
-- **Nested outcome card:** Partnered with backend engineers market by market. Revealed more data was available than assumed. The carrier data map became a resource for other initiatives.
+**Right column — Two rows of Challenge → Resolution pairs:**
 
-**Speaker notes:** Two key stakeholder challenges: The FAQ redesign pushback was resolved by proposing a phased strategy: embed first, evolve later. Carrier API fragmentation was addressed by partnering with backend engineers market by market. We discovered more data was available than assumed, and the carrier data map became a resource for other teams.
+**Row 1:**
+| Challenge (white card) | → | Resolution (accent card) |
+|------------------------|---|--------------------------|
+| **FAQ redesign pushback** | | **Strategic compromise** |
+| I proposed redesigning the FAQ as part of improving self-service, but other member teams saw it as scope creep outside the core self-help mandate. | | Agreed to phase the work: deliver contextual help cards first (the core deliverable), with FAQ improvements planned for a future phase. This preserved momentum while keeping the door open. |
+
+**Row 2:**
+| Challenge (white card) | → | Outcome (accent card) |
+|------------------------|---|----------------------|
+| **Missing carrier data** | | **Collaborative discovery** |
+| Engineering said the data I needed for the cards didn't exist because carriers weren't providing it. But I'd seen similar data from other carriers, so I asked them to investigate further. | | Engineering partnered with me to audit carrier APIs across markets. We found more data existed than assumed. The investigation became a shared resource for future projects. |
+
+**Speaker notes:** Two key stakeholder challenges: The FAQ redesign pushback was resolved by proposing a phased strategy: deliver contextual cards first, evolve FAQ later. Missing carrier data challenge was addressed by partnering with engineering to audit carrier APIs market by market. We discovered more data was available than assumed, and the carrier data map became a shared resource for other teams.
 
 ---
 
@@ -545,16 +552,23 @@ The pivot from combined dashboard to connected journey model was driven by API c
 
 ---
 
-## IMAGE PLACEHOLDERS SUMMARY
+## IMAGE ASSETS SUMMARY
 
-For reference, here are all the image placeholders that need actual visuals:
+### Actual Images (in `/public/images/presentation-assets/`)
+
+| Slide | Filename | Description |
+|-------|----------|-------------|
+| 1 | `mobile-returns.png` | Phone mockup showing Zalando self-help returns interface |
+| 2 | `zalando-logo.svg` | Zalando company logo |
+| 3 | `Dashboard - Returns and Refunds.png` | Self-service returns and refunds desktop interface |
+| 4 | `FAQ - Orders - Dark Mode.png` | FAQ orders interface showing generic self-service |
+| 5 | `Contextual Self Help Home.png` | Contextual self-help home interface |
+| 14 | `handshake-deal.svg` | Handshake illustration for stakeholder navigation |
+
+### Remaining Placeholders (need actual visuals)
 
 | Slide | Placeholder Label |
 |-------|-------------------|
-| 3 | Self-service experience visual |
-| 4 | Generic FAQ visual |
-| 4 | Channel hopping visual |
-| 4 | Agent dependency visual |
 | 7 | FAQ page heatmap / scroll depth |
 | 7 | Before: wall of text FAQ |
 | 8 | Order list with IDs |
