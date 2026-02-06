@@ -19,7 +19,7 @@ export const slideData: SlideData[] = [
     componentName: 'SlideHero',
     title: 'Introduction',
     section: 'Opening',
-    notes: 'Open with the headline and let the metrics speak. Pause on each metric briefly.\n\n42% fewer inquiries, 28% CSAT lift, €3.2M saved, 67% faster resolution.\n\nThese are the outcomes. The rest of the presentation explains how we got there.',
+    notes: 'Open with the headline and let the metrics speak. Pause on each metric briefly.\n\n45% drop in recontact cases, 28% CSAT lift, €3.2M annual savings, 67% faster resolution.\n\nThese are the outcomes. The rest of the presentation explains how we got there.',
   },
   {
     id: 1,
@@ -47,17 +47,17 @@ export const slideData: SlideData[] = [
   {
     id: 4,
     componentName: 'SlideTopFive',
-    title: 'Top five reasons',
+    title: 'Top four reasons',
     section: 'The Challenge',
     subSection: 'Problem Statement',
-    notes: "Five questions dominated support volume: Where is my refund? Where is my package? How do I return this? What is the latest status? Where do I drop this off?\n\nEvery one pointed to the same root issue: zero awareness of the customer's actual situation.",
+    notes: "Four questions dominated support volume: Where is my refund? Where is my package? How do I return this? Where do I drop this off?\n\nEvery one pointed to the same root issue: zero awareness of the customer's actual situation.",
   },
   {
     id: 5,
     componentName: 'SlideResearch',
-    title: 'Research methods',
+    title: 'How I built understanding',
     section: 'Research & Discovery',
-    notes: 'I conducted 12 user interviews across multiple European markets and 8 stakeholder interviews spanning product, engineering, and customer care leadership.\n\nWe analyzed 50,000+ support transcripts for conversation patterns and failure points. The research also included first-hand testing of existing channels, usability studies, and A/B testing during rollout.',
+    notes: 'I conducted 12 user interviews across multiple European markets and 8 stakeholder interviews spanning product, engineering, and customer care leadership.\n\nI analyzed 100+ support transcripts for conversation patterns and failure points. The research also included first-hand testing of existing channels, usability studies, and A/B testing during rollout.',
   },
   {
     id: 6,
@@ -96,7 +96,7 @@ export const slideData: SlideData[] = [
     componentName: 'SlidePrinciples',
     title: 'Guiding principles',
     section: 'Guiding Principles',
-    notes: "Three design principles emerged from research:\n\n1. Progressive disclosure: reveal only what matters at each step\n2. Design for existing mental models (Jakob's Law): embed in existing FAQ, use product images\n3. Transparent system status (Nielsen's Heuristic #1): only show confirmed, verified data",
+    notes: "Three design principles emerged from research:\n\n1. Progressive disclosure: reveal only what matters at each step\n2. Design for existing mental models (Jakob's Law): embed in existing FAQ, use product images\n3. Confirmed data builds trust (Error prevention - Heuristic #5): only show confirmed, verified data",
   },
   {
     id: 11,
@@ -120,7 +120,7 @@ export const slideData: SlideData[] = [
     title: 'Stakeholder navigation',
     section: 'Design Process',
     subSection: 'Stakeholder Navigation',
-    notes: 'Two key stakeholder challenges:\n\nThe FAQ redesign pushback was resolved by proposing a phased strategy: embed first, evolve later.\n\nCarrier API fragmentation was addressed by partnering with backend engineers market by market. We discovered more data was available than assumed, and the carrier data map became a resource for other teams.',
+    notes: 'Two key stakeholder challenges:\n\nThe FAQ redesign pushback was resolved by proposing a phased strategy: embed first, evolve later.\n\nCarrier API fragmentation was addressed by partnering with backend engineers market by market. I discovered more data was available than assumed, and the carrier data map became a resource for other teams.',
   },
   {
     id: 14,
@@ -168,7 +168,7 @@ export const slideData: SlideData[] = [
     componentName: 'SlideResultsCustomer',
     title: 'Customer impact',
     section: 'Results & Impact',
-    notes: '42% reduction in overall yearly inquiries. 33% fewer returns inquiries, exceeding the 25% target.\n\n28% CSAT improvement from 3.1 to 4.2 out of 5. 67% faster resolution from 24 hours to under 3 hours. 45% reduction in repeat contacts.',
+    notes: '45% drop in recontact cases across delivery and returns. 33% fewer returns inquiries, exceeding the 25% target.\n\n28% CSAT improvement from 3.1 to 4.2 out of 5. 67% faster resolution from 24 hours to under 3 hours.',
   },
   {
     id: 20,
@@ -189,7 +189,7 @@ export const slideData: SlideData[] = [
     componentName: 'SlideKeyLesson',
     title: 'Key lesson',
     section: 'Reflection',
-    notes: 'The most important shift was from comprehensive to contextual. Research proved customers needed the right information at the right moment, not all information at once.\n\nThis distinction unlocked every major outcome, from the 42% inquiry reduction to the 28% CSAT improvement.',
+    notes: 'The most important shift was from comprehensive to contextual. Research proved customers needed the right information at the right moment, not all information at once.\n\nThis distinction unlocked every major outcome, from the 45% drop in recontact cases to the 28% CSAT improvement.',
   },
   {
     id: 23,

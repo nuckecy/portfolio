@@ -34,8 +34,8 @@ export const SlideHero = () => (
         gap: 16, width: 'fit-content',
       }}>
         {[
-          { number: '42%', text: 'drop in recontact cases' },
-          { number: '€3.2M', text: 'operational cost saved' },
+          { number: '45%', text: 'drop in recontact cases' },
+          { number: '€3.2M', text: 'annual cost savings' },
           { number: '67%', text: 'faster resolution' },
           { number: '28%', text: 'increase in CSAT' },
         ].map((item, i) => (
@@ -467,7 +467,7 @@ export const SlideWhyRepeats = () => {
 };
 
 // ─────────────────────────────────────────────────────────
-// SLIDE 4: Top five reasons
+// SLIDE 4: Top four reasons
 // ─────────────────────────────────────────────────────────
 
 export const SlideTopFive = () => {
@@ -484,7 +484,7 @@ export const SlideTopFive = () => {
     <div style={slideBase}>
       <SectionLabel section="The challenge" subSection="Problem Statement" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>
-        Top five reasons customers contacted support
+        Top four reasons customers contacted support
       </h2>
       <div style={{
         display: 'grid',
@@ -584,7 +584,7 @@ export const SlideResearch = () => {
   return (
     <div style={slideBase}>
       <SectionLabel section="Research & Discovery" />
-      <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>How we built understanding</h2>
+      <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>How I built understanding</h2>
       <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1200 }}>
         A multi-method research approach combining qualitative insights from users and stakeholders, quantitative analysis of support data, and hands-on validation through iterative testing.
       </p>
@@ -782,7 +782,7 @@ export const SlideInsight1 = () => {
       <SectionLabel section="Research & Discovery" subSection="Key Insights" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>Customers scan. They don&apos;t read.</h2>
       <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1000 }}>
-        Detailed context cards with comprehensive information caused information overload and abandonment. Customers wanted the one piece of information relevant to their specific situation, immediately visible.
+        Detailed FAQ pages with comprehensive information caused information overload and abandonment. Customers wanted the one piece of information relevant to their specific situation, immediately visible.
       </p>
       <div style={{ display: 'flex', gap: 24, flex: 1, minHeight: 0, marginTop: STYLE.spacing.titleGap }}>
         {/* Return Card */}
@@ -1330,9 +1330,9 @@ export const SlidePrinciples = () => {
     },
     {
       num: '03',
-      title: 'Transparent system status builds trust',
+      title: 'Confirmed data builds trust',
       body: 'Only communicate what you can verify. Confirmed data only: carrier-verified delivery, warehouse-scanned returns, processed refund amounts. No optimistic estimates.',
-      tag: "Nielsen's Heuristic #1, confirmed over declared data",
+      tag: "Error prevention (Heuristic #5), confirmed over declared data",
     },
   ];
 
@@ -1730,7 +1730,7 @@ export const SlideStakeholders = () => {
               <div style={{ ...typeStyle('tag', '#1A1A1A'), fontSize: 18, marginBottom: 16, padding: '16px 0' }}>OUTCOME</div>
               <div style={{ ...typeStyle('header2', STYLE.colors.bg), fontSize: 32 }}>Collaborative discovery</div>
               <div style={{ ...typeStyle('paragraph2', '#2A1A08'), fontSize: 22, lineHeight: 1.5, marginTop: 12 }}>
-                Engineering partnered with me to audit carrier APIs across markets. We found more data existed than assumed. The investigation became a shared resource for future projects.
+                Engineering partnered with me to audit carrier APIs across markets. I found more data existed than assumed. The investigation became a shared resource for future projects.
               </div>
             </div>
           </div>
@@ -2555,7 +2555,7 @@ export const SlideResultsCustomer = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const metrics = [
-    { value: '42%', label: 'reduction in yearly inquiries', desc: 'Across delivery and returns categories', variant: 'orangeGradient' as const },
+    { value: '45%', label: 'Drop in recontact cases', desc: 'Across delivery and returns categories', variant: 'orangeGradient' as const },
     { value: '33%', label: 'fewer returns inquiries', desc: 'Exceeded 25% target set at kickoff', variant: 'gradientDark' as const },
     { value: '28%', label: 'CSAT improvement', desc: '3.1 → 4.2 out of 5', variant: 'gradientDark' as const },
     { value: '67%', label: 'faster resolution', desc: '24 hours → under 3 hours', variant: 'gradientWhite' as const },
@@ -2756,7 +2756,7 @@ export const SlideMetricsComparison = () => {
       <SectionLabel section="Results & Impact" />
       <h2 style={{ ...typeStyle('header1'), marginTop: STYLE.spacing.sectionGap }}>The transformation in numbers</h2>
       <p style={{ ...typeStyle('paragraph1', STYLE.colors.gray400), marginTop: 16, maxWidth: 1600 }}>
-        Self-help enabled instant answers, customers resolved issues independently, and transparent information built trust—driving significant improvements across resolution time, satisfaction, repeat contacts, and cost.
+        Self-help enabled instant answers, customers resolved issues independently, and transparent information built trust, driving significant improvements across resolution time, satisfaction, recontact rate, and cost.
       </p>
       <div style={{
         display: 'grid',
@@ -2886,7 +2886,7 @@ export const SlideClosing = () => {
 };
 
 // ─────────────────────────────────────────────────────────
-// SLIDE 25: Thank You & About Otobong
+// SLIDE 24: Thank You & About Otobong
 // ─────────────────────────────────────────────────────────
 
 export const SlideThankYou = () => (
