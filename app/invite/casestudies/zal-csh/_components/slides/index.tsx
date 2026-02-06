@@ -18,6 +18,57 @@ const slideBase: React.CSSProperties = {
 };
 
 // ─────────────────────────────────────────────────────────
+// Reusable Preview Overlay Component
+// ─────────────────────────────────────────────────────────
+
+const PreviewOverlay = ({ onClick, isHovered }: { onClick: () => void; isHovered: boolean }) => (
+  <div
+    onClick={onClick}
+    style={{
+      position: 'absolute',
+      inset: 0,
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-end',
+      padding: 16,
+      zIndex: 10,
+    }}
+  >
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 6,
+        padding: '8px 12px',
+        borderRadius: 8,
+        background: 'rgba(50, 50, 50, 0.85)',
+        color: 'white',
+        opacity: isHovered ? 1 : 0.6,
+        transition: 'opacity 0.2s ease',
+      }}
+    >
+      <span style={{ fontSize: 12, fontWeight: 500 }}>Preview</span>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polyline points="15 3 21 3 21 9" />
+        <polyline points="9 21 3 21 3 15" />
+        <line x1="21" y1="3" x2="14" y2="10" />
+        <line x1="3" y1="21" x2="10" y2="14" />
+      </svg>
+    </div>
+  </div>
+);
+
+// ─────────────────────────────────────────────────────────
 // SLIDE 0: Hero
 // ─────────────────────────────────────────────────────────
 
@@ -202,6 +253,7 @@ export const SlideAbout = () => {
 
 export const SlideCost = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   return (
     <div style={slideBase}>
@@ -282,44 +334,22 @@ export const SlideCost = () => {
         </div>
 
         {/* Right column: Image placeholder */}
-        <div style={{ 
-          borderRadius: STYLE.radius.bento, 
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          background: '#D8D8D8',
-          position: 'relative',
-        }}>
-          {/* Expand icon */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 10,
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-          </button>
+        <div
+          style={{
+            borderRadius: STYLE.radius.bento,
+            overflow: 'hidden',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            background: '#D8D8D8',
+            position: 'relative',
+            cursor: 'pointer',
+          }}
+          onClick={() => setIsModalOpen(true)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
             alt="Zalando self-service returns and refunds desktop interface"
@@ -349,6 +379,7 @@ export const SlideCost = () => {
 
 export const SlideWhyRepeats = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const reasons = [
     {
@@ -405,44 +436,22 @@ export const SlideWhyRepeats = () => {
           ))}
         </div>
         {/* Right: Image */}
-        <div style={{
-          borderRadius: STYLE.radius.bento,
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          background: '#D8D8D8',
-          position: 'relative',
-        }}>
-          {/* Expand icon */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 10,
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-          </button>
+        <div
+          style={{
+            borderRadius: STYLE.radius.bento,
+            overflow: 'hidden',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            background: '#D8D8D8',
+            position: 'relative',
+            cursor: 'pointer',
+          }}
+          onClick={() => setIsModalOpen(true)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/FAQ - Orders - Dark Mode.png"
             alt="Zalando FAQ orders interface showing generic self-service"
@@ -472,6 +481,7 @@ export const SlideWhyRepeats = () => {
 
 export const SlideTopFive = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const questions = [
     { icon: icons.wallet, q: '"Where is my refund?"', desc: 'No visibility into refund amount, timeline, or payment method' },
@@ -516,43 +526,21 @@ export const SlideTopFive = () => {
             </Card>
           ))}
         </div>
-        <div style={{
-          position: 'relative',
-          overflow: 'hidden',
-          borderRadius: STYLE.radius.bento,
-          background: STYLE.colors.surface,
-          border: `1px solid ${STYLE.colors.border}`,
-          height: '100%',
-        }}>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            aria-label="Expand image"
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              zIndex: 10,
-              width: 36,
-              height: 36,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-          </button>
+        <div
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            borderRadius: STYLE.radius.bento,
+            background: STYLE.colors.surface,
+            border: `1px solid ${STYLE.colors.border}`,
+            height: '100%',
+            cursor: 'pointer',
+          }}
+          onClick={() => setIsModalOpen(true)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/Contextual Self Help Home.png"
             alt="Zalando contextual self-help home interface"
@@ -637,6 +625,8 @@ export const SlideResearch = () => {
 
 export const SlideInsight1 = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered1, setIsHovered1] = React.useState(false);
+  const [isHovered2, setIsHovered2] = React.useState(false);
 
   // Dual-image modal for Return and Refund cards
   const DualImageModal = () => {
@@ -680,7 +670,7 @@ export const SlideInsight1 = () => {
               borderRadius: 20,
             }}
           >
-            Context Cards Comparison
+            FAQ vs Self Help Information Comparison
           </div>
 
           <button
@@ -786,30 +776,13 @@ export const SlideInsight1 = () => {
       </p>
       <div style={{ display: 'flex', gap: 24, flex: 1, minHeight: 0, marginTop: STYLE.spacing.titleGap }}>
         {/* Old FAQ */}
-        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#e0e0e0', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
-              position: 'absolute',
-              top: 12,
-              right: 12,
-              width: 36,
-              height: 36,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 10,
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            {navIcons.expand}
-          </button>
+        <div
+          style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#e0e0e0', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%', cursor: 'pointer' }}
+          onClick={() => setIsModalOpen(true)}
+          onMouseEnter={() => setIsHovered1(true)}
+          onMouseLeave={() => setIsHovered1(false)}
+        >
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
           <img
             src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png"
             alt="Old FAQ showing Where is my order page"
@@ -824,30 +797,13 @@ export const SlideInsight1 = () => {
         </div>
 
         {/* New Self-help */}
-        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#e0e0e0', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
-              position: 'absolute',
-              top: 12,
-              right: 12,
-              width: 36,
-              height: 36,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 10,
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            {navIcons.expand}
-          </button>
+        <div
+          style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#e0e0e0', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%', cursor: 'pointer' }}
+          onClick={() => setIsModalOpen(true)}
+          onMouseEnter={() => setIsHovered2(true)}
+          onMouseLeave={() => setIsHovered2(false)}
+        >
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} />
           <img
             src="/images/presentation-assets/New FAQ - Delivery - Status.png"
             alt="New self-help showing contextual delivery status"
@@ -874,6 +830,8 @@ export const SlideInsight1 = () => {
 
 export const SlideInsight2 = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered1, setIsHovered1] = React.useState(false);
+  const [isHovered2, setIsHovered2] = React.useState(false);
 
   // Custom dual-image modal
   const DualImageModal = () => {
@@ -1039,35 +997,13 @@ export const SlideInsight2 = () => {
           <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 24, lineHeight: 1.5 }}>
             &quot;1019234205367&quot; means nothing to a customer with 5 active orders. They can&apos;t recall system-generated codes.
           </div>
-          <div style={{ flex: 1, borderRadius: 12, background: '#3a3a3a', border: '2px solid #3a3a3a', overflow: 'hidden', position: 'relative', minHeight: 0 }}>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              style={{
-                position: 'absolute',
-                top: 12,
-                right: 12,
-                width: 40,
-                height: 40,
-                borderRadius: 8,
-                background: 'rgba(0, 0, 0, 0.6)',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 10,
-                transition: 'background 0.2s ease',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <polyline points="9 21 3 21 3 15"></polyline>
-                <line x1="21" y1="3" x2="14" y2="10"></line>
-                <line x1="3" y1="21" x2="10" y2="14"></line>
-              </svg>
-            </button>
+          <div
+            style={{ flex: 1, borderRadius: 12, background: '#3a3a3a', border: '2px solid #3a3a3a', overflow: 'hidden', position: 'relative', minHeight: 0, cursor: 'pointer' }}
+            onClick={() => setIsModalOpen(true)}
+            onMouseEnter={() => setIsHovered1(true)}
+            onMouseLeave={() => setIsHovered1(false)}
+          >
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
             <img
               src="/images/presentation-assets/Delivery Card Version 1.png?v=3"
               alt="Order card showing order ID and reference number"
@@ -1098,35 +1034,13 @@ export const SlideInsight2 = () => {
           <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), fontSize: 24, lineHeight: 1.5 }}>
             Customers think in &quot;the blue jacket&quot; or &quot;the running shoes.&quot; Product photos became the primary identifier.
           </div>
-          <div style={{ flex: 1, borderRadius: 12, background: '#3a3a3a', border: '2px solid #3a3a3a', overflow: 'hidden', position: 'relative', minHeight: 0 }}>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              style={{
-                position: 'absolute',
-                top: 12,
-                right: 12,
-                width: 40,
-                height: 40,
-                borderRadius: 8,
-                background: 'rgba(0, 0, 0, 0.6)',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 10,
-                transition: 'background 0.2s ease',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <polyline points="9 21 3 21 3 15"></polyline>
-                <line x1="21" y1="3" x2="14" y2="10"></line>
-                <line x1="3" y1="21" x2="10" y2="14"></line>
-              </svg>
-            </button>
+          <div
+            style={{ flex: 1, borderRadius: 12, background: '#3a3a3a', border: '2px solid #3a3a3a', overflow: 'hidden', position: 'relative', minHeight: 0, cursor: 'pointer' }}
+            onClick={() => setIsModalOpen(true)}
+            onMouseEnter={() => setIsHovered2(true)}
+            onMouseLeave={() => setIsHovered2(false)}
+          >
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} />
             <img
               src="/images/presentation-assets/Delivery Card - Current.png?v=3"
               alt="Order card with product images as primary identifier"
@@ -1450,6 +1364,7 @@ export const SlideDecisions = () => {
 
 export const SlideTesting = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const findings = [
     { finding: 'Unclear escalation entry points', resolution: 'Increased escalation trigger visibility and positioning', status: 'Fixed' },
@@ -1543,42 +1458,25 @@ export const SlideTesting = () => {
             </Card>
           ))}
           {/* Card iterations image */}
-          <div style={{
-            position: 'relative',
-            overflow: 'hidden',
-            borderRadius: STYLE.radius.bento,
-            background: '#f5f5f5',
-            border: `1px solid ${STYLE.colors.border}`,
-            flex: 1,
-            minHeight: 180,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              aria-label="Expand image"
-              style={{
-                position: 'absolute',
-                top: 16,
-                right: 16,
-                zIndex: 10,
-                width: 36,
-                height: 36,
-                borderRadius: 8,
-                background: 'rgba(0, 0, 0, 0.6)',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'background 0.2s ease',
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-            >
-              {navIcons.expand}
-            </button>
+          <div
+            onClick={() => setIsModalOpen(true)}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+              position: 'relative',
+              overflow: 'hidden',
+              borderRadius: STYLE.radius.bento,
+              background: '#f5f5f5',
+              border: `1px solid ${STYLE.colors.border}`,
+              flex: 1,
+              minHeight: 180,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+            }}
+          >
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
             <img
               src="/images/presentation-assets/Delivery Cards - Iterations.png"
               alt="Delivery card iterations showing design evolution"
@@ -1892,6 +1790,7 @@ export const SlideArchitecture = () => {
 
 export const SlideIdentification = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   return (
     <div style={slideBase}>
@@ -1933,44 +1832,22 @@ export const SlideIdentification = () => {
         </div>
 
         {/* Right: Image */}
-        <div style={{
-          borderRadius: STYLE.radius.bento,
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: '#D8D8D8',
-          position: 'relative',
-        }}>
-          {/* Expand icon */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 10,
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-          </button>
+        <div
+          onClick={() => setIsModalOpen(true)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          style={{
+            borderRadius: STYLE.radius.bento,
+            overflow: 'hidden',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: '#D8D8D8',
+            position: 'relative',
+            cursor: 'pointer',
+          }}
+        >
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
             alt="FAQ homepage with contextual cards showing returns and refunds"
@@ -2188,6 +2065,8 @@ export const SlideEscalation = () => {
 export const SlideBeforeAfter = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  const [isHovered1, setIsHovered1] = React.useState(false);
+  const [isHovered2, setIsHovered2] = React.useState(false);
 
   const sliderImages = [
     { src: '/images/presentation-assets/Old FAQ - Delivery.png', label: 'Old FAQ - Delivery' },
@@ -2405,6 +2284,8 @@ export const SlideBeforeAfter = () => {
           }}>BEFORE</div>
           <div
             onClick={() => setIsModalOpen(true)}
+            onMouseEnter={() => setIsHovered1(true)}
+            onMouseLeave={() => setIsHovered1(false)}
             style={{
               position: 'relative',
               flex: 1,
@@ -2414,6 +2295,7 @@ export const SlideBeforeAfter = () => {
               cursor: 'pointer',
             }}
           >
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
             {/* Base image */}
             <img
               src="/images/presentation-assets/Old FAQ - Delivery.png"
@@ -2442,26 +2324,6 @@ export const SlideBeforeAfter = () => {
                 borderRadius: 8,
               }}
             />
-            {/* Expand button */}
-            <button
-              onClick={(e) => { e.stopPropagation(); setIsModalOpen(true); }}
-              style={{
-                position: 'absolute',
-                top: 12,
-                right: 12,
-                background: 'rgba(0,0,0,0.6)',
-                border: 'none',
-                borderRadius: 6,
-                padding: 8,
-                cursor: 'pointer',
-                color: STYLE.colors.white,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              {navIcons.expand}
-            </button>
           </div>
           <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray500), textAlign: 'center' }}>
             Same static page for every customer. Text-heavy, no personalization, no real-time data.
@@ -2483,6 +2345,8 @@ export const SlideBeforeAfter = () => {
           }}>AFTER</div>
           <div
             onClick={() => { setCurrentImageIndex(2); setIsModalOpen(true); }}
+            onMouseEnter={() => setIsHovered2(true)}
+            onMouseLeave={() => setIsHovered2(false)}
             style={{
               position: 'relative',
               flex: 1,
@@ -2492,6 +2356,7 @@ export const SlideBeforeAfter = () => {
               cursor: 'pointer',
             }}
           >
+            <PreviewOverlay onClick={() => { setCurrentImageIndex(2); setIsModalOpen(true); }} isHovered={isHovered2} />
             {/* Base image - Mobile */}
             <img
               src="/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png"
@@ -2520,26 +2385,6 @@ export const SlideBeforeAfter = () => {
                 borderRadius: 8,
               }}
             />
-            {/* Expand button */}
-            <button
-              onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(2); setIsModalOpen(true); }}
-              style={{
-                position: 'absolute',
-                top: 12,
-                right: 12,
-                background: 'rgba(0,0,0,0.6)',
-                border: 'none',
-                borderRadius: 6,
-                padding: 8,
-                cursor: 'pointer',
-                color: STYLE.colors.white,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              {navIcons.expand}
-            </button>
           </div>
           <div style={{ ...typeStyle('paragraph2', STYLE.colors.gray400), textAlign: 'center' }}>
             Personalized contextual cards. Product images, real-time status, entry-point-adaptive display.
@@ -2557,6 +2402,7 @@ export const SlideBeforeAfter = () => {
 
 export const SlideResultsCustomer = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const metrics = [
     { value: '45%', label: 'Drop in recontact cases', desc: 'Across delivery and returns categories', variant: 'orangeGradient' as const },
@@ -2604,45 +2450,23 @@ export const SlideResultsCustomer = () => {
         </div>
 
         {/* Right: Image - 35% */}
-        <div style={{
-          width: '35%',
-          borderRadius: STYLE.radius.bento,
-          overflow: 'hidden',
-          background: '#E8E8E8',
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          {/* Expand icon */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              width: 40,
-              height: 40,
-              borderRadius: 8,
-              background: 'rgba(0, 0, 0, 0.6)',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 10,
-              transition: 'background 0.2s ease',
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'}
-            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <polyline points="9 21 3 21 3 15"></polyline>
-              <line x1="21" y1="3" x2="14" y2="10"></line>
-              <line x1="3" y1="21" x2="10" y2="14"></line>
-            </svg>
-          </button>
+        <div
+          onClick={() => setIsModalOpen(true)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          style={{
+            width: '35%',
+            borderRadius: STYLE.radius.bento,
+            overflow: 'hidden',
+            background: '#E8E8E8',
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+          }}
+        >
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/Customer Email.png"
             alt="Zalando customer email notification about delivery delay"
@@ -2893,39 +2717,46 @@ export const SlideClosing = () => {
 // SLIDE 24: Thank You & About Otobong
 // ─────────────────────────────────────────────────────────
 
-export const SlideThankYou = () => (
-  <div style={{
-    ...slideBase,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    position: 'relative',
-  }}>
-    {/* Two-column layout */}
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gap: 64,
-      alignItems: 'center',
-      flex: 1,
-    }}>
-      {/* Left: Thank you */}
-      <div>
-        <h2 style={{ ...typeStyle('header1'), fontSize: 96, lineHeight: 1, marginBottom: 24 }}>
-          Thank you
-        </h2>
-        <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.6 }}>
-          I appreciate you taking the time to explore this case study.
-        </p>
-      </div>
+export const SlideThankYou = () => {
+  const [isCardHovered, setIsCardHovered] = React.useState(false);
 
-      {/* Right: About section */}
+  return (
+    <div style={{
+      ...slideBase,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      position: 'relative',
+    }}>
+      {/* Two-column layout */}
       <div style={{
-        background: STYLE.colors.surface,
-        border: `1px solid ${STYLE.colors.border}`,
-        borderRadius: STYLE.radius.bento,
-        padding: 32,
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: 64,
+        alignItems: 'center',
+        flex: 1,
       }}>
+        {/* Left: Thank you */}
+        <div>
+          <h2 style={{ ...typeStyle('header1'), fontSize: 96, lineHeight: 1, marginBottom: 24 }}>
+            Thank you
+          </h2>
+          <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.6 }}>
+            I appreciate you taking the time to explore this case study.
+          </p>
+        </div>
+
+        {/* Right: About section */}
+        <div
+          onMouseEnter={() => setIsCardHovered(true)}
+          onMouseLeave={() => setIsCardHovered(false)}
+          style={{
+            background: STYLE.colors.surface,
+            border: `1px solid ${STYLE.colors.border}`,
+            borderRadius: STYLE.radius.bento,
+            padding: 32,
+          }}
+        >
         <div style={{ marginBottom: 16 }}>
           <div style={{ fontFamily: STYLE.fonts.body, fontWeight: 600, color: STYLE.colors.white, fontSize: 42 }}>Otobong Okoko</div>
           <div style={{ ...typeStyle('paragraph3'), color: STYLE.colors.accent, marginTop: 4 }}>
@@ -2938,6 +2769,27 @@ export const SlideThankYou = () => (
         <p style={{ ...typeStyle('paragraph2'), color: STYLE.colors.gray400, lineHeight: 1.4, margin: 0 }}>
           With a background in fintech, e-commerce, and enterprise platforms, plus hands-on frontend engineering experience, I bring a systems-oriented approach to every challenge.
         </p>
+        {/* Expert Skills */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16 }}>
+          <span style={{ ...typeStyle('paragraph3', STYLE.colors.gray500), fontSize: 16 }}>Notable Skills:</span>
+          {['AI', 'Accessibility', 'Design Engineer'].map((skill) => (
+            <span
+              key={skill}
+              style={{
+                padding: '6px 12px',
+                borderRadius: 16,
+                background: isCardHovered ? STYLE.colors.white : STYLE.colors.surface,
+                border: `1px solid ${isCardHovered ? STYLE.colors.white : STYLE.colors.border}`,
+                fontFamily: STYLE.fonts.body,
+                fontSize: 16,
+                color: isCardHovered ? STYLE.colors.bg : STYLE.colors.gray400,
+                transition: 'all 0.2s ease',
+              }}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
         {/* Separator line */}
         <div style={{ height: 1, background: STYLE.colors.border, margin: '24px 0' }} />
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 32 }}>
@@ -3003,4 +2855,5 @@ export const SlideThankYou = () => (
       </span>
     </div>
   </div>
-);
+  );
+};
