@@ -106,7 +106,7 @@ export const SlideHero = () => (
     
     {/* Phone mockup image - absolutely positioned */}
     <img
-      src="/images/presentation-assets/mobile-returns.png?v=2"
+      src="/images/presentation-assets/mobile-returns.png?v=4"
       alt="Zalando self-help returns interface on mobile"
       style={{
         position: 'absolute',
@@ -159,7 +159,7 @@ export const SlideAbout = () => {
           justifyContent: 'space-between',
         }}>
           <img
-            src="/images/presentation-assets/zalando-logo.svg"
+            src="/images/presentation-assets/zalando-logo.svg?v=4"
             alt="Zalando"
             style={{ width: 280, height: 'auto' }}
           />
@@ -351,7 +351,7 @@ export const SlideCost = () => {
         >
           <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
-            src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
+            src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
             alt="Zalando self-service returns and refunds desktop interface"
             style={{
               width: '130%',
@@ -366,7 +366,7 @@ export const SlideCost = () => {
       <ImageModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
+        src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
         alt="Zalando self-service returns and refunds desktop interface"
       />
     </div>
@@ -453,7 +453,7 @@ export const SlideWhyRepeats = () => {
         >
           <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
-            src="/images/presentation-assets/FAQ - Orders - Dark Mode.png"
+            src="/images/presentation-assets/FAQ - Orders - Dark Mode.png?v=4"
             alt="Zalando FAQ orders interface showing generic self-service"
             style={{
               width: '130%',
@@ -468,7 +468,7 @@ export const SlideWhyRepeats = () => {
       <ImageModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/FAQ - Orders - Dark Mode.png"
+        src="/images/presentation-assets/FAQ - Orders - Dark Mode.png?v=4"
         alt="Zalando FAQ orders interface showing generic self-service"
       />
     </div>
@@ -542,7 +542,7 @@ export const SlideTopFive = () => {
         >
           <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
-            src="/images/presentation-assets/Contextual Self Help Home.png"
+            src="/images/presentation-assets/Contextual Self Help Home.png?v=4"
             alt="Zalando contextual self-help home interface"
             style={{
               width: '130%',
@@ -557,7 +557,7 @@ export const SlideTopFive = () => {
       <ImageModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/Contextual Self Help Home.png"
+        src="/images/presentation-assets/Contextual Self Help Home.png?v=4"
         alt="Zalando contextual self-help home interface"
       />
     </div>
@@ -725,7 +725,7 @@ export const SlideInsight1 = () => {
               Old FAQ
             </div>
             <img
-              src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png"
+              src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png?v=4"
               alt="Old FAQ showing Where is my order page"
               style={{
                 width: '100%',
@@ -751,7 +751,7 @@ export const SlideInsight1 = () => {
               New Self-help
             </div>
             <img
-              src="/images/presentation-assets/New FAQ - Delivery - Status.png"
+              src="/images/presentation-assets/New FAQ - Delivery - Status.png?v=4"
               alt="New self-help showing contextual delivery status"
               style={{
                 width: '100%',
@@ -784,7 +784,7 @@ export const SlideInsight1 = () => {
         >
           <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
           <img
-            src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png"
+            src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png?v=4"
             alt="Old FAQ showing Where is my order page"
             style={{
               width: '80%',
@@ -805,7 +805,7 @@ export const SlideInsight1 = () => {
         >
           <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} />
           <img
-            src="/images/presentation-assets/New FAQ - Delivery - Status.png"
+            src="/images/presentation-assets/New FAQ - Delivery - Status.png?v=4"
             alt="New self-help showing contextual delivery status"
             style={{
               width: '80%',
@@ -930,7 +930,7 @@ export const SlideInsight2 = () => {
               Delivery Card Version 1
             </div>
             <img
-              src="/images/presentation-assets/Delivery Card Version 1.png?v=3"
+              src="/images/presentation-assets/Delivery Card Version 1.png?v=4"
               alt="Order card showing order ID and reference number"
               style={{
                 width: '100%',
@@ -956,7 +956,7 @@ export const SlideInsight2 = () => {
               Delivery Card - Current
             </div>
             <img
-              src="/images/presentation-assets/Delivery Card - Current.png?v=3"
+              src="/images/presentation-assets/Delivery Card - Current.png?v=4"
               alt="Order card with product images as primary identifier"
               style={{
                 width: '100%',
@@ -1005,7 +1005,7 @@ export const SlideInsight2 = () => {
           >
             <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
             <img
-              src="/images/presentation-assets/Delivery Card Version 1.png?v=3"
+              src="/images/presentation-assets/Delivery Card Version 1.png?v=4"
               alt="Order card showing order ID and reference number"
               style={{
                 position: 'absolute',
@@ -1042,7 +1042,7 @@ export const SlideInsight2 = () => {
           >
             <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} />
             <img
-              src="/images/presentation-assets/Delivery Card - Current.png?v=3"
+              src="/images/presentation-assets/Delivery Card - Current.png?v=4"
               alt="Order card with product images as primary identifier"
               style={{
                 position: 'absolute',
@@ -1095,7 +1095,7 @@ export const SlideInsight3 = () => {
           justifyContent: 'center',
         }}>
           <img
-            src="/images/presentation-assets/Tech Life - Blockchain.png"
+            src="/images/presentation-assets/Tech Life - Blockchain.png?v=4"
             alt="Illustration showing context-aware information delivery"
             style={{
               width: '105%',
@@ -1181,7 +1181,7 @@ export const SlideEntryPoints = () => {
           justifyContent: 'center',
         }}>
           <img
-            src="/images/presentation-assets/CSH Entry Point Flows.jpg"
+            src="/images/presentation-assets/CSH Entry Point Flows.jpg?v=4"
             alt="Entry Points to Contextual Self-Help"
             style={{
               width: '100%',
@@ -1221,7 +1221,7 @@ export const SlideEntryPoints = () => {
       <CanvasModal
         isOpen={isCanvasOpen}
         onClose={() => setIsCanvasOpen(false)}
-        src="/images/presentation-assets/CSH Entry Point Flows.jpg"
+        src="/images/presentation-assets/CSH Entry Point Flows.jpg?v=4"
         alt="Entry Points to Contextual Self-Help"
       />
     </div>
@@ -1478,7 +1478,7 @@ export const SlideTesting = () => {
           >
             <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
             <img
-              src="/images/presentation-assets/Delivery Cards - Iterations.png"
+              src="/images/presentation-assets/Delivery Cards - Iterations.png?v=4"
               alt="Delivery card iterations showing design evolution"
               style={{
                 width: '95%',
@@ -1493,7 +1493,7 @@ export const SlideTesting = () => {
       <ImageModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/Delivery Cards - Iterations.png"
+        src="/images/presentation-assets/Delivery Cards - Iterations.png?v=4"
         alt="Delivery card iterations showing design evolution"
       />
     </div>
@@ -1527,7 +1527,7 @@ export const SlideStakeholders = () => {
           overflow: 'hidden',
         }}>
           <img
-            src="/images/presentation-assets/handshake-deal.svg?v=2"
+            src="/images/presentation-assets/handshake-deal.svg?v=4"
             alt="Handshake illustration"
             style={{
               width: '100%',
@@ -1738,7 +1738,7 @@ export const SlideArchitecture = () => {
         justifyContent: 'center',
       }}>
         <img
-          src="/images/presentation-assets/Contextual Self Help - User Journey.png"
+          src="/images/presentation-assets/Contextual Self Help - User Journey.png?v=4"
           alt="Contextual Self Help User Journey"
           style={{
             width: '100%',
@@ -1777,7 +1777,7 @@ export const SlideArchitecture = () => {
       <CanvasModal
         isOpen={isCanvasOpen}
         onClose={() => setIsCanvasOpen(false)}
-        src="/images/presentation-assets/Contextual Self Help - User Journey.png"
+        src="/images/presentation-assets/Contextual Self Help - User Journey.png?v=4"
         alt="Contextual Self Help User Journey"
       />
     </div>
@@ -1849,7 +1849,7 @@ export const SlideIdentification = () => {
         >
           <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
-            src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
+            src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
             alt="FAQ homepage with contextual cards showing returns and refunds"
             style={{
               width: '100%',
@@ -1864,7 +1864,7 @@ export const SlideIdentification = () => {
       <ImageModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/Dashboard - Returns and Refunds.png"
+        src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
         alt="FAQ homepage with contextual cards showing returns and refunds"
       />
     </div>
@@ -2069,14 +2069,14 @@ export const SlideBeforeAfter = () => {
   const [isHovered2, setIsHovered2] = React.useState(false);
 
   const sliderImages = [
-    { src: '/images/presentation-assets/Old FAQ - Delivery.png', label: 'Old FAQ - Delivery' },
-    { src: '/images/presentation-assets/Old FAQ - Where is my Order.png', label: 'Old FAQ - Where is my Order' },
-    { src: '/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png', label: 'New FAQ Mobile - Delivery Status' },
-    { src: '/images/presentation-assets/New FAQ [Web] - Delivery Status.png', label: 'New FAQ Web - Delivery Status' },
-    { src: '/images/presentation-assets/New FAQ - Delivery Status (Mobile & Web).png', label: 'Delivery Status Comparison' },
-    { src: '/images/presentation-assets/New FAQ - Where is my Order (Mobile & Web).png', label: 'Where is my Order Comparison' },
-    { src: '/images/presentation-assets/New FAQ [Mobile] - Where is my Order.png', label: 'New FAQ Mobile - Where is my Order' },
-    { src: '/images/presentation-assets/New FAQ [Web] - Where is my Order.png', label: 'New FAQ Web - Where is my Order' },
+    { src: '/images/presentation-assets/Old FAQ - Delivery.png?v=4', label: 'Old FAQ - Delivery' },
+    { src: '/images/presentation-assets/Old FAQ - Where is my Order.png?v=4', label: 'Old FAQ - Where is my Order' },
+    { src: '/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png?v=4', label: 'New FAQ Mobile - Delivery Status' },
+    { src: '/images/presentation-assets/New FAQ [Web] - Delivery Status.png?v=4', label: 'New FAQ Web - Delivery Status' },
+    { src: '/images/presentation-assets/New FAQ - Delivery Status (Mobile & Web).png?v=4', label: 'Delivery Status Comparison' },
+    { src: '/images/presentation-assets/New FAQ - Where is my Order (Mobile & Web).png?v=4', label: 'Where is my Order Comparison' },
+    { src: '/images/presentation-assets/New FAQ [Mobile] - Where is my Order.png?v=4', label: 'New FAQ Mobile - Where is my Order' },
+    { src: '/images/presentation-assets/New FAQ [Web] - Where is my Order.png?v=4', label: 'New FAQ Web - Where is my Order' },
   ];
 
   const goNextImage = () => setCurrentImageIndex((i) => Math.min(i + 1, sliderImages.length - 1));
@@ -2298,7 +2298,7 @@ export const SlideBeforeAfter = () => {
             <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
             {/* Base image */}
             <img
-              src="/images/presentation-assets/Old FAQ - Delivery.png"
+              src="/images/presentation-assets/Old FAQ - Delivery.png?v=4"
               alt="Old FAQ - Delivery"
               style={{
                 position: 'absolute',
@@ -2312,7 +2312,7 @@ export const SlideBeforeAfter = () => {
             />
             {/* Overlaid image */}
             <img
-              src="/images/presentation-assets/Old FAQ - Where is my Order.png"
+              src="/images/presentation-assets/Old FAQ - Where is my Order.png?v=4"
               alt="Old FAQ - Where is my Order"
               style={{
                 position: 'absolute',
@@ -2359,7 +2359,7 @@ export const SlideBeforeAfter = () => {
             <PreviewOverlay onClick={() => { setCurrentImageIndex(2); setIsModalOpen(true); }} isHovered={isHovered2} />
             {/* Base image - Mobile */}
             <img
-              src="/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png"
+              src="/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png?v=4"
               alt="New FAQ Mobile - Delivery Status"
               style={{
                 position: 'absolute',
@@ -2373,7 +2373,7 @@ export const SlideBeforeAfter = () => {
             />
             {/* Overlaid image - Web */}
             <img
-              src="/images/presentation-assets/New FAQ [Web] - Delivery Status.png"
+              src="/images/presentation-assets/New FAQ [Web] - Delivery Status.png?v=4"
               alt="New FAQ Web - Delivery Status"
               style={{
                 position: 'absolute',
@@ -2468,7 +2468,7 @@ export const SlideResultsCustomer = () => {
         >
           <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
-            src="/images/presentation-assets/Customer Email.png"
+            src="/images/presentation-assets/Customer Email.png?v=4"
             alt="Zalando customer email notification about delivery delay"
             style={{
               width: '85%',
@@ -2485,7 +2485,7 @@ export const SlideResultsCustomer = () => {
       <ImageModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        src="/images/presentation-assets/Customer Email.png"
+        src="/images/presentation-assets/Customer Email.png?v=4"
         alt="Zalando customer email notification about delivery delay"
       />
     </div>
