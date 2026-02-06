@@ -113,7 +113,7 @@ export const SlideHero = () => (
       alt="Zalando self-help returns interface on mobile"
       style={{
         position: 'absolute',
-        right: 180,
+        right: 'calc(180px + 5%)',
         top: '50%',
         transform: 'translateY(-50%)',
         height: 943,
