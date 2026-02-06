@@ -21,52 +21,55 @@ const slideBase: React.CSSProperties = {
 // Reusable Preview Overlay Component
 // ─────────────────────────────────────────────────────────
 
-const PreviewOverlay = ({ onClick, isHovered }: { onClick: () => void; isHovered: boolean }) => (
-  <div
-    onClick={onClick}
-    style={{
-      position: 'absolute',
-      inset: 0,
-      cursor: 'pointer',
-      display: 'flex',
-      alignItems: 'flex-start',
-      justifyContent: 'flex-end',
-      padding: 16,
-      zIndex: 10,
-    }}
-  >
+const PreviewOverlay = ({ onClick, isHovered, variant = 'dark' }: { onClick: () => void; isHovered: boolean; variant?: 'dark' | 'light' }) => {
+  const isDark = variant === 'dark';
+  return (
     <div
+      onClick={onClick}
       style={{
+        position: 'absolute',
+        inset: 0,
+        cursor: 'pointer',
         display: 'flex',
-        alignItems: 'center',
-        gap: 6,
-        padding: '8px 12px',
-        borderRadius: 8,
-        background: 'rgba(50, 50, 50, 0.85)',
-        color: 'white',
-        opacity: isHovered ? 1 : 0.6,
-        transition: 'opacity 0.2s ease',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-end',
+        padding: 16,
+        zIndex: 10,
       }}
     >
-      <span style={{ fontSize: 12, fontWeight: 500 }}>Preview</span>
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 6,
+          padding: '8px 12px',
+          borderRadius: 8,
+          background: isDark ? 'rgba(50, 50, 50, 0.85)' : 'rgba(255, 255, 255, 0.9)',
+          color: isDark ? 'white' : '#1a1a1a',
+          opacity: isHovered ? 1 : 0.6,
+          transition: 'opacity 0.2s ease',
+        }}
       >
-        <polyline points="15 3 21 3 21 9" />
-        <polyline points="9 21 3 21 3 15" />
-        <line x1="21" y1="3" x2="14" y2="10" />
-        <line x1="3" y1="21" x2="10" y2="14" />
-      </svg>
+        <span style={{ fontSize: 12, fontWeight: 500 }}>Preview</span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke={isDark ? 'white' : '#1a1a1a'}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="15 3 21 3 21 9" />
+          <polyline points="9 21 3 21 3 15" />
+          <line x1="21" y1="3" x2="14" y2="10" />
+          <line x1="3" y1="21" x2="10" y2="14" />
+        </svg>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // ─────────────────────────────────────────────────────────
 // SLIDE 0: Hero
@@ -349,7 +352,7 @@ export const SlideCost = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
           <img
             src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
             alt="Zalando self-service returns and refunds desktop interface"
@@ -451,7 +454,7 @@ export const SlideWhyRepeats = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
           <img
             src="/images/presentation-assets/FAQ - Orders - Dark Mode.png?v=4"
             alt="Zalando FAQ orders interface showing generic self-service"
@@ -782,7 +785,7 @@ export const SlideInsight1 = () => {
           onMouseEnter={() => setIsHovered1(true)}
           onMouseLeave={() => setIsHovered1(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} variant="light" />
           <img
             src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png?v=4"
             alt="Old FAQ showing Where is my order page"
@@ -803,7 +806,7 @@ export const SlideInsight1 = () => {
           onMouseEnter={() => setIsHovered2(true)}
           onMouseLeave={() => setIsHovered2(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} variant="light" />
           <img
             src="/images/presentation-assets/New FAQ - Delivery - Status.png?v=4"
             alt="New self-help showing contextual delivery status"
@@ -1476,7 +1479,7 @@ export const SlideTesting = () => {
               cursor: 'pointer',
             }}
           >
-            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
             <img
               src="/images/presentation-assets/Delivery Cards - Iterations.png?v=4"
               alt="Delivery card iterations showing design evolution"
@@ -1847,7 +1850,7 @@ export const SlideIdentification = () => {
             cursor: 'pointer',
           }}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
           <img
             src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
             alt="FAQ homepage with contextual cards showing returns and refunds"
@@ -2466,7 +2469,7 @@ export const SlideResultsCustomer = () => {
             cursor: 'pointer',
           }}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
           <img
             src="/images/presentation-assets/Customer Email.png?v=4"
             alt="Zalando customer email notification about delivery delay"
