@@ -1173,16 +1173,20 @@ export const SlideEntryPoints = () => {
           ))}
         </div>
         {/* Right: Canvas preview */}
-        <div style={{
-          position: 'relative',
-          flex: 1,
-          borderRadius: STYLE.radius.bento,
-          overflow: 'hidden',
-          background: '#f5f5f5',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+        <div
+          onClick={() => setIsCanvasOpen(true)}
+          style={{
+            position: 'relative',
+            flex: 1,
+            borderRadius: STYLE.radius.bento,
+            overflow: 'hidden',
+            background: '#f5f5f5',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+          }}
+        >
           <img
             src="/images/presentation-assets/CSH Entry Point Flows.jpg?v=4"
             alt="Entry Points to Contextual Self-Help"
@@ -1729,18 +1733,22 @@ export const SlideArchitecture = () => {
       </div>
 
       {/* Architecture diagram with canvas preview */}
-      <div style={{
-        position: 'relative',
-        flex: 1,
-        minHeight: 300,
-        marginTop: 24,
-        borderRadius: STYLE.radius.bento,
-        overflow: 'hidden',
-        background: '#1a1a1a',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      <div
+        onClick={() => setIsCanvasOpen(true)}
+        style={{
+          position: 'relative',
+          flex: 1,
+          minHeight: 300,
+          marginTop: 24,
+          borderRadius: STYLE.radius.bento,
+          overflow: 'hidden',
+          background: '#1a1a1a',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+        }}
+      >
         <img
           src="/images/presentation-assets/Contextual Self Help - User Journey.png?v=4"
           alt="Contextual Self Help User Journey"
