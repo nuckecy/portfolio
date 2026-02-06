@@ -1199,8 +1199,7 @@ export const SlideEntryPoints = () => {
               position: 'absolute',
               top: 12,
               right: 12,
-              width: 36,
-              height: 36,
+              padding: '8px 12px',
               borderRadius: 8,
               background: 'rgba(0, 0, 0, 0.6)',
               border: 'none',
@@ -1208,6 +1207,7 @@ export const SlideEntryPoints = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              gap: 6,
               color: 'white',
               transition: 'background 0.2s ease',
             }}
@@ -1215,6 +1215,7 @@ export const SlideEntryPoints = () => {
             onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'; }}
             title="Open canvas view"
           >
+            <span style={{ fontSize: 12, fontWeight: 500 }}>Expand</span>
             {navIcons.expand}
           </button>
         </div>
@@ -1756,23 +1757,29 @@ export const SlideArchitecture = () => {
             position: 'absolute',
             top: 12,
             right: 12,
-            width: 36,
-            height: 36,
+            padding: '8px 12px',
             borderRadius: 8,
-            background: 'rgba(0, 0, 0, 0.6)',
+            background: 'rgba(255, 255, 255, 0.9)',
             border: 'none',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: 'white',
+            gap: 6,
+            color: '#1a1a1a',
             transition: 'background 0.2s ease',
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)'; }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 1)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)'; }}
           title="Open canvas view"
         >
-          {navIcons.expand}
+          <span style={{ fontSize: 12, fontWeight: 500 }}>Expand</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 3 21 3 21 9" />
+            <polyline points="9 21 3 21 3 15" />
+            <line x1="21" y1="3" x2="14" y2="10" />
+            <line x1="3" y1="21" x2="10" y2="14" />
+          </svg>
         </button>
       </div>
 
