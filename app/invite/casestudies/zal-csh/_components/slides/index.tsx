@@ -352,7 +352,7 @@ export const SlideCost = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
             alt="Zalando self-service returns and refunds desktop interface"
@@ -454,7 +454,7 @@ export const SlideWhyRepeats = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/FAQ - Orders - Dark Mode.png?v=4"
             alt="Zalando FAQ orders interface showing generic self-service"
@@ -543,7 +543,7 @@ export const SlideTopFive = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
           <img
             src="/images/presentation-assets/Contextual Self Help Home.png?v=4"
             alt="Zalando contextual self-help home interface"
@@ -785,7 +785,7 @@ export const SlideInsight1 = () => {
           onMouseEnter={() => setIsHovered1(true)}
           onMouseLeave={() => setIsHovered1(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} variant="light" />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
           <img
             src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png?v=4"
             alt="Old FAQ showing Where is my order page"
@@ -806,7 +806,7 @@ export const SlideInsight1 = () => {
           onMouseEnter={() => setIsHovered2(true)}
           onMouseLeave={() => setIsHovered2(false)}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} variant="light" />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} />
           <img
             src="/images/presentation-assets/New FAQ - Delivery - Status.png?v=4"
             alt="New self-help showing contextual delivery status"
@@ -1006,7 +1006,7 @@ export const SlideInsight2 = () => {
             onMouseEnter={() => setIsHovered1(true)}
             onMouseLeave={() => setIsHovered1(false)}
           >
-            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} variant="light" />
             <img
               src="/images/presentation-assets/Delivery Card Version 1.png?v=4"
               alt="Order card showing order ID and reference number"
@@ -1043,7 +1043,7 @@ export const SlideInsight2 = () => {
             onMouseEnter={() => setIsHovered2(true)}
             onMouseLeave={() => setIsHovered2(false)}
           >
-            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} />
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered2} variant="light" />
             <img
               src="/images/presentation-assets/Delivery Card - Current.png?v=4"
               alt="Order card with product images as primary identifier"
@@ -1479,7 +1479,7 @@ export const SlideTesting = () => {
               cursor: 'pointer',
             }}
           >
-            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
             <img
               src="/images/presentation-assets/Delivery Cards - Iterations.png?v=4"
               alt="Delivery card iterations showing design evolution"
@@ -1850,7 +1850,7 @@ export const SlideIdentification = () => {
             cursor: 'pointer',
           }}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/Dashboard - Returns and Refunds.png?v=4"
             alt="FAQ homepage with contextual cards showing returns and refunds"
@@ -2298,7 +2298,7 @@ export const SlideBeforeAfter = () => {
               cursor: 'pointer',
             }}
           >
-            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} />
+            <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered1} variant="light" />
             {/* Base image */}
             <img
               src="/images/presentation-assets/Old FAQ - Delivery.png?v=4"
@@ -2359,7 +2359,7 @@ export const SlideBeforeAfter = () => {
               cursor: 'pointer',
             }}
           >
-            <PreviewOverlay onClick={() => { setCurrentImageIndex(2); setIsModalOpen(true); }} isHovered={isHovered2} />
+            <PreviewOverlay onClick={() => { setCurrentImageIndex(2); setIsModalOpen(true); }} isHovered={isHovered2} variant="light" />
             {/* Base image - Mobile */}
             <img
               src="/images/presentation-assets/New FAQ [Mobile] - Delivery Status.png?v=4"
@@ -2469,7 +2469,7 @@ export const SlideResultsCustomer = () => {
             cursor: 'pointer',
           }}
         >
-          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} variant="light" />
+          <PreviewOverlay onClick={() => setIsModalOpen(true)} isHovered={isHovered} />
           <img
             src="/images/presentation-assets/Customer Email.png?v=4"
             alt="Zalando customer email notification about delivery delay"
