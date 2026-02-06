@@ -720,7 +720,7 @@ export const SlideInsight1 = () => {
             padding: 40,
           }}
         >
-          {/* Return Card */}
+          {/* Old FAQ */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, width: '45%' }}>
             <div
               style={{
@@ -732,11 +732,11 @@ export const SlideInsight1 = () => {
                 letterSpacing: 1,
               }}
             >
-              Return Card
+              Old FAQ
             </div>
             <img
-              src="/images/presentation-assets/Return Card.png"
-              alt="Return card showing in transit status"
+              src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png"
+              alt="Old FAQ showing Where is my order page"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -746,7 +746,7 @@ export const SlideInsight1 = () => {
             />
           </div>
 
-          {/* Refund Card */}
+          {/* New Self-help */}
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, width: '45%' }}>
             <div
               style={{
@@ -758,11 +758,11 @@ export const SlideInsight1 = () => {
                 letterSpacing: 1,
               }}
             >
-              Refund Card
+              New Self-help
             </div>
             <img
-              src="/images/presentation-assets/Refund Card.png"
-              alt="Refund card showing refund issued status"
+              src="/images/presentation-assets/New FAQ - Delivery - Status.png"
+              alt="New self-help showing contextual delivery status"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -785,8 +785,8 @@ export const SlideInsight1 = () => {
         Detailed FAQ pages with comprehensive information caused information overload and abandonment. Customers wanted the one piece of information relevant to their specific situation, immediately visible.
       </p>
       <div style={{ display: 'flex', gap: 24, flex: 1, minHeight: 0, marginTop: STYLE.spacing.titleGap }}>
-        {/* Return Card */}
-        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
+        {/* Old FAQ */}
+        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#e0e0e0', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
           <button
             onClick={() => setIsModalOpen(true)}
             style={{
@@ -811,18 +811,20 @@ export const SlideInsight1 = () => {
             {navIcons.expand}
           </button>
           <img
-            src="/images/presentation-assets/Return Card.png"
-            alt="Return card showing in transit status"
+            src="/images/presentation-assets/Old FAQ - Where is my Order - Status.png"
+            alt="Old FAQ showing Where is my order page"
             style={{
               width: '80%',
               height: 'auto',
               display: 'block',
+              transform: 'scale(1.3) translateX(-10%) translateY(5%)',
+              transformOrigin: 'top center',
             }}
           />
         </div>
 
-        {/* Refund Card */}
-        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#f5f5f5', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
+        {/* New Self-help */}
+        <div style={{ flex: 1, borderRadius: STYLE.radius.bento, background: '#e0e0e0', overflow: 'hidden', position: 'relative', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '2%' }}>
           <button
             onClick={() => setIsModalOpen(true)}
             style={{
@@ -847,12 +849,14 @@ export const SlideInsight1 = () => {
             {navIcons.expand}
           </button>
           <img
-            src="/images/presentation-assets/Refund Card.png"
-            alt="Refund card showing refund issued status"
+            src="/images/presentation-assets/New FAQ - Delivery - Status.png"
+            alt="New self-help showing contextual delivery status"
             style={{
               width: '80%',
               height: 'auto',
               display: 'block',
+              transform: 'scale(1.3) translateX(10%) translateY(5%)',
+              transformOrigin: 'top center',
             }}
           />
         </div>
