@@ -10,8 +10,8 @@ interface ConditionalFooterProps {
 export function ConditionalFooter({ data }: ConditionalFooterProps) {
   const pathname = usePathname()
 
-  // Hide footer on about page and all case study pages
-  if (pathname === "/about" || pathname.startsWith("/invite/casestudies")) {
+  // Hide footer on about page
+  if (pathname === "/about") {
     return null
   }
 

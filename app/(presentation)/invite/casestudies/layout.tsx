@@ -7,15 +7,7 @@ export default function CaseStudiesLayout({
 }) {
   return (
     <>
-      <style>{`
-        html, body {
-          overflow: hidden !important;
-          background: #0A0A0A !important;
-        }
-      `}</style>
-
       <HomeIcon />
-
       {children}
     </>
   );
