@@ -14,16 +14,16 @@ export const zalandoChatbotConfig = {
   cardInfo: {
     title: "Guided Conversational Chatbot",
     subtitle: "Reimagining Automated Support with Empathy",
-    description: "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
+    description: "Transformed a 23% automation rate into 48% by redesigning guided conversational flows across delivery, returns, and refund use cases.",
   },
 
   hero: {
     company: "ZALANDO",
-    year: "2024",
+    year: "2022-2023",
     title: "Transforming Customer Service with AI",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Reimagining Automated Support with Empathy. Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
+    description: "Reimagining Automated Support with Empathy. Transformed a 23% automation rate into 48% by redesigning guided conversational flows across delivery, returns, and refund use cases.",
     descriptionSize: "text-lg md:text-xl",
     skills: ["Product Design", "AI/ML", "Conversational UX"],
     centered: true,
@@ -33,10 +33,10 @@ export const zalandoChatbotConfig = {
   metrics: {
     style: "pills", // UNIQUE: Pills style (like Specta but different colors)
     items: [
-      { value: "87%", label: "Resolution Rate" },
-      { value: "45s", label: "Avg Response Time" },
-      { value: "3M+", label: "Monthly Interactions" },
-      { value: "4.6/5", label: "Customer Rating" },
+      { value: "48%", label: "Automation Rate" },
+      { value: "€0.18", label: "Cost per Bot Contact" },
+      { value: "1.6M+", label: "Monthly Interactions" },
+      { value: "€4.11M", label: "Annualized Savings" },
     ],
     fontSize: {
       value: "text-2xl md:text-3xl",
@@ -76,7 +76,7 @@ export const zalandoChatbotConfig = {
 
   project: {
     company: "Zalando",
-    year: "2024",
+    year: "2022-2023",
     role: "Senior UX Designer",
     roleDetails: "Conversational Design, AI UX, User Research",
     team: "AI, Product, Engineering",

@@ -174,7 +174,7 @@
         },
         {
           "name": "Guided Conversational Chatbot",
-          "problem": "Our old chatbot was pretty rigid, which meant a 78% abandonment rate and a 43% escalation to human agents. Customers felt trapped in loops and kept having to repeat themselves, which was not a good look for the brand and was damaging our reputation.",
+          "problem": "Our old chatbot was pretty rigid, with only a 23% automation rate and high escalation to human agents. Customers felt trapped in loops and kept having to repeat themselves, which was not a good look for the brand and was damaging our reputation.",
           "solution": "By analyzing over 100 customer histories and use cases, I discovered useful insights and designed a new conversational architecture. This new system used natural language understanding with high accuracy and dynamic conversation paths that could adapt to a customer's emotional cues. We also included multi-modal confirmation states (visual, textual, and progress indicators) to keep customers confident throughout the interaction.",
           "impact": [
             "Increased the automation rate by 34%, beating our target by 9%",
@@ -285,16 +285,16 @@
     {
       "slug": "zalando-chatbot",
       "company": "Zalando",
-      "year": "2024",
+      "year": "2022-2023",
       "title": "Guided Conversational Chatbot",
       "subtitle": "Reimagining Automated Support with Empathy",
-      "description": "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
+      "description": "Transformed a 23% automation rate into 48% by redesigning guided conversational flows across delivery, returns, and refund use cases.",
       "skills": ["Product Design", "AI/ML", "Conversational UX"],
       "metrics": [
-        { "value": "87%", "label": "Resolution Rate" },
-        { "value": "45s", "label": "Avg Response Time" },
-        { "value": "3M+", "label": "Monthly Interactions" },
-        { "value": "4.6/5", "label": "Customer Rating" }
+        { "value": "48%", "label": "Automation Rate" },
+        { "value": "€0.18", "label": "Cost per Bot Contact" },
+        { "value": "1.6M+", "label": "Monthly Interactions" },
+        { "value": "€4.11M", "label": "Annualized Savings" }
       ],
       "role": "Senior UX Designer",
       "team": "AI, Product, Engineering (12-person cross-functional team)",
@@ -330,10 +330,10 @@
         { "value": "20k", "label": "Employees" },
         { "value": "85%", "label": "Adoption Rate" },
         { "value": "60%", "label": "Time Saved" },
-        { "value": "8 Mo", "label": "Timeline" }
+        { "value": "14 Mo", "label": "Timeline" }
       ],
       "role": "Lead Product Designer",
-      "team": "Product, Engineering, HR (6-person cross-functional team)",
+      "team": "Product, Engineering, Design, HR (cross-functional team scaling from 15 to 23)",
       "market": "Nigeria, Africa - Enterprise HR Technology"
     },
     {
@@ -358,18 +358,18 @@
       "slug": "specta",
       "company": "Sterling Bank",
       "year": "2016",
-      "title": "Mobile Banking App (Specta)",
-      "subtitle": "Next-Generation Digital Lending Experience",
-      "description": "5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
+      "title": "Specta Digital Lending Platform",
+      "subtitle": "Pioneering Nigeria's First Digital Lending Platform",
+      "description": "5-minute loan approvals that processed $263M with zero non-performing loans and grew customers by 75%.",
       "skills": ["Product Design", "UX Research", "Fintech"],
       "metrics": [
-        { "value": "3 min", "label": "Approval Time" },
-        { "value": "15k+", "label": "Loans Disbursed" },
-        { "value": "₦500M", "label": "Total Value" },
-        { "value": "4.8/5", "label": "User Rating" }
+        { "value": "5 min", "label": "Approval Time" },
+        { "value": "11,000+", "label": "Customers (Year 1)" },
+        { "value": "$263M", "label": "Total Disbursed" },
+        { "value": "0%", "label": "Default Rate" }
       ],
       "role": "Lead Product Designer",
-      "team": "Product, Engineering, Credit (4-person cross-functional team)",
+      "team": "Design, Engineering, Retail/Sales, Financial Analysis, Credit (5-person cross-functional squad)",
       "market": "Nigeria - Consumer Lending, Fintech"
     },
     {

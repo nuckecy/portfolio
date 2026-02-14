@@ -71,7 +71,7 @@ export default function UBAHCMConnectCaseStudy() {
                       <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
                         Timeline
                       </h3>
-                      <p className="text-base md:text-lg">14 Months</p>
+                      <p className="text-base md:text-lg">14 months to first module launch (June 2020 – August 2021), full rollout early 2022</p>
                     </div>
                     <div>
                       <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
@@ -93,10 +93,10 @@ export default function UBAHCMConnectCaseStudy() {
                     </h3>
                     <ul className="text-muted-foreground space-y-1">
                       <li>Otobong Okoko (Senior Product Designer & Design Lead)</li>
-                      <li>23-person cross-functional squad:</li>
+                      <li>Cross-functional squad (grew from 15 to 23 over the project):</li>
                       <li className="ml-4">6 Frontend Engineers</li>
-                      <li className="ml-4">11 Backend Engineers</li>
-                      <li className="ml-4">3 Designers</li>
+                      <li className="ml-4">5-11 Backend Engineers (scaled up)</li>
+                      <li className="ml-4">3 Designers (1 lead + 2 junior designers + 1 content designer)</li>
                       <li className="ml-4">1 Data Analyst</li>
                       <li className="ml-4">1 QA Specialist</li>
                       <li className="ml-4">1 Project Manager</li>
@@ -233,23 +233,19 @@ export default function UBAHCMConnectCaseStudy() {
                       <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
                         <li>
                           <strong className="text-foreground">Cultural Adaptability:</strong> Flexible components
-                          accommodating regional variations in HR practices and compliance requirements
+                          accommodating regional variations in HR practices and compliance requirements across 20 countries.
+                          This drove decisions like configurable leave policies, multi-currency support, and locale-specific terminology.
                         </li>
                         <li>
                           <strong className="text-foreground">Progressive Disclosure:</strong> Layered complexity
-                          based on user sophistication, supporting varying technical literacy levels
+                          based on user sophistication, supporting varying technical literacy levels (NNGroup).
+                          Employees in high-literacy regions saw advanced features upfront; those in lower-literacy contexts
+                          experienced simplified flows with guided onboarding.
                         </li>
                         <li>
                           <strong className="text-foreground">Mobile-First Design:</strong> Primary experience
-                          optimized for mobile devices (67% of employees primarily accessed systems via mobile)
-                        </li>
-                        <li>
-                          <strong className="text-foreground">Inclusive Accessibility:</strong> Design for varying
-                          technical literacy and infrastructure capabilities
-                        </li>
-                        <li>
-                          <strong className="text-foreground">Modular Architecture:</strong> Scalable system
-                          supporting future expansion across 12 distinct modules
+                          optimized for mobile devices based on research showing 67% of employees primarily accessed systems via mobile.
+                          This was a data-driven decision, not a philosophical preference.
                         </li>
                       </ul>
                     </div>
@@ -376,10 +372,10 @@ export default function UBAHCMConnectCaseStudy() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
                         <div className="text-center">
                           <div className="text-4xl md:text-5xl lg:text-6xl font-normal text-green-600 mb-3 md:mb-4">
-                            94%
+                            85%
                           </div>
                           <p className="text-sm md:text-base text-muted-foreground">
-                            Employee adoption within 6 months across 20,000+ employees
+                            Employee adoption across 20,000+ employees
                           </p>
                         </div>
 

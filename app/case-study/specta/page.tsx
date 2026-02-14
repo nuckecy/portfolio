@@ -142,7 +142,7 @@ export default function SpectaCaseStudy() {
                             Build Trust Through Radical Transparency
                           </h3>
                           <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                            Address Nigeria's exploitative lending crisis where 89% of borrowers had negative
+                            Address Nigeria's exploitative lending crisis where borrowers routinely had negative
                             experiences with loan sharks and hidden fees by creating a transparent platform
                             with zero hidden charges and 24-hour reversal option.
                           </p>
@@ -197,18 +197,18 @@ export default function SpectaCaseStudy() {
                       </p>
                       <ul className="space-y-3 text-sm md:text-base text-muted-foreground">
                         <li>
-                          <strong className="text-foreground">Trust Through Transparency:</strong> 89% of
-                          Nigerians had negative lending experiences due to hidden fees and unrealistic
-                          conditions. Transparency wasn't just nice-to-have—it was revolutionary.
+                          <strong className="text-foreground">Trust Through Transparency:</strong> Research revealed
+                          widespread negative lending experiences due to hidden fees and unrealistic conditions.
+                          Transparency was not a feature; it was the foundation.
                         </li>
                         <li>
-                          <strong className="text-foreground">Algorithmic Opportunity:</strong> 91% of manual
-                          loan processing could be automated using existing bank transaction data and debt
-                          coverage ratio calculations, enabling instant decisions.
+                          <strong className="text-foreground">Algorithmic Opportunity:</strong> Analysis showed the
+                          vast majority of manual loan processing steps could be automated using existing bank
+                          transaction data and debt coverage ratio calculations, enabling instant credit decisions.
                         </li>
                         <li>
-                          <strong className="text-foreground">Mobile-First Reality:</strong> 84% of target
-                          customers completed financial transactions on mobile devices, requiring mobile-native
+                          <strong className="text-foreground">Mobile-First Reality:</strong> Target customers
+                          predominantly completed financial transactions on mobile devices, requiring mobile-native
                           design rather than desktop-first thinking.
                         </li>
                       </ul>

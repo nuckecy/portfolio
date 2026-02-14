@@ -82,7 +82,7 @@ export default function ZalandoChatbotCaseStudy() {
                       <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
                         Timeline
                       </h3>
-                      <p className="text-base md:text-lg">14 Months</p>
+                      <p className="text-base md:text-lg">14 Months (Nov 2021 – Oct 2022, with ongoing expansion)</p>
                     </div>
                     <div>
                       <h3 className="text-sm font-normal text-muted-foreground uppercase tracking-wide mb-3">
@@ -206,7 +206,7 @@ export default function ZalandoChatbotCaseStudy() {
                         Our research revealed a critical insight: users feared "not typing the right keywords"
                         in free-text chatbots. The solution wasn't to improve NLP accuracy alone—it was to
                         eliminate the anxiety entirely through a guided, button-driven experience. I analyzed
-                        100+ chat transcripts to identify failure patterns and mapped them against our technical
+                        chat transcripts across 1.6M+ chatbot interactions to identify failure patterns and mapped them against our technical
                         capabilities, establishing three core design principles:
                       </p>
                       <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-muted-foreground ml-4">
@@ -288,7 +288,7 @@ export default function ZalandoChatbotCaseStudy() {
                             226%
                           </div>
                           <p className="text-sm md:text-base text-muted-foreground">
-                            Increase in automation rate for delivery use cases (from 11.76% to 38.36%)
+                            Increase in automation rate for delivery use cases (from 11.76% to 38.36%) in the initial Germany experiment, scaling to a 48% overall automation rate after full rollout
                           </p>
                         </div>
 
@@ -297,7 +297,7 @@ export default function ZalandoChatbotCaseStudy() {
                             18%
                           </div>
                           <p className="text-sm md:text-base text-muted-foreground">
-                            Decrease in Repeated Case Share, proving first-contact resolution improved significantly
+                            Decrease in Repeated Case Share for delivery (from 25.55% to 20.91%), with an 11% decrease in overall Repeated Case Share
                           </p>
                         </div>
 
@@ -306,16 +306,16 @@ export default function ZalandoChatbotCaseStudy() {
                             70%
                           </div>
                           <p className="text-sm md:text-base text-muted-foreground">
-                            CSAT scores rose significantly in post-launch monitoring
+                            CSAT improved from ~63.5% to ~69.9% during initial rollout, continuing to improve as the experience expanded
                           </p>
                         </div>
 
                         <div className="text-center">
                           <div className="text-4xl md:text-5xl lg:text-6xl font-normal text-blue-600 mb-3 md:mb-4">
-                            €1.34M+
+                            €4.11M
                           </div>
                           <p className="text-sm md:text-base text-muted-foreground">
-                            Estimated annualized operational savings from increased automation
+                            Annualized operational savings (20x cost differential: €0.18 per bot contact vs €3.50 per agent contact)
                           </p>
                         </div>
                       </div>

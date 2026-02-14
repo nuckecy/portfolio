@@ -21,14 +21,14 @@ export const caseStudiesPageConfig = {
     },
     {
       company: "UBA GROUP",
-      year: "2021",
+      year: "2020-2022",
       title: "UBA HCM Connect",
       subtitle: "Enterprise HR Management System",
       description: "Unified 12 systems across 20 countries, cutting $80K monthly costs and boosting productivity 43%.",
       metrics: [
         "$960K annual savings",
         "91% process automation",
-        "94% employee adoption"
+        "85% employee adoption"
       ],
       skills: ["Enterprise Design", "HR Tech", "System Design"],
       href: "/case-study/uba-hcm-connect"
@@ -77,14 +77,14 @@ export const caseStudiesPageConfig = {
     },
     {
       company: "ZALANDO",
-      year: "2024",
+      year: "2022-2023",
       title: "Guided Conversational Chatbot",
       subtitle: "Reimagining Automated Support with Empathy",
-      description: "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
+      description: "Transformed a 23% automation rate into 48% by redesigning guided conversational flows across delivery, returns, and refund use cases.",
       metrics: [
         "226% automation increase",
         "18% reduction in repeat contacts",
-        "€1.34M+ savings"
+        "€4.11M annualized savings"
       ],
       skills: ["Conversational AI", "Product Design", "User Research"],
       href: "/case-study/zalando-chatbot"
@@ -106,9 +106,9 @@ export const caseStudiesPageConfig = {
     {
       company: "STERLING BANK",
       year: "2016",
-      title: "Mobile Banking App (Specta)",
-      subtitle: "Next-Generation Digital Lending Experience",
-      description: "5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
+      title: "Specta Digital Lending Platform",
+      subtitle: "Pioneering Nigeria's First Digital Lending Platform",
+      description: "5-minute loan approvals that processed $263M with zero non-performing loans and grew customers by 75%.",
       metrics: [
         "$263M disbursements",
         "200% profit growth",

@@ -10,9 +10,9 @@ export const spectaConfig = {
   },
 
   cardInfo: {
-    title: "Mobile Banking App (Specta)",
-    subtitle: "Next-Generation Digital Lending Experience",
-    description: "5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
+    title: "Specta Digital Lending Platform",
+    subtitle: "Pioneering Nigeria's First Digital Lending Platform",
+    description: "5-minute loan approvals that processed $263M with zero non-performing loans and grew customers by 75%.",
   },
 
   // Different hero - SMALLER height, sidebar layout, different image
@@ -22,7 +22,7 @@ export const spectaConfig = {
     title: "From Weeks to Minutes: Nigeria's Digital Lending Revolution",
     titleSize: "text-3xl md:text-4xl lg:text-5xl",
     titleWeight: "font-light",
-    description: "Next-Generation Digital Lending Experience. 5-minute loan approvals that processed $55M with 0.1% defaults and grew customers by 230%.",
+    description: "Pioneering Nigeria's First Digital Lending Platform. 5-minute loan approvals that processed $263M with zero non-performing loans and grew customers by 75%.",
     descriptionSize: "text-xl md:text-2xl",
     skills: ["Product Design", "UX Research", "Fintech"],
     centered: true,
@@ -36,10 +36,10 @@ export const spectaConfig = {
     style: "pills", // DIFFERENT: Pill style instead of clean
     background: "bg-muted/50", // Lighter background
     items: [
-      { value: "3 min", label: "Approval Time" },
-      { value: "15k+", label: "Loans Disbursed" },
-      { value: "₦500M", label: "Total Value" },
-      { value: "4.8/5", label: "User Rating" },
+      { value: "5 min", label: "Approval Time" },
+      { value: "11,000+", label: "Customers (Year 1)" },
+      { value: "$263M", label: "Total Disbursed" },
+      { value: "0%", label: "Default Rate" },
     ],
     fontSize: {
       value: "text-2xl md:text-3xl", // SMALLER than Fraud Analytics
@@ -81,11 +81,11 @@ export const spectaConfig = {
 
   project: {
     company: "Sterling Bank",
-    year: "2017-2018",
+    year: "2016-2018",
     role: "Lead Product Designer",
     roleDetails: "End-to-end design, research, prototyping",
-    team: "Product, Engineering, Credit",
-    teamDetails: "4-person cross-functional team",
+    team: "Design, Engineering, Retail/Sales, Financial Analysis, Credit",
+    teamDetails: "5-person cross-functional squad",
     market: "Nigeria",
     marketDetails: "Consumer Lending, Fintech",
   },

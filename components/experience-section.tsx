@@ -42,7 +42,7 @@ const experiences: Experience[] = [
       },
       {
         title: "Guided Conversational Chatbot",
-        problem: "Old chatbot was rigid with 78% abandonment rate and 43% escalation to human agents. Customers felt trapped in loops and kept having to repeat themselves.",
+        problem: "Old chatbot had a 23% automation rate with high escalation to human agents. Customers felt trapped in loops and kept having to repeat themselves.",
         solution: "By analyzing over 100 customer histories, I designed a new conversational architecture using natural language understanding with dynamic conversation paths that adapt to customer's emotional cues. Included multi-modal confirmation states to keep customers confident.",
         impacts: [
           "Increased automation rate by 34%, beating target by 9%",

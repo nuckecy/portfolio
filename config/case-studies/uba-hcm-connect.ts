@@ -18,7 +18,7 @@ export const ubaHcmConnectConfig = {
   // Medium full-width hero - UNIQUE combination
   hero: {
     company: "UBA GROUP",
-    year: "2021",
+    year: "2020-2022",
     title: "Employee Self-Service Revolution: From Paper to Digital",
     titleSize: "text-3xl md:text-4xl lg:text-5xl xl:text-6xl",
     titleWeight: "font-light",
@@ -46,7 +46,7 @@ export const ubaHcmConnectConfig = {
       { value: "20k", label: "Employees", gradient: "from-purple-500/20 to-pink-500/20" },
       { value: "85%", label: "Adoption Rate", gradient: "from-pink-500/20 to-rose-500/20" },
       { value: "60%", label: "Time Saved", gradient: "from-rose-500/20 to-red-500/20" },
-      { value: "8 Mo", label: "Timeline", gradient: "from-red-500/20 to-orange-500/20" },
+      { value: "14 Mo", label: "Timeline", gradient: "from-red-500/20 to-orange-500/20" },
     ],
     fontSize: {
       value: "text-3xl md:text-4xl",
@@ -87,11 +87,11 @@ export const ubaHcmConnectConfig = {
 
   project: {
     company: "UBA Group",
-    year: "2019-2020",
+    year: "2020-2022",
     role: "Lead Product Designer",
     roleDetails: "UX/UI Design, User Research, Prototyping",
-    team: "Product, Engineering, HR",
-    teamDetails: "6-person cross-functional team",
+    team: "Product, Engineering, Design, HR",
+    teamDetails: "Cross-functional team scaling from 15 to 23 members",
     market: "Nigeria, Africa",
     marketDetails: "Enterprise HR Technology",
   },

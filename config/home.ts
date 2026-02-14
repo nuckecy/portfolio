@@ -142,7 +142,7 @@ export const homeConfig = {
       {
         title: "Guided Conversational Chatbot",
         subtitle: "Reimagining Automated Support with Empathy.",
-        description: "Transformed a 78% abandonment rate into 34% higher automation by redesigning from 100+ user journeys.",
+        description: "Transformed a 23% automation rate into 48% by redesigning guided conversational flows across delivery, returns, and refund use cases.",
         tags: ["Conversational AI", "Product Design"],
         image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
         imageAlt: "AI chatbot and conversational interface",
@@ -189,7 +189,7 @@ export const homeConfig = {
         description: "Rebuilding trust in AI through guided conversational experiences.",
         image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
         tags: ["Conversational AI", "Service Design", "UX Research"],
-        metrics: ["226% automation increase", "€1.34M+ savings"],
+        metrics: ["226% automation increase", "€4.11M annualized savings"],
         href: "/case-study/zalando-chatbot",
       },
       {
@@ -198,7 +198,7 @@ export const homeConfig = {
         description: "Transforming HR operations across Africa with a comprehensive digital platform.",
         image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
         tags: ["Enterprise Design", "HR Tech", "System Design"],
-        metrics: ["$960K annual savings", "94% adoption"],
+        metrics: ["$960K annual savings", "85% adoption"],
         href: "/case-study/uba-hcm-connect",
       },
       {

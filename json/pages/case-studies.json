@@ -16,21 +16,21 @@
     },
     {
       "company": "ZALANDO",
-      "year": "2024",
+      "year": "2022-2023",
       "title": "Zalando Chatbot Redesign",
       "subtitle": "From Frustration to Flow: Rebuilding Trust in Conversational AI",
-      "description": "A guided chatbot experience that increased automation by 66% and saved over €1.34M annually.",
-      "metrics": ["226% automation increase", "18% reduction in repeat contacts", "€1.34M+ savings"],
+      "description": "A guided chatbot experience that increased automation by 226% and saved over €4.11M annually.",
+      "metrics": ["226% automation increase", "18% reduction in repeat contacts", "€4.11M annualized savings"],
       "skills": ["Conversational AI", "Product Design", "User Research"],
       "href": "/case-study/zalando-chatbot"
     },
     {
       "company": "UBA GROUP",
-      "year": "2021",
+      "year": "2020-2022",
       "title": "UBA HCM Connect",
       "subtitle": "Transforming HR Operations for 20,000+ Employees Across Africa",
       "description": "A comprehensive 12-module enterprise platform that revolutionized HR processes.",
-      "metrics": ["$960K annual savings", "91% process automation", "94% employee adoption"],
+      "metrics": ["$960K annual savings", "91% process automation", "85% employee adoption"],
       "skills": ["Enterprise Design", "HR Tech", "System Design"],
       "href": "/case-study/uba-hcm-connect"
     },
